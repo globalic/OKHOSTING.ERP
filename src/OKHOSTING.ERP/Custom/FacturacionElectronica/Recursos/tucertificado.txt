@@ -1,0 +1,72 @@
+Certificate:
+	Data:
+		Version: 3 (0x2)
+		Serial Number:
+			30:30:30:30:31:30:30:30:30:30:30:32:30:31:35:33:31:34:32:37
+		Signature Algorithm: sha1WithRSAEncryption
+		Issuer: CN=A.C. del Servicio de Administraci\xC3\xB3n Tributaria, O=Servicio de Administraci\xC3\xB3n Tributaria, OU=Administraci\xC3\xB3n de Seguridad de la Informaci\xC3\xB3n/emailAddress=asisnet@sat.gob.mx/streetAddress=Av. Hidalgo 77, Col. Guerrero/postalCode=06300, C=MX, ST=Distrito Federal, L=Cuauht\xC3\xA9moc/x500UniqueIdentifier=SAT970701NN3/unstructuredName=Responsable: Cecilia Guillermina Garc\xC3\xADa Guerra
+		Validity
+			Not Before: Jul 11 17:40:04 2012 GMT
+			Not After : Jul 11 17:40:04 2016 GMT
+		Subject: CN=OK HOSTING SC/name=OK HOSTING SC, O=OK HOSTING SC/x500UniqueIdentifier=OHO100303SC7 / MUCE800730P31/serialNumber= / MUCE800730HJCXHD08, OU=Zapopan
+		Subject Public Key Info:
+			Public Key Algorithm: rsaEncryption
+			RSA Public Key: (1024 bit)
+				Modulus (1024 bit):
+					00:ae:6b:a4:20:7f:5b:f1:18:b5:0f:4e:46:d5:0e:
+					98:63:fc:dd:4d:54:95:6b:d1:51:8c:c6:6c:73:17:
+					73:88:ee:34:51:e1:94:93:cb:8a:dd:48:ec:d3:da:
+					43:6c:78:d3:1c:1e:fa:fa:0f:26:0a:de:21:96:92:
+					34:ce:57:31:a8:eb:78:15:3c:90:22:d6:19:75:f9:
+					d9:25:26:d3:49:e1:e7:e5:2d:23:b1:6e:e1:1e:c2:
+					d4:62:75:f9:2a:9b:d8:70:5f:f7:f8:e1:ea:c1:96:
+					41:2e:98:ad:de:73:39:43:5d:cc:90:f0:3e:66:1f:
+					d2:41:d5:02:ca:73:6e:a2:49
+				Exponent: 65537 (0x10001)
+		X509v3 extensions:
+			X509v3 Basic Constraints: critical
+				CA:FALSE
+			X509v3 Key Usage: 
+				Digital Signature, Non Repudiation
+	Signature Algorithm: sha1WithRSAEncryption
+		87:92:d1:26:c0:36:86:48:87:eb:ab:b2:dc:bf:21:ee:9d:91:
+		14:5f:80:d6:87:9b:9b:96:a7:00:46:33:54:32:50:49:4f:d1:
+		94:6a:40:7f:d7:05:af:73:1a:5c:01:6c:9e:a9:d1:bd:b9:56:
+		8a:ff:87:98:2e:91:2b:8f:27:34:d5:af:39:56:ae:aa:fa:6d:
+		a1:94:e9:b9:47:ba:e6:9d:9e:8a:14:d3:4a:55:71:6a:f6:de:
+		85:1c:7c:a2:df:8f:00:bb:76:af:54:c5:44:1c:c6:60:46:4f:
+		e8:f6:e7:68:b8:ee:69:cf:93:67:e8:2d:2f:52:fb:71:94:62:
+		19:61:1c:5f:1f:e5:e6:55:3e:34:bc:b1:80:09:fe:43:49:c3:
+		c0:c0:65:0c:5f:00:17:d0:b9:86:39:8c:39:6f:fd:9b:8f:dd:
+		60:63:0e:9d:f0:98:96:8f:ef:f4:30:3a:eb:04:4a:29:a9:44:
+		83:0d:e7:16:64:3f:f3:34:69:52:07:a4:d4:66:5e:5f:51:2c:
+		ce:be:b1:90:de:ac:76:c0:91:20:4c:59:19:2b:a7:99:e5:91:
+		07:29:47:87:25:ed:d7:36:09:85:bc:7c:4b:7d:33:a8:9c:5e:
+		7b:08:83:b9:4a:80:49:9b:03:2c:3e:6c:e0:74:e6:be:77:e7:
+		96:c3:79:44
+-----BEGIN CERTIFICATE-----
+MIIEYDCCA0igAwIBAgIUMDAwMDEwMDAwMDAyMDE1MzE0MjcwDQYJKoZIhvcNAQEF
+BQAwggGVMTgwNgYDVQQDDC9BLkMuIGRlbCBTZXJ2aWNpbyBkZSBBZG1pbmlzdHJh
+Y2nDs24gVHJpYnV0YXJpYTEvMC0GA1UECgwmU2VydmljaW8gZGUgQWRtaW5pc3Ry
+YWNpw7NuIFRyaWJ1dGFyaWExODA2BgNVBAsML0FkbWluaXN0cmFjacOzbiBkZSBT
+ZWd1cmlkYWQgZGUgbGEgSW5mb3JtYWNpw7NuMSEwHwYJKoZIhvcNAQkBFhJhc2lz
+bmV0QHNhdC5nb2IubXgxJjAkBgNVBAkMHUF2LiBIaWRhbGdvIDc3LCBDb2wuIEd1
+ZXJyZXJvMQ4wDAYDVQQRDAUwNjMwMDELMAkGA1UEBhMCTVgxGTAXBgNVBAgMEERp
+c3RyaXRvIEZlZGVyYWwxFDASBgNVBAcMC0N1YXVodMOpbW9jMRUwEwYDVQQtEwxT
+QVQ5NzA3MDFOTjMxPjA8BgkqhkiG9w0BCQIML1Jlc3BvbnNhYmxlOiBDZWNpbGlh
+IEd1aWxsZXJtaW5hIEdhcmPDrWEgR3VlcnJhMB4XDTEyMDcxMTE3NDAwNFoXDTE2
+MDcxMTE3NDAwNFowgaExFjAUBgNVBAMTDU9LIEhPU1RJTkcgU0MxFjAUBgNVBCkT
+DU9LIEhPU1RJTkcgU0MxFjAUBgNVBAoTDU9LIEhPU1RJTkcgU0MxJTAjBgNVBC0T
+HE9ITzEwMDMwM1NDNyAvIE1VQ0U4MDA3MzBQMzExHjAcBgNVBAUTFSAvIE1VQ0U4
+MDA3MzBISkNYSEQwODEQMA4GA1UECxMHWmFwb3BhbjCBnzANBgkqhkiG9w0BAQEF
+AAOBjQAwgYkCgYEArmukIH9b8Ri1D05G1Q6YY/zdTVSVa9FRjMZscxdziO40UeGU
+k8uK3Ujs09pDbHjTHB76+g8mCt4hlpI0zlcxqOt4FTyQItYZdfnZJSbTSeHn5S0j
+sW7hHsLUYnX5KpvYcF/3+OHqwZZBLpit3nM5Q13MkPA+Zh/SQdUCynNuokkCAwEA
+AaMdMBswDAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBsAwDQYJKoZIhvcNAQEFBQAD
+ggEBAIeS0SbANoZIh+ursty/Ie6dkRRfgNaHm5uWpwBGM1QyUElP0ZRqQH/XBa9z
+GlwBbJ6p0b25Vor/h5gukSuPJzTVrzlWrqr6baGU6blHuuadnooU00pVcWr23oUc
+fKLfjwC7dq9UxUQcxmBGT+j252i47mnPk2foLS9S+3GUYhlhHF8f5eZVPjS8sYAJ
+/kNJw8DAZQxfABfQuYY5jDlv/ZuP3WBjDp3wmJaP7/QwOusESimpRIMN5xZkP/M0
+aVIHpNRmXl9RLM6+sZDerHbAkSBMWRkrp5nlkQcpR4cl7dc2CYW8fEt9M6icXnsI
+g7lKgEmbAyw+bOB05r5355bDeUQ=
+-----END CERTIFICATE-----

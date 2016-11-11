@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04C2F81A-439A-4E72-AA70-BA0C9C5FD77B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OKHOSTING.ERP</RootNamespace>
+    <AssemblyName>OKHOSTING.ERP</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile44</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="app.config" />
+    <None Include="Custom\FacturacionElectronica\Facturas\Readme.txt" />
+    <None Include="Custom\FacturacionElectronica\Recursos\1- Convertir certificado a PEM.BAT" />
+    <None Include="Custom\FacturacionElectronica\Recursos\2- Extraer num de certificado.BAT" />
+    <None Include="Custom\FacturacionElectronica\Recursos\3- Convertir llave a PEM.bat" />
+    <None Include="Custom\FacturacionElectronica\Recursos\LlavePrivada.key.pem" />
+    <None Include="Custom\FacturacionElectronica\Recursos\tucertificado.cer" />
+    <None Include="Custom\FacturacionElectronica\Recursos\tucertificado.cer.pem" />
+    <None Include="Custom\FacturacionElectronica\Recursos\tullave.key" />
+    <None Include="Custom\FacturacionElectronica\Recursos\___LlavePrivada.key.pem" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounting\Account.cs" />
+    <Compile Include="Accounting\AccountProjection.cs" />
+    <Compile Include="Accounting\AccountUpdate.cs" />
+    <Compile Include="Accounting\CalculatedAccount.cs" />
+    <Compile Include="Accounting\ObjectCalculatedAccount.cs" />
+    <Compile Include="Accounting\PeriodicTypeCalculatedAccount.cs" />
+    <Compile Include="Accounting\TypeCalculatedAccount.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="CompanyAddress.cs" />
+    <Compile Include="CompanyAddressType.cs" />
+    <Compile Include="CompanyContact.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="Currency.cs" />
+    <Compile Include="Customers\Customer.cs" />
+    <Compile Include="Customers\CustomerCategory.cs" />
+    <Compile Include="Customers\CustomerFeedback.cs" />
+    <Compile Include="Customers\Prospect.cs" />
+    <Compile Include="Customers\ProspectSource.cs" />
+    <Compile Include="Customers\ProspectStatus.cs" />
+    <Compile Include="Customers\Quote.cs" />
+    <Compile Include="Customers\Sale.cs" />
+    <Compile Include="HR\Department.cs" />
+    <Compile Include="Finances\Tax.cs" />
+    <Compile Include="Finances\TaxAgency.cs" />
+    <Compile Include="Finances\TaxGroup.cs" />
+    <Compile Include="HR\CommissionLevel.cs" />
+    <Compile Include="HR\Employee.cs" />
+    <Compile Include="HR\SalaryType.cs" />
+    <Compile Include="HR\SalesPerson.cs" />
+    <Compile Include="Invoice.cs" />
+    <Compile Include="InvoiceCategory.cs" />
+    <Compile Include="InvoiceItem.cs" />
+    <Compile Include="InvoiceItemTax.cs" />
+    <Compile Include="InvoicePayment.cs" />
+    <Compile Include="InvoiceType.cs" />
+    <Compile Include="PaymentMethod.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Production\PackageProduct.cs" />
+    <Compile Include="Production\PackageProductIncludedProduct.cs" />
+    <Compile Include="Production\Product.cs" />
+    <Compile Include="Production\ProductCategory.cs" />
+    <Compile Include="Production\ProductInstance.cs" />
+    <Compile Include="Production\Subscription.cs" />
+    <Compile Include="Production\Warehouse.cs" />
+    <Compile Include="Production\WarehouseProduct.cs" />
+    <Compile Include="Production\WarehouseTransaction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Production\SubscriptionProduct.cs" />
+    <Compile Include="HR\Team.cs" />
+    <Compile Include="TimeUnit.cs" />
+    <Compile Include="Vendors\Purchase.cs" />
+    <Compile Include="Vendors\Vendor.cs" />
+    <Compile Include="Vendors\VendorCategory.cs" />
+    <Compile Include="Gender.cs" />
+    <Compile Include="Address.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Custom\FacturacionElectronica\Recursos\CadenaOriginal.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Custom\FacturacionElectronica\Recursos\ConvertirHTML.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Custom\FacturacionElectronica\Recursos\libeay32.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Custom\FacturacionElectronica\Recursos\openssl.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Custom\FacturacionElectronica\Recursos\Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Custom\FacturacionElectronica\Recursos\ssleay32.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Custom\FacturacionElectronica\Recursos\tucertificado.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Custom\FacturacionElectronica\Temporal\Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Customers.NewCustomerMail.html" />
+    <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Customers.QuoteMail.html" />
+    <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Customers.SaleMail.html" />
+    <Content Include="Custom\MailTemplates\OKHOSTING.ERP.HR.TaskMail.html" />
+    <Content Include="Custom\MailTemplates\OKHOSTING.ERP.InvoiceMail.html" />
+    <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Local.Mexico.FacturacionElectronica.EmailFactura.html" />
+    <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Production.ExpiredQuoteMail.html" />
+    <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Production.ExpiredSubscriptionMail.html" />
+    <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Production.ExpiringQuoteMail.html" />
+    <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Production.ExpiringSubscriptionMail.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Custom\FacturacionElectronica\Informes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="OKHOSTING.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OKHOSTING.Core.1.0.25\lib\OKHOSTING.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OKHOSTING.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OKHOSTING.Data.1.0.16\lib\portable-net45+win+wpa81+MonoAndroid10+Xamarin.iOS10+MonoTouch10\OKHOSTING.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PCLCrypto, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
+      <HintPath>..\packages\PCLCrypto.2.0.147\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PInvoke.BCrypt, Version=0.3.0.0, Culture=neutral, PublicKeyToken=9e300f9f87f04a7a, processorArchitecture=MSIL">
+      <HintPath>..\packages\PInvoke.BCrypt.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.BCrypt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PInvoke.Kernel32, Version=0.3.0.0, Culture=neutral, PublicKeyToken=9e300f9f87f04a7a, processorArchitecture=MSIL">
+      <HintPath>..\packages\PInvoke.Kernel32.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.Kernel32.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PInvoke.NCrypt, Version=0.3.0.0, Culture=neutral, PublicKeyToken=9e300f9f87f04a7a, processorArchitecture=MSIL">
+      <HintPath>..\packages\PInvoke.NCrypt.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.NCrypt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PInvoke.Windows.Core, Version=0.3.0.0, Culture=neutral, PublicKeyToken=9e300f9f87f04a7a, processorArchitecture=MSIL">
+      <HintPath>..\packages\PInvoke.Windows.Core.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.Windows.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Validation, Version=2.3.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Validation.2.3.7\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
