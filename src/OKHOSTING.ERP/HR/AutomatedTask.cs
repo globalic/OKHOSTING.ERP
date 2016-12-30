@@ -11,15 +11,15 @@ namespace OKHOSTING.ERP.HR
 		[RequiredValidator]
 		public Type MethodType
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
 		public string Criteria
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -29,8 +29,8 @@ namespace OKHOSTING.ERP.HR
 		[RequiredValidator]
 		public string Method
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -39,21 +39,21 @@ namespace OKHOSTING.ERP.HR
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
 		public string Parameters
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public bool Approved
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public Computer Computer
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		//public object Execute()

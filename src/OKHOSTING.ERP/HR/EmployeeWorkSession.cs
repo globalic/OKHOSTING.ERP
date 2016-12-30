@@ -11,8 +11,8 @@ namespace OKHOSTING.ERP.HR
 
 		public bool IsIregular
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 	}
 }

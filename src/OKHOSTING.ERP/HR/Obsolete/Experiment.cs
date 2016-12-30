@@ -19,8 +19,8 @@ namespace OKHOSTING.ERP.HR
 		/// </example>
 		public string Hypotesis
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 	}
 }

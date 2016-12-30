@@ -20,8 +20,8 @@ namespace OKHOSTING.ERP.Accounting
 		[RequiredValidator]
 		public Account Account
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -30,8 +30,8 @@ namespace OKHOSTING.ERP.Accounting
 		[RequiredValidator]
 		public decimal ProjectedValue
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -40,8 +40,8 @@ namespace OKHOSTING.ERP.Accounting
 		[RequiredValidator]
 		public DateTime Date
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -49,8 +49,8 @@ namespace OKHOSTING.ERP.Accounting
 		/// </summary>
 		public AccountUpdate ActualValue
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public decimal Difference

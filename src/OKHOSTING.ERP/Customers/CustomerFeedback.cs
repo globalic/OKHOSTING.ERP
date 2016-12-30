@@ -14,41 +14,41 @@ namespace OKHOSTING.ERP.Customers
 	{
 		public short SatisfactionLevel
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public Customer Customer
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
-        [RequiredValidator]
-        public DateTime Date
+		[RequiredValidator]
+		public DateTime Date
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public Team Team
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public Employee Employee
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
 		public string Comment
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 	}
 }

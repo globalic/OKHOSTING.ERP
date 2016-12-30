@@ -28,8 +28,8 @@ namespace OKHOSTING.ERP.HR
 		[StringLengthValidator(100)]
 		public string AuxId
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -38,8 +38,8 @@ namespace OKHOSTING.ERP.HR
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
 		public string Description
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -47,8 +47,8 @@ namespace OKHOSTING.ERP.HR
 		/// </summary>
 		public Employee AssignedTo
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -56,20 +56,20 @@ namespace OKHOSTING.ERP.HR
 		/// </summary>
 		public int MinutesInvested
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public int PlannedMinutesInvested
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public TaskPriority Priority
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -77,8 +77,8 @@ namespace OKHOSTING.ERP.HR
 		/// </summary>
 		public Task Parent
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -86,14 +86,14 @@ namespace OKHOSTING.ERP.HR
 		/// </summary>
 		public Company Company
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		private ICollection<InvoiceItem> CompanyInvoiceItems
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -105,8 +105,8 @@ namespace OKHOSTING.ERP.HR
 		/// </remarks>
 		public InvoiceItem InvoiceItem
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -115,22 +115,22 @@ namespace OKHOSTING.ERP.HR
 		[RequiredValidator]
 		public int Progress
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public DateTime StartOn
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public DateTime EndOn
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		#endregion
@@ -216,8 +216,8 @@ namespace OKHOSTING.ERP.HR
 		/// </summary>
 		public ICollection<Task> SubTasks
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public ICollection<TaskAttachement> Attachements

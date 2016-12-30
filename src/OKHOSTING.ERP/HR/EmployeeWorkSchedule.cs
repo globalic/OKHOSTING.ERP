@@ -9,26 +9,26 @@ namespace OKHOSTING.ERP.HR
 	{
 		public Employee Employee
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public DayOfWeek DayOfWeek
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public TimeSpan Start
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public TimeSpan End
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public TimeSpan Lenght

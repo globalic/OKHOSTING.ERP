@@ -12,36 +12,36 @@ namespace OKHOSTING.ERP.HR
 		[StringLengthValidator(50)]
 		public string Role
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public decimal MinSalary
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public decimal MaxSalary
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public SalaryType SalaryType
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public Department Department
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 	}
 }

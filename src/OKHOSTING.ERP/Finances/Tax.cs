@@ -12,8 +12,8 @@ namespace OKHOSTING.ERP.Finances
 		[StringLengthValidator(50)]
 		public string Name
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -24,20 +24,20 @@ namespace OKHOSTING.ERP.Finances
 		[RequiredValidator]
 		public decimal Rate
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public TaxAgency TaxAgency
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public ICollection<TaxGroup> TaxGroups
 		{
-            get;
+			get;
 			set;
 		}
 

@@ -16,109 +16,109 @@ namespace OKHOSTING.ERP
 		}
 
 		[RequiredValidator]
-        [StringLengthValidator(100)]
-        public string LegalName
+		[StringLengthValidator(100)]
+		public string LegalName
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
-        [StringLengthValidator(100)]
-        public string CommercialName
+		[StringLengthValidator(100)]
+		public string CommercialName
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
-        [StringLengthValidator(50)]
-        public string FederalTaxID
+		[StringLengthValidator(50)]
+		public string FederalTaxID
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
-        [StringLengthValidator(StringLengthValidator.Unlimited)]
-        public string Notes
+		[StringLengthValidator(StringLengthValidator.Unlimited)]
+		public string Notes
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
-        [StringLengthValidator(50)]
-        public string Telephone
+		[StringLengthValidator(50)]
+		public string Telephone
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
-        [StringLengthValidator(50)]
-        public string Telephone2
+		[StringLengthValidator(50)]
+		public string Telephone2
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
-        [StringLengthValidator(50)]
-        public string MobileTelephone
+		[StringLengthValidator(50)]
+		public string MobileTelephone
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
-        [StringLengthValidator(100)]
-        [RegexValidator(Core.RegexPatterns.EmailAddress)]
-        public string Email
+		[StringLengthValidator(100)]
+		[RegexValidator(Core.RegexPatterns.EmailAddress)]
+		public string Email
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
-        [StringLengthValidator(100)]
-        [RegexValidator(Core.RegexPatterns.EmailAddress)]
+		[StringLengthValidator(100)]
+		[RegexValidator(Core.RegexPatterns.EmailAddress)]
 		public string Email2
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
-        [StringLengthValidator(100)]
-        [RegexValidator(Core.RegexPatterns.DomainName)]
-        public string Url
+		[StringLengthValidator(100)]
+		[RegexValidator(Core.RegexPatterns.DomainName)]
+		public string Url
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public CompanyAddress MainAddress
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public CompanyContact MainContact
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		#region Collections
 
 		public ICollection<CompanyAddress> Addresses
 		{
-            get;
+			get;
 			set;
 		}
 
 		public ICollection<CompanyContact> Contacts
 		{
-            get;
+			get;
 			set;
 		}
 
 		//public ICollection<HR.Task> Tasks
 		//{
-  //          get;
+  //		  get;
 		//	set;
 		//}
 

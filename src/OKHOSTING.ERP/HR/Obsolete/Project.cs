@@ -20,8 +20,8 @@ namespace OKHOSTING.ERP.HR
 		[RequiredValidator]
 		public TimeSpan EstimatedDuration
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -48,32 +48,32 @@ namespace OKHOSTING.ERP.HR
 
 		public Department Department
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		[StringLengthValidator(100)]
 		public string Name
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
 		public string Objectives
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
 		public string Strategy
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -108,51 +108,51 @@ namespace OKHOSTING.ERP.HR
 		/// </summary>
 		public decimal HoursInvested
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
 		public string Evaluation
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public bool ObjectivesAccomplished
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public bool OnBudget
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public bool OnSchedule
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public DateTime EstimatedStartDate
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public DateTime EstimatedEndDate
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		private DateTime? _Start = null;
@@ -162,8 +162,8 @@ namespace OKHOSTING.ERP.HR
 		/// </summary>
 		public DateTime? Start
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 		
 		private DateTime? _End = null;
@@ -173,26 +173,26 @@ namespace OKHOSTING.ERP.HR
 		/// </summary>
 		public DateTime? End
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public Project Parent
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public ICollection<Project> SubProjects
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public ICollection<Activity> Activities
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 	

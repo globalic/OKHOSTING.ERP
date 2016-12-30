@@ -10,18 +10,18 @@ namespace OKHOSTING.ERP.Accounting
 	/// </summary>
 	public class Account
 	{
-        /// <summary>
-        /// Name of the account
-        /// </summary>
-        /// <example>
-        /// Total customers, active customers, sales this month, revenue last month, expenses last year, etc.
-        /// </example>
-        [StringLengthValidator(100)]
-        [RequiredValidator]
+		/// <summary>
+		/// Name of the account
+		/// </summary>
+		/// <example>
+		/// Total customers, active customers, sales this month, revenue last month, expenses last year, etc.
+		/// </example>
+		[StringLengthValidator(100)]
+		[RequiredValidator]
 		public string Name
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -29,21 +29,21 @@ namespace OKHOSTING.ERP.Accounting
 		/// </summary>
 		public Account Parent
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
-        /// <summary>
-        /// More detailed description of the account
-        /// </summary>
-        /// <example>
-        /// Describes in better detail what this account is keeping track of
-        /// </example>
-        [StringLengthValidator(StringLengthValidator.Unlimited)]
-        public string Description
+		/// <summary>
+		/// More detailed description of the account
+		/// </summary>
+		/// <example>
+		/// Describes in better detail what this account is keeping track of
+		/// </example>
+		[StringLengthValidator(StringLengthValidator.Unlimited)]
+		public string Description
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -55,14 +55,14 @@ namespace OKHOSTING.ERP.Accounting
 		[RequiredValidator]
 		public decimal Value
 		{
-            get;
+			get;
 			set;
 		}
 
 		public ICollection<Account> SubAccounts
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public ICollection<AccountUpdate> History

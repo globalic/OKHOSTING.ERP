@@ -14,21 +14,21 @@ namespace OKHOSTING.ERP.Customers
 	{
 		public SalesPerson SalesPerson
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public Currency Currency
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 		
 		public CustomerCategory Category
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -37,8 +37,8 @@ namespace OKHOSTING.ERP.Customers
 		[StringLengthValidator(100)]
 		public string HowDidYouFindUs
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public string SoldProductsString
@@ -60,8 +60,8 @@ namespace OKHOSTING.ERP.Customers
 
 		public DateTime RegisteredSince
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		#region Calculated fields
@@ -145,20 +145,20 @@ namespace OKHOSTING.ERP.Customers
 
 		public ICollection<Sale> Sales
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public ICollection<Quote> Quotes
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public ICollection<Production.ProductInstance> SoldProducts
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		#endregion

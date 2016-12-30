@@ -22,8 +22,8 @@ namespace OKHOSTING.ERP.Accounting
 		/// </summary>
 		public string DateProperty
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -31,8 +31,8 @@ namespace OKHOSTING.ERP.Accounting
 		/// </summary>
 		public DateTime Start
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -41,8 +41,8 @@ namespace OKHOSTING.ERP.Accounting
 		[RequiredValidator]
 		public int PeriodLenght
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -51,8 +51,8 @@ namespace OKHOSTING.ERP.Accounting
 		[RequiredValidator]
 		public TimeUnit.Unit PeriodUnit
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>

@@ -32,8 +32,8 @@ namespace OKHOSTING.ERP.Accounting
 		/// </example>
 		//public string EvaluationExpression
 		//{
-  //          get;
-  //          set;
+  //		  get;
+  //		  set;
 		//}
 
 		/// <summary>

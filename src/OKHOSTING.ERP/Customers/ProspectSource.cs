@@ -26,8 +26,8 @@ namespace OKHOSTING.ERP.Customers
 		[StringLengthValidator(50)]
 		public string Name
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 	}
 }

@@ -10,22 +10,22 @@ namespace OKHOSTING.ERP.Customers
 	{
 		public SalesPerson SalesPerson
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public CommissionLevel CommissionLevel
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public Customer Customer
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		///// <summary>
@@ -33,8 +33,8 @@ namespace OKHOSTING.ERP.Customers
 		///// </summary>
 		//public MetodoPago MetodoDePago
 		//{
-  //          get;
-  //          set;
+  //		  get;
+  //		  set;
 		//}
 
 		///// <summary>
@@ -44,8 +44,8 @@ namespace OKHOSTING.ERP.Customers
 		///// <remarks>Opcional, se usa solo en caso de que el metodo de pago sea "Deposito bancario"</remarks>
 		//public string NumCtaPago
 		//{
-  //          get;
-  //          set;
+  //		  get;
+  //		  set;
 		//}
 
 		//public void CrearFactura()

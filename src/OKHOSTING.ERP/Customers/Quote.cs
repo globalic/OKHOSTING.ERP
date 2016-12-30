@@ -10,21 +10,21 @@ namespace OKHOSTING.ERP.Customers
 	{
 		public SalesPerson SalesPerson
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public CommissionLevel CommissionLevel
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public Customer Customer
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		//public QuoteStatus Status

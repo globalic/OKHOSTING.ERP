@@ -17,8 +17,8 @@ namespace OKHOSTING.ERP.HR
 		[StringLengthValidator(100)]
 		public string Name
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -27,8 +27,8 @@ namespace OKHOSTING.ERP.HR
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
 		public string Description
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -36,8 +36,8 @@ namespace OKHOSTING.ERP.HR
 		/// </summary>
 		public ActivityCategory Parent
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public string FullPath
@@ -52,13 +52,13 @@ namespace OKHOSTING.ERP.HR
 
 		public ICollection<Activity> Activities
 		{
-            get;
+			get;
 			set;
 		}
 
 		public ICollection<ActivityCategory> SubCategories
 		{
-            get;
+			get;
 			set;
 		}
 

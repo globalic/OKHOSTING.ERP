@@ -19,8 +19,8 @@ namespace OKHOSTING.ERP.Accounting
 		[RequiredValidator]
 		public Account Account
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -29,8 +29,8 @@ namespace OKHOSTING.ERP.Accounting
 		[RequiredValidator]
 		public decimal UpdatedValue
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -39,8 +39,8 @@ namespace OKHOSTING.ERP.Accounting
 		[RequiredValidator]
 		public DateTime Date
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		///// <summary>

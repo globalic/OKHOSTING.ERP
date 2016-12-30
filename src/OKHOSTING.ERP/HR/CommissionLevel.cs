@@ -8,15 +8,15 @@ namespace OKHOSTING.ERP.HR
 	/// Depending on the type of sale, different commission leves can be assigned to one sale
 	/// </summary>
 	public class CommissionLevel
-    { 
+	{ 
 		/// <summary>
 		/// Name of the commission level
 		/// </summary>
 		[StringLengthValidator(20)]
 		public string Name
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -25,8 +25,8 @@ namespace OKHOSTING.ERP.HR
 		[RequiredValidator]
 		public decimal Commission
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 	}
 }

@@ -12,35 +12,35 @@ namespace OKHOSTING.ERP.HR
 		[StringLengthValidator(50)]
 		public string Role
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public decimal Salary
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public SalaryType SalaryType
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public DateTime EnrollmentDate
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public Team Team
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -49,27 +49,27 @@ namespace OKHOSTING.ERP.HR
 		[RequiredValidator]
 		public bool Active
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
 		public string MailSignature
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 	//	public ICollection<Task> AssignedTasks
 	//	{
- //           get;
- //           set;
+ //		   get;
+ //		   set;
 	//	}
 
 	//	public ICollection<Task> OpenTasks
 	//	{
- //           get;
- //           set;
+ //		   get;
+ //		   set;
 	//	}
 	}
 }

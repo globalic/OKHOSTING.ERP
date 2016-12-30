@@ -17,8 +17,8 @@ namespace OKHOSTING.ERP.HR
 		[RequiredValidator]
 		public CompanyMailMessage Message
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 	}
 }

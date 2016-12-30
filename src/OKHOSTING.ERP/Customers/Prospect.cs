@@ -16,8 +16,8 @@ namespace OKHOSTING.ERP.Customers
 		/// </summary>
 		public SalesPerson SalesPerson
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -25,8 +25,8 @@ namespace OKHOSTING.ERP.Customers
 		/// </summary>
 		public Product ProductOfInterest
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -35,8 +35,8 @@ namespace OKHOSTING.ERP.Customers
 		[RequiredValidator]
 		public decimal PotentialSaleAmmount
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -45,8 +45,8 @@ namespace OKHOSTING.ERP.Customers
 		[RequiredValidator]
 		public ProspectStatus Status
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -55,8 +55,8 @@ namespace OKHOSTING.ERP.Customers
 		[RequiredValidator]
 		public ProspectSource Source
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -65,8 +65,8 @@ namespace OKHOSTING.ERP.Customers
 		[RequiredValidator]
 		public DateTime NextCallDate
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -75,8 +75,8 @@ namespace OKHOSTING.ERP.Customers
 		[RequiredValidator]
 		public DateTime RegistrationDate
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 

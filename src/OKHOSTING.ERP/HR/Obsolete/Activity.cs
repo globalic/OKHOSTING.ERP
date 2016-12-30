@@ -7,66 +7,66 @@ using System.Linq;
 
 namespace OKHOSTING.ERP.HR
 {
-    public class Activity
-    {
-        [StringLengthValidator(100)]
-        [RequiredValidator]
-        public string Name
-        {
-            get;
-            set;
-        }
+	public class Activity
+	{
+		[StringLengthValidator(100)]
+		[RequiredValidator]
+		public string Name
+		{
+			get;
+			set;
+		}
 
-        /// <summary>
-        /// Duration of the activity
-        /// </summary>
-        public TimeSpan? TotalDuration
-        {
-            get
-            {
-                if (StartDate != null && EndDate != null)
-                {
-                    return EndDate - StartDate;
-                }
-                else
-                {
-                    return TimeSpan.Zero;
-                }
-            }
-        }
+		/// <summary>
+		/// Duration of the activity
+		/// </summary>
+		public TimeSpan? TotalDuration
+		{
+			get
+			{
+				if (StartDate != null && EndDate != null)
+				{
+					return EndDate - StartDate;
+				}
+				else
+				{
+					return TimeSpan.Zero;
+				}
+			}
+		}
 
-        public bool Finished
-        {
-            get
-            {
-                return Progress == 100;
-            }
-        }
+		public bool Finished
+		{
+			get
+			{
+				return Progress == 100;
+			}
+		}
 
-        [RequiredValidator]
-        public Employee AssignedTo
-        {
-            get;
-            set;
-        }
+		[RequiredValidator]
+		public Employee AssignedTo
+		{
+			get;
+			set;
+		}
 
-        [RequiredValidator]
-        [StringLengthValidator(StringLengthValidator.Unlimited)]
-        public string Description
-        {
-            get;
-            set;
-        }
+		[RequiredValidator]
+		[StringLengthValidator(StringLengthValidator.Unlimited)]
+		public string Description
+		{
+			get;
+			set;
+		}
 
-        /// <summary>
-        /// Percentaje (from 0 to 100) of progress, how much is an activity finished
-        /// </summary>
-        [RequiredValidator]
+		/// <summary>
+		/// Percentaje (from 0 to 100) of progress, how much is an activity finished
+		/// </summary>
+		[RequiredValidator]
 		[RangeValidator(0, 100)]
 		public ushort Progress
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		//[Custom("DisplayFormat", "{0:G}")]
@@ -103,8 +103,8 @@ namespace OKHOSTING.ERP.HR
 
 		public ActivityCategory Category
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -112,8 +112,8 @@ namespace OKHOSTING.ERP.HR
 		/// </summary>
 		public Company Company
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -125,25 +125,25 @@ namespace OKHOSTING.ERP.HR
 		/// </remarks>
 		public InvoiceItem InvoiceItem
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public ActivityPriority Priority
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public Project Project
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public ICollection<ActivityUpdate> Updates
 		{
-            get;
+			get;
 			set;
 		}
 

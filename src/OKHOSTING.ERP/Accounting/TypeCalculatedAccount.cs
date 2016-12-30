@@ -17,21 +17,21 @@ namespace OKHOSTING.ERP.Accounting
 		//[ValueConverter(typeof(OKHOSTING.ValueConverters.TypeValueConverter))]
 		public Type EvaluatedType
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
-        /// <summary>
-        /// A filter expression. Only objects that match this filter will be considered for the value evaluation
-        /// </summary>
-        /// <example>
-        /// Date > 1/1/2013 && Date < 1/2/2013
-        /// </example>
-        [StringLengthValidator(200)]
-        public string EvaluationFilter
+		/// <summary>
+		/// A filter expression. Only objects that match this filter will be considered for the value evaluation
+		/// </summary>
+		/// <example>
+		/// Date > 1/1/2013 && Date < 1/2/2013
+		/// </example>
+		[StringLengthValidator(200)]
+		public string EvaluationFilter
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -43,8 +43,8 @@ namespace OKHOSTING.ERP.Accounting
 		/// </example>
 		public string EvaluationExpression
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>

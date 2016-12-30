@@ -11,8 +11,8 @@ namespace OKHOSTING.ERP.HR
 		[RequiredValidator]
 		public ConversationOrigin Origin
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -20,8 +20,8 @@ namespace OKHOSTING.ERP.HR
 		/// </summary>
 		public CompanyContact Contact
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public enum ConversationOrigin

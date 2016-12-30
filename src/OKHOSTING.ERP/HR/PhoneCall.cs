@@ -14,8 +14,8 @@ namespace OKHOSTING.ERP.HR
 		[StringLengthValidator(30)]
 		public string PhoneNumber
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 	}
 }

@@ -39,7 +39,7 @@ namespace OKHOSTING.ERP.Production
 		public ICollection<WarehouseTransaction> Transactions
 		{
 			get;
-            set;
+			set;
 		}
 
 		/*[PersistentAlias("Sum(Products.TotalValue)")]

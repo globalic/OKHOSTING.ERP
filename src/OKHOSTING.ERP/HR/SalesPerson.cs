@@ -13,8 +13,8 @@ namespace OKHOSTING.ERP.HR
 		[RequiredValidator]
 		public decimal Comission
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/*

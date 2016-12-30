@@ -25,8 +25,8 @@ namespace OKHOSTING.ERP.Customers
 		[StringLengthValidator(50)]
 		public string Name
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -35,8 +35,8 @@ namespace OKHOSTING.ERP.Customers
 		/// </summary>
 		public ushort PipeLineOrder
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 	}
 }

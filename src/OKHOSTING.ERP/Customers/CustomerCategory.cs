@@ -14,27 +14,27 @@ namespace OKHOSTING.ERP.Customers
 		[RequiredValidator]
 		public string Name
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
-        [StringLengthValidator(StringLengthValidator.Unlimited)]
-        public string Description
+		[StringLengthValidator(StringLengthValidator.Unlimited)]
+		public string Description
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public decimal PriceAdjustment
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public ICollection<Customer> Customers
 		{
-            get;
+			get;
 		}
 
 	}

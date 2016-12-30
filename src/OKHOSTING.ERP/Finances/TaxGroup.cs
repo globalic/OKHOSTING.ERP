@@ -13,13 +13,13 @@ namespace OKHOSTING.ERP.Finances
 		[StringLengthValidator(50)]
 		public string Name
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public ICollection<Tax> Taxes
 		{
-            get;
+			get;
 			set;
 		}
 

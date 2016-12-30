@@ -8,15 +8,15 @@ namespace OKHOSTING.ERP.HR
 	{
 		public Activity Activity
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public DateTime StartDate
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -25,8 +25,8 @@ namespace OKHOSTING.ERP.HR
 		[RequiredValidator]
 		public decimal HoursInvested
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		public DateTime EndDate
@@ -40,15 +40,15 @@ namespace OKHOSTING.ERP.HR
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
 		public string Notes
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public Employee Employee
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 	}
 }

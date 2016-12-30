@@ -12,43 +12,43 @@ namespace OKHOSTING.ERP.Finances
 		[StringLengthValidator(100)]
 		public string Name
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[StringLengthValidator(50)]
 		public string Telephone
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[StringLengthValidator(50)]
 		public string Fax
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[StringLengthValidator(200)]
 		public string Url
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[StringLengthValidator(200)]
 		public string Email
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
 		public string Notes
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 	}
 }

@@ -8,22 +8,22 @@ namespace OKHOSTING.ERP.HR
 		[RequiredValidator]
 		public TimeSpan EstimatedDuration
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public DateTime EstimatedStartDate
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[RequiredValidator]
 		public DateTime EstimatedEndDate
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 	}
 }

@@ -9,15 +9,15 @@ namespace OKHOSTING.ERP.HR
 		[StringLengthValidator(20)]
 		public string Name
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
 		public string Description
 		{
-            get;
-            set;
+			get;
+			set;
 		}
 	}
 }
