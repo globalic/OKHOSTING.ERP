@@ -8,7 +8,7 @@ using OKHOSTING.Data.Validation;
 
 namespace OKHOSTING.ERP.Production
 {
-	public class Warehouse
+	public class Warehouse : ORM.PersistentClass<Guid>
 	{
 		[StringLengthValidator(100)]
 		[RequiredValidator]

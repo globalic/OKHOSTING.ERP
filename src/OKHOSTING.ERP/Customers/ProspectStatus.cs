@@ -1,4 +1,5 @@
 using OKHOSTING.Data.Validation;
+using System;
 
 namespace OKHOSTING.ERP.Customers
 {
@@ -16,7 +17,7 @@ namespace OKHOSTING.ERP.Customers
 	/// Negotiation
 	/// Close
 	/// </example>
-	public class ProspectStatus
+	public class ProspectStatus : ORM.PersistentClass<Guid>
 	{
 		/// <summary>
 		/// Name of the status

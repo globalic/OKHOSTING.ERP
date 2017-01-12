@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace OKHOSTING.ERP.Production
 {
-	public class WarehouseProduct
+	public class WarehouseProduct : ORM.PersistentClass<Guid>
 	{
 		[RequiredValidator]
 		public Warehouse Warehouse

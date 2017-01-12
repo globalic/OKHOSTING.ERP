@@ -2,13 +2,16 @@ using System;
 using System.Linq;
 using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
+using OKHOSTING.ERP.Production;
+using OKHOSTING.ORM;
+using OKHOSTING.ORM.Operations;
 
 namespace OKHOSTING.ERP.Vendors
 {
 	/// <summary>
 	/// A vendor who sales products or services to the company
 	/// </summary>
-	public class Vendor
+	public class Vendor : Company
 	{
 		[RequiredValidator]
 		public VendorCategory Category
@@ -29,10 +32,8 @@ namespace OKHOSTING.ERP.Vendors
 		/// </summary>
 		public decimal Balance
 		{
-			get
-			{
-				return Purchases.Sum(p => p.Balance);
-			}
+			get;
+			set;
 		}
 
 		public ICollection<Purchase> Purchases
@@ -58,38 +59,75 @@ namespace OKHOSTING.ERP.Vendors
 		/// be reasigned to the current one
 		/// </remarks>
 		/// <param name="vendor">Customer that willl be merged and deleted</param>
-		//public void Merge(Vendor vendor)
-		//{
-		//	if (vendor.Oid == this.Oid)
-		//	{
-		//		throw new ArgumentException("Can't merge the same vendor", "vendor");
-		//	}
+		public void Merge(Vendor vendor)
+		{
+			if (vendor.Id == this.Id)
+			{
+				throw new ArgumentException("Can't merge the same vendor", "vendor");
+			}
+			
+			foreach (Purchase s in vendor.Purchases)
+			{
+				s.Vendor = this;
+				s.Update();
+			}
 
-		//	while (vendor.Purchases.Count > 0)
-		//	{
-		//		Purchase s = vendor.Purchases[0];
-		//		s.Vendor = this;
-		//		s.Save();
-		//	}
+			foreach (CompanyContact s in vendor.Contacts)
+			{
+				s.Company = this;
+				s.Update();
+			}
 
-		//	while (vendor.Contacts.Count > 0)
-		//	{
-		//		CompanyContact s = vendor.Contacts[0];
-		//		s.Company = this;
-		//		s.Save();
-		//	}
+			foreach (CompanyAddress s in vendor.Addresses)
+			{
+				s.Company = this;
+				s.Update();
+			}
 
-		//	while (vendor.Addresses.Count > 0)
-		//	{
-		//		CompanyAddress s = vendor.Addresses[0];
-		//		s.Company = this;
-		//		s.Save();
-		//	}
+			foreach (ProductInstance s in vendor.PurchasedProducts)
+			{
+				s.PurchasedTo = this;
+				s.Update();
+			}
 
-		//	//delete the other customer
-		//	vendor.Delete();
+			//delete the other customer
+			vendor.Delete();
 
-		//	Save();
-		//}
+			Save();
+		}
+
+
+		/// <summary>
+		/// Calculates current vendor's balance
+		/// </summary>
+		public void CalculateBalance()
+		{
+			Balance = 0;
+
+			using (var db = DataBase.CreateDataBase())
+			{
+				db.LoadCollection(this, c => c.Purchases);
+			}
+
+			foreach (Purchase purchase in Purchases)
+			{
+				Balance += purchase.Balance;
+			}
+		}
+
+		/// <summary>
+		/// Deletes all invoices of this vendor
+		/// </summary>
+		protected override void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
+		{
+			base.OnBeforeDelete(sender, eventArgs);
+
+			sender.LoadCollection(this, i => i.Purchases);
+
+			foreach (var s in Purchases)
+			{
+				sender.Delete(s);
+			}
+		}
 	}
 }

@@ -8,7 +8,7 @@ namespace OKHOSTING.ERP.Customers
 	/// <summary>
 	/// A category for customers
 	/// </summary>
-	public class CustomerCategory
+	public class CustomerCategory : ORM.PersistentClass<Guid>
 	{
 		[StringLengthValidator(250)]
 		[RequiredValidator]

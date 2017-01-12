@@ -1,4 +1,7 @@
 using OKHOSTING.Data.Validation;
+using OKHOSTING.ORM;
+using OKHOSTING.ORM.Operations;
+using System;
 using System.Collections.Generic;
 
 namespace OKHOSTING.ERP
@@ -7,14 +10,8 @@ namespace OKHOSTING.ERP
 	/// A company
 	/// </summary>
 	/// <remarks>This is the base class for customers, vendors, competition and any kind of company</remarks>
-	public class Company
+	public class Company : ORM.PersistentClass<Guid>
 	{
-		public System.Guid Id
-		{
-			get;
-			set;
-		}
-
 		[RequiredValidator]
 		[StringLengthValidator(100)]
 		public string LegalName
@@ -209,6 +206,28 @@ namespace OKHOSTING.ERP
 			}
 
 			return null;
+		}
+
+		/// <summary>
+		/// Deletes all addresses and  contacts of this company
+		/// </summary>
+		protected override void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
+		{
+			base.OnBeforeDelete(sender, eventArgs);
+
+			sender.LoadCollection(this, i => i.Addresses);
+
+			foreach (var a in Addresses)
+			{
+				sender.Delete(a);
+			}
+
+			sender.LoadCollection(this, i => i.Contacts);
+
+			foreach (var c in Contacts)
+			{
+				sender.Delete(c);
+			}
 		}
 	}
 }

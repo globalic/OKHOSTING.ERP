@@ -6,7 +6,7 @@ namespace OKHOSTING.ERP.Accounting
 	/// <summary>
 	/// A calculated account that takes it's value from looking into a list of objects and evaluating an expression on it
 	/// </summary>
-	public class TypeCalculatedAccount
+	public class TypeCalculatedAccount : CalculatedAccount
 	{
 		/// <summary>
 		/// Collection of objects that will be evaluated
@@ -53,9 +53,10 @@ namespace OKHOSTING.ERP.Accounting
 		/// <returns>
 		/// A decimal containing the value that will be assigned to value property
 		/// </returns>
-		//public override decimal CalculateCurrentValue()
-		//{
-		//	return Convert.ToDecimal(Session.Evaluate(EvaluatedType, CriteriaOperator.Parse(EvaluationExpression), CriteriaOperator.Parse(EvaluationFilter)));
-		//}
+		public override decimal CalculateCurrentValue()
+		{
+			//	return Convert.ToDecimal(Session.Evaluate(EvaluatedType, CriteriaOperator.Parse(EvaluationExpression), CriteriaOperator.Parse(EvaluationFilter)));
+			return 0;
+		}
 	}
 }

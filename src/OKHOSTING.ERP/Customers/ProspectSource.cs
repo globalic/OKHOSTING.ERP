@@ -17,7 +17,7 @@ namespace OKHOSTING.ERP.Customers
 	/// Incoming email
 	/// Incoming chat
 	/// </example>
-	public class ProspectSource
+	public class ProspectSource : ORM.PersistentClass<Guid>
 	{
 		/// <summary>
 		/// Name of the status

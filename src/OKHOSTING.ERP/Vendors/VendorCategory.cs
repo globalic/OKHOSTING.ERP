@@ -3,7 +3,7 @@ using OKHOSTING.Data.Validation;
 
 namespace OKHOSTING.ERP.Vendors
 {
-	public class VendorCategory
+	public class VendorCategory : ORM.PersistentClass<Guid>
 	{
 		[RequiredValidator]
 		[StringLengthValidator(50)]

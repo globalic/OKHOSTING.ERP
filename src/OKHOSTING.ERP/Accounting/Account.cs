@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
+using System;
 
 namespace OKHOSTING.ERP.Accounting
 {
@@ -8,7 +9,7 @@ namespace OKHOSTING.ERP.Accounting
 	/// number of sales the past month, total income of the past year, or anything that is a number and is
 	/// important for decition making
 	/// </summary>
-	public class Account
+	public class Account : ORM.PersistentClass<Guid>
 	{
 		/// <summary>
 		/// Name of the account

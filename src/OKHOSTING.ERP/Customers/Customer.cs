@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
 using OKHOSTING.ERP.HR;
 using OKHOSTING.ERP.Production;
+using OKHOSTING.ORM.Operations;
+using OKHOSTING.ORM;
 
 namespace OKHOSTING.ERP.Customers
 {
@@ -41,23 +43,6 @@ namespace OKHOSTING.ERP.Customers
 			set;
 		}
 
-		public string SoldProductsString
-		{
-			get 
-			{
-				string names = string.Empty;
-
-				foreach (ProductInstance product in SoldProducts)
-				{
-					names += product.Name + ',' + ' ';
-				}
-
-				names = names.Trim(',', ' ');
-				
-				return names;
-			}
-		}
-
 		public DateTime RegisteredSince
 		{
 			get;
@@ -66,15 +51,30 @@ namespace OKHOSTING.ERP.Customers
 
 		#region Calculated fields
 
+		public string SoldProductsString
+		{
+			get
+			{
+				string names = string.Empty;
+
+				foreach (ProductInstance product in SoldProducts)
+				{
+					names += product.Product.Name + ',' + ' ';
+				}
+
+				names = names.Trim(',', ' ');
+
+				return names;
+			}
+		}
+
 		/// <summary>
 		/// Total ammount sold to the customer so far, including taxes
 		/// </summary>
 		public decimal TotalSold
 		{
-			get
-			{
-				return Sales.Sum(s => s.Total);
-			}
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -82,10 +82,8 @@ namespace OKHOSTING.ERP.Customers
 		/// </summary>
 		public int TotalSales
 		{
-			get
-			{
-				return Sales.Count;
-			}
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -93,10 +91,8 @@ namespace OKHOSTING.ERP.Customers
 		/// </summary>
 		public decimal Balance
 		{
-			get
-			{
-				return Sales.Sum(s => s.Balance);
-			}
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -104,10 +100,8 @@ namespace OKHOSTING.ERP.Customers
 		/// </summary>
 		public DateTime? FirstSaleDate
 		{
-			get
-			{
-				return Sales.Min(s => s.Date);
-			}
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -115,10 +109,8 @@ namespace OKHOSTING.ERP.Customers
 		/// </summary>
 		public DateTime? LastSaleDate
 		{
-			get
-			{
-				return Sales.Max(s => s.Date);
-			}
+			get;
+			set;
 		}
 
 		/// <summary>
@@ -126,17 +118,8 @@ namespace OKHOSTING.ERP.Customers
 		/// </summary>
 		public bool Active
 		{
-			get
-			{
-				if (TotalSales > 0)
-				{
-					return DateTime.Today.Subtract(LastSaleDate.Value).TotalDays < 365 || SoldProducts.Count > 0;
-				}
-				else
-				{
-					return false;
-				}
-			}
+			get;
+			set;
 		}
 
 		#endregion
@@ -174,50 +157,100 @@ namespace OKHOSTING.ERP.Customers
 		/// be reasigned to the current one
 		/// </remarks>
 		/// <param name="customer">Customer that willl be merged and deleted</param>
-		//public void Merge(Customer customer)
-		//{
-		//	if (customer.Oid == this.Oid)
-		//	{
-		//		throw new ArgumentException("Can't merge the same customer", "customer");
-		//	}
+		public void Merge(Customer customer)
+		{
+			if (customer.Id == this.Id)
+			{
+				throw new ArgumentException("Can't merge the same customer", "customer");
+			}
 
-		//	while (customer.Sales.Count > 0)
-		//	{
-		//		Sale s = customer.Sales[0];
-		//		s.Customer = this;
-		//		s.Save();
-		//	}
+			foreach (Sale s in customer.Sales)
+			{
+				s.Customer = this;
+				s.Update();
+			}
 
-		//	while (customer.Quotes.Count > 0)
-		//	{
-		//		Quote s = customer.Quotes[0];
-		//		s.Customer = this;
-		//		s.Save();
-		//	}
+			foreach (Quote s in customer.Quotes)
+			{
+				s.Customer = this;
+				s.Update();
+			}
 
-		//	while (customer.Contacts.Count > 0)
-		//	{
-		//		CompanyContact s = customer.Contacts[0];
-		//		s.Company = this;
-		//		s.Save();
-		//	}
+			foreach (CompanyContact s in customer.Contacts)
+			{
+				s.Company = this;
+				s.Update();
+			}
 
-		//	while (customer.Addresses.Count > 0)
-		//	{
-		//		CompanyAddress s = customer.Addresses[0];
-		//		s.Company = this;
-		//		s.Save();
-		//	}
+			foreach (CompanyAddress s in customer.Addresses)
+			{
+				s.Company = this;
+				s.Update();
+			}
 
-		//	while (customer.SoldProducts.Count > 0)
-		//	{
-		//		ProductInstance s = customer.SoldProducts[0];
-		//		s.SoldTo = this;
-		//		s.Save();
-		//	}
+			foreach (ProductInstance s in customer.SoldProducts)
+			{
+				s.SoldTo = this;
+				s.Update();
+			}
 
-		//	//delete the other customer
-		//	customer.Delete();
-		//}
+			//delete the other customer
+			customer.Delete();
+
+			Save();
+		}
+
+		/// <summary>
+		/// Calculates current customer's balance
+		/// </summary>
+		public void CalculateStatistics()
+		{
+			TotalSold = 0;
+			TotalSales = 0;
+			Balance = 0;
+			FirstSaleDate = null;
+			LastSaleDate = null;
+
+			using (var db = DataBase.CreateDataBase())
+			{
+				db.LoadCollection(this, c => c.Sales);
+				db.LoadCollection(this, c => c.SoldProducts);
+			}
+
+			foreach (Sale sale in Sales)
+			{
+				TotalSold += sale.Total;
+				TotalSales++;
+				Balance += sale.Balance;
+
+				if (FirstSaleDate == null || sale.Date < FirstSaleDate) FirstSaleDate = sale.Date;
+				if (LastSaleDate == null || sale.Date > LastSaleDate) LastSaleDate = sale.Date;
+			}
+
+			//is the customer active? it is if it bought something the in the last year or if it has at least one active subscription
+			if (LastSaleDate != null && DateTime.Today.Subtract(LastSaleDate.Value).TotalDays > 365 && !SoldProducts.Any())
+			{
+				Active = false;
+			}
+			else
+			{
+				Active = true;
+			}
+		}
+
+		/// <summary>
+		/// Deletes all Sales of this customer
+		/// </summary>
+		protected override void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
+		{
+			base.OnBeforeDelete(sender, eventArgs);
+
+			sender.LoadCollection(this, i => i.Sales);
+
+			foreach (var s in Sales)
+			{
+				sender.Delete(s);
+			}
+		}
 	}
 }

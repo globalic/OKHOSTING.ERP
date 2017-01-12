@@ -4,7 +4,7 @@ using OKHOSTING.Data.Validation;
 
 namespace OKHOSTING.ERP.HR
 {
-	public class Team
+	public class Team : ORM.PersistentClass<Guid>
 	{
 		[RequiredValidator]
 		[StringLengthValidator(100)]

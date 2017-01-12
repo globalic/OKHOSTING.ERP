@@ -1,18 +1,13 @@
 using OKHOSTING.Data.Validation;
+using System;
 
 namespace OKHOSTING.ERP
 {
 	/// <summary>
 	/// An address of a person or a company
 	/// </summary>
-	public class Address
+	public class Address : ORM.PersistentClass<Guid>
 	{
-		public System.Guid Id
-		{
-			get;
-			set;
-		}
-
 		/// <summary>
 		/// Name of the street
 		/// </summary>

@@ -34,24 +34,26 @@ namespace OKHOSTING.ERP.Customers
 		//}
 
 
-		//public void CreateSale()
-		//{
-		//	Sale sale = new Sale(this.Session);
-		//	sale.Customer = this.Customer;
-		//	sale.Date = this.Date;
+		public void CreateSale()
+		{
+			Sale sale = new Sale();
+			sale.Customer = Customer;
+			sale.Date = Date;
 
-		//	foreach (InvoiceItem item in this.Items)
-		//	{
-		//		InvoiceItem newItem = new InvoiceItem(Session);
-		//		newItem.Product = item.Product;
-		//		newItem.Price = item.Price;
-		//		newItem.Quantity = item.Quantity;
-		//		newItem.Description = item.Description;
+			foreach (InvoiceItem item in Items)
+			{
+				InvoiceItem newItem = new InvoiceItem();
+				newItem.Product = item.Product;
+				newItem.Price = item.Price;
+				newItem.Quantity = item.Quantity;
+				newItem.Description = item.Description;
+				newItem.Discount = item.Discount;
+				newItem.ProductInstance = item.ProductInstance;
 
-		//		sale.Items.Add(newItem);
-		//	}
+				sale.Items.Add(newItem);
+			}
 
-		//	sale.Save();
-		//}
+			sale.Save();
+		}
 	}
 }

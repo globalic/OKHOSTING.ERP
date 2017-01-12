@@ -5,7 +5,7 @@ namespace OKHOSTING.ERP.Production
 	/// <summary>
 	/// A product that is included into a PackageProduct
 	/// </summary>
-	public class PackageProductIncludedProduct
+	public class PackageProductIncludedProduct : ORM.PersistentClass<Guid>
 	{
 		public PackageProduct PackageProduct
 		{

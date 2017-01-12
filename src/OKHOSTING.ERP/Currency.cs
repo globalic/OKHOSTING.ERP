@@ -7,7 +7,7 @@ namespace OKHOSTING.ERP
 	/// A currency that is used by the company for purchases or sales
 	/// </summary>
 	/// <example>US dollar, Mexican Peso, Canadian dollar</example>
-	public class Currency
+	public class Currency : ORM.PersistentClass<Guid>
 	{
 		/// <summary>
 		/// Name of the currency

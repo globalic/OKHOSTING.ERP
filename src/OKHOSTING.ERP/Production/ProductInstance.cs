@@ -18,7 +18,7 @@ namespace OKHOSTING.ERP.Production
 	/// Create a class named "Television" with a property named SerialNumber 
 	/// to track inventory after bought and guarantee after sold
 	/// </example>
-	public class ProductInstance
+	public class ProductInstance : ORM.PersistentClass<Guid>
 	{
 		/// <summary>
 		/// A unique Id like the serial number of the product, the name of a domain name
@@ -36,12 +36,10 @@ namespace OKHOSTING.ERP.Production
 		/// The DataType of this object
 		/// </summary>
 		[RequiredValidator]
-		public Type Type
+		public ORM.LooseForeignKey<int> Instance
 		{
-			get 
-			{ 
-				return this.GetType(); 
-			}
+			get;
+			set;
 		}
 
 		/// <summary>

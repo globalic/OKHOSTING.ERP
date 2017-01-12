@@ -9,7 +9,7 @@ namespace OKHOSTING.ERP.Production
 	/// <summary>
 	/// A product that can be purchased or saled
 	/// </summary>
-	public class Product
+	public class Product : ORM.PersistentClass<Guid>
 	{
 		[RequiredValidator]
 		public ProductCategory Category

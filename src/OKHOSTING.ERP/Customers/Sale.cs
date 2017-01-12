@@ -1,5 +1,7 @@
 using OKHOSTING.Data.Validation;
 using OKHOSTING.ERP.HR;
+using OKHOSTING.ORM;
+using OKHOSTING.ORM.Operations;
 
 namespace OKHOSTING.ERP.Customers
 {
@@ -33,8 +35,8 @@ namespace OKHOSTING.ERP.Customers
 		///// </summary>
 		//public MetodoPago MetodoDePago
 		//{
-  //		  get;
-  //		  set;
+		//		  get;
+		//		  set;
 		//}
 
 		///// <summary>
@@ -44,8 +46,8 @@ namespace OKHOSTING.ERP.Customers
 		///// <remarks>Opcional, se usa solo en caso de que el metodo de pago sea "Deposito bancario"</remarks>
 		//public string NumCtaPago
 		//{
-  //		  get;
-  //		  set;
+		//		  get;
+		//		  set;
 		//}
 
 		//public void CrearFactura()
@@ -73,5 +75,44 @@ namespace OKHOSTING.ERP.Customers
 		//{
 		//	OKHOSTING.ERP.Local.Mexico.FacturacionElectronica.Factura.RegenerarFactura(this);
 		//}
+
+		/// <summary>
+		/// Re-calculates customer's balance
+		/// </summary>
+		protected override void OnAfterInsert(DataBase sender, OperationEventArgs eventArgs)
+		{
+			base.OnAfterInsert(sender, eventArgs);
+
+			//re-calculate customer balance
+			Customer.SelectOnce();
+			Customer.CalculateStatistics();
+			Customer.Save();
+		}
+
+		/// <summary>
+		/// Re-calculates customer's balance
+		/// </summary>
+		protected override void OnAfterUpdate(DataBase sender, OperationEventArgs eventArgs)
+		{
+			base.OnAfterUpdate(sender, eventArgs);
+
+			//re-calculate customer balance
+			Customer.SelectOnce();
+			Customer.CalculateStatistics();
+			Customer.Save();
+		}
+
+		/// <summary>
+		/// Re-calculates customer's balance
+		/// </summary>
+		protected override void OnAfterDelete(DataBase sender, OperationEventArgs eventArgs)
+		{
+			base.OnAfterDelete(sender, eventArgs);
+
+			//re-calculate customer balance
+			Customer.SelectOnce();
+			Customer.CalculateStatistics();
+			Customer.Save();
+		}
 	}
 }

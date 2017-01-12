@@ -1,4 +1,5 @@
 using OKHOSTING.Data.Validation;
+using System;
 using System.Collections.Generic;
 
 namespace OKHOSTING.ERP.Finances
@@ -6,7 +7,7 @@ namespace OKHOSTING.ERP.Finances
 	/// <summary>
 	/// A tax that can be applied to sales or purchases
 	/// </summary>
-	public class Tax
+	public class Tax : ORM.PersistentClass<Guid>
 	{
 		[RequiredValidator]
 		[StringLengthValidator(50)]

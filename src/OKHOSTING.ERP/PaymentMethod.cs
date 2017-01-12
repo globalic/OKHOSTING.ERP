@@ -14,6 +14,5 @@ namespace OKHOSTING.ERP
 			get;
 			set;
 		}
-
 	}
 }
