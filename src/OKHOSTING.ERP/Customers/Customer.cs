@@ -20,7 +20,6 @@ namespace OKHOSTING.ERP.Customers
 			set;
 		}
 
-		[RequiredValidator]
 		public Currency Currency
 		{
 			get;

@@ -62,7 +62,6 @@ namespace OKHOSTING.ERP
 			set;
 		}
 
-		[RequiredValidator]
 		[StringLengthValidator(100)]
 		[RegexValidator(Core.RegexPatterns.EmailAddress)]
 		public string Email
@@ -228,6 +227,11 @@ namespace OKHOSTING.ERP
 			{
 				sender.Delete(c);
 			}
+		}
+
+		public override string ToString()
+		{
+			return LegalName;
 		}
 	}
 }

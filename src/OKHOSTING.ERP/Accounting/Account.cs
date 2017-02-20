@@ -17,8 +17,8 @@ namespace OKHOSTING.ERP.Accounting
 		/// <example>
 		/// Total customers, active customers, sales this month, revenue last month, expenses last year, etc.
 		/// </example>
-		[StringLengthValidator(100)]
 		[RequiredValidator]
+		[StringLengthValidator(100)]
 		public string Name
 		{
 			get;

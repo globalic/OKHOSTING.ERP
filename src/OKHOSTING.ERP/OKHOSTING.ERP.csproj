@@ -154,7 +154,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="OKHOSTING.ORM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OKHOSTING.ORM.1.0.25\lib\OKHOSTING.ORM.dll</HintPath>
+      <HintPath>..\..\..\OKHOSTING.PachucaTouch\src\packages\OKHOSTING.ORM.1.0.27\lib\OKHOSTING.ORM.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="OKHOSTING.Sql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">

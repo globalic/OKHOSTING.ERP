@@ -122,5 +122,10 @@ namespace OKHOSTING.ERP
 		//		Default = db.FindObject<Currency>(new BinaryOperator("Name"
 		//	}
 		//}
+
+		public override string ToString()
+		{
+			return Name;
+		}
 	}
 }
