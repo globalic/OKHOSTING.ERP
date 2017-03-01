@@ -47,5 +47,10 @@ namespace OKHOSTING.ERP.Finances
 			if (ammount == null) return null;
 			return ammount * Rate / 100;
 		}
+
+		public override string ToString()
+		{
+			return Name;
+		}
 	}
 }

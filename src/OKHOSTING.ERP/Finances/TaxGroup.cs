@@ -34,5 +34,10 @@ namespace OKHOSTING.ERP.Finances
 
 			return totalTax;
 		}
+
+		public override string ToString()
+		{
+			return Name;
+		}
 	}
 }

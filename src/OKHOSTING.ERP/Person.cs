@@ -141,5 +141,10 @@ namespace OKHOSTING.ERP
 				return (int) DateTime.Now.Subtract(BirthDate).TotalDays / 365; 
 			}
 		}
+
+		public override string ToString()
+		{
+			return FullName;
+		}
 	}
 }

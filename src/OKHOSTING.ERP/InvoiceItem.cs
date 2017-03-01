@@ -13,11 +13,24 @@ namespace OKHOSTING.ERP
 	/// </summary>
 	public class InvoiceItem : PersistentClass<Guid>
 	{
+		Product _Product;
+
 		[RequiredValidator]
 		public Product Product
 		{
-			get;
-			set;
+			get
+			{
+				return _Product;
+			}
+			set
+			{
+				_Product = value;
+				
+				if (value != null && Price == 0)
+				{
+					Price = value.Price;
+				}
+			}
 		}
 
 		/// <summary>
@@ -33,7 +46,6 @@ namespace OKHOSTING.ERP
 		/// <summary>
 		/// Individual product price
 		/// </summary>
-		[RequiredValidator]
 		public decimal Price
 		{
 			get;
@@ -43,7 +55,6 @@ namespace OKHOSTING.ERP
 		/// <summary>
 		/// Individual product discount
 		/// </summary>
-		[RequiredValidator]
 		public decimal Discount
 		{
 			get;

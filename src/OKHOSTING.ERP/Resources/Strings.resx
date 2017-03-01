@@ -1,0 +1,1113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="OKHOSTING_ERP_Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_LegalName" xml:space="preserve">
+    <value>Legal name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_CommercialName" xml:space="preserve">
+    <value>Commercial name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_FederalTaxID" xml:space="preserve">
+    <value>Federal tax id</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_Telephone" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_Telephone2" xml:space="preserve">
+    <value>Telephone 2</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_MobileTelephone" xml:space="preserve">
+    <value>Mobile telephone</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_Email2" xml:space="preserve">
+    <value>Email 2</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_MainAddress" xml:space="preserve">
+    <value>Main address</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_MainContact" xml:space="preserve">
+    <value>Main contact</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_Addresses" xml:space="preserve">
+    <value>Addresses</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_Contacts" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_AllEmails" xml:space="preserve">
+    <value>All emails</value>
+  </data>
+  <data name="OKHOSTING_ERP_Company_AllTelephones" xml:space="preserve">
+    <value>All telephones</value>
+  </data>
+  <data name="OKHOSTING_ERP_CompanyAddress" xml:space="preserve">
+    <value>Company address</value>
+  </data>
+  <data name="OKHOSTING_ERP_CompanyAddress_Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="OKHOSTING_ERP_CompanyAddress_AddressType" xml:space="preserve">
+    <value>Address type</value>
+  </data>
+  <data name="OKHOSTING_ERP_CompanyAddressType" xml:space="preserve">
+    <value>Company address type</value>
+  </data>
+  <data name="OKHOSTING_ERP_CompanyAddressType_Billing" xml:space="preserve">
+    <value>Billing</value>
+  </data>
+  <data name="OKHOSTING_ERP_CompanyAddressType_Shipping" xml:space="preserve">
+    <value>Shipping</value>
+  </data>
+  <data name="OKHOSTING_ERP_CompanyAddressType_Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="OKHOSTING_ERP_CompanyContact" xml:space="preserve">
+    <value>Company contact</value>
+  </data>
+  <data name="OKHOSTING_ERP_CompanyContact_Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="OKHOSTING_ERP_CompanyContact_Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="OKHOSTING_ERP_Configuration" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="OKHOSTING_ERP_Configuration_MyCompany" xml:space="preserve">
+    <value>My company</value>
+  </data>
+  <data name="OKHOSTING_ERP_Configuration_MyBillingAddress" xml:space="preserve">
+    <value>My billing address</value>
+  </data>
+  <data name="OKHOSTING_ERP_Configuration_MyShippingAddress" xml:space="preserve">
+    <value>My shipping address</value>
+  </data>
+  <data name="OKHOSTING_ERP_Configuration_MyMainContact" xml:space="preserve">
+    <value>My main contact</value>
+  </data>
+  <data name="OKHOSTING_ERP_Configuration_Current" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="OKHOSTING_ERP_Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="OKHOSTING_ERP_Country_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Country_Iso2" xml:space="preserve">
+    <value>Iso 2</value>
+  </data>
+  <data name="OKHOSTING_ERP_Country_Iso3" xml:space="preserve">
+    <value>Iso 3</value>
+  </data>
+  <data name="OKHOSTING_ERP_Country_NumericCode" xml:space="preserve">
+    <value>Numeric code</value>
+  </data>
+  <data name="OKHOSTING_ERP_Country_PhoneCode" xml:space="preserve">
+    <value>Phone code</value>
+  </data>
+  <data name="OKHOSTING_ERP_Country_Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="OKHOSTING_ERP_Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="OKHOSTING_ERP_Currency_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Currency_AlphabeticCode" xml:space="preserve">
+    <value>Alphabetic code</value>
+  </data>
+  <data name="OKHOSTING_ERP_Currency_Rate" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="OKHOSTING_ERP_Currency_SymbolBefore" xml:space="preserve">
+    <value>Symbol before</value>
+  </data>
+  <data name="OKHOSTING_ERP_Currency_SymbolAfter" xml:space="preserve">
+    <value>Symbol after</value>
+  </data>
+  <data name="OKHOSTING_ERP_Invoice" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="OKHOSTING_ERP_Invoice_AuxId" xml:space="preserve">
+    <value>Aux id</value>
+  </data>
+  <data name="OKHOSTING_ERP_Invoice_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="OKHOSTING_ERP_Invoice_Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="OKHOSTING_ERP_Invoice_Subtotal" xml:space="preserve">
+    <value>Subtotal</value>
+  </data>
+  <data name="OKHOSTING_ERP_Invoice_Tax" xml:space="preserve">
+    <value>Tax</value>
+  </data>
+  <data name="OKHOSTING_ERP_Invoice_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="OKHOSTING_ERP_Invoice_Paid" xml:space="preserve">
+    <value>Paid</value>
+  </data>
+  <data name="OKHOSTING_ERP_Invoice_Balance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="OKHOSTING_ERP_Invoice_InvoiceType" xml:space="preserve">
+    <value>Invoice type</value>
+  </data>
+  <data name="OKHOSTING_ERP_Invoice_Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="OKHOSTING_ERP_Invoice_Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="OKHOSTING_ERP_Invoice_Payments" xml:space="preserve">
+    <value>Payments</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceCategory" xml:space="preserve">
+    <value>Invoice category</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceCategory_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceCategory_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItem" xml:space="preserve">
+    <value>Invoice item</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItem_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItem_Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItem_Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItem_Discount" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItem_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItem_Invoice" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItem_ProductInstance" xml:space="preserve">
+    <value>Product instance</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItem_Subtotal" xml:space="preserve">
+    <value>Subtotal</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItem_Tax" xml:space="preserve">
+    <value>Tax</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItem_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItem_Taxes" xml:space="preserve">
+    <value>Taxes</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItemTax" xml:space="preserve">
+    <value>Invoice item tax</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItemTax_Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItemTax_Tax" xml:space="preserve">
+    <value>Tax</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceItemTax_Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoicePayment" xml:space="preserve">
+    <value>Invoice payment</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoicePayment_Invoice" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoicePayment_Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoicePayment_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoicePayment_Method" xml:space="preserve">
+    <value>Method</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceType" xml:space="preserve">
+    <value>Invoice type</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceType_Sale" xml:space="preserve">
+    <value>Sale</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceType_Purchase" xml:space="preserve">
+    <value>Purchase</value>
+  </data>
+  <data name="OKHOSTING_ERP_InvoiceType_Quote" xml:space="preserve">
+    <value>Quote</value>
+  </data>
+  <data name="OKHOSTING_ERP_PaymentMethod" xml:space="preserve">
+    <value>Payment method</value>
+  </data>
+  <data name="OKHOSTING_ERP_PaymentMethod_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person" xml:space="preserve">
+    <value>Person</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_Prefix" xml:space="preserve">
+    <value>Prefix</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_FirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_LastName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_FullName" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_Alias" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_BirthDate" xml:space="preserve">
+    <value>Birth date</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_Telephone" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_Telephone2" xml:space="preserve">
+    <value>Telephone 2</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_MobileTelephone" xml:space="preserve">
+    <value>Mobile telephone</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_Email2" xml:space="preserve">
+    <value>Email 2</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_TwitterAccount" xml:space="preserve">
+    <value>Twitter account</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_FacebookAccount" xml:space="preserve">
+    <value>Facebook account</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="OKHOSTING_ERP_Person_Age" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <data name="OKHOSTING_ERP_TimeUnit" xml:space="preserve">
+    <value>Time unit</value>
+  </data>
+  <data name="OKHOSTING_ERP_Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="OKHOSTING_ERP_Gender_Male" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="OKHOSTING_ERP_Gender_Female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="OKHOSTING_ERP_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="OKHOSTING_ERP_Address_Street" xml:space="preserve">
+    <value>Street</value>
+  </data>
+  <data name="OKHOSTING_ERP_Address_Number" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="OKHOSTING_ERP_Address_Suburb" xml:space="preserve">
+    <value>Suburb</value>
+  </data>
+  <data name="OKHOSTING_ERP_Address_ZipCode" xml:space="preserve">
+    <value>Zip code</value>
+  </data>
+  <data name="OKHOSTING_ERP_Address_City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="OKHOSTING_ERP_Address_State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="OKHOSTING_ERP_Address_Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="OKHOSTING_ERP_Address_Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="OKHOSTING_ERP_Address_FulllAddress" xml:space="preserve">
+    <value>Fulll address</value>
+  </data>
+  <data name="OKHOSTING_ERP_Vendors_Purchase" xml:space="preserve">
+    <value>Purchase</value>
+  </data>
+  <data name="OKHOSTING_ERP_Vendors_Purchase_Vendor" xml:space="preserve">
+    <value>Vendor</value>
+  </data>
+  <data name="OKHOSTING_ERP_Vendors_Vendor" xml:space="preserve">
+    <value>Vendor</value>
+  </data>
+  <data name="OKHOSTING_ERP_Vendors_Vendor_Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="OKHOSTING_ERP_Vendors_Vendor_Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="OKHOSTING_ERP_Vendors_Vendor_Balance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="OKHOSTING_ERP_Vendors_Vendor_Purchases" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="OKHOSTING_ERP_Vendors_Vendor_PurchasedProducts" xml:space="preserve">
+    <value>Purchased products</value>
+  </data>
+  <data name="OKHOSTING_ERP_Vendors_VendorCategory" xml:space="preserve">
+    <value>Vendor category</value>
+  </data>
+  <data name="OKHOSTING_ERP_Vendors_VendorCategory_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Vendors_VendorCategory_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="OKHOSTING_ERP_Resources_Strings" xml:space="preserve">
+    <value>Strings</value>
+  </data>
+  <data name="OKHOSTING_ERP_Resources_Strings_ResourceManager" xml:space="preserve">
+    <value>Resource manager</value>
+  </data>
+  <data name="OKHOSTING_ERP_Resources_Strings_Culture" xml:space="preserve">
+    <value>Culture</value>
+  </data>
+  <data name="OKHOSTING_ERP_Resources_Strings_resourceMan" xml:space="preserve">
+    <value>resource man</value>
+  </data>
+  <data name="OKHOSTING_ERP_Resources_Strings_resourceCulture" xml:space="preserve">
+    <value>resource culture</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_PackageProduct" xml:space="preserve">
+    <value>Package product</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_PackageProduct_IncludedProducts" xml:space="preserve">
+    <value>Included products</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_PackageProductIncludedProduct" xml:space="preserve">
+    <value>Package product included product</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_PackageProductIncludedProduct_PackageProduct" xml:space="preserve">
+    <value>Package product</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_PackageProductIncludedProduct_IncludedProduct" xml:space="preserve">
+    <value>Included product</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_PackageProductIncludedProduct_Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_ShortName" xml:space="preserve">
+    <value>Short name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_AuxId" xml:space="preserve">
+    <value>Aux id</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_ProductInstanceType" xml:space="preserve">
+    <value>Product instance type</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_HasInventory" xml:space="preserve">
+    <value>Has inventory</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_Sale" xml:space="preserve">
+    <value>Sale</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_SaleTaxes" xml:space="preserve">
+    <value>Sale taxes</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_PurchaseDescription" xml:space="preserve">
+    <value>Purchase description</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_PurchasePrice" xml:space="preserve">
+    <value>Purchase price</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_PreferredVendor" xml:space="preserve">
+    <value>Preferred vendor</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_PreferredVendorItemID" xml:space="preserve">
+    <value>Preferred vendor item i d</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_Purchase" xml:space="preserve">
+    <value>Purchase</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_PurchaseTaxes" xml:space="preserve">
+    <value>Purchase taxes</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Product_StandardCost" xml:space="preserve">
+    <value>Standard cost</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_ProductCategory" xml:space="preserve">
+    <value>Product category</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_ProductCategory_Parent" xml:space="preserve">
+    <value>Parent</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_ProductCategory_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_ProductCategory_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_ProductCategory_SubCategories" xml:space="preserve">
+    <value>Sub categories</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_ProductInstance" xml:space="preserve">
+    <value>Product instance</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_ProductInstance_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_ProductInstance_Instance" xml:space="preserve">
+    <value>Instance</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_ProductInstance_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_ProductInstance_PurchasedTo" xml:space="preserve">
+    <value>Purchased to</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_ProductInstance_SoldTo" xml:space="preserve">
+    <value>Sold to</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_ProductInstance_Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Subscription" xml:space="preserve">
+    <value>Subscription</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Subscription_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Subscription_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Subscription_End" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Subscription_GracePeriodEnd" xml:space="preserve">
+    <value>Grace period end</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Subscription_AutoRenew" xml:space="preserve">
+    <value>Auto renew</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Warehouse" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Warehouse_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Warehouse_Manager" xml:space="preserve">
+    <value>Manager</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Warehouse_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Warehouse_Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Warehouse_Transactions" xml:space="preserve">
+    <value>Transactions</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_WarehouseProduct" xml:space="preserve">
+    <value>Warehouse product</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_WarehouseProduct_Warehouse" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_WarehouseProduct_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_WarehouseProduct_OnHand" xml:space="preserve">
+    <value>On hand</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_WarehouseProduct_ReorderPoint" xml:space="preserve">
+    <value>Reorder point</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_WarehouseTransaction" xml:space="preserve">
+    <value>Warehouse transaction</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_WarehouseTransaction_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_WarehouseTransaction_Warehouse" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_WarehouseTransaction_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_WarehouseTransaction_Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_WarehouseTransaction_Reason" xml:space="preserve">
+    <value>Reason</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_WarehouseTransaction_Invoice" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_SubscriptionProduct" xml:space="preserve">
+    <value>Subscription product</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_SubscriptionProduct_SubscriptionLenght" xml:space="preserve">
+    <value>Subscription lenght</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_SubscriptionProduct_SubscriptionUnit" xml:space="preserve">
+    <value>Subscription unit</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_SubscriptionProduct_GracePeriodLenght" xml:space="preserve">
+    <value>Grace period lenght</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_SubscriptionProduct_GracePeriodUnit" xml:space="preserve">
+    <value>Grace period unit</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_Tax" xml:space="preserve">
+    <value>Tax</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_Tax_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_Tax_Rate" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_Tax_TaxAgency" xml:space="preserve">
+    <value>Tax agency</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_Tax_TaxGroups" xml:space="preserve">
+    <value>Tax groups</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_TaxAgency" xml:space="preserve">
+    <value>Tax agency</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_TaxAgency_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_TaxAgency_Telephone" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_TaxAgency_Fax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_TaxAgency_Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_TaxAgency_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_TaxAgency_Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_TaxGroup" xml:space="preserve">
+    <value>Tax group</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_TaxGroup_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Finances_TaxGroup_Taxes" xml:space="preserve">
+    <value>Taxes</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Department" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Department_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Department_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Department_Parent" xml:space="preserve">
+    <value>Parent</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_CommissionLevel" xml:space="preserve">
+    <value>Commission level</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_CommissionLevel_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_CommissionLevel_Commission" xml:space="preserve">
+    <value>Commission</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Employee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Employee_Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Employee_Salary" xml:space="preserve">
+    <value>Salary</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Employee_SalaryType" xml:space="preserve">
+    <value>Salary type</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Employee_EnrollmentDate" xml:space="preserve">
+    <value>Enrollment date</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Employee_Team" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Employee_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Employee_MailSignature" xml:space="preserve">
+    <value>Mail signature</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_SalaryType" xml:space="preserve">
+    <value>Salary type</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_SalaryType_PerHour" xml:space="preserve">
+    <value>Per hour</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_SalaryType_PerDay" xml:space="preserve">
+    <value>Per day</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_SalaryType_PerWeek" xml:space="preserve">
+    <value>Per week</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_SalaryType_PerBiWeek" xml:space="preserve">
+    <value>Per bi week</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_SalaryType_PerMonth" xml:space="preserve">
+    <value>Per month</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_SalaryType_PerWork" xml:space="preserve">
+    <value>Per work</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_SalesPerson" xml:space="preserve">
+    <value>Sales person</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_SalesPerson_Comission" xml:space="preserve">
+    <value>Comission</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Team" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Team_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Team_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Team_Parent" xml:space="preserve">
+    <value>Parent</value>
+  </data>
+  <data name="OKHOSTING_ERP_HR_Team_Employees" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_SalesPerson" xml:space="preserve">
+    <value>Sales person</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_HowDidYouFindUs" xml:space="preserve">
+    <value>How did you find us</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_RegisteredSince" xml:space="preserve">
+    <value>Registered since</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_SoldProductsString" xml:space="preserve">
+    <value>Sold products string</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_TotalSold" xml:space="preserve">
+    <value>Total sold</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_TotalSales" xml:space="preserve">
+    <value>Total sales</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_Balance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_FirstSaleDate" xml:space="preserve">
+    <value>First sale date</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_LastSaleDate" xml:space="preserve">
+    <value>Last sale date</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_Sales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_Quotes" xml:space="preserve">
+    <value>Quotes</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Customer_SoldProducts" xml:space="preserve">
+    <value>Sold products</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_CustomerCategory" xml:space="preserve">
+    <value>Customer category</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_CustomerCategory_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_CustomerCategory_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_CustomerCategory_PriceAdjustment" xml:space="preserve">
+    <value>Price adjustment</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_CustomerCategory_Customers" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_CustomerFeedback" xml:space="preserve">
+    <value>Customer feedback</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_CustomerFeedback_SatisfactionLevel" xml:space="preserve">
+    <value>Satisfaction level</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_CustomerFeedback_Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_CustomerFeedback_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_CustomerFeedback_Team" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_CustomerFeedback_Employee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_CustomerFeedback_Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Prospect" xml:space="preserve">
+    <value>Prospect</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Prospect_SalesPerson" xml:space="preserve">
+    <value>Sales person</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Prospect_ProductOfInterest" xml:space="preserve">
+    <value>Product of interest</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Prospect_PotentialSaleAmmount" xml:space="preserve">
+    <value>Potential sale ammount</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Prospect_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Prospect_Source" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Prospect_NextCallDate" xml:space="preserve">
+    <value>Next call date</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Prospect_RegistrationDate" xml:space="preserve">
+    <value>Registration date</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_ProspectSource" xml:space="preserve">
+    <value>Prospect source</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_ProspectSource_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_ProspectStatus" xml:space="preserve">
+    <value>Prospect status</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_ProspectStatus_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_ProspectStatus_PipeLineOrder" xml:space="preserve">
+    <value>Pipe line order</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Quote" xml:space="preserve">
+    <value>Quote</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Quote_SalesPerson" xml:space="preserve">
+    <value>Sales person</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Quote_CommissionLevel" xml:space="preserve">
+    <value>Commission level</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Quote_Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Sale" xml:space="preserve">
+    <value>Sale</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Sale_SalesPerson" xml:space="preserve">
+    <value>Sales person</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Sale_CommissionLevel" xml:space="preserve">
+    <value>Commission level</value>
+  </data>
+  <data name="OKHOSTING_ERP_Customers_Sale_Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_Account_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_Account_Parent" xml:space="preserve">
+    <value>Parent</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_Account_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_Account_Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_Account_SubAccounts" xml:space="preserve">
+    <value>Sub accounts</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_Account_History" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_Account_Projections" xml:space="preserve">
+    <value>Projections</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_AccountProjection" xml:space="preserve">
+    <value>Account projection</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_AccountProjection_Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_AccountProjection_ProjectedValue" xml:space="preserve">
+    <value>Projected value</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_AccountProjection_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_AccountProjection_ActualValue" xml:space="preserve">
+    <value>Actual value</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_AccountProjection_Difference" xml:space="preserve">
+    <value>Difference</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_AccountUpdate" xml:space="preserve">
+    <value>Account update</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_AccountUpdate_Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_AccountUpdate_UpdatedValue" xml:space="preserve">
+    <value>Updated value</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_AccountUpdate_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_CalculatedAccount" xml:space="preserve">
+    <value>Calculated account</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_ObjectCalculatedAccount" xml:space="preserve">
+    <value>Object calculated account</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_PeriodicTypeCalculatedAccount" xml:space="preserve">
+    <value>Periodic type calculated account</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_PeriodicTypeCalculatedAccount_DateProperty" xml:space="preserve">
+    <value>Date property</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_PeriodicTypeCalculatedAccount_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_PeriodicTypeCalculatedAccount_PeriodLenght" xml:space="preserve">
+    <value>Period lenght</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_PeriodicTypeCalculatedAccount_PeriodUnit" xml:space="preserve">
+    <value>Period unit</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_TypeCalculatedAccount" xml:space="preserve">
+    <value>Type calculated account</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_TypeCalculatedAccount_EvaluatedType" xml:space="preserve">
+    <value>Evaluated type</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_TypeCalculatedAccount_EvaluationFilter" xml:space="preserve">
+    <value>Evaluation filter</value>
+  </data>
+  <data name="OKHOSTING_ERP_Accounting_TypeCalculatedAccount_EvaluationExpression" xml:space="preserve">
+    <value>Evaluation expression</value>
+  </data>
+  <data name="OKHOSTING_ERP_Unit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="OKHOSTING_ERP_Unit_Second" xml:space="preserve">
+    <value>Second</value>
+  </data>
+  <data name="OKHOSTING_ERP_Unit_Minute" xml:space="preserve">
+    <value>Minute</value>
+  </data>
+  <data name="OKHOSTING_ERP_Unit_Hour" xml:space="preserve">
+    <value>Hour</value>
+  </data>
+  <data name="OKHOSTING_ERP_Unit_Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="OKHOSTING_ERP_Unit_Week" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="OKHOSTING_ERP_Unit_Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="OKHOSTING_ERP_Unit_Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+</root>

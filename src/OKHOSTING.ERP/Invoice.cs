@@ -1,7 +1,6 @@
 using System;
 using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
-using System.Linq;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
 
@@ -11,7 +10,7 @@ namespace OKHOSTING.ERP
 	/// An invoice
 	/// </summary>
 	/// <remarks>An invoice can be a customer or a vendor invoice and represents a bussines transaction, a sale or a purchase</remarks>
-	public abstract class Invoice : ORM.PersistentClass<Guid>
+	public class Invoice : PersistentClass<Guid>
 	{
 		[StringLengthValidator(50)]
 		public string AuxId

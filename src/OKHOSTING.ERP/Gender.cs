@@ -7,5 +7,6 @@ namespace OKHOSTING.ERP
 	{
 		Male,
 		Female,
+		Other,
 	}
 }

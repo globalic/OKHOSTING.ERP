@@ -33,5 +33,9 @@ namespace OKHOSTING.ERP.HR
 			set;
 		}
 
+		public override string ToString()
+		{
+			return Name;
+		}
 	}
 }

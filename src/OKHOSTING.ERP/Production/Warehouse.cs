@@ -48,5 +48,9 @@ namespace OKHOSTING.ERP.Production
 			get { return (decimal)EvaluateAlias("TotalValue"); }
 		}*/
 
+		public override string ToString()
+		{
+			return Name;
+		}
 	}
 }

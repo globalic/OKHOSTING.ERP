@@ -64,7 +64,6 @@ namespace OKHOSTING.ERP.Production
 			set;
 		}
 
-		[RequiredValidator]
 		public decimal Price
 		{
 			get;
@@ -96,7 +95,6 @@ namespace OKHOSTING.ERP.Production
 			set;
 		}
 
-		[RequiredValidator]
 		public decimal PurchasePrice
 		{
 			get;
@@ -159,5 +157,10 @@ namespace OKHOSTING.ERP.Production
 			Save();
 		}
 		*/
+
+		public override string ToString()
+		{
+			return Name;
+		}
 	}
 }

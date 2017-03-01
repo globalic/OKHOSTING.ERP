@@ -346,5 +346,10 @@ namespace OKHOSTING.ERP.Production
 
 			Log.Write(LogSource, "End synchronization of product " + product.GetType().FullName, LogType);
 		}*/
+
+		public override string ToString()
+		{
+			return Name;
+		}
 	}
 }
