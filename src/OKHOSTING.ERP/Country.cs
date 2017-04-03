@@ -47,7 +47,7 @@ namespace OKHOSTING.ERP
 		/// Gets an international numeric unique identifier of the country
 		/// </summary>
 		/// <example>484 for México, 840 for USA</example>
-		public Int32? NumericCode
+		public int? NumericCode
 		{
 			get;
 			set;
@@ -57,7 +57,7 @@ namespace OKHOSTING.ERP
 		/// Phone area code of the country
 		/// </summary>
 		/// <example>52 for México, 01 for USA</example>
-		public Int32? PhoneCode
+		public int? PhoneCode
 		{
 			get;
 			set;
@@ -71,6 +71,10 @@ namespace OKHOSTING.ERP
 		{
 			get;
 			set;
+		}
+
+		public Country()
+		{
 		}
 
 		/// <summary>
