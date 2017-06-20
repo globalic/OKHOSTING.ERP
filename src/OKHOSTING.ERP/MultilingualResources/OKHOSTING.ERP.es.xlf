@@ -488,7 +488,7 @@
         </trans-unit>
         <trans-unit id="OKHOSTING_ERP_Vendors_Purchase" translate="yes" xml:space="preserve">
           <source>Purchase</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Comprar</target>
+          <target state="translated">Compra</target>
         </trans-unit>
         <trans-unit id="OKHOSTING_ERP_Vendors_Purchase_Vendor" translate="yes" xml:space="preserve">
           <source>Vendor</source>

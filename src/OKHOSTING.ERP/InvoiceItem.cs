@@ -149,7 +149,6 @@ namespace OKHOSTING.ERP
 
 			foreach (InvoiceItemTax tax in this.Taxes)
 			{
-				tax.Tax.Select();
 				tax.CalculateAmount();
 				Tax += tax.Amount.Value;
 			}
@@ -175,6 +174,11 @@ namespace OKHOSTING.ERP
 				using (var db = DataBase.CreateDataBase())
 				{
 					db.LoadCollection(this, i=> i.Taxes);
+					
+					foreach (var t in Taxes)
+					{
+						db.Select(t.Tax);
+					}
 				}
 			}
 
@@ -221,6 +225,45 @@ namespace OKHOSTING.ERP
 		/// </summary>
 		protected override void OnBeforeInsert(DataBase sender, OperationEventArgs eventArgs)
 		{
+			//get price from product
+			if (Price == 0)
+			{
+				Price = Product.Price;
+			}
+
+			//insert item taxes according to product
+			if (Taxes == null || !Taxes.Any())
+			{
+				Taxes = new List<ERP.InvoiceItemTax>();
+
+				sender.Select(Product);
+				ERP.Finances.TaxGroup group = null;
+
+				if (Invoice is Customers.Sale || Invoice is Customers.Quote)
+				{
+					group = Product.SaleTaxes;
+				}
+				else if (Invoice is Vendors.Purchase)
+				{
+					group = Product.SaleTaxes;
+				}
+
+				sender.LoadCollection(group, g => g.Taxes);
+
+				CalculateSubtotal();
+
+				foreach (var t in group.Taxes)
+				{
+					sender.Select(t.Tax);
+					ERP.InvoiceItemTax itemTax = new ERP.InvoiceItemTax();
+					itemTax.Item = this;
+					itemTax.Tax = t.Tax;
+					itemTax.CalculateAmount();
+
+					Taxes.Add(itemTax);
+				}
+			}
+
 			//calculate items totals
 			CalculateTotals();
 
@@ -234,18 +277,14 @@ namespace OKHOSTING.ERP
 		{
 			base.OnAfterInsert(sender, eventArgs);
 
-			//insert taxes
-			if (Taxes != null)
-			{
-				foreach (var t in Taxes)
-				{
-					sender.Insert(t);
-				}
-			}
+			//foreach (var t in Taxes)
+			//{
+			//	sender.Insert(t);
+			//}
 
 			Invoice.SelectOnce();
 			Invoice.CalculateTotals();
-			Invoice.Update();
+			sender.Update(Invoice);
 		}
 
 		/// <summary>

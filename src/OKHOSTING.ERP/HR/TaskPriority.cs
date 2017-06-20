@@ -14,5 +14,6 @@ namespace OKHOSTING.ERP.HR
 		Normal,
 		High,
 		Urgent,
+		Emergency,
 	}
 }

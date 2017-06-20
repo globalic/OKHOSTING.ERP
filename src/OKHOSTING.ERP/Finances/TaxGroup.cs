@@ -1,6 +1,7 @@
 using System;
-using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
+using System.Linq;
+using OKHOSTING.Data.Validation;
 
 namespace OKHOSTING.ERP.Finances
 {
@@ -17,7 +18,7 @@ namespace OKHOSTING.ERP.Finances
 			set;
 		}
 
-		public ICollection<Tax> Taxes
+		public ICollection<TaxGroupItem> Taxes
 		{
 			get;
 			set;
@@ -27,7 +28,7 @@ namespace OKHOSTING.ERP.Finances
 		{
 			decimal? totalTax = 0;
 
-			foreach (Tax tax in Taxes)
+			foreach (Tax tax in Taxes.Select(i => i.Tax))
 			{
 				totalTax = tax.GetTaxFor(ammount);
 			}

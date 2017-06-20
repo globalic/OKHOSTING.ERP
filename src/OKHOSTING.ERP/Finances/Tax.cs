@@ -36,7 +36,7 @@ namespace OKHOSTING.ERP.Finances
 			set;
 		}
 
-		public ICollection<TaxGroup> TaxGroups
+		public ICollection<TaxGroupItem> TaxGroups
 		{
 			get;
 			set;

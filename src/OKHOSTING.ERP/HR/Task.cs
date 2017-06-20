@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
-using System.ComponentModel;
 
 namespace OKHOSTING.ERP.HR
 {
@@ -14,19 +12,14 @@ namespace OKHOSTING.ERP.HR
 	{
 		#region General properties
 
+		public Guid Id { get; set; }
+
 		/// <summary>
 		/// Name of the task, should summarize the hole task in a few words
 		/// </summary>
-		[StringLengthValidator(250)]
 		[RequiredValidator]
-		public string Subject
-		{
-			get;
-			set;
-		}
-
 		[StringLengthValidator(100)]
-		public string AuxId
+		public string Name
 		{
 			get;
 			set;
@@ -54,13 +47,16 @@ namespace OKHOSTING.ERP.HR
 		/// <summary>
 		/// Time invested (in minutes) in doing this task so far
 		/// </summary>
-		public int MinutesInvested
+		public TimeSpan TimeInvested
 		{
 			get;
 			set;
 		}
 
-		public int PlannedMinutesInvested
+		/// <summary>
+		/// Ammount of time estimated to complete the task
+		/// </summary>
+		public TimeSpan PlannedDuration
 		{
 			get;
 			set;
@@ -90,29 +86,11 @@ namespace OKHOSTING.ERP.HR
 			set;
 		}
 
-		private ICollection<InvoiceItem> CompanyInvoiceItems
-		{
-			get;
-			set;
-		}
-
-		/// <summary>
-		/// InvoiceItem that is related to this activity in the way it involved a sale or a purchase.
-		/// </summary>
-		/// <remarks>
-		/// Used to link activities with sales and purchases, and keep tracking of how much money is spent
-		/// or earned realted to the ammount of time invested in activities to complete the sale or purchase
-		/// </remarks>
-		public InvoiceItem InvoiceItem
-		{
-			get;
-			set;
-		}
-
 		/// <summary>
 		/// Percentaje (from 0 to 100) of progress, how much is an activity finished
 		/// </summary>
 		[RequiredValidator]
+		[RangeValidator(0, 100)]
 		public int Progress
 		{
 			get;
@@ -137,28 +115,17 @@ namespace OKHOSTING.ERP.HR
 
 		#region Read only
 
-		//[Persistent("MinutesInvestedTotal")]
-		protected decimal _MinutesInvestedTotal;
+		protected TimeSpan _TimeInvestedTotal;
 
 		/// <summary>
 		/// Time invested (in minutes) in doing this task so far, including all subtasks
 		/// </summary>
-		public decimal MinutesInvestedTotal
+		public TimeSpan TimeInvestedTotal
 		{
-			get { return _MinutesInvestedTotal; }
+			get { return _TimeInvestedTotal; }
 		}
 
-		/// <summary>
-		/// Time invested (in hours) in doing this task so far, including all subtasks
-		/// </summary>
-		public decimal HoursInvestedTotal
-		{
-			get
-			{
-				return MinutesInvestedTotal / 60;
-			}
-		}
-
+		[RequiredValidator]
 		public bool Finished
 		{
 			get
@@ -202,7 +169,7 @@ namespace OKHOSTING.ERP.HR
 				}
 				else
 				{
-					return (decimal)AssignedTo.Salary / 180 / 60 * MinutesInvestedTotal;
+					return (decimal)AssignedTo.Salary / 180 / 60 * TimeInvestedTotal;
 				}
 			}
 		}
@@ -226,11 +193,6 @@ namespace OKHOSTING.ERP.HR
 			set;
 		}
 
-		public ICollection<TaskCollaborator> Collaborators
-		{
-			get;
-			set;
-		}
 
 		#endregion
 
@@ -252,17 +214,9 @@ namespace OKHOSTING.ERP.HR
 		
 		#region Methods
 
-		/*
-		[Action]
-		public void MarkAsFinished()
-		{
-			MarkAsFinished(0);
-		}
-		*/
-
 		public void MarkAsFinished(int minutesInvested)
 		{
-			MinutesInvested += minutesInvested;
+			TimeInvested += minutesInvested;
 			Progress = 100;
 
 			//foreach (Task sub in SubTasks)
@@ -273,22 +227,9 @@ namespace OKHOSTING.ERP.HR
 			Save();
 		}
 
-		protected void AutoLabel()
+		protected virtual void RecalculateValues()
 		{
-			//label
-			if (Finished)
-			{
-				Label = 0;
-			}
-			else
-			{
-				Label = 5;
-			}
-		}
-
-		protected void RecalculateValues()
-		{
-			_MinutesInvestedTotal = MinutesInvested;
+			_TimeInvestedTotal = TimeInvested;
 
 			if (SubTasks.Count > 0)
 			{
@@ -304,13 +245,11 @@ namespace OKHOSTING.ERP.HR
 						EndOn = s.EndOn;
 					}
 
-					_MinutesInvestedTotal += s.MinutesInvestedTotal;
+					_TimeInvestedTotal += s.TimeInvestedTotal;
 				}
 
-				Progress = Convert.ToInt32(Evaluate("SubTasks.Avg(Progress)"));
+				Progress = Convert.ToInt32(SubTasks.Average(t => t.Progress));
 			}
-
-			SetPropertyValue<decimal>("MinutesInvestedTotal", _MinutesInvestedTotal);
 
 			if (Finished && EndOn == null)
 			{
@@ -318,34 +257,12 @@ namespace OKHOSTING.ERP.HR
 				
 				if (StartOn == null)
 				{
-					StartOn = EndOn.AddMinutes(MinutesInvested * -1);
+					StartOn = EndOn.AddMinutes(TimeInvested * -1);
 				}
 			}
 			else if (!Finished)
 			{
 				//EndDate = null;
-			}
-
-			//if this task has collaborators, clone the curent task for each coollaborator who participated on it
-			foreach (TaskCollaborator collaborator in Collaborators)
-			{
-				//is there already a clone task for this collaborator?
-				Task collaborationTask = Session.FindObject<Task>(CriteriaOperator.And(new BinaryOperator("Parent", this), new BinaryOperator("AssignedTo", collaborator.Collaborator), new BinaryOperator("Subject", "Colaboración")));
-
-				//if does not exist, create it
-				if (collaborationTask == null)
-				{
-					collaborationTask = new Task(Session);
-				}
-
-				collaborationTask.Subject = "Colaboración";
-				collaborationTask.AssignedTo = collaborator.Collaborator;
-				collaborationTask.StartOn = StartOn;
-				collaborationTask.EndOn = EndOn;
-				collaborationTask.MinutesInvested = MinutesInvested;
-				collaborationTask.Parent = this;
-				collaborationTask.Progress = this.Progress;
-				collaborationTask.Save();
 			}
 		}
 
@@ -362,89 +279,5 @@ namespace OKHOSTING.ERP.HR
 		*/		
 
 		#endregion
-		
-		#region ITreeNode
-
-		#endregion
-
-		#region Constructors
-
-		#endregion
-
-		#region IEvent / ISupportRecurrences
-
-		#region NonPersistent
-
-		public bool AllDay
-		{
-			get;
-			set;
-
-		}
-
-		public object AppointmentId
-		{
-			get 
-			{ 
-				return Oid; 
-			}
-		}
-
-		public string Location
-		{
-			get;
-			set;
-
-		}
-
-		public string ResourceId
-		{
-			get;
-			set;
-		}
-		
-		#endregion
-
-		public int Type
-		{
-			get;
-			set;
-		}
-
-		public int Label
-		{
-			get;
-			set;
-		}
-
-		public int Status
-		{
-			get;
-			set;
-		}
-
-		[StringLengthValidator(StringLengthValidator.Unlimited)]
-		public string RecurrenceInfoXml
-		{
-			get;
-			set;
-		}
-
-		#endregion
-
-		public class Configuration : OKHOSTING.Tools.ConfigurationBase
-		{
-			public int LastAuxId = 0;
-
-			public static Configuration Current;
-
-			/// <summary>
-			/// Loads the current configuration
-			/// </summary>
-			static Configuration()
-			{
-				Current = OKHOSTING.Tools.ConfigurationBase.Current<Configuration>();
-			}
-		}
 	}
 }

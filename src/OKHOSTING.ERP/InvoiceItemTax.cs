@@ -55,10 +55,10 @@ namespace OKHOSTING.ERP
 		{
 			base.OnBeforeInsert(sender, eventArgs);
 
-			Tax.SelectOnce();
-			Item.SelectOnce();
+			//Tax.SelectOnce();
+			//Item.SelectOnce();
 
-			CalculateAmount();
+			//CalculateAmount();
 		}
 
 		/// <summary>
@@ -82,9 +82,9 @@ namespace OKHOSTING.ERP
 			base.OnAfterInsert(sender, eventArgs);
 
 			//re-calculate invoice item totals
-			Item.SelectOnce();
-			Item.CalculateTotals();
-			Item.Update();
+			//Item.SelectOnce();
+			//Item.CalculateTotals();
+			//Item.Update();
 		}
 
 		/// <summary>

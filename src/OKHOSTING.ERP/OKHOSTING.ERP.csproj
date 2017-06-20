@@ -76,6 +76,7 @@
     <Compile Include="Customers\ProspectStatus.cs" />
     <Compile Include="Customers\Quote.cs" />
     <Compile Include="Customers\Sale.cs" />
+    <Compile Include="Finances\TaxGroupItem.cs" />
     <Compile Include="HR\Department.cs" />
     <Compile Include="Finances\Tax.cs" />
     <Compile Include="Finances\TaxAgency.cs" />
@@ -84,6 +85,12 @@
     <Compile Include="HR\Employee.cs" />
     <Compile Include="HR\SalaryType.cs" />
     <Compile Include="HR\SalesPerson.cs" />
+    <Compile Include="HR\Task.cs" />
+    <Compile Include="HR\TaskAttachement.cs" />
+    <Compile Include="HR\TeamTaskCollaborator.cs" />
+    <Compile Include="HR\TaskPriority.cs" />
+    <Compile Include="HR\TaskTemplate.cs" />
+    <Compile Include="HR\TeamTask.cs" />
     <Compile Include="Invoice.cs" />
     <Compile Include="InvoiceCategory.cs" />
     <Compile Include="InvoiceItem.cs" />
@@ -162,27 +169,27 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OKHOSTING.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OKHOSTING.Core.1.0.32\lib\OKHOSTING.Core.dll</HintPath>
+      <HintPath>..\packages\OKHOSTING.Core.1.0.34\lib\OKHOSTING.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="OKHOSTING.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\OKHOSTING.Hosting\src\packages\OKHOSTING.Data.1.0.18\lib\OKHOSTING.Data.dll</HintPath>
+      <HintPath>..\packages\OKHOSTING.Data.1.0.23\lib\OKHOSTING.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="OKHOSTING.ORM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\OKHOSTING.Hosting\src\packages\OKHOSTING.ORM.1.0.35\lib\OKHOSTING.ORM.dll</HintPath>
+      <HintPath>..\packages\OKHOSTING.ORM.1.0.37\lib\OKHOSTING.ORM.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="OKHOSTING.Sql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OKHOSTING.Sql.1.0.10\lib\OKHOSTING.Sql.dll</HintPath>
+      <HintPath>..\packages\OKHOSTING.Sql.1.0.11\lib\OKHOSTING.Sql.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PCLCrypto, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
       <HintPath>..\packages\PCLCrypto.2.0.147\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Validation, Version=2.3.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Validation.2.3.7\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Validation.dll</HintPath>
+    <Reference Include="Validation, Version=2.4.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Validation.2.4.15\lib\portable-net45+win8+wp8+wpa81\Validation.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
