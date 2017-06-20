@@ -85,12 +85,11 @@
     <Compile Include="HR\Employee.cs" />
     <Compile Include="HR\SalaryType.cs" />
     <Compile Include="HR\SalesPerson.cs" />
+    <Compile Include="HR\Project.cs" />
     <Compile Include="HR\Task.cs" />
     <Compile Include="HR\TaskAttachement.cs" />
-    <Compile Include="HR\TeamTaskCollaborator.cs" />
     <Compile Include="HR\TaskPriority.cs" />
     <Compile Include="HR\TaskTemplate.cs" />
-    <Compile Include="HR\TeamTask.cs" />
     <Compile Include="Invoice.cs" />
     <Compile Include="InvoiceCategory.cs" />
     <Compile Include="InvoiceItem.cs" />

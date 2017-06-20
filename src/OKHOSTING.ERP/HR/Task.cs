@@ -10,8 +10,6 @@ namespace OKHOSTING.ERP.HR
 	/// </summary>
 	public class Task
 	{
-		#region General properties
-
 		public Guid Id { get; set; }
 
 		/// <summary>
@@ -20,16 +18,6 @@ namespace OKHOSTING.ERP.HR
 		[RequiredValidator]
 		[StringLengthValidator(100)]
 		public string Name
-		{
-			get;
-			set;
-		}
-
-		/// <summary>
-		/// Complete description of this task
-		/// </summary>
-		[StringLengthValidator(StringLengthValidator.Unlimited)]
-		public string Description
 		{
 			get;
 			set;
@@ -45,23 +33,8 @@ namespace OKHOSTING.ERP.HR
 		}
 
 		/// <summary>
-		/// Time invested (in minutes) in doing this task so far
+		/// The proprity of the task
 		/// </summary>
-		public TimeSpan TimeInvested
-		{
-			get;
-			set;
-		}
-
-		/// <summary>
-		/// Ammount of time estimated to complete the task
-		/// </summary>
-		public TimeSpan PlannedDuration
-		{
-			get;
-			set;
-		}
-
 		public TaskPriority Priority
 		{
 			get;
@@ -71,7 +44,7 @@ namespace OKHOSTING.ERP.HR
 		/// <summary>
 		/// Tasks are organized as a tree, so we can divide big tasks in smaller tasks
 		/// </summary>
-		public Task Parent
+		public Project Parent
 		{
 			get;
 			set;
@@ -86,198 +59,34 @@ namespace OKHOSTING.ERP.HR
 			set;
 		}
 
-		/// <summary>
-		/// Percentaje (from 0 to 100) of progress, how much is an activity finished
-		/// </summary>
-		[RequiredValidator]
-		[RangeValidator(0, 100)]
-		public int Progress
+		public DateTime StartedOn
 		{
 			get;
 			set;
 		}
-
-		[RequiredValidator]
-		public DateTime StartOn
-		{
-			get;
-			set;
-		}
-
-		[RequiredValidator]
-		public DateTime EndOn
-		{
-			get;
-			set;
-		}
-
-		#endregion
-
-		#region Read only
-
-		protected TimeSpan _TimeInvestedTotal;
 
 		/// <summary>
-		/// Time invested (in minutes) in doing this task so far, including all subtasks
+		/// Time invested (in minutes) in doing this task so far
 		/// </summary>
-		public TimeSpan TimeInvestedTotal
+		public TimeSpan TimeInvested
 		{
-			get { return _TimeInvestedTotal; }
+			get;
+			set;
 		}
 
-		[RequiredValidator]
-		public bool Finished
+		public DateTime FinishedOn
 		{
 			get
 			{
-				return (bool)(Progress >= 100);
+				return StartedOn.Add(TimeInvested);
 			}
 		}
 
-		/// <summary>
-		/// Duration of the task
-		/// </summary>
-		public TimeSpan Duration
-		{
-			get
-			{
-				if (StartOn == null)
-				{
-					return TimeSpan.Zero;
-				}
-				else if (EndOn == null)
-				{
-					return DateTime.Now - StartOn;
-				}
-				else
-				{
-					return (TimeSpan)(EndOn - StartOn);
-				}
-			}
-		}
-
-		/// <summary>
-		/// The expenses incurred by the time dedicated to this task by the Employee
-		/// </summary>
-		public decimal TimeExpenses
-		{
-			get
-			{
-				if (AssignedTo == null)
-				{
-					return 0;
-				}
-				else
-				{
-					return (decimal)AssignedTo.Salary / 180 / 60 * TimeInvestedTotal;
-				}
-			}
-		}
-
-		#endregion
-
-		#region Collections
-
-		/// <summary>
-		/// All tasks that 
-		/// </summary>
-		public ICollection<Task> SubTasks
+		[RequiredValidator]
+		public virtual bool Finished
 		{
 			get;
 			set;
 		}
-
-		public ICollection<TaskAttachement> Attachements
-		{
-			get;
-			set;
-		}
-
-
-		#endregion
-
-		//public decimal TotalInvoiceItemsIncome
-		//{
-		//	get
-		//	{
-		//		return (decimal) EvaluateAlias("Finished");
-		//	}
-		//}
-
-		//public decimal TotalOutcome
-		//{
-		//	get
-		//	{
-		//		return (decimal)EvaluateAlias("Finished");
-		//	}
-		//}
-		
-		#region Methods
-
-		public void MarkAsFinished(int minutesInvested)
-		{
-			TimeInvested += minutesInvested;
-			Progress = 100;
-
-			//foreach (Task sub in SubTasks)
-			//{
-			//	sub.MarkAsFinished(minutesInvested);
-			//}
-
-			Save();
-		}
-
-		protected virtual void RecalculateValues()
-		{
-			_TimeInvestedTotal = TimeInvested;
-
-			if (SubTasks.Count > 0)
-			{
-				foreach (Task s in SubTasks)
-				{
-					if (s.StartOn < StartOn)
-					{
-						StartOn = s.StartOn;
-					}
-
-					if (s.EndOn > EndOn)
-					{
-						EndOn = s.EndOn;
-					}
-
-					_TimeInvestedTotal += s.TimeInvestedTotal;
-				}
-
-				Progress = Convert.ToInt32(SubTasks.Average(t => t.Progress));
-			}
-
-			if (Finished && EndOn == null)
-			{
-				EndOn = DateTime.Now;
-				
-				if (StartOn == null)
-				{
-					StartOn = EndOn.AddMinutes(TimeInvested * -1);
-				}
-			}
-			else if (!Finished)
-			{
-				//EndDate = null;
-			}
-		}
-
-		/*
-		[Action]
-		public void Notify()
-		{
-			TaskMail mail = new TaskMail();
-			mail.Task = this;
-			mail.From = new System.Net.Mail.MailAddress(AssignedTo.Email, AssignedTo.FullName);
-			mail.ReplyToList.Add(AssignedTo.Email);
-			OKHOSTING.Tools.Net.Mail.MailManager.Send(mail);
-		}
-		*/		
-
-		#endregion
 	}
 }
