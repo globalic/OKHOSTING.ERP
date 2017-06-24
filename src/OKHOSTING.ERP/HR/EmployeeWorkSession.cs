@@ -8,8 +8,18 @@ namespace OKHOSTING.ERP.HR
 {
 	public class EmployeeWorkSession
 	{
+		public Guid Id { get; set; }
+		public Employee Employee { get; set; }
+		public DateTime StartedOn { get; set; }
+		public TimeSpan Lenght { get; set; }
 
-		public bool IsIregular
+		public bool StartedOnTime
+		{
+			get;
+			set;
+		}
+
+		public bool FinishedOnTime
 		{
 			get;
 			set;

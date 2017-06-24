@@ -23,33 +23,6 @@ namespace OKHOSTING.ERP.HR
 		}
 
 		/// <summary>
-		/// Ammount of time estimated to complete the task
-		/// </summary>
-		public TimeSpan PlannedDuration
-		{
-			get;
-			set;
-		}
-
-		/// <summary>
-		/// Tasks are organized as a tree, so we can divide big tasks in smaller tasks
-		/// </summary>
-		public Task Parent
-		{
-			get;
-			set;
-		}
-
-		/// <summary>
-		/// The company (customer or vendor) which this activity is related to, if any.
-		/// </summary>
-		public Company Company
-		{
-			get;
-			set;
-		}
-
-		/// <summary>
 		/// Percentaje (from 0 to 100) of progress, how much is an activity finished
 		/// </summary>
 		[RequiredValidator]

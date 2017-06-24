@@ -53,23 +53,22 @@ namespace OKHOSTING.ERP.HR
 			set;
 		}
 
-		[StringLengthValidator(StringLengthValidator.Unlimited)]
-		public string MailSignature
+		public byte[] Picture
 		{
 			get;
 			set;
 		}
 
-	//	public ICollection<Task> AssignedTasks
-	//	{
- //		   get;
- //		   set;
-	//	}
+		//	public ICollection<Task> AssignedTasks
+		//	{
+		//		   get;
+		//		   set;
+		//	}
 
-	//	public ICollection<Task> OpenTasks
-	//	{
- //		   get;
- //		   set;
-	//	}
+		//	public ICollection<Task> OpenTasks
+		//	{
+		//		   get;
+		//		   set;
+		//	}
 	}
 }

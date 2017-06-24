@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace OKHOSTING.ERP.Construction
 {
-	class ConstructionProject
+	public class ConstructionProject: ERP.HR.Project
 	{
+		public string Address { get; set; }
 	}
 }
