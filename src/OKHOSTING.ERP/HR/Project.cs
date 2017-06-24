@@ -32,24 +32,6 @@ namespace OKHOSTING.ERP.HR
 		}
 
 		/// <summary>
-		/// Tasks are organized as a tree, so we can divide big tasks in smaller tasks
-		/// </summary>
-		public Task Parent
-		{
-			get;
-			set;
-		}
-
-		/// <summary>
-		/// The company (customer or vendor) which this activity is related to, if any.
-		/// </summary>
-		public Company Company
-		{
-			get;
-			set;
-		}
-
-		/// <summary>
 		/// Percentaje (from 0 to 100) of progress, how much is an activity finished
 		/// </summary>
 		[RequiredValidator]
@@ -143,7 +125,7 @@ namespace OKHOSTING.ERP.HR
 				}
 				else
 				{
-					return (decimal)AssignedTo.Salary / 180 / 60 * TimeInvestedTotal;
+					return AssignedTo.Salary * (decimal) TimeInvestedTotal.TotalHours;
 				}
 			}
 		}
@@ -189,8 +171,8 @@ namespace OKHOSTING.ERP.HR
 		#region Methods
 
 		public void MarkAsFinished(int minutesInvested)
-		{
-			TimeInvested += minutesInvested;
+		{//
+			//TimeInvested += minutesInvested;
 			Progress = 100;
 
 			//foreach (Task sub in SubTasks)
@@ -198,7 +180,7 @@ namespace OKHOSTING.ERP.HR
 			//	sub.MarkAsFinished(minutesInvested);
 			//}
 
-			Save();
+			//Save();
 		}
 
 		protected virtual void RecalculateValues()
@@ -209,20 +191,20 @@ namespace OKHOSTING.ERP.HR
 			{
 				foreach (Task s in SubTasks)
 				{
-					if (s.StartOn < StartOn)
+					if (s.StartedOn < StartOn)
 					{
-						StartOn = s.StartOn;
+						StartOn = s.StartedOn;
 					}
 
-					if (s.EndOn > EndOn)
+					if (s.StartedOn > EndOn)
 					{
-						EndOn = s.EndOn;
+						EndOn = s.StartedOn;
 					}
 
-					_TimeInvestedTotal += s.TimeInvestedTotal;
+					_TimeInvestedTotal += s.TimeInvested;
 				}
 
-				Progress = Convert.ToInt32(SubTasks.Average(t => t.Progress));
+				//Progress = Convert.ToInt32(SubTasks.Average(t => t.Progress));
 			}
 
 			if (Finished && EndOn == null)
@@ -231,7 +213,7 @@ namespace OKHOSTING.ERP.HR
 				
 				if (StartOn == null)
 				{
-					StartOn = EndOn.AddMinutes(TimeInvested * -1);
+					//StartOn = EndOn.AddMinutes(TimeInvested * -1);
 				}
 			}
 			else if (!Finished)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OKHOSTING.ERP.Construction
 {
-	class ConstructionProject
+	public class ConstructionProject: HR.Project
 	{
 	}
 }

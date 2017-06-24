@@ -83,6 +83,7 @@
     <Compile Include="Finances\TaxGroup.cs" />
     <Compile Include="HR\CommissionLevel.cs" />
     <Compile Include="HR\Employee.cs" />
+    <Compile Include="HR\PlannedTask.cs" />
     <Compile Include="HR\SalaryType.cs" />
     <Compile Include="HR\SalesPerson.cs" />
     <Compile Include="HR\Project.cs" />
