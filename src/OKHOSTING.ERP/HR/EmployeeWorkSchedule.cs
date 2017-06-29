@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace OKHOSTING.ERP.HR
 {
@@ -25,17 +22,26 @@ namespace OKHOSTING.ERP.HR
 			set;
 		}
 
-		public TimeSpan End
+		public TimeSpan Lenght
 		{
 			get;
 			set;
 		}
 
-		public TimeSpan Lenght
+		public TimeSpan End
 		{
 			get 
 			{
-				return End - Start; 
+				var end = Start + Lenght;
+
+				if (end > TimeSpan.FromHours(24))
+				{
+					return end - TimeSpan.FromHours(24);
+				}
+				else
+				{
+					return end;
+				}
 			}
 		}
 	}

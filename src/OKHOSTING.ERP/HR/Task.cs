@@ -33,15 +33,6 @@ namespace OKHOSTING.ERP.HR
 		}
 
 		/// <summary>
-		/// The proprity of the task
-		/// </summary>
-		public TaskPriority Priority
-		{
-			get;
-			set;
-		}
-
-		/// <summary>
 		/// Tasks are organized as a tree, so we can divide big tasks in smaller tasks
 		/// </summary>
 		public Project Parent
@@ -66,7 +57,7 @@ namespace OKHOSTING.ERP.HR
 		}
 
 		/// <summary>
-		/// Time invested (in minutes) in doing this task so far
+		/// Time invested in doing this task
 		/// </summary>
 		public TimeSpan TimeInvested
 		{
@@ -74,11 +65,18 @@ namespace OKHOSTING.ERP.HR
 			set;
 		}
 
-		public DateTime FinishedOn
+		public DateTime? FinishedOn
 		{
 			get
 			{
-				return StartedOn.Add(TimeInvested);
+				if (Finished)
+				{
+					return StartedOn.Add(TimeInvested);
+				}
+				else
+				{
+					return null;
+				}
 			}
 		}
 

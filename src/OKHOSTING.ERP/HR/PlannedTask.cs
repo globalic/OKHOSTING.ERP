@@ -6,14 +6,23 @@ namespace OKHOSTING.ERP.HR
 {
 	public class PlannedTask: Task
 	{
-		DateTime? PlannedStartDateParent { get; set; }
+		/// <summary>
+		/// The proprity of the task
+		/// </summary>
+		public TaskPriority Priority { get; set; }
 
-		public DateTime? PlannedEndDateParent { get; set; }
+		public DateTime PlannedStart { get; set; }
 
-		//public int PlannedMinutesInvested
-		//{
-		//	get { return GetPropertyValue<int>("PlannedMinutesInvested"); }
-		//	set { SetPropertyValue("PlannedMinutesInvested", value); }
-		//}
+		public TimeSpan PlannedTimeInvestment { get; set; }
+
+		public DateTime PlannedFinish
+		{
+			get
+			{
+				return PlannedStart.Add(PlannedTimeInvestment);
+			}
+		}
+
+
 	}
 }
