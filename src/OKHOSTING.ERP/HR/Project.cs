@@ -116,7 +116,7 @@ namespace OKHOSTING.ERP.HR
 				}
 				else
 				{
-					return (decimal)AssignedTo.Salary / 180 / 60 * TimeInvestedTotal;
+					return AssignedTo.Salary * (decimal) TimeInvestedTotal.TotalHours;
 				}
 			}
 		}
@@ -163,54 +163,54 @@ namespace OKHOSTING.ERP.HR
 
 		public void MarkAsFinished(int minutesInvested)
 		{
-			TimeInvested += minutesInvested;
-			Progress = 100;
+			//TimeInvested += minutesInvested;
+			//Progress = 100;
 
-			//foreach (Task sub in SubTasks)
-			//{
-			//	sub.MarkAsFinished(minutesInvested);
-			//}
+			////foreach (Task sub in SubTasks)
+			////{
+			////	sub.MarkAsFinished(minutesInvested);
+			////}
 
-			Save();
+			//Save();
 		}
 
 		protected virtual void RecalculateValues()
 		{
 			_TimeInvestedTotal = TimeInvested;
 
-			if (SubTasks.Count > 0)
-			{
-				foreach (Task s in SubTasks)
-				{
-					if (s.StartOn < StartOn)
-					{
-						StartOn = s.StartOn;
-					}
+			//if (SubTasks.Count > 0)
+			//{
+			//	foreach (Task s in SubTasks)
+			//	{
+			//		if (s.StartOn < StartOn)
+			//		{
+			//			StartOn = s.StartOn;
+			//		}
 
-					if (s.EndOn > EndOn)
-					{
-						EndOn = s.EndOn;
-					}
+			//		if (s.EndOn > EndOn)
+			//		{
+			//			EndOn = s.EndOn;
+			//		}
 
-					_TimeInvestedTotal += s.TimeInvestedTotal;
-				}
+			//		_TimeInvestedTotal += s.TimeInvestedTotal;
+			//	}
 
-				Progress = Convert.ToInt32(SubTasks.Average(t => t.Progress));
-			}
+			//	Progress = Convert.ToInt32(SubTasks.Average(t => t.Progress));
+			//}
 
-			if (Finished && EndOn == null)
-			{
-				EndOn = DateTime.Now;
+			//if (Finished && EndOn == null)
+			//{
+			//	EndOn = DateTime.Now;
 				
-				if (StartOn == null)
-				{
-					StartOn = EndOn.AddMinutes(TimeInvested * -1);
-				}
-			}
-			else if (!Finished)
-			{
-				//EndDate = null;
-			}
+			//	if (StartOn == null)
+			//	{
+			//		StartOn = EndOn.AddMinutes(TimeInvested * -1);
+			//	}
+			//}
+			//else if (!Finished)
+			//{
+			//	//EndDate = null;
+			//}
 		}
 
 		/*
