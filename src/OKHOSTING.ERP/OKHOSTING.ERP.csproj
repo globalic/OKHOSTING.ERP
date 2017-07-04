@@ -41,7 +41,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <None Include="app.config" />
     <None Include="Custom\FacturacionElectronica\Facturas\Readme.txt" />
     <None Include="Custom\FacturacionElectronica\Recursos\1- Convertir certificado a PEM.BAT" />
     <None Include="Custom\FacturacionElectronica\Recursos\2- Extraer num de certificado.BAT" />
@@ -51,7 +50,6 @@
     <None Include="Custom\FacturacionElectronica\Recursos\tucertificado.cer.pem" />
     <None Include="Custom\FacturacionElectronica\Recursos\tullave.key" />
     <None Include="Custom\FacturacionElectronica\Recursos\___LlavePrivada.key.pem" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accounting\Account.cs" />
@@ -95,6 +93,7 @@
     <Compile Include="InvoiceItem.cs" />
     <Compile Include="InvoiceItemTax.cs" />
     <Compile Include="InvoicePayment.cs" />
+    <Compile Include="InvoiceStatus.cs" />
     <Compile Include="InvoiceType.cs" />
     <Compile Include="PaymentMethod.cs" />
     <Compile Include="Person.cs" />
@@ -167,32 +166,6 @@
     <Folder Include="Custom\FacturacionElectronica\Informes\" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="OKHOSTING.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OKHOSTING.Core.1.0.34\lib\OKHOSTING.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="OKHOSTING.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OKHOSTING.Data.1.0.23\lib\OKHOSTING.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="OKHOSTING.ORM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OKHOSTING.ORM.1.0.37\lib\OKHOSTING.ORM.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="OKHOSTING.Sql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OKHOSTING.Sql.1.0.11\lib\OKHOSTING.Sql.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PCLCrypto, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
-      <HintPath>..\packages\PCLCrypto.2.0.147\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Validation, Version=2.4.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Validation.2.4.15\lib\portable-net45+win8+wp8+wpa81\Validation.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resources\Strings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.es.Designer.cs</LastGenOutput>
@@ -205,6 +178,16 @@
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="MultilingualResources\OKHOSTING.ERP.es.xlf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\OKHOSTING.Core\src\PCL\OKHOSTING.Core\OKHOSTING.Core.csproj">
+      <Project>{3f4502fa-51ea-4cb9-8e50-46f828d240a1}</Project>
+      <Name>OKHOSTING.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\OKHOSTING.Data\src\PCL\OKHOSTING.Data\OKHOSTING.Data.csproj">
+      <Project>{5ba0cbac-63e5-4e01-aeca-67ae3b63503b}</Project>
+      <Name>OKHOSTING.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />
