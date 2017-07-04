@@ -149,6 +149,11 @@ namespace OKHOSTING.ERP.HR
 			set;
 		}
 
+		public ICollection<Invoice> Invoices
+		{
+			get;
+			set;
+		}
 
 		#endregion
 
@@ -167,7 +172,7 @@ namespace OKHOSTING.ERP.HR
 		//		return (decimal)EvaluateAlias("Finished");
 		//	}
 		//}
-		
+
 		#region Methods
 
 		public void MarkAsFinished(int minutesInvested)

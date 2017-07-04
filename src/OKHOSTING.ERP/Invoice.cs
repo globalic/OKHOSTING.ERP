@@ -95,6 +95,13 @@ namespace OKHOSTING.ERP
 			set;
 		}
 
+		[RequiredValidator]
+		public InvoiceStatus Status
+		{
+			get;
+			set;
+		}
+
 		#region Collections
 
 		/// <summary>

@@ -74,7 +74,6 @@
     <Compile Include="Customers\Prospect.cs" />
     <Compile Include="Customers\ProspectSource.cs" />
     <Compile Include="Customers\ProspectStatus.cs" />
-    <Compile Include="Customers\Quote.cs" />
     <Compile Include="Customers\Sale.cs" />
     <Compile Include="Finances\TaxGroupItem.cs" />
     <Compile Include="HR\Department.cs" />
