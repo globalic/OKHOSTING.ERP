@@ -8,7 +8,7 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// A payment made for an invoice
 	/// </summary>
-	public class InvoicePayment : PersistentClass<Guid>
+	public class InvoicePayment : ORM.Model.Base<Guid>
 	{
 		[RequiredValidator]
 		public Invoice Invoice

@@ -11,7 +11,7 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// An item that belongs to an invoice
 	/// </summary>
-	public class InvoiceItem : PersistentClass<Guid>
+	public class InvoiceItem : ORM.Model.Base<Guid>
 	{
 		Product _Product;
 
@@ -144,9 +144,6 @@ namespace OKHOSTING.ERP
 		{
 			Tax = 0;
 
-			//if no taxes are defined, return
-			if (Taxes == null) return;
-
 			foreach (InvoiceItemTax tax in this.Taxes)
 			{
 				tax.CalculateAmount();
@@ -168,20 +165,6 @@ namespace OKHOSTING.ERP
 		/// </summary>
 		public void CalculateTotals()
 		{
-			//if necesary, load taxes
-			if (IsSaved && (Taxes == null || Taxes.Count == 0))
-			{
-				using (var db = Core.BaitAndSwitch.Create<DataBase>())
-				{
-					db.LoadCollection(this, i=> i.Taxes);
-					
-					foreach (var t in Taxes)
-					{
-						db.Select(t.Tax);
-					}
-				}
-			}
-
 			CalculateSubtotal();
 			CalculateTax();
 			CalculateTotal();
@@ -198,8 +181,6 @@ namespace OKHOSTING.ERP
 		protected override void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
 		{
 			base.OnBeforeDelete(sender, eventArgs);
-
-			sender.LoadCollection(this, i => i.Taxes);
 
 			foreach (var tax in Taxes)
 			{
@@ -234,12 +215,12 @@ namespace OKHOSTING.ERP
 			//insert item taxes according to product
 			if (Taxes == null || !Taxes.Any())
 			{
-				Taxes = new List<ERP.InvoiceItemTax>();
+				Taxes = new List<InvoiceItemTax>();
 
 				sender.Select(Product);
-				ERP.Finances.TaxGroup group = null;
+				Finances.TaxGroup group = null;
 
-				if (Invoice is Customers.Sale || Invoice is Customers.Quote)
+				if (Invoice is Customers.Sale)
 				{
 					group = Product.SaleTaxes;
 				}
@@ -248,14 +229,12 @@ namespace OKHOSTING.ERP
 					group = Product.SaleTaxes;
 				}
 
-				sender.LoadCollection(group, g => g.Taxes);
-
 				CalculateSubtotal();
 
 				foreach (var t in group.Taxes)
 				{
 					sender.Select(t.Tax);
-					ERP.InvoiceItemTax itemTax = new ERP.InvoiceItemTax();
+					InvoiceItemTax itemTax = new InvoiceItemTax();
 					itemTax.Item = this;
 					itemTax.Tax = t.Tax;
 					itemTax.CalculateAmount();
@@ -284,7 +263,7 @@ namespace OKHOSTING.ERP
 
 			Invoice.SelectOnce();
 			Invoice.CalculateTotals();
-			sender.Update(Invoice);
+			Invoice.Update();
 		}
 
 		/// <summary>

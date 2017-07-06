@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using OKHOSTING.ERP.Production;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
+using OKHOSTING.ERP.HR;
 
 namespace OKHOSTING.ERP.Vendors
 {
@@ -72,13 +73,13 @@ namespace OKHOSTING.ERP.Vendors
 				s.Update();
 			}
 
-			foreach (CompanyContact s in vendor.Contacts)
+			foreach (Employee s in vendor.Employees)
 			{
 				s.Company = this;
 				s.Update();
 			}
 
-			foreach (CompanyAddress s in vendor.Addresses)
+			foreach (CompanyLocation s in vendor.Locations)
 			{
 				s.Company = this;
 				s.Update();
@@ -104,11 +105,6 @@ namespace OKHOSTING.ERP.Vendors
 		{
 			Balance = 0;
 
-			using (var db = Core.BaitAndSwitch.Create<DataBase>())
-			{
-				db.LoadCollection(this, c => c.Purchases);
-			}
-
 			foreach (Purchase purchase in Purchases)
 			{
 				Balance += purchase.Balance;
@@ -121,8 +117,6 @@ namespace OKHOSTING.ERP.Vendors
 		protected override void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
 		{
 			base.OnBeforeDelete(sender, eventArgs);
-
-			sender.LoadCollection(this, i => i.Purchases);
 
 			foreach (var s in Purchases)
 			{

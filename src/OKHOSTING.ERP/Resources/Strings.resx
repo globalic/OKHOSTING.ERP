@@ -189,13 +189,13 @@
   <data name="OKHOSTING_ERP_CompanyAddressType_Other" xml:space="preserve">
     <value>Other</value>
   </data>
-  <data name="OKHOSTING_ERP_CompanyContact" xml:space="preserve">
+  <data name="OKHOSTING_ERP_Employee" xml:space="preserve">
     <value>Company contact</value>
   </data>
-  <data name="OKHOSTING_ERP_CompanyContact_Company" xml:space="preserve">
+  <data name="OKHOSTING_ERP_Employee_Company" xml:space="preserve">
     <value>Company</value>
   </data>
-  <data name="OKHOSTING_ERP_CompanyContact_Role" xml:space="preserve">
+  <data name="OKHOSTING_ERP_Employee_Role" xml:space="preserve">
     <value>Role</value>
   </data>
   <data name="OKHOSTING_ERP_Configuration" xml:space="preserve">

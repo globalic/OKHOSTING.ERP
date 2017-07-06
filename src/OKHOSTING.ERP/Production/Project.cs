@@ -12,8 +12,8 @@ namespace OKHOSTING.ERP.Production
 	{
 		public Project()
 		{
-			Attachements = new Data.CachedCollection<ProjectAttachement>(new ORM.ForeignKeyCollection<Project, ProjectAttachement>(this, t => t.Project));
-			Invoices = new Data.CachedCollection<Invoice>(new ORM.ForeignKeyCollection<Project, Invoice>(this, i => i.Project));
+			Attachements = new Data.CachedCollection<ProjectAttachement>(new ORM.Model.ForeignKeyFilteredCollection<Project, ProjectAttachement>(this, t => t.Project));
+			Invoices = new Data.CachedCollection<Invoice>(new ORM.Model.ForeignKeyFilteredCollection<Project, Invoice>(this, i => i.Project));
 		}
 
 		/// <summary>

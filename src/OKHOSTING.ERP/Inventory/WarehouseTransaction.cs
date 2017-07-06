@@ -3,7 +3,7 @@ using OKHOSTING.Data.Validation;
 
 namespace OKHOSTING.ERP.Inventory
 {
-	public class WarehouseTransaction : ORM.PersistentClass<Guid>
+	public class WarehouseTransaction : ORM.Model.Base<Guid>
 	{
 		[RequiredValidator]
 		public DateTime Date

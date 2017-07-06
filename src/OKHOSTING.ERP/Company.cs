@@ -1,4 +1,5 @@
 using OKHOSTING.Data.Validation;
+using OKHOSTING.ERP.HR;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
 using System;
@@ -10,7 +11,7 @@ namespace OKHOSTING.ERP
 	/// A company
 	/// </summary>
 	/// <remarks>This is the base class for customers, vendors, competition and any kind of company</remarks>
-	public class Company : ORM.PersistentClass<Guid>
+	public class Company : ORM.Model.Base<Guid>
 	{
 		[RequiredValidator]
 		[StringLengthValidator(100)]
@@ -94,7 +95,7 @@ namespace OKHOSTING.ERP
 			set;
 		}
 
-		public ICollection<HR.Employee> Employees
+		public ICollection<Employee> Employees
 		{
 			get;
 			set;
@@ -112,7 +113,7 @@ namespace OKHOSTING.ERP
 			{
 				string emails = string.Empty;
 
-				foreach (CompanyContact contact in Contacts)
+				foreach (Employee contact in Employees)
 				{
 					if (contact.Email != null && !emails.Contains(contact.Email))
 					{
@@ -145,7 +146,7 @@ namespace OKHOSTING.ERP
 			{
 				string telephones = string.Empty;
 
-				foreach (CompanyContact contact in Contacts)
+				foreach (Employee contact in Employees)
 				{
 					if (contact.Telephone != null && !telephones.Contains(contact.Telephone))
 					{
@@ -189,16 +190,12 @@ namespace OKHOSTING.ERP
 		{
 			base.OnBeforeDelete(sender, eventArgs);
 
-			sender.LoadCollection(this, i => i.Addresses);
-
-			foreach (var a in Addresses)
+			foreach (var a in Locations)
 			{
 				sender.Delete(a);
 			}
 
-			sender.LoadCollection(this, i => i.Contacts);
-
-			foreach (var c in Contacts)
+			foreach (var c in Employees)
 			{
 				sender.Delete(c);
 			}

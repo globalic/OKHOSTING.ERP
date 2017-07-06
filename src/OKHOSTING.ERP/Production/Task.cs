@@ -8,7 +8,7 @@ namespace OKHOSTING.ERP.Production
 	/// <summary>
 	/// The main class for tracking employee time
 	/// </summary>
-	public class Task: ORM.PersistentClass<Guid>
+	public class Task: ORM.Model.Base<Guid>
 	{
 		/// <summary>
 		/// Name of the task, should summarize the hole task in a few words

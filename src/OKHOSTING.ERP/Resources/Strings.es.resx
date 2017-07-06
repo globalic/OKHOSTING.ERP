@@ -84,13 +84,13 @@
   <data name="OKHOSTING_ERP_CompanyAddressType_Other" xml:space="preserve">
     <value>Otro</value>
   </data>
-  <data name="OKHOSTING_ERP_CompanyContact" xml:space="preserve">
+  <data name="OKHOSTING_ERP_Employee" xml:space="preserve">
     <value>Contacto de la empresa</value>
   </data>
-  <data name="OKHOSTING_ERP_CompanyContact_Company" xml:space="preserve">
+  <data name="OKHOSTING_ERP_Employee_Company" xml:space="preserve">
     <value>Compañía</value>
   </data>
-  <data name="OKHOSTING_ERP_CompanyContact_Role" xml:space="preserve">
+  <data name="OKHOSTING_ERP_Employee_Role" xml:space="preserve">
     <value>Rol</value>
   </data>
   <data name="OKHOSTING_ERP_Configuration" xml:space="preserve">

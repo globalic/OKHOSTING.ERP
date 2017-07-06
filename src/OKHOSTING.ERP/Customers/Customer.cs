@@ -131,13 +131,7 @@ namespace OKHOSTING.ERP.Customers
 			set;
 		}
 
-		public ICollection<Quote> Quotes
-		{
-			get;
-			set;
-		}
-
-		public ICollection<Production.ProductInstance> SoldProducts
+		public ICollection<ProductInstance> SoldProducts
 		{
 			get;
 			set;
@@ -169,19 +163,13 @@ namespace OKHOSTING.ERP.Customers
 				s.Update();
 			}
 
-			foreach (Quote s in customer.Quotes)
-			{
-				s.Customer = this;
-				s.Update();
-			}
-
-			foreach (CompanyContact s in customer.Contacts)
+			foreach (Employee s in customer.Employees)
 			{
 				s.Company = this;
 				s.Update();
 			}
 
-			foreach (CompanyAddress s in customer.Addresses)
+			foreach (CompanyLocation s in customer.Locations)
 			{
 				s.Company = this;
 				s.Update();
@@ -209,12 +197,6 @@ namespace OKHOSTING.ERP.Customers
 			Balance = 0;
 			FirstSaleDate = null;
 			LastSaleDate = null;
-
-			using (var db = Core.BaitAndSwitch.Create<DataBase>())
-			{
-				db.LoadCollection(this, c => c.Sales);
-				db.LoadCollection(this, c => c.SoldProducts);
-			}
 
 			foreach (Sale sale in Sales)
 			{
@@ -244,11 +226,9 @@ namespace OKHOSTING.ERP.Customers
 		{
 			base.OnBeforeDelete(sender, eventArgs);
 
-			sender.LoadCollection(this, i => i.Sales);
-
 			foreach (var s in Sales)
 			{
-				sender.Delete(s);
+				s.Delete();
 			}
 		}
 	}

@@ -3,7 +3,7 @@ using OKHOSTING.Data.Validation;
 
 namespace OKHOSTING.ERP.HR
 {
-	public class EmployeeWorkSession: ORM.PersistentClass<Guid>
+	public class EmployeeWorkSession: ORM.Model.Base<Guid>
 	{
 		[RequiredValidator]
 		public Employee Employee { get; set; }

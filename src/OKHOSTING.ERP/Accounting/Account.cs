@@ -9,7 +9,7 @@ namespace OKHOSTING.ERP.Accounting
 	/// number of sales the past month, total income of the past year, or anything that is a number and is
 	/// important for decition making
 	/// </summary>
-	public class Account : ORM.PersistentClass<Guid>
+	public class Account : ORM.Model.Base<Guid>
 	{
 		/// <summary>
 		/// Name of the account

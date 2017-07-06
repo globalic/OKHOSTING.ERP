@@ -11,21 +11,6 @@
 		public Company MyCompany;
 
 		/// <summary>
-		/// My billing address
-		/// </summary>
-		public CompanyAddress MyBillingAddress;
-		
-		/// <summary>
-		/// My shipping address
-		/// </summary>
-		public CompanyAddress MyShippingAddress;
-
-		/// <summary>
-		/// My company's main contact
-		/// </summary>
-		public CompanyContact MyMainContact;
-		
-		/// <summary>
 		/// Current configuration
 		/// </summary>
 		public static Configuration Current;

@@ -7,7 +7,7 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// A country
 	/// </summary>
-	public class Country : ORM.PersistentClass<Guid>
+	public class Country : ORM.Model.Base<Guid>
 	{
 		/// <summary>
 		/// Name of the country

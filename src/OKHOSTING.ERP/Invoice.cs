@@ -1,6 +1,7 @@
 using System;
-using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
+using System.Linq;
+using OKHOSTING.Data.Validation;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
 
@@ -10,7 +11,7 @@ namespace OKHOSTING.ERP
 	/// An invoice
 	/// </summary>
 	/// <remarks>An invoice can be a customer or a vendor invoice and represents a bussines transaction, a sale or a purchase</remarks>
-	public class Invoice : PersistentClass<Guid>
+	public class Invoice : ORM.Model.Base<Guid>
 	{
 		[StringLengthValidator(50)]
 		public string AuxId
@@ -130,9 +131,6 @@ namespace OKHOSTING.ERP
 		{
 			Subtotal = 0;
 
-			//if no items are defined, return
-			if (Items == null) return;
-
 			foreach (InvoiceItem item in Items)
 			{
 				item.CalculateTotals();
@@ -146,9 +144,6 @@ namespace OKHOSTING.ERP
 		private void CalculateTax()
 		{
 			Tax = 0;
-
-			//if no items are defined, return
-			if (Items == null) return;
 
 			foreach (InvoiceItem item in Items)
 			{
@@ -172,27 +167,11 @@ namespace OKHOSTING.ERP
 		}
 
 		/// <summary>
-		/// Calculates amount paid
-		/// </summary>
-		private void CalculatePaid()
-		{
-			Paid = 0;
-
-			//if no Payments are defined, return
-			if (Payments == null) return;
-
-			foreach (InvoicePayment payment in Payments)
-			{
-				Paid += payment.Amount;
-			}
-		}
-
-		/// <summary>
 		/// Calculates invoice balance
 		/// </summary>
 		private void CalculateBalance()
 		{
-			Balance = Total - Paid;
+			Balance = Total - Payments.Sum(p => p.Amount);
 		}
 
 		/// <summary>
@@ -200,26 +179,10 @@ namespace OKHOSTING.ERP
 		/// </summary>
 		public void CalculateTotals()
 		{
-			using (var db = Core.BaitAndSwitch.Create<DataBase>())
-			{
-				//if necesary, load items
-				if (this.IsSaved && (Items == null || Items.Count == 0))
-				{
-					db.LoadCollection(this, i => i.Items);
-				}
-
-				//if necesary, load payments
-				if (this.IsSaved && (Payments == null || Payments.Count == 0))
-				{
-					db.LoadCollection(this, i => i.Payments);
-				}
-			}
-
 			//calculate this invoice's totals
 			CalculateSubtotal();
 			CalculateTax();
 			CalculateTotal();
-			CalculatePaid();
 			CalculateBalance();
 		}
 
@@ -241,14 +204,10 @@ namespace OKHOSTING.ERP
 		{
 			base.OnBeforeDelete(sender, eventArgs);
 
-			sender.LoadCollection(this, i => i.Items);
-
 			foreach (var i in Items)
 			{
 				sender.Delete(i);
 			}
-
-			sender.LoadCollection(this, i => i.Payments);
 
 			foreach (var p in Payments)
 			{

@@ -12,7 +12,7 @@ namespace OKHOSTING.ERP.Accounting
 	/// <remarks>
 	/// Use this class to create budgets for next month or next year, create goals, etc.
 	/// </remarks>
-	public class AccountProjection : ORM.PersistentClass<Guid>
+	public class AccountProjection : ORM.Model.Base<Guid>
 	{
 		/// <summary>
 		/// Account that this projection is about

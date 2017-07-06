@@ -9,7 +9,7 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// Tax applied to an invoice item
 	/// </summary>
-	public class InvoiceItemTax: PersistentClass<Guid>
+	public class InvoiceItemTax: ORM.Model.Base<Guid>
 	{
 		/// <summary>
 		/// Invoice item that generated this tax
@@ -45,7 +45,10 @@ namespace OKHOSTING.ERP
 		/// </summary>
 		public void CalculateAmount()
 		{
-			Amount = Tax.GetTaxFor(Item.Subtotal);
+			Tax?.SelectOnce();
+			Item?.SelectOnce();
+
+			Amount = Tax?.GetTaxFor(Item.Subtotal);
 		}
 
 		/// <summary>
@@ -55,10 +58,7 @@ namespace OKHOSTING.ERP
 		{
 			base.OnBeforeInsert(sender, eventArgs);
 
-			//Tax.SelectOnce();
-			//Item.SelectOnce();
-
-			//CalculateAmount();
+			CalculateAmount();
 		}
 
 		/// <summary>
@@ -67,9 +67,6 @@ namespace OKHOSTING.ERP
 		protected override void OnBeforeUpdate(DataBase sender, OperationEventArgs eventArgs)
 		{
 			base.OnBeforeUpdate(sender, eventArgs);
-
-			Tax.SelectOnce();
-			Item.SelectOnce();
 
 			CalculateAmount();
 		}
@@ -82,9 +79,9 @@ namespace OKHOSTING.ERP
 			base.OnAfterInsert(sender, eventArgs);
 
 			//re-calculate invoice item totals
-			//Item.SelectOnce();
-			//Item.CalculateTotals();
-			//Item.Update();
+			Item.SelectOnce();
+			Item.CalculateTotals();
+			Item.Update();
 		}
 
 		/// <summary>

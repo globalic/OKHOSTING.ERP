@@ -7,7 +7,7 @@ namespace OKHOSTING.ERP.Finances
 	/// <summary>
 	/// A group of taxes that can be applied in a purchase or a sale
 	/// </summary>
-	public class TaxGroupItem : ORM.PersistentClass<Guid>
+	public class TaxGroupItem : ORM.Model.Base<Guid>
 	{
 		[RequiredValidator]
 		public Tax Tax

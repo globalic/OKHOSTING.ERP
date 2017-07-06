@@ -17,7 +17,7 @@ namespace OKHOSTING.ERP.Customers
 	/// Negotiation
 	/// Close
 	/// </example>
-	public class ProspectStatus : ORM.PersistentClass<Guid>
+	public class ProspectStatus : ORM.Model.Base<Guid>
 	{
 		/// <summary>
 		/// Name of the status

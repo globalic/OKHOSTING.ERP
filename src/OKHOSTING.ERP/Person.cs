@@ -7,7 +7,7 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// Represents a person
 	/// </summary>
-	public class Person : ORM.PersistentClass<Guid>
+	public class Person : ORM.Model.Base<Guid>
 	{
 		/// <summary>
 		/// Prefix of the name that should be used when talking to this person

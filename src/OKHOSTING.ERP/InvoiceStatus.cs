@@ -7,7 +7,7 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// Tax applied to an invoice item
 	/// </summary>
-	public class InvoiceStatus : PersistentClass<Guid>
+	public class InvoiceStatus : ORM.Model.Base<Guid>
 	{
 		/// <summary>
 		/// Ammount being charged as tax

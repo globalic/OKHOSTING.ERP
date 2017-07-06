@@ -6,7 +6,7 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// An address of a person or a company
 	/// </summary>
-	public class Location : ORM.PersistentClass<Guid>
+	public class Location : ORM.Model.Base<Guid>
 	{
 		[RequiredValidator]
 		[StringLengthValidator(100)]

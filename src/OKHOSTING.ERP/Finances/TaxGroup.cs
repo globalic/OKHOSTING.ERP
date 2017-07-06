@@ -8,7 +8,7 @@ namespace OKHOSTING.ERP.Finances
 	/// <summary>
 	/// A group of taxes that can be applied in a purchase or a sale
 	/// </summary>
-	public class TaxGroup : ORM.PersistentClass<Guid>
+	public class TaxGroup : ORM.Model.Base<Guid>
 	{
 		[RequiredValidator]
 		[StringLengthValidator(50)]

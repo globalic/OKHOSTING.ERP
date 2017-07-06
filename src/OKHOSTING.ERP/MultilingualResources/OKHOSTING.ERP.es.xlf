@@ -102,15 +102,15 @@
           <source>Other</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Otro</target>
         </trans-unit>
-        <trans-unit id="OKHOSTING_ERP_CompanyContact" translate="yes" xml:space="preserve">
+        <trans-unit id="OKHOSTING_ERP_Employee" translate="yes" xml:space="preserve">
           <source>Company contact</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Contacto de la empresa</target>
         </trans-unit>
-        <trans-unit id="OKHOSTING_ERP_CompanyContact_Company" translate="yes" xml:space="preserve">
+        <trans-unit id="OKHOSTING_ERP_Employee_Company" translate="yes" xml:space="preserve">
           <source>Company</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Compañía</target>
         </trans-unit>
-        <trans-unit id="OKHOSTING_ERP_CompanyContact_Role" translate="yes" xml:space="preserve">
+        <trans-unit id="OKHOSTING_ERP_Employee_Role" translate="yes" xml:space="preserve">
           <source>Role</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Rol</target>
         </trans-unit>

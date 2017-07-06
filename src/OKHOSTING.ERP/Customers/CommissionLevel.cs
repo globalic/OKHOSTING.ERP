@@ -7,7 +7,7 @@ namespace OKHOSTING.ERP.Customers
 	/// A percentage of commission that will be given to a sales person for a specific sale.
 	/// Depending on the type of sale, different commission leves can be assigned to one sale
 	/// </summary>
-	public class CommissionLevel : ORM.PersistentClass<Guid>
+	public class CommissionLevel : ORM.Model.Base<Guid>
 	{ 
 		/// <summary>
 		/// Name of the commission level

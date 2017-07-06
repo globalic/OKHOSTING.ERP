@@ -631,27 +631,27 @@ namespace OKHOSTING.ERP.Resources {
 		/// <summary>
 		///   Busca una cadena traducida similar a Company contact.
 		/// </summary>
-		internal static string OKHOSTING_ERP_CompanyContact {
+		internal static string OKHOSTING_ERP_Employee {
 			get {
-				return ResourceManager.GetString("OKHOSTING_ERP_CompanyContact", resourceCulture);
+				return ResourceManager.GetString("OKHOSTING_ERP_Employee", resourceCulture);
 			}
 		}
 		
 		/// <summary>
 		///   Busca una cadena traducida similar a Company.
 		/// </summary>
-		internal static string OKHOSTING_ERP_CompanyContact_Company {
+		internal static string OKHOSTING_ERP_Employee_Company {
 			get {
-				return ResourceManager.GetString("OKHOSTING_ERP_CompanyContact_Company", resourceCulture);
+				return ResourceManager.GetString("OKHOSTING_ERP_Employee_Company", resourceCulture);
 			}
 		}
 		
 		/// <summary>
 		///   Busca una cadena traducida similar a Role.
 		/// </summary>
-		internal static string OKHOSTING_ERP_CompanyContact_Role {
+		internal static string OKHOSTING_ERP_Employee_Role {
 			get {
-				return ResourceManager.GetString("OKHOSTING_ERP_CompanyContact_Role", resourceCulture);
+				return ResourceManager.GetString("OKHOSTING_ERP_Employee_Role", resourceCulture);
 			}
 		}
 		

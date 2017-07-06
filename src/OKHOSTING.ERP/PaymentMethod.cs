@@ -6,7 +6,7 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// A method of payment
 	/// </summary>
-	public class PaymentMethod : ORM.PersistentClass<Guid>
+	public class PaymentMethod : ORM.Model.Base<Guid>
 	{
 		[RequiredValidator]
 		[StringLengthValidator(100)]

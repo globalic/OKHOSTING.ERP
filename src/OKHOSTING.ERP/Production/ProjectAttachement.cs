@@ -7,7 +7,7 @@ namespace OKHOSTING.ERP.Production
 	/// <summary>
 	/// Defines a task and subtasks that are reusable in similar projects
 	/// </summary>
-	public class ProjectAttachement: ORM.PersistentClass<Guid>
+	public class ProjectAttachement: ORM.Model.Base<Guid>
 	{
 		[RequiredValidator]
 		public Files.Element Attachement

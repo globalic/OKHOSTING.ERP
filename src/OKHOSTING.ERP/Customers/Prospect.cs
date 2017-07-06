@@ -93,7 +93,7 @@ namespace OKHOSTING.ERP.Customers
 
 		//	//copy collections
 		//	customer.Addresses = DataBase.Current.SelectByForeignKey((DataValue)DataType.From(typeof(CompanyAddress))["Company"], this);
-		//	customer.Contacts = DataBase.Current.SelectByForeignKey((DataValue)DataType.From(typeof(CompanyContact))["Company"], this);
+		//	customer.Contacts = DataBase.Current.SelectByForeignKey((DataValue)DataType.From(typeof(Employee))["Company"], this);
 
 		//	//delete me
 		//	DataBase.Current.Delete(this);

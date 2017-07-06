@@ -2,7 +2,7 @@ using System;
 
 namespace OKHOSTING.ERP.Inventory
 {
-	public class WarehouseInventory : ORM.PersistentClass<Guid>
+	public class WarehouseInventory : ORM.Model.Base<Guid>
 	{
 		public WarehouseProduct Product
 		{

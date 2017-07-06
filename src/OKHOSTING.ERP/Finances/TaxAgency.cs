@@ -6,7 +6,7 @@ namespace OKHOSTING.ERP.Finances
 	/// <summary>
 	/// A tax agency which taxes must be paid to
 	/// </summary>
-	public class TaxAgency : ORM.PersistentClass<Guid>
+	public class TaxAgency : ORM.Model.Base<Guid>
 	{
 		[RequiredValidator]
 		[StringLengthValidator(100)]
