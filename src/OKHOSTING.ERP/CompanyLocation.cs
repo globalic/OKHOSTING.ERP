@@ -3,9 +3,9 @@ using OKHOSTING.Data.Validation;
 namespace OKHOSTING.ERP
 {
 	/// <summary>
-	/// An address that belongs to a company
+	/// A location that belongs to a company
 	/// </summary>
-	public class CompanyAddress: Address
+	public class CompanyLocation : Location
 	{
 		[RequiredValidator]
 		public Company Company
@@ -13,13 +13,5 @@ namespace OKHOSTING.ERP
 			get;
 			set;
 		}
-
-		[RequiredValidator]
-		public CompanyAddressType AddressType
-		{
-			get;
-			set;
-		}
-
 	}
 }

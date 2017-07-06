@@ -1,14 +1,11 @@
-using System;
 using OKHOSTING.Data.Validation;
-using OKHOSTING.ERP.Customers;
-using System.Collections.Generic;
 
-namespace OKHOSTING.ERP.HR
+namespace OKHOSTING.ERP.Customers
 {
 	/// <summary>
 	/// An employee in charge of sales, that optionally recieves a comissions for every sale he or she makes
 	/// </summary>
-	public class SalesPerson: Employee
+	public class SalesPerson: HR.Employee
 	{
 		[RequiredValidator]
 		public decimal Comission

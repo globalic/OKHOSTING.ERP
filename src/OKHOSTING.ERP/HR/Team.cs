@@ -21,6 +21,18 @@ namespace OKHOSTING.ERP.HR
 			set;
 		}
 
+		public Company Company
+		{
+			get;
+			set;
+		}
+
+		public Employee Leader
+		{
+			get;
+			set;
+		}
+
 		public Team Parent
 		{
 			get;

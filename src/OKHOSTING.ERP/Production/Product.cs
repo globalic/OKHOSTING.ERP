@@ -48,13 +48,6 @@ namespace OKHOSTING.ERP.Production
 			set;
 		}
 
-		[RequiredValidator]
-		public bool HasInventory
-		{
-			get;
-			set;
-		}
-				
 		#region Sales
 
 		[StringLengthValidator(StringLengthValidator.Unlimited)]

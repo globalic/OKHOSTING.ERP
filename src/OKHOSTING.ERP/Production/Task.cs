@@ -3,15 +3,13 @@ using System.Linq;
 using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.HR
+namespace OKHOSTING.ERP.Production
 {
 	/// <summary>
 	/// The main class for tracking employee time
 	/// </summary>
-	public class Task
+	public class Task: ORM.PersistentClass<Guid>
 	{
-		public Guid Id { get; set; }
-
 		/// <summary>
 		/// Name of the task, should summarize the hole task in a few words
 		/// </summary>
@@ -26,31 +24,36 @@ namespace OKHOSTING.ERP.HR
 		/// <summary>
 		/// Employee who is responsible for doing this task
 		/// </summary>
-		public Employee AssignedTo
+		[RequiredValidator]
+		public HR.Employee AssignedTo
 		{
 			get;
 			set;
 		}
 
 		/// <summary>
-		/// Tasks are organized as a tree, so we can divide big tasks in smaller tasks
+		/// Indicates if the task has been finished or not
 		/// </summary>
-		public Project Parent
+		[RequiredValidator]
+		public virtual bool Finished
 		{
 			get;
 			set;
 		}
 
 		/// <summary>
-		/// The company (customer or vendor) which this activity is related to, if any.
+		/// Project which this task belongs to
 		/// </summary>
-		public Company Company
+		public Project Project
 		{
 			get;
 			set;
 		}
 
-		public DateTime StartedOn
+		/// <summary>
+		/// Date when the task started or is supposed to start
+		/// </summary>
+		public DateTime StartDate
 		{
 			get;
 			set;
@@ -65,26 +68,19 @@ namespace OKHOSTING.ERP.HR
 			set;
 		}
 
-		public DateTime? FinishedOn
+		public DateTime? FinishDate
 		{
 			get
 			{
 				if (Finished)
 				{
-					return StartedOn.Add(TimeInvested);
+					return StartDate.Add(TimeInvested);
 				}
 				else
 				{
 					return null;
 				}
 			}
-		}
-
-		[RequiredValidator]
-		public virtual bool Finished
-		{
-			get;
-			set;
 		}
 	}
 }

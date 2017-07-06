@@ -61,15 +61,6 @@ namespace OKHOSTING.ERP
 		}
 
 		/// <summary>
-		/// Ammount paid so far
-		/// </summary>
-		public decimal Paid
-		{
-			get;
-			set;
-		}
-
-		/// <summary>
 		/// Whether the invoice is fully paid or not
 		/// </summary>
 		public decimal Balance
@@ -90,6 +81,12 @@ namespace OKHOSTING.ERP
 
 		[RequiredValidator]
 		public InvoiceCategory Category
+		{
+			get;
+			set;
+		}
+
+		public Production.Project Project
 		{
 			get;
 			set;
@@ -170,7 +167,7 @@ namespace OKHOSTING.ERP
 			//round subtotal
 			//if (Total != Subtotal + Tax)
 			//{
-			//    Subtotal = Total - Tax;
+			//	Subtotal = Total - Tax;
 			//}
 		}
 
@@ -203,7 +200,7 @@ namespace OKHOSTING.ERP
 		/// </summary>
 		public void CalculateTotals()
 		{
-			using (var db = DataBase.CreateDataBase())
+			using (var db = Core.BaitAndSwitch.Create<DataBase>())
 			{
 				//if necesary, load items
 				if (this.IsSaved && (Items == null || Items.Count == 0))

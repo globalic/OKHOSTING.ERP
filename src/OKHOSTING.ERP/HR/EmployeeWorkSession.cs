@@ -1,28 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using OKHOSTING.Data.Validation;
 
 namespace OKHOSTING.ERP.HR
 {
-	public class EmployeeWorkSession
+	public class EmployeeWorkSession: ORM.PersistentClass<Guid>
 	{
-		public Guid Id { get; set; }
+		[RequiredValidator]
 		public Employee Employee { get; set; }
+
+		[RequiredValidator]
 		public DateTime StartedOn { get; set; }
+
+		[RequiredValidator]
 		public TimeSpan Lenght { get; set; }
 
-		public bool StartedOnTime
-		{
-			get;
-			set;
-		}
+		[RequiredValidator]
+		public Location Location { get; set; }
 
-		public bool FinishedOnTime
-		{
-			get;
-			set;
-		}
+		[RequiredValidator]
+		public bool StartedOnTime { get; set; }
+
+		[RequiredValidator]
+		public bool FinishedOnTime { get; set; }
 	}
 }

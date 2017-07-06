@@ -41,6 +41,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="app.config" />
     <None Include="Custom\FacturacionElectronica\Facturas\Readme.txt" />
     <None Include="Custom\FacturacionElectronica\Recursos\1- Convertir certificado a PEM.BAT" />
     <None Include="Custom\FacturacionElectronica\Recursos\2- Extraer num de certificado.BAT" />
@@ -60,9 +61,7 @@
     <Compile Include="Accounting\PeriodicTypeCalculatedAccount.cs" />
     <Compile Include="Accounting\TypeCalculatedAccount.cs" />
     <Compile Include="Company.cs" />
-    <Compile Include="CompanyAddress.cs" />
-    <Compile Include="CompanyAddressType.cs" />
-    <Compile Include="CompanyContact.cs" />
+    <Compile Include="CompanyLocation.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="Currency.cs" />
@@ -78,16 +77,19 @@
     <Compile Include="Finances\Tax.cs" />
     <Compile Include="Finances\TaxAgency.cs" />
     <Compile Include="Finances\TaxGroup.cs" />
-    <Compile Include="HR\CommissionLevel.cs" />
+    <Compile Include="Customers\CommissionLevel.cs" />
     <Compile Include="HR\Employee.cs" />
-    <Compile Include="HR\PlannedTask.cs" />
+    <Compile Include="HR\EmployeeWorkSchedule.cs" />
+    <Compile Include="HR\EmployeeWorkSession.cs" />
     <Compile Include="HR\SalaryType.cs" />
-    <Compile Include="HR\SalesPerson.cs" />
-    <Compile Include="HR\Project.cs" />
-    <Compile Include="HR\Task.cs" />
-    <Compile Include="HR\TaskAttachement.cs" />
-    <Compile Include="HR\TaskPriority.cs" />
-    <Compile Include="HR\TaskTemplate.cs" />
+    <Compile Include="Customers\SalesPerson.cs" />
+    <Compile Include="Production\AutomatedTask.cs" />
+    <Compile Include="Production\Project.cs" />
+    <Compile Include="Customers\PointOfSale.cs" />
+    <Compile Include="Production\Task.cs" />
+    <Compile Include="Production\TaskPriority.cs" />
+    <Compile Include="Production\ProjectAttachement.cs" />
+    <Compile Include="Production\TaskTemplate.cs" />
     <Compile Include="Invoice.cs" />
     <Compile Include="InvoiceCategory.cs" />
     <Compile Include="InvoiceItem.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="InvoicePayment.cs" />
     <Compile Include="InvoiceStatus.cs" />
     <Compile Include="InvoiceType.cs" />
+    <Compile Include="HR\Office.cs" />
     <Compile Include="PaymentMethod.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Production\PackageProduct.cs" />
@@ -103,9 +106,10 @@
     <Compile Include="Production\ProductCategory.cs" />
     <Compile Include="Production\ProductInstance.cs" />
     <Compile Include="Production\Subscription.cs" />
-    <Compile Include="Production\Warehouse.cs" />
-    <Compile Include="Production\WarehouseProduct.cs" />
-    <Compile Include="Production\WarehouseTransaction.cs" />
+    <Compile Include="Inventory\Warehouse.cs" />
+    <Compile Include="Inventory\WarehouseInventory.cs" />
+    <Compile Include="Inventory\WarehouseProduct.cs" />
+    <Compile Include="Inventory\WarehouseTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Production\SubscriptionProduct.cs" />
     <Compile Include="HR\Team.cs" />
@@ -124,7 +128,7 @@
     <Compile Include="Vendors\Vendor.cs" />
     <Compile Include="Vendors\VendorCategory.cs" />
     <Compile Include="Gender.cs" />
-    <Compile Include="Address.cs" />
+    <Compile Include="Location.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Custom\FacturacionElectronica\Recursos\CadenaOriginal.xslt" />
@@ -187,6 +191,18 @@
     <ProjectReference Include="..\..\..\OKHOSTING.Data\src\PCL\OKHOSTING.Data\OKHOSTING.Data.csproj">
       <Project>{5ba0cbac-63e5-4e01-aeca-67ae3b63503b}</Project>
       <Name>OKHOSTING.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\OKHOSTING.Files\src\PCL\OKHOSTING.Files\OKHOSTING.Files.csproj">
+      <Project>{0a277eb9-39dd-43b7-aeca-1250f4e62a10}</Project>
+      <Name>OKHOSTING.Files</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\OKHOSTING.ORM\src\PCL\OKHOSTING.ORM\OKHOSTING.ORM.csproj">
+      <Project>{976ffeb3-e99d-4b0b-9735-98d2bb311986}</Project>
+      <Name>OKHOSTING.ORM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\OKHOSTING.Sql\src\PCL\OKHOSTING.Sql\OKHOSTING.Sql.csproj">
+      <Project>{afc2147b-ead8-439b-8ca6-d1bf308064b3}</Project>
+      <Name>OKHOSTING.Sql</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

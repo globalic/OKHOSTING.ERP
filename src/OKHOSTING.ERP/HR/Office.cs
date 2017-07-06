@@ -2,16 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace OKHOSTING.ERP.HR
 {
-	public class TaskAttachement 
+	public class Office: CompanyLocation
 	{
-		public Task Task
-		{
-			get;
-			set;
-		}
-
 	}
 }

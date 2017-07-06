@@ -1,27 +1,32 @@
-﻿using System;
+﻿using OKHOSTING.Data.Validation;
+using System;
 
 namespace OKHOSTING.ERP.HR
 {
 	public class EmployeeWorkSchedule
 	{
+		[RequiredValidator]
 		public Employee Employee
 		{
 			get;
 			set;
 		}
 
+		[RequiredValidator]
 		public DayOfWeek DayOfWeek
 		{
 			get;
 			set;
 		}
 
+		[RequiredValidator]
 		public TimeSpan Start
 		{
 			get;
 			set;
 		}
 
+		[RequiredValidator]
 		public TimeSpan Lenght
 		{
 			get;

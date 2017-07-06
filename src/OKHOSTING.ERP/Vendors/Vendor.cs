@@ -104,7 +104,7 @@ namespace OKHOSTING.ERP.Vendors
 		{
 			Balance = 0;
 
-			using (var db = DataBase.CreateDataBase())
+			using (var db = Core.BaitAndSwitch.Create<DataBase>())
 			{
 				db.LoadCollection(this, c => c.Purchases);
 			}

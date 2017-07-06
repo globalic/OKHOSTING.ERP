@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.HR
+namespace OKHOSTING.ERP.Production
 {
 	/// <summary>
 	/// Defines a task and subtasks that are reusable in similar projects

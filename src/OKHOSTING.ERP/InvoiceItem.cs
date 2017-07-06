@@ -171,7 +171,7 @@ namespace OKHOSTING.ERP
 			//if necesary, load taxes
 			if (IsSaved && (Taxes == null || Taxes.Count == 0))
 			{
-				using (var db = DataBase.CreateDataBase())
+				using (var db = Core.BaitAndSwitch.Create<DataBase>())
 				{
 					db.LoadCollection(this, i=> i.Taxes);
 					

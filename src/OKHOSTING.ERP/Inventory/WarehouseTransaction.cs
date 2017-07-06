@@ -1,7 +1,7 @@
 ﻿using System;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.Production
+namespace OKHOSTING.ERP.Inventory
 {
 	public class WarehouseTransaction : ORM.PersistentClass<Guid>
 	{
@@ -20,7 +20,7 @@ namespace OKHOSTING.ERP.Production
 		}
 
 		[RequiredValidator]
-		public Product Product
+		public WarehouseProduct Product
 		{
 			get;
 			set;
@@ -33,8 +33,21 @@ namespace OKHOSTING.ERP.Production
 			set;
 		}
 
-		[StringLengthValidator(100)]
-		public string Reason
+		[StringLengthValidator(StringLengthValidator.Unlimited)]
+		public string Notes
+		{
+			get;
+			set;
+		}
+
+		[RequiredValidator]
+		public HR.Employee Supervisor
+		{
+			get;
+			set;
+		}
+
+		public Production.Project Project
 		{
 			get;
 			set;

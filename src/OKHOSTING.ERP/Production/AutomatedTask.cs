@@ -1,22 +1,15 @@
 ﻿using System;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.HR
+namespace OKHOSTING.ERP.Production
 {
 	/// <summary>
 	/// A task that can be automated and will be performed by code
 	/// </summary>
 	public class AutomatedTask: Task
 	{
-		[RequiredValidator]
-		public Type MethodType
-		{
-			get;
-			set;
-		}
-
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
-		public string Criteria
+		public ORM.Operations.Select Criteria
 		{
 			get;
 			set;
@@ -25,9 +18,8 @@ namespace OKHOSTING.ERP.HR
 		/// <summary>
 		/// Signature of the method to execute
 		/// </summary>
-		[StringLengthValidator(200)]
 		[RequiredValidator]
-		public string Method
+		public System.Reflection.MethodInfo Method
 		{
 			get;
 			set;
@@ -37,7 +29,7 @@ namespace OKHOSTING.ERP.HR
 		/// Paramenters that will be used to execute the method, if any
 		/// </summary>
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
-		public string Parameters
+		public object[] Parameters
 		{
 			get;
 			set;
@@ -45,12 +37,6 @@ namespace OKHOSTING.ERP.HR
 
 		[RequiredValidator]
 		public bool Approved
-		{
-			get;
-			set;
-		}
-
-		public Computer Computer
 		{
 			get;
 			set;

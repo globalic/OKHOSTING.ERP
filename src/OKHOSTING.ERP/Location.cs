@@ -6,8 +6,16 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// An address of a person or a company
 	/// </summary>
-	public class Address : ORM.PersistentClass<Guid>
+	public class Location : ORM.PersistentClass<Guid>
 	{
+		[RequiredValidator]
+		[StringLengthValidator(100)]
+		public string Name
+		{
+			get;
+			set;
+		}
+
 		/// <summary>
 		/// Name of the street
 		/// </summary>
@@ -97,6 +105,15 @@ namespace OKHOSTING.ERP
 			set;
 		}
 
+		/// <summary>
+		/// Geographic coordinates in decimal notation
+		/// </summary>
+		public Tuple<decimal, decimal> Coordinates
+		{
+			get;
+			set;
+		}
+
 		public string FulllAddress
 		{
 			get
@@ -107,6 +124,5 @@ namespace OKHOSTING.ERP
 					{6}", Street, Number, ZipCode, City, State, Country, Notes);
 			}
 		}
-
 	}
 }

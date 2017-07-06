@@ -210,7 +210,7 @@ namespace OKHOSTING.ERP.Customers
 			FirstSaleDate = null;
 			LastSaleDate = null;
 
-			using (var db = DataBase.CreateDataBase())
+			using (var db = Core.BaitAndSwitch.Create<DataBase>())
 			{
 				db.LoadCollection(this, c => c.Sales);
 				db.LoadCollection(this, c => c.SoldProducts);

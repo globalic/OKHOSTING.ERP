@@ -36,7 +36,7 @@ namespace OKHOSTING.ERP.Production
 		/// The DataType of this object
 		/// </summary>
 		[RequiredValidator]
-		public ORM.LooseForeignKey<int> Instance
+		public ORM.LooseForeignKey<Guid> Instance
 		{
 			get;
 			set;

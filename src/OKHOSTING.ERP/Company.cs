@@ -86,27 +86,15 @@ namespace OKHOSTING.ERP
 			set;
 		}
 
-		public CompanyAddress MainAddress
-		{
-			get;
-			set;
-		}
-
-		public CompanyContact MainContact
-		{
-			get;
-			set;
-		}
-
 		#region Collections
 
-		public ICollection<CompanyAddress> Addresses
+		public ICollection<CompanyLocation> Locations
 		{
 			get;
 			set;
 		}
 
-		public ICollection<CompanyContact> Contacts
+		public ICollection<HR.Employee> Employees
 		{
 			get;
 			set;
@@ -193,19 +181,6 @@ namespace OKHOSTING.ERP
 		}
 
 		#endregion
-
-		public CompanyAddress SearchAddress(CompanyAddressType type)
-		{
-			if (Addresses == null) return null;
-			if (Addresses.Count == 0) return null;
-
-			foreach (CompanyAddress a in Addresses)
-			{
-				if (a.AddressType == type) return a;
-			}
-
-			return null;
-		}
 
 		/// <summary>
 		/// Deletes all addresses and  contacts of this company
