@@ -233,7 +233,7 @@ namespace OKHOSTING.ERP
 
 				foreach (var t in group.Taxes)
 				{
-					sender.Select(t.Tax);
+					t.Tax.SelectOnce();
 					InvoiceItemTax itemTax = new InvoiceItemTax();
 					itemTax.Item = this;
 					itemTax.Tax = t.Tax;

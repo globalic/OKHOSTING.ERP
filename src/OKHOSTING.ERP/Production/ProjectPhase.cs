@@ -6,14 +6,14 @@ using OKHOSTING.Data.Validation;
 namespace OKHOSTING.ERP.Production
 {
 	/// <summary>
-	/// A group of tasks that are organized in chronological order
+	/// A phase in a project, defined in a specific period in time and goals
 	/// </summary>
-	public class Project: ORM.Model.Base<Guid>
+	public class ProjectPhase : ORM.Model.Base<Guid>
 	{
 		/// <summary>
 		/// Customer that is requesting this project. Use null for "internal" projects, no customer paying
 		/// </summary>
-		public Customers.Customer Customer
+		public Project Project
 		{
 			get;
 			set;
@@ -24,27 +24,6 @@ namespace OKHOSTING.ERP.Production
 		/// </summary>
 		[StringLengthValidator(250)]
 		public string Name
-		{
-			get;
-			set;
-		}
-
-		/// <summary>
-		/// Name of this project
-		/// </summary>
-		[StringLengthValidator(StringLengthValidator.Unlimited)]
-		public string Description
-		{
-			get;
-			set;
-		}
-
-		/// <summary>
-		/// Percentaje (from 0 to 100) of progress, how much is an activity finished
-		/// </summary>
-		[RequiredValidator]
-		[RangeValidator(0, 100)]
-		public int Progress
 		{
 			get;
 			set;
@@ -74,7 +53,6 @@ namespace OKHOSTING.ERP.Production
 			set;
 		}
 
-
 		/// <summary>
 		/// invoices related to this project
 		/// </summary>
@@ -83,6 +61,5 @@ namespace OKHOSTING.ERP.Production
 			get;
 			set;
 		}
-
 	}
 }

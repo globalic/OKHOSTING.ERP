@@ -87,7 +87,7 @@ namespace OKHOSTING.ERP
 			set;
 		}
 
-		public Production.Project Project
+		public Production.Task Task
 		{
 			get;
 			set;

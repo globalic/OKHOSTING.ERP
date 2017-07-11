@@ -7,17 +7,24 @@ namespace OKHOSTING.ERP.Production
 	/// <summary>
 	/// Defines a task and subtasks that are reusable in similar projects
 	/// </summary>
-	public class ProjectAttachement: ORM.Model.Base<Guid>
+	public class TaskCheckItem : ORM.Model.Base<Guid>
 	{
 		[RequiredValidator]
-		public Files.Element Attachement
+		public string Title
 		{
 			get;
 			set;
 		}
 
+		[RequiredValidator]
+		public bool Completed
+		{
+			get;
+			set;
+		}
 
-		public Project Project
+		[RequiredValidator]
+		public Task Task
 		{
 			get;
 			set;

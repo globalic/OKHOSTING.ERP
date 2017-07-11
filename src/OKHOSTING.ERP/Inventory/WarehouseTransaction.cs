@@ -47,7 +47,7 @@ namespace OKHOSTING.ERP.Inventory
 			set;
 		}
 
-		public Production.Project Project
+		public Production.Task Task
 		{
 			get;
 			set;
