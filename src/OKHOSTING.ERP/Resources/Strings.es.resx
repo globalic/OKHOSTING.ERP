@@ -1,5 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
@@ -16,13 +121,13 @@
     <value>Compañía</value>
   </data>
   <data name="OKHOSTING_ERP_Company_LegalName" xml:space="preserve">
-    <value>Nombre legal</value>
+    <value>Razón social</value>
   </data>
   <data name="OKHOSTING_ERP_Company_CommercialName" xml:space="preserve">
     <value>Nombre comercial</value>
   </data>
   <data name="OKHOSTING_ERP_Company_FederalTaxID" xml:space="preserve">
-    <value>Identificación de impuesto federal</value>
+    <value>RFC</value>
   </data>
   <data name="OKHOSTING_ERP_Company_Notes" xml:space="preserve">
     <value>Notas</value>
@@ -45,68 +150,17 @@
   <data name="OKHOSTING_ERP_Company_Url" xml:space="preserve">
     <value>Dirección URL</value>
   </data>
-  <data name="OKHOSTING_ERP_Company_MainAddress" xml:space="preserve">
-    <value>Dirección principal</value>
-  </data>
-  <data name="OKHOSTING_ERP_Company_MainContact" xml:space="preserve">
-    <value>Contacto principal</value>
-  </data>
-  <data name="OKHOSTING_ERP_Company_Addresses" xml:space="preserve">
-    <value>Direcciones</value>
-  </data>
-  <data name="OKHOSTING_ERP_Company_Contacts" xml:space="preserve">
-    <value>Contactos</value>
-  </data>
   <data name="OKHOSTING_ERP_Company_AllEmails" xml:space="preserve">
     <value>Todos los correos electrónicos</value>
   </data>
   <data name="OKHOSTING_ERP_Company_AllTelephones" xml:space="preserve">
     <value>Todos los teléfonos</value>
   </data>
-  <data name="OKHOSTING_ERP_CompanyAddress" xml:space="preserve">
-    <value>Dirección de la compañía</value>
-  </data>
-  <data name="OKHOSTING_ERP_CompanyAddress_Company" xml:space="preserve">
-    <value>Compañía</value>
-  </data>
-  <data name="OKHOSTING_ERP_CompanyAddress_AddressType" xml:space="preserve">
-    <value>Tipo de dirección</value>
-  </data>
-  <data name="OKHOSTING_ERP_CompanyAddressType" xml:space="preserve">
-    <value>Tipo de dirección de la empresa</value>
-  </data>
-  <data name="OKHOSTING_ERP_CompanyAddressType_Billing" xml:space="preserve">
-    <value>Facturación</value>
-  </data>
-  <data name="OKHOSTING_ERP_CompanyAddressType_Shipping" xml:space="preserve">
-    <value>Envío</value>
-  </data>
-  <data name="OKHOSTING_ERP_CompanyAddressType_Other" xml:space="preserve">
-    <value>Otro</value>
-  </data>
-  <data name="OKHOSTING_ERP_Employee" xml:space="preserve">
-    <value>Contacto de la empresa</value>
-  </data>
-  <data name="OKHOSTING_ERP_Employee_Company" xml:space="preserve">
-    <value>Compañía</value>
-  </data>
-  <data name="OKHOSTING_ERP_Employee_Role" xml:space="preserve">
-    <value>Rol</value>
-  </data>
   <data name="OKHOSTING_ERP_Configuration" xml:space="preserve">
     <value>Configuración</value>
   </data>
   <data name="OKHOSTING_ERP_Configuration_MyCompany" xml:space="preserve">
     <value>Mi empresa</value>
-  </data>
-  <data name="OKHOSTING_ERP_Configuration_MyBillingAddress" xml:space="preserve">
-    <value>Mi dirección de facturación</value>
-  </data>
-  <data name="OKHOSTING_ERP_Configuration_MyShippingAddress" xml:space="preserve">
-    <value>Mi dirección de envío</value>
-  </data>
-  <data name="OKHOSTING_ERP_Configuration_MyMainContact" xml:space="preserve">
-    <value>Mi contacto principal</value>
   </data>
   <data name="OKHOSTING_ERP_Configuration_Current" xml:space="preserve">
     <value>Corriente</value>
@@ -170,9 +224,6 @@
   </data>
   <data name="OKHOSTING_ERP_Invoice_Total" xml:space="preserve">
     <value>Total</value>
-  </data>
-  <data name="OKHOSTING_ERP_Invoice_Paid" xml:space="preserve">
-    <value>Pagado</value>
   </data>
   <data name="OKHOSTING_ERP_Invoice_Balance" xml:space="preserve">
     <value>balance</value>
@@ -270,9 +321,6 @@
   <data name="OKHOSTING_ERP_InvoiceType_Purchase" xml:space="preserve">
     <value>Comprar</value>
   </data>
-  <data name="OKHOSTING_ERP_InvoiceType_Quote" xml:space="preserve">
-    <value>Cita</value>
-  </data>
   <data name="OKHOSTING_ERP_PaymentMethod" xml:space="preserve">
     <value>Método de pago</value>
   </data>
@@ -342,36 +390,6 @@
   <data name="OKHOSTING_ERP_Gender_Female" xml:space="preserve">
     <value>Mujer</value>
   </data>
-  <data name="OKHOSTING_ERP_Address" xml:space="preserve">
-    <value>Dirección</value>
-  </data>
-  <data name="OKHOSTING_ERP_Address_Street" xml:space="preserve">
-    <value>Calle</value>
-  </data>
-  <data name="OKHOSTING_ERP_Address_Number" xml:space="preserve">
-    <value>Número</value>
-  </data>
-  <data name="OKHOSTING_ERP_Address_Suburb" xml:space="preserve">
-    <value>Suburbio</value>
-  </data>
-  <data name="OKHOSTING_ERP_Address_ZipCode" xml:space="preserve">
-    <value>Código postal</value>
-  </data>
-  <data name="OKHOSTING_ERP_Address_City" xml:space="preserve">
-    <value>Ciudad</value>
-  </data>
-  <data name="OKHOSTING_ERP_Address_State" xml:space="preserve">
-    <value>Estado</value>
-  </data>
-  <data name="OKHOSTING_ERP_Address_Country" xml:space="preserve">
-    <value>País</value>
-  </data>
-  <data name="OKHOSTING_ERP_Address_Notes" xml:space="preserve">
-    <value>Notas</value>
-  </data>
-  <data name="OKHOSTING_ERP_Address_FulllAddress" xml:space="preserve">
-    <value>Dirección fulll</value>
-  </data>
   <data name="OKHOSTING_ERP_Vendors_Purchase" xml:space="preserve">
     <value>Compra</value>
   </data>
@@ -404,21 +422,6 @@
   </data>
   <data name="OKHOSTING_ERP_Vendors_VendorCategory_Description" xml:space="preserve">
     <value>Descripción</value>
-  </data>
-  <data name="OKHOSTING_ERP_Resources_Strings" xml:space="preserve">
-    <value>Cadenas</value>
-  </data>
-  <data name="OKHOSTING_ERP_Resources_Strings_ResourceManager" xml:space="preserve">
-    <value>Responsable de recursos</value>
-  </data>
-  <data name="OKHOSTING_ERP_Resources_Strings_Culture" xml:space="preserve">
-    <value>Cultura</value>
-  </data>
-  <data name="OKHOSTING_ERP_Resources_Strings_resourceMan" xml:space="preserve">
-    <value>hombre de recursos</value>
-  </data>
-  <data name="OKHOSTING_ERP_Resources_Strings_resourceCulture" xml:space="preserve">
-    <value>cultura de recursos</value>
   </data>
   <data name="OKHOSTING_ERP_Production_PackageProduct" xml:space="preserve">
     <value>Producto</value>
@@ -455,9 +458,6 @@
   </data>
   <data name="OKHOSTING_ERP_Production_Product_ProductInstanceType" xml:space="preserve">
     <value>Tipo de la instancia de producto</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_Product_HasInventory" xml:space="preserve">
-    <value>Tiene inventario</value>
   </data>
   <data name="OKHOSTING_ERP_Production_Product_Description" xml:space="preserve">
     <value>Descripción</value>
@@ -546,60 +546,6 @@
   <data name="OKHOSTING_ERP_Production_Subscription_AutoRenew" xml:space="preserve">
     <value>Renovación automática</value>
   </data>
-  <data name="OKHOSTING_ERP_Production_Warehouse" xml:space="preserve">
-    <value>Almacén</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_Warehouse_Name" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_Warehouse_Manager" xml:space="preserve">
-    <value>Administrador</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_Warehouse_Address" xml:space="preserve">
-    <value>Dirección</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_Warehouse_Products" xml:space="preserve">
-    <value>productos</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_Warehouse_Transactions" xml:space="preserve">
-    <value>Transacciones</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_WarehouseProduct" xml:space="preserve">
-    <value>Productos de almacén</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_WarehouseProduct_Warehouse" xml:space="preserve">
-    <value>Almacén</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_WarehouseProduct_Product" xml:space="preserve">
-    <value>Producto</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_WarehouseProduct_OnHand" xml:space="preserve">
-    <value>Inventario disponible</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_WarehouseProduct_ReorderPoint" xml:space="preserve">
-    <value>Punto de reorden</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_WarehouseTransaction" xml:space="preserve">
-    <value>Transacciones de almacén</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_WarehouseTransaction_Date" xml:space="preserve">
-    <value>Fecha</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_WarehouseTransaction_Warehouse" xml:space="preserve">
-    <value>Almacén</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_WarehouseTransaction_Product" xml:space="preserve">
-    <value>Producto</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_WarehouseTransaction_Quantity" xml:space="preserve">
-    <value>Cantidad</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_WarehouseTransaction_Reason" xml:space="preserve">
-    <value>Motivo</value>
-  </data>
-  <data name="OKHOSTING_ERP_Production_WarehouseTransaction_Invoice" xml:space="preserve">
-    <value>Factura</value>
-  </data>
   <data name="OKHOSTING_ERP_Production_SubscriptionProduct" xml:space="preserve">
     <value>Producto de la suscripción</value>
   </data>
@@ -672,15 +618,6 @@
   <data name="OKHOSTING_ERP_HR_Department_Parent" xml:space="preserve">
     <value>Primario</value>
   </data>
-  <data name="OKHOSTING_ERP_HR_CommissionLevel" xml:space="preserve">
-    <value>Nivel de la Comisión</value>
-  </data>
-  <data name="OKHOSTING_ERP_HR_CommissionLevel_Name" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="OKHOSTING_ERP_HR_CommissionLevel_Commission" xml:space="preserve">
-    <value>Comisión</value>
-  </data>
   <data name="OKHOSTING_ERP_HR_Employee" xml:space="preserve">
     <value>Empleado</value>
   </data>
@@ -702,9 +639,6 @@
   <data name="OKHOSTING_ERP_HR_Employee_Active" xml:space="preserve">
     <value>Activo</value>
   </data>
-  <data name="OKHOSTING_ERP_HR_Employee_MailSignature" xml:space="preserve">
-    <value>Firma de correo</value>
-  </data>
   <data name="OKHOSTING_ERP_HR_SalaryType" xml:space="preserve">
     <value>Tipo de salario</value>
   </data>
@@ -725,12 +659,6 @@
   </data>
   <data name="OKHOSTING_ERP_HR_SalaryType_PerWork" xml:space="preserve">
     <value>Por trabajo</value>
-  </data>
-  <data name="OKHOSTING_ERP_HR_SalesPerson" xml:space="preserve">
-    <value>Vendedor</value>
-  </data>
-  <data name="OKHOSTING_ERP_HR_SalesPerson_Comission" xml:space="preserve">
-    <value>Comisión</value>
   </data>
   <data name="OKHOSTING_ERP_HR_Team" xml:space="preserve">
     <value>Equipo</value>
@@ -775,7 +703,7 @@
     <value>Total de ventas</value>
   </data>
   <data name="OKHOSTING_ERP_Customers_Customer_Balance" xml:space="preserve">
-    <value>balance</value>
+    <value>Balance</value>
   </data>
   <data name="OKHOSTING_ERP_Customers_Customer_FirstSaleDate" xml:space="preserve">
     <value>Primera fecha de la venta</value>
@@ -788,9 +716,6 @@
   </data>
   <data name="OKHOSTING_ERP_Customers_Customer_Sales" xml:space="preserve">
     <value>Ventas</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_Customer_Quotes" xml:space="preserve">
-    <value>Ofertas</value>
   </data>
   <data name="OKHOSTING_ERP_Customers_Customer_SoldProducts" xml:space="preserve">
     <value>Productos vendidos</value>
@@ -830,57 +755,6 @@
   </data>
   <data name="OKHOSTING_ERP_Customers_CustomerFeedback_Comment" xml:space="preserve">
     <value>Comentar</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_Prospect" xml:space="preserve">
-    <value>Cliente potencial</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_Prospect_SalesPerson" xml:space="preserve">
-    <value>Vendedor</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_Prospect_ProductOfInterest" xml:space="preserve">
-    <value>Producto de interés</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_Prospect_PotentialSaleAmmount" xml:space="preserve">
-    <value>Cantidad potencial de venta</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_Prospect_Status" xml:space="preserve">
-    <value>Estado</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_Prospect_Source" xml:space="preserve">
-    <value>código fuente</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_Prospect_NextCallDate" xml:space="preserve">
-    <value>Próxima fecha de convocatoria</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_Prospect_RegistrationDate" xml:space="preserve">
-    <value>Fecha de registro</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_ProspectSource" xml:space="preserve">
-    <value>Fuente perspectiva</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_ProspectSource_Name" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_ProspectStatus" xml:space="preserve">
-    <value>Estado de la perspectiva</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_ProspectStatus_Name" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_ProspectStatus_PipeLineOrder" xml:space="preserve">
-    <value>Orden de línea de tubería</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_Quote" xml:space="preserve">
-    <value>Cita</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_Quote_SalesPerson" xml:space="preserve">
-    <value>Vendedor</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_Quote_CommissionLevel" xml:space="preserve">
-    <value>Nivel de la Comisión</value>
-  </data>
-  <data name="OKHOSTING_ERP_Customers_Quote_Customer" xml:space="preserve">
-    <value>Cliente</value>
   </data>
   <data name="OKHOSTING_ERP_Customers_Sale" xml:space="preserve">
     <value>Venta</value>
@@ -1004,5 +878,113 @@
   </data>
   <data name="OKHOSTING_ERP_Unit_Year" xml:space="preserve">
     <value>Año</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task" xml:space="preserve">
+    <value>Tarea / proyecto</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_TaskAttachement" xml:space="preserve">
+    <value>Adjuntos</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_TaskAttachement_Attachement" xml:space="preserve">
+    <value>Adjunto</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_TaskAttachement_Comment" xml:space="preserve">
+    <value>Comentario</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_TaskAttachement_Date" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_TaskAttachement_RegisteredBy" xml:space="preserve">
+    <value>Registrado por</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_TaskAttachement_Task" xml:space="preserve">
+    <value>Tarea</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_TaskPriority" xml:space="preserve">
+    <value>Prioridad de tarea</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_TaskPriority_Emergency" xml:space="preserve">
+    <value>Emergencia</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_TaskPriority_High" xml:space="preserve">
+    <value>Alta</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_TaskPriority_Low" xml:space="preserve">
+    <value>Baja</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_TaskPriority_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_TaskPriority_Urgent" xml:space="preserve">
+    <value>Urgente</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_AssignedTo" xml:space="preserve">
+    <value>Asignada a</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_Balance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_Customer" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_FinishDate" xml:space="preserve">
+    <value>Fecha de entrega</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_Finished" xml:space="preserve">
+    <value>Terminada</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_Invoices" xml:space="preserve">
+    <value>Recibos</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_Name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_OnAfterInsert" xml:space="preserve">
+    <value>On after insert</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_OnAfterUpdate" xml:space="preserve">
+    <value>On after update</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_OnBeforeInsert" xml:space="preserve">
+    <value>On before insert</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_OnBeforeUpdate" xml:space="preserve">
+    <value>On before update</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_Parent" xml:space="preserve">
+    <value>Padre</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_Priority" xml:space="preserve">
+    <value>Prioridad</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_Progress" xml:space="preserve">
+    <value>Progreso</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_RecalculateValues" xml:space="preserve">
+    <value>Recalcular valores</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_StartDate" xml:space="preserve">
+    <value>Fecha de inicio</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_SubTasks" xml:space="preserve">
+    <value>Sub tareas</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_TimeInvested" xml:space="preserve">
+    <value>Tiempo invertido</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_TimeInvestedTotal" xml:space="preserve">
+    <value>Tiempo invertido en total</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_TotalPurchases" xml:space="preserve">
+    <value>Total egresos</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_TotalSales" xml:space="preserve">
+    <value>Total ingresos</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_Updates" xml:space="preserve">
+    <value>Actualizaciones</value>
+  </data>
+  <data name="OKHOSTING_ERP_Production_Task_WarehouseTransactions" xml:space="preserve">
+    <value>Movimientos de inventario</value>
   </data>
 </root>

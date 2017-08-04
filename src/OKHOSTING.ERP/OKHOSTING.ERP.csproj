@@ -41,16 +41,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <None Include="app.config" />
-    <None Include="Custom\FacturacionElectronica\Facturas\Readme.txt" />
-    <None Include="Custom\FacturacionElectronica\Recursos\1- Convertir certificado a PEM.BAT" />
-    <None Include="Custom\FacturacionElectronica\Recursos\2- Extraer num de certificado.BAT" />
-    <None Include="Custom\FacturacionElectronica\Recursos\3- Convertir llave a PEM.bat" />
-    <None Include="Custom\FacturacionElectronica\Recursos\LlavePrivada.key.pem" />
-    <None Include="Custom\FacturacionElectronica\Recursos\tucertificado.cer" />
-    <None Include="Custom\FacturacionElectronica\Recursos\tucertificado.cer.pem" />
-    <None Include="Custom\FacturacionElectronica\Recursos\tullave.key" />
-    <None Include="Custom\FacturacionElectronica\Recursos\___LlavePrivada.key.pem" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accounting\Account.cs" />
@@ -68,9 +59,6 @@
     <Compile Include="Customers\Customer.cs" />
     <Compile Include="Customers\CustomerCategory.cs" />
     <Compile Include="Customers\CustomerFeedback.cs" />
-    <Compile Include="Customers\Prospect.cs" />
-    <Compile Include="Customers\ProspectSource.cs" />
-    <Compile Include="Customers\ProspectStatus.cs" />
     <Compile Include="Customers\Sale.cs" />
     <Compile Include="Finances\TaxGroupItem.cs" />
     <Compile Include="HR\Department.cs" />
@@ -129,30 +117,6 @@
     <Compile Include="Location.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Custom\FacturacionElectronica\Recursos\CadenaOriginal.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Custom\FacturacionElectronica\Recursos\ConvertirHTML.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Custom\FacturacionElectronica\Recursos\libeay32.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Custom\FacturacionElectronica\Recursos\openssl.exe" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Custom\FacturacionElectronica\Recursos\Readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Custom\FacturacionElectronica\Recursos\ssleay32.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Custom\FacturacionElectronica\Recursos\tucertificado.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Custom\FacturacionElectronica\Temporal\Readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Customers.NewCustomerMail.html" />
     <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Customers.QuoteMail.html" />
     <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Customers.SaleMail.html" />
@@ -165,7 +129,7 @@
     <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Production.ExpiringSubscriptionMail.html" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Custom\FacturacionElectronica\Informes\" />
+    <Folder Include="MultilingualResources\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Strings.es.resx">
@@ -177,9 +141,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <XliffResource Include="MultilingualResources\OKHOSTING.ERP.es.xlf" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\OKHOSTING.Core\src\PCL\OKHOSTING.Core\OKHOSTING.Core.csproj">

@@ -37,5 +37,9 @@ namespace OKHOSTING.ERP.Customers
 			get;
 		}
 
+		public override string ToString()
+		{
+			return Name;
+		}
 	}
 }

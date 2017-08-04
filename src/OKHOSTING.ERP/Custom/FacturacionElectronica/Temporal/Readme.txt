@@ -1,1 +1,0 @@
-﻿Aqui son guardados archivos temporales que pueden ser eliminados periodicamente

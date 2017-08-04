@@ -26,9 +26,12 @@ namespace OKHOSTING.ERP
 			{
 				_Product = value;
 				
-				if (value != null && Price == 0)
+				if (value != null)
 				{
-					Price = value.Price;
+					if (Price == 0)
+					{
+						Price = value.Price;
+					}
 				}
 			}
 		}
@@ -211,6 +214,16 @@ namespace OKHOSTING.ERP
 			{
 				Price = Product.Price;
 			}
+			
+			base.OnBeforeInsert(sender, eventArgs);
+		}
+
+		/// <summary>
+		/// Inserts all items taxes along with the current item and recalculates item's and invoice's totals
+		/// </summary>
+		protected override void OnAfterInsert(DataBase sender, OperationEventArgs eventArgs)
+		{
+			base.OnAfterInsert(sender, eventArgs);
 
 			//insert item taxes according to product
 			if (Taxes == null || !Taxes.Any())
@@ -218,6 +231,7 @@ namespace OKHOSTING.ERP
 				Taxes = new List<InvoiceItemTax>();
 
 				sender.Select(Product);
+
 				Finances.TaxGroup group = null;
 
 				if (Invoice is Customers.Sale)
@@ -229,37 +243,23 @@ namespace OKHOSTING.ERP
 					group = Product.SaleTaxes;
 				}
 
-				CalculateSubtotal();
+				group.Select();
+				sender.LoadCollection(group, g => g.Taxes);
 
 				foreach (var t in group.Taxes)
 				{
 					t.Tax.SelectOnce();
+
 					InvoiceItemTax itemTax = new InvoiceItemTax();
 					itemTax.Item = this;
 					itemTax.Tax = t.Tax;
 					itemTax.CalculateAmount();
 
 					Taxes.Add(itemTax);
+
+					itemTax.Insert();
 				}
 			}
-
-			//calculate items totals
-			CalculateTotals();
-
-			base.OnBeforeInsert(sender, eventArgs);
-		}
-
-		/// <summary>
-		/// Inserts all items taxes along with the current item and recalculates item's and invoice's totals
-		/// </summary>
-		protected override void OnAfterInsert(DataBase sender, OperationEventArgs eventArgs)
-		{
-			base.OnAfterInsert(sender, eventArgs);
-
-			//foreach (var t in Taxes)
-			//{
-			//	sender.Insert(t);
-			//}
 
 			Invoice.SelectOnce();
 			Invoice.CalculateTotals();

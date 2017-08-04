@@ -12,6 +12,8 @@ namespace OKHOSTING.ERP.Production
 	/// </summary>
 	public class Task: ORM.Model.Base<Guid>
 	{
+		#region Basic properties
+
 		/// <summary>
 		/// Name of the task, should summarize the hole task in a few words
 		/// </summary>
@@ -22,37 +24,6 @@ namespace OKHOSTING.ERP.Production
 			get;
 			set;
 		}
-
-		/// <summary>
-		/// Employee who is responsible for doing this task
-		/// </summary>
-		[RequiredValidator]
-		public HR.Employee AssignedTo
-		{
-			get;
-			set;
-		}
-
-		int _Progress;
-
-		/// <summary>
-		/// Percentaje (from 0 to 100) of progress, how much is an activity finished
-		/// </summary>
-		[RequiredValidator]
-		[RangeValidator(0, 100)]
-		public int Progress
-		{
-			get
-			{
-				return _Progress;
-			}
-			set
-			{
-				_Progress = value;
-				_Finished = value >= 100;
-			}
-		}
-
 		bool _Finished;
 
 		/// <summary>
@@ -73,37 +44,16 @@ namespace OKHOSTING.ERP.Production
 				{
 					_Progress = 100;
 				}
-				else if(_Progress >= 100)
+				else if (_Progress >= 100)
 				{
-					_Progress = 99;
+					_Progress = 0;
 				}
 			}
 		}
 
-		/// <summary>
-		/// Task which this task belongs to
-		/// </summary>
-		public Task Parent
-		{
-			get;
-			set;
-		}
+		#endregion
 
-		/// <summary>
-		/// Customer that is requesting this project. Use null for "internal" projects, no customer paying
-		/// </summary>
-		public Customers.Customer Customer
-		{
-			get;
-			set;
-		}
-
-		[RequiredValidator]
-		public TaskPriority Priority
-		{
-			get;
-			set;
-		} = TaskPriority.Normal;
+		#region Management
 
 		/// <summary>
 		/// Date when the task started or is supposed to start
@@ -115,7 +65,16 @@ namespace OKHOSTING.ERP.Production
 		}
 
 		/// <summary>
-		/// Time invested in doing this task
+		/// Date when the task was finished or is supposed to finish in the furture
+		/// </summary>
+		public DateTime? FinishDate
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Time invested in doing this task, or estimated time to invest
 		/// </summary>
 		public TimeSpan TimeInvested
 		{
@@ -124,16 +83,49 @@ namespace OKHOSTING.ERP.Production
 		}
 
 		/// <summary>
-		/// Time invested in doing this task
+		/// Employee who is responsible for doing this task
 		/// </summary>
 		[RequiredValidator]
-		public TimeSpan TimeInvestedTotal
+		public HR.Employee AssignedTo
 		{
 			get;
 			set;
 		}
 
-		public DateTime? FinishDate
+		int _Progress;
+
+		/// <summary>
+		/// Percentaje (from 0 to 100) of progress, how much is an activity finished
+		/// </summary>
+		[RangeValidator(0, 100)]
+		public int Progress
+		{
+			get
+			{
+				return _Progress;
+			}
+			set
+			{
+				_Progress = value;
+				_Finished = value >= 100;
+			}
+		}
+
+		[RequiredValidator]
+		public TaskPriority Priority
+		{
+			get;
+			set;
+		} = TaskPriority.Normal;
+
+		#endregion
+
+		#region Finance
+
+		/// <summary>
+		/// Customer that is requesting this project. Use null for "internal" projects, no customer paying
+		/// </summary>
+		public Customers.Customer Customer
 		{
 			get;
 			set;
@@ -157,16 +149,39 @@ namespace OKHOSTING.ERP.Production
 			set;
 		}
 
-		public ICollection<Task> SubTasks
+		/// <summary>
+		/// invoices related to this project
+		/// </summary>
+		public ICollection<Invoice> Invoices
+		{
+			get;
+			set;
+		}
+
+		#endregion
+
+		#region Subtasks, updates and inventory
+
+		/// <summary>
+		/// Task which this task belongs to
+		/// </summary>
+		public Task Parent
 		{
 			get;
 			set;
 		}
 
 		/// <summary>
-		/// invoices related to this project
+		/// Time invested in doing this task
 		/// </summary>
-		public ICollection<Invoice> Invoices
+		[RequiredValidator]
+		public TimeSpan TimeInvestedTotal
+		{
+			get;
+			set;
+		}
+
+		public ICollection<Task> SubTasks
 		{
 			get;
 			set;
@@ -182,11 +197,13 @@ namespace OKHOSTING.ERP.Production
 		/// </summary>
 		public readonly ICollection<Inventory.WarehouseTransaction> WarehouseTransactions;
 
+		#endregion
+
+		#region Recalculate values
+
 		protected override void OnBeforeInsert(DataBase sender, OperationEventArgs eventArgs)
 		{
 			base.OnBeforeInsert(sender, eventArgs);
-
-			RecalculateValues();
 
 			if (Parent != null)
 			{
@@ -205,8 +222,6 @@ namespace OKHOSTING.ERP.Production
 		protected override void OnBeforeUpdate(DataBase sender, OperationEventArgs eventArgs)
 		{
 			base.OnBeforeUpdate(sender, eventArgs);
-
-			RecalculateValues();
 
 			if (Parent != null)
 			{
@@ -249,13 +264,14 @@ namespace OKHOSTING.ERP.Production
 		protected void RecalculateValues()
 		{
 			TimeInvestedTotal = TimeInvested;
+			TotalSales = TotalPurchases = 0;
 
 			if (SubTasks.Any())
 			{
 				foreach (Task sub in SubTasks)
 				{
 					sub.SelectOnce();
-					sub.RecalculateValues();
+					//sub.RecalculateValues();
 
 					if (sub.StartDate < StartDate)
 					{
@@ -268,31 +284,42 @@ namespace OKHOSTING.ERP.Production
 					}
 				}
 
-				Progress = (int) SubTasks.Average(t => t.Progress);
+				Progress = (int)SubTasks.Average(t => t.Progress);
 				TimeInvestedTotal += TimeSpan.FromTicks(SubTasks.Sum(t => t.TimeInvestedTotal.Ticks));
-			}
 
-			if (Finished && FinishDate == null)
-			{
-				FinishDate = DateTime.Now;
-
-				if (StartDate == null)
+				if (Finished && FinishDate == null)
 				{
-					StartDate = FinishDate.Value.Subtract(TimeInvested);
+					FinishDate = DateTime.Now;
+
+					if (StartDate == null)
+					{
+						StartDate = FinishDate.Value.Subtract(TimeInvested);
+					}
 				}
+				else if (!Finished)
+				{
+					FinishDate = null;
+				}
+				
+				TotalSales += SubTasks.Sum(st => st.TotalSales);
+				TotalPurchases += SubTasks.Sum(st => st.TotalPurchases);
+				Balance += SubTasks.Sum(st => st.Balance);
 			}
-			else if (!Finished)
+
+			if (Invoices.Any())
 			{
-				FinishDate = null;
+				TotalSales = Invoices.Where(i => i is Customers.Sale).Sum(i => i.Total);
+				TotalPurchases = Invoices.Where(i => i is Vendors.Purchase).Sum(i => i.Total);
 			}
 
-			TotalSales = Invoices.Where(i => i is Customers.Sale).Sum(i => i.Total);
-			TotalPurchases = Invoices.Where(i => i is Vendors.Purchase).Sum(i => i.Total);
 			Balance = TotalSales - TotalPurchases;
+		}
 
-			TotalSales += SubTasks.Sum(st => st.TotalSales);
-			TotalPurchases += SubTasks.Sum(st => st.TotalPurchases);
-			Balance += SubTasks.Sum(st => st.Balance);
+		#endregion
+
+		public override string ToString()
+		{
+			return Name;
 		}
 	}
 }

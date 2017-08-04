@@ -15,7 +15,6 @@ namespace OKHOSTING.ERP.Customers
 			set;
 		}
 
-		[RequiredValidator]
 		public CommissionLevel CommissionLevel
 		{
 			get;

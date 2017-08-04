@@ -80,7 +80,6 @@ namespace OKHOSTING.ERP
 			set;
 		}
 
-		[RequiredValidator]
 		public InvoiceCategory Category
 		{
 			get;
@@ -93,7 +92,6 @@ namespace OKHOSTING.ERP
 			set;
 		}
 
-		[RequiredValidator]
 		public InvoiceStatus Status
 		{
 			get;
@@ -261,20 +259,14 @@ namespace OKHOSTING.ERP
 		{
 			base.OnAfterInsert(sender, eventArgs);
 
-			if (Items != null)
+			foreach (var i in Items)
 			{
-				foreach (var i in Items)
-				{
-					i.Save();
-				}
+				i.Save();
 			}
 
-			if (Payments != null)
+			foreach (var p in Payments)
 			{
-				foreach (var p in Payments)
-				{
-					p.Save();
-				}
+				p.Save();
 			}
 		}
 

@@ -26,7 +26,6 @@ namespace OKHOSTING.ERP.Production
 			set;
 		}
 
-		[RequiredValidator]
 		[StringLengthValidator(20)]
 		public string ShortName
 		{

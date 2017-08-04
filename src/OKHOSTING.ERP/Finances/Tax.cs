@@ -22,7 +22,6 @@ namespace OKHOSTING.ERP.Finances
 		/// </summary>
 		/// <example>16 = 16%</example>
 		/// <example>11.5 = 11.5%</example>
-		[RequiredValidator]
 		public decimal Rate
 		{
 			get;

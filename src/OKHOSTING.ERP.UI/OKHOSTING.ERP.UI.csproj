@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{23F0A48E-BC8B-43E6-A9A7-363097CCC687}</ProjectGuid>
+    <ProjectGuid>{AC30E9FF-50A6-412D-A321-97E5FE908786}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>OKHOSTING.ERP.UI</RootNamespace>
     <AssemblyName>OKHOSTING.ERP.UI</AssemblyName>
@@ -36,8 +36,6 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InsertInvoice.cs" />
-    <Compile Include="InsertTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

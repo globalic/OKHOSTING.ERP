@@ -14,7 +14,6 @@ namespace OKHOSTING.ERP.Vendors
 	/// </summary>
 	public class Vendor : Company
 	{
-		[RequiredValidator]
 		public VendorCategory Category
 		{
 			get;
