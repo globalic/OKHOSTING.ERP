@@ -13,7 +13,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -56,6 +56,7 @@
     <Compile Include="Configuration.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="Currency.cs" />
+    <Compile Include="Customers\CommissionLevel.cs" />
     <Compile Include="Customers\Customer.cs" />
     <Compile Include="Customers\CustomerCategory.cs" />
     <Compile Include="Customers\CustomerFeedback.cs" />
@@ -65,7 +66,6 @@
     <Compile Include="Finances\Tax.cs" />
     <Compile Include="Finances\TaxAgency.cs" />
     <Compile Include="Finances\TaxGroup.cs" />
-    <Compile Include="Customers\CommissionLevel.cs" />
     <Compile Include="HR\Employee.cs" />
     <Compile Include="HR\EmployeeWorkSchedule.cs" />
     <Compile Include="HR\EmployeeWorkSession.cs" />
@@ -144,7 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\OKHOSTING.Core\src\PCL\OKHOSTING.Core\OKHOSTING.Core.csproj">
-      <Project>{3f4502fa-51ea-4cb9-8e50-46f828d240a1}</Project>
+      <Project>{a5394469-222e-47f2-b88e-670f7d25ad8e}</Project>
       <Name>OKHOSTING.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\OKHOSTING.Data\src\PCL\OKHOSTING.Data\OKHOSTING.Data.csproj">
