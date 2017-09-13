@@ -59,10 +59,6 @@ namespace OKHOSTING.ERP.HR
 			set;
 		}
 
-		public Company Company { get; set; }
-
-		public CompanyLocation BaseLocation { get; set; }
-
 		//	public ICollection<Task> AssignedTasks
 		//	{
 		//		   get;

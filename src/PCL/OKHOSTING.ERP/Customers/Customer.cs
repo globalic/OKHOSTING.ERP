@@ -169,7 +169,7 @@ namespace OKHOSTING.ERP.Customers
 				s.Update();
 			}
 
-			foreach (CompanyLocation s in customer.Locations)
+			foreach (CompanyAddress s in customer.Locations)
 			{
 				s.Company = this;
 				s.Update();

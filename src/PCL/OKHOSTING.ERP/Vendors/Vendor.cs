@@ -78,7 +78,7 @@ namespace OKHOSTING.ERP.Vendors
 				s.Update();
 			}
 
-			foreach (CompanyLocation s in vendor.Locations)
+			foreach (CompanyAddress s in vendor.Locations)
 			{
 				s.Company = this;
 				s.Update();

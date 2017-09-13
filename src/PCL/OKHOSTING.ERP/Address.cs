@@ -6,16 +6,8 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// An address of a person or a company
 	/// </summary>
-	public class Location : ORM.Model.Base<Guid>
+	public class Address : ORM.Model.Base<Guid>
 	{
-		[RequiredValidator]
-		[StringLengthValidator(100)]
-		public string Name
-		{
-			get;
-			set;
-		}
-
 		/// <summary>
 		/// Name of the street
 		/// </summary>

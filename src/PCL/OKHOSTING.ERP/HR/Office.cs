@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OKHOSTING.ERP.HR
 {
-	public class Office: CompanyLocation
+	public class Office: CompanyAddress
 	{
 	}
 }

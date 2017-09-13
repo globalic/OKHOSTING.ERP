@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OKHOSTING.ERP</RootNamespace>
-    <AssemblyName>OKHOSTING.ERP</AssemblyName>
+    <AssemblyName>OKHOSTING.ERP.New</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -52,7 +52,7 @@
     <Compile Include="Accounting\PeriodicTypeCalculatedAccount.cs" />
     <Compile Include="Accounting\TypeCalculatedAccount.cs" />
     <Compile Include="Company.cs" />
-    <Compile Include="CompanyLocation.cs" />
+    <Compile Include="CompanyAddress.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="Currency.cs" />
@@ -114,7 +114,7 @@
     <Compile Include="Vendors\Vendor.cs" />
     <Compile Include="Vendors\VendorCategory.cs" />
     <Compile Include="Gender.cs" />
-    <Compile Include="Location.cs" />
+    <Compile Include="Address.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Customers.NewCustomerMail.html" />

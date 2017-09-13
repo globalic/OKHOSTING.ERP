@@ -8,7 +8,7 @@ using OKHOSTING.Data.Validation;
 
 namespace OKHOSTING.ERP.Inventory
 {
-	public class Warehouse : CompanyLocation
+	public class Warehouse : CompanyAddress
 	{
 		public ICollection<WarehouseInventory> Inventory
 		{

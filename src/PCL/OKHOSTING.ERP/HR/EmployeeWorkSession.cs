@@ -15,7 +15,7 @@ namespace OKHOSTING.ERP.HR
 		public TimeSpan Lenght { get; set; }
 
 		[RequiredValidator]
-		public Location Location { get; set; }
+		public Address Location { get; set; }
 
 		[RequiredValidator]
 		public bool StartedOnTime { get; set; }

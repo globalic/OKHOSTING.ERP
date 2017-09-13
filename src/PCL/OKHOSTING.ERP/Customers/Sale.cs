@@ -74,43 +74,5 @@ namespace OKHOSTING.ERP.Customers
 		//	OKHOSTING.ERP.Local.Mexico.FacturacionElectronica.Factura.RegenerarFactura(this);
 		//}
 
-		/// <summary>
-		/// Re-calculates customer's balance
-		/// </summary>
-		protected override void OnAfterInsert(DataBase sender, OperationEventArgs eventArgs)
-		{
-			base.OnAfterInsert(sender, eventArgs);
-
-			//re-calculate customer balance
-			Customer.SelectOnce();
-			Customer.CalculateStatistics();
-			Customer.Save();
-		}
-
-		/// <summary>
-		/// Re-calculates customer's balance
-		/// </summary>
-		protected override void OnAfterUpdate(DataBase sender, OperationEventArgs eventArgs)
-		{
-			base.OnAfterUpdate(sender, eventArgs);
-
-			//re-calculate customer balance
-			Customer.SelectOnce();
-			Customer.CalculateStatistics();
-			Customer.Save();
-		}
-
-		/// <summary>
-		/// Re-calculates customer's balance
-		/// </summary>
-		protected override void OnAfterDelete(DataBase sender, OperationEventArgs eventArgs)
-		{
-			base.OnAfterDelete(sender, eventArgs);
-
-			//re-calculate customer balance
-			Customer.SelectOnce();
-			Customer.CalculateStatistics();
-			Customer.Save();
-		}
 	}
 }

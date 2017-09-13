@@ -89,7 +89,7 @@ namespace OKHOSTING.ERP
 
 		#region Collections
 
-		public ICollection<CompanyLocation> Locations
+		public ICollection<CompanyAddress> Locations
 		{
 			get;
 			set;

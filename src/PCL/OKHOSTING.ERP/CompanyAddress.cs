@@ -5,10 +5,17 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// A location that belongs to a company
 	/// </summary>
-	public class CompanyLocation : Location
+	public class CompanyAddress : Address
 	{
 		[RequiredValidator]
 		public Company Company
+		{
+			get;
+			set;
+		}
+
+		[RequiredValidator]
+		public CompanyAddressType AddressType
 		{
 			get;
 			set;
