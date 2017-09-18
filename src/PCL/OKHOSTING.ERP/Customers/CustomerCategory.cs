@@ -8,8 +8,10 @@ namespace OKHOSTING.ERP.Customers
 	/// <summary>
 	/// A category for customers
 	/// </summary>
-	public class CustomerCategory : ORM.Model.Base<Guid>
+	public class CustomerCategory
 	{
+		public Guid Id { get; set; }
+
 		[StringLengthValidator(250)]
 		[RequiredValidator]
 		public string Name

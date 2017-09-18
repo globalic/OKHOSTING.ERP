@@ -6,8 +6,10 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// An address of a person or a company
 	/// </summary>
-	public class Address : ORM.Model.Base<Guid>
+	public class Address
 	{
+		public Guid Id { get; set; }
+
 		/// <summary>
 		/// Name of the street
 		/// </summary>

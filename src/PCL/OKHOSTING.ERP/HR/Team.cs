@@ -4,8 +4,10 @@ using OKHOSTING.Data.Validation;
 
 namespace OKHOSTING.ERP.HR
 {
-	public class Team : ORM.Model.Base<Guid>
+	public class Team
 	{
+		public Guid Id { get; set; }
+
 		[RequiredValidator]
 		[StringLengthValidator(100)]
 		public string Name

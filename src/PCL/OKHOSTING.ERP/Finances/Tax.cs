@@ -7,8 +7,10 @@ namespace OKHOSTING.ERP.Finances
 	/// <summary>
 	/// A tax that can be applied to sales or purchases
 	/// </summary>
-	public class Tax : ORM.Model.Base<Guid>
+	public class Tax
 	{
+		public Guid Id { get; set; }
+
 		[RequiredValidator]
 		[StringLengthValidator(50)]
 		public string Name

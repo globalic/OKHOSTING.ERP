@@ -2,17 +2,19 @@
 using System.Linq;
 using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
-using OKHOSTING.ORM;
-using OKHOSTING.ORM.Operations;
+
+
 
 namespace OKHOSTING.ERP.Production
 {
 	/// <summary>
 	/// The main class for tracking employee time
 	/// </summary>
-	public class Task: ORM.Model.Base<Guid>
+	public class Task
 	{
 		#region Basic properties
+
+		public Guid Id { get; set; }
 
 		/// <summary>
 		/// Name of the task, should summarize the hole task in a few words
@@ -201,67 +203,7 @@ namespace OKHOSTING.ERP.Production
 
 		#region Recalculate values
 
-		protected override void OnBeforeInsert(DataBase sender, OperationEventArgs eventArgs)
-		{
-			base.OnBeforeInsert(sender, eventArgs);
-
-			if (Parent != null)
-			{
-				if (Customer == null)
-				{
-					Customer  = Parent.Customer;
-				}
-
-				if (AssignedTo == null)
-				{
-					AssignedTo = Parent.AssignedTo;
-				}
-			}
-		}
-
-		protected override void OnBeforeUpdate(DataBase sender, OperationEventArgs eventArgs)
-		{
-			base.OnBeforeUpdate(sender, eventArgs);
-
-			if (Parent != null)
-			{
-				if (Customer == null)
-				{
-					Customer = Parent.Customer;
-				}
-
-				if (AssignedTo == null)
-				{
-					AssignedTo = Parent.AssignedTo;
-				}
-			}
-		}
-
-		protected override void OnAfterInsert(DataBase sender, OperationEventArgs eventArgs)
-		{
-			base.OnAfterInsert(sender, eventArgs);
-
-			if (Parent != null)
-			{
-				Parent.SelectOnce();
-				Parent.RecalculateValues();
-				Parent.Save();
-			}
-		}
-
-		protected override void OnAfterUpdate(DataBase sender, OperationEventArgs eventArgs)
-		{
-			base.OnAfterUpdate(sender, eventArgs);
-
-			if (Parent != null)
-			{
-				Parent.SelectOnce();
-				Parent.RecalculateValues();
-				Parent.Save();
-			}
-		}
-
-		protected void RecalculateValues()
+		public void RecalculateValues()
 		{
 			TimeInvestedTotal = TimeInvested;
 			TotalSales = TotalPurchases = 0;
@@ -270,7 +212,7 @@ namespace OKHOSTING.ERP.Production
 			{
 				foreach (Task sub in SubTasks)
 				{
-					sub.SelectOnce();
+					//sub.SelectOnce();
 					//sub.RecalculateValues();
 
 					if (sub.StartDate < StartDate)

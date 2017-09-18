@@ -1,7 +1,7 @@
 using OKHOSTING.Data.Validation;
 using OKHOSTING.ERP.HR;
-using OKHOSTING.ORM;
-using OKHOSTING.ORM.Operations;
+
+
 using System;
 using System.Collections.Generic;
 
@@ -11,8 +11,10 @@ namespace OKHOSTING.ERP
 	/// A company
 	/// </summary>
 	/// <remarks>This is the base class for customers, vendors, competition and any kind of company</remarks>
-	public class Company : ORM.Model.Base<Guid>
+	public class Company
 	{
+		public Guid Id { get; set; }
+
 		[RequiredValidator]
 		[StringLengthValidator(100)]
 		public string LegalName
@@ -95,7 +97,7 @@ namespace OKHOSTING.ERP
 			set;
 		}
 
-		public ICollection<Employee> Employees
+		public ICollection<CompanyContact> Contacts
 		{
 			get;
 			set;
@@ -113,7 +115,7 @@ namespace OKHOSTING.ERP
 			{
 				string emails = string.Empty;
 
-				foreach (Employee contact in Employees)
+				foreach (CompanyContact contact in Contacts)
 				{
 					if (contact.Email != null && !emails.Contains(contact.Email))
 					{
@@ -146,7 +148,7 @@ namespace OKHOSTING.ERP
 			{
 				string telephones = string.Empty;
 
-				foreach (Employee contact in Employees)
+				foreach (CompanyContact contact in Contacts)
 				{
 					if (contact.Telephone != null && !telephones.Contains(contact.Telephone))
 					{
@@ -182,24 +184,6 @@ namespace OKHOSTING.ERP
 		}
 
 		#endregion
-
-		/// <summary>
-		/// Deletes all addresses and  contacts of this company
-		/// </summary>
-		protected override void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
-		{
-			base.OnBeforeDelete(sender, eventArgs);
-
-			foreach (var a in Locations)
-			{
-				sender.Delete(a);
-			}
-
-			foreach (var c in Employees)
-			{
-				sender.Delete(c);
-			}
-		}
 
 		public override string ToString()
 		{

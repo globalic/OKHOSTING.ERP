@@ -7,8 +7,10 @@ namespace OKHOSTING.ERP.Production
 	/// <summary>
 	/// An attachement to a task, including an optional file and an also optional comment
 	/// </summary>
-	public class TaskAttachement : ORM.Model.Base<Guid>
+	public class TaskAttachement
 	{
+		public Guid Id { get; set; }
+
 		[RequiredValidator]
 		public Task Task
 		{
@@ -37,10 +39,10 @@ namespace OKHOSTING.ERP.Production
 			set;
 		}
 
-		public Files.Element Attachement
-		{
-			get;
-			set;
-		}
+		//public Files.Element Attachement
+		//{
+		//	get;
+		//	set;
+		//}
 	}
 }

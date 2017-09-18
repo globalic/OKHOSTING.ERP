@@ -1,6 +1,7 @@
 ﻿using OKHOSTING.ERP.Customers;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
+using OKHOSTING.ORM.Model;
 
 namespace OKHOSTING.ERP.ORM
 {
@@ -9,10 +10,10 @@ namespace OKHOSTING.ERP.ORM
 		/// <summary>
 		/// Re-calculates customer's balance
 		/// </summary>
-		protected static void OnAfterInsert(this Sale sale, DataBase sender, OperationEventArgs eventArgs)
+		public static void OnAfterInsert(this Sale sale, DataBase sender, OperationEventArgs eventArgs)
 		{
 			//re-calculate customer balance
-			sale.Customer.SelectOnce();
+			sale.Customer.Select();
 			sale.Customer.CalculateStatistics();
 			sale.Customer.Save();
 		}
@@ -20,28 +21,27 @@ namespace OKHOSTING.ERP.ORM
 		/// <summary>
 		/// Re-calculates customer's balance
 		/// </summary>
-		protected override void OnAfterUpdate(DataBase sender, OperationEventArgs eventArgs)
+		public static void OnAfterUpdate(this Sale sale, DataBase sender, OperationEventArgs eventArgs)
 		{
-			base.OnAfterUpdate(sender, eventArgs);
+			//base.OnAfterUpdate(sender, eventArgs);
 
 			//re-calculate customer balance
-			Customer.SelectOnce();
-			Customer.CalculateStatistics();
-			Customer.Save();
+			sale.Customer.Select();
+			sale.Customer.CalculateStatistics();
+			sale.Customer.Save();
 		}
 
 		/// <summary>
 		/// Re-calculates customer's balance
 		/// </summary>
-		protected override void OnAfterDelete(DataBase sender, OperationEventArgs eventArgs)
+		public static void OnAfterDelete(this Sale sale, DataBase sender, OperationEventArgs eventArgs)
 		{
-			base.OnAfterDelete(sender, eventArgs);
+			//base.OnAfterDelete(sender, eventArgs);
 
 			//re-calculate customer balance
-			Customer.SelectOnce();
-			Customer.CalculateStatistics();
-			Customer.Save();
+			sale.Customer.Select();
+			sale.Customer.CalculateStatistics();
+			sale.Customer.Save();
 		}
-
 	}
 }

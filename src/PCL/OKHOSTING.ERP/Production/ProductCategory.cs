@@ -7,8 +7,10 @@ namespace OKHOSTING.ERP.Production
 	/// <summary>
 	/// A category for products
 	/// </summary>
-	public class ProductCategory : ORM.Model.Base<Guid>
+	public class ProductCategory
 	{
+		public Guid Id { get; set; }
+
 		public ProductCategory Parent
 		{
 			get;

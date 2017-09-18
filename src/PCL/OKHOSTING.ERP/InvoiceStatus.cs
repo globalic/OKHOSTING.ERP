@@ -1,14 +1,16 @@
 using System;
 using OKHOSTING.Data.Validation;
-using OKHOSTING.ORM;
+
 
 namespace OKHOSTING.ERP
 {
 	/// <summary>
 	/// Tax applied to an invoice item
 	/// </summary>
-	public class InvoiceStatus : ORM.Model.Base<Guid>
+	public class InvoiceStatus
 	{
+		public Guid Id { get; set; }
+
 		/// <summary>
 		/// Ammount being charged as tax
 		/// </summary>

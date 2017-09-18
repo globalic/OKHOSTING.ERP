@@ -7,8 +7,10 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// A country
 	/// </summary>
-	public class Country : ORM.Model.Base<Guid>
+	public class Country
 	{
+		public Guid Id { get; set; }
+
 		/// <summary>
 		/// Name of the country
 		/// </summary>

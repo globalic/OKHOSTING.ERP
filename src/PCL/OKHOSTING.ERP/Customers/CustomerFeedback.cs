@@ -10,8 +10,10 @@ namespace OKHOSTING.ERP.Customers
 	/// <summary>
 	/// Represents a customer feedback where the customer is expressing his overall satisfaction level with our service
 	/// </summary>
-	public class CustomerFeedback : ORM.Model.Base<Guid>
+	public class CustomerFeedback
 	{
+		public Guid Id { get; set; }
+
 		public short SatisfactionLevel
 		{
 			get;

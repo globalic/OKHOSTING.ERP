@@ -2,8 +2,10 @@ using System;
 
 namespace OKHOSTING.ERP.Inventory
 {
-	public class WarehouseInventory : ORM.Model.Base<Guid>
+	public class WarehouseInventory
 	{
+		public Guid Id { get; set; }
+
 		public WarehouseProduct Product
 		{
 			get;

@@ -53,6 +53,8 @@
     <Compile Include="Accounting\TypeCalculatedAccount.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="CompanyAddress.cs" />
+    <Compile Include="CompanyAddressType.cs" />
+    <Compile Include="CompanyContact.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="Currency.cs" />
@@ -71,7 +73,6 @@
     <Compile Include="HR\EmployeeWorkSession.cs" />
     <Compile Include="HR\SalaryType.cs" />
     <Compile Include="Customers\SalesPerson.cs" />
-    <Compile Include="Production\AutomatedTask.cs" />
     <Compile Include="Customers\PointOfSale.cs" />
     <Compile Include="Production\Task.cs" />
     <Compile Include="Production\TaskAttachement.cs" />
@@ -143,25 +144,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\OKHOSTING.Core\src\PCL\OKHOSTING.Core\OKHOSTING.Core.csproj">
+    <ProjectReference Include="..\..\..\..\OKHOSTING.Core\src\PCL\OKHOSTING.Core\OKHOSTING.Core.csproj">
       <Project>{a5394469-222e-47f2-b88e-670f7d25ad8e}</Project>
       <Name>OKHOSTING.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\OKHOSTING.Data\src\PCL\OKHOSTING.Data\OKHOSTING.Data.csproj">
+    <ProjectReference Include="..\..\..\..\OKHOSTING.Data\src\PCL\OKHOSTING.Data\OKHOSTING.Data.csproj">
       <Project>{5ba0cbac-63e5-4e01-aeca-67ae3b63503b}</Project>
       <Name>OKHOSTING.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\OKHOSTING.Files\src\PCL\OKHOSTING.Files\OKHOSTING.Files.csproj">
-      <Project>{0a277eb9-39dd-43b7-aeca-1250f4e62a10}</Project>
-      <Name>OKHOSTING.Files</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\OKHOSTING.ORM\src\PCL\OKHOSTING.ORM\OKHOSTING.ORM.csproj">
-      <Project>{976ffeb3-e99d-4b0b-9735-98d2bb311986}</Project>
-      <Name>OKHOSTING.ORM</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\OKHOSTING.Sql\src\PCL\OKHOSTING.Sql\OKHOSTING.Sql.csproj">
-      <Project>{afc2147b-ead8-439b-8ca6-d1bf308064b3}</Project>
-      <Name>OKHOSTING.Sql</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

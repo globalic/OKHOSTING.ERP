@@ -7,8 +7,10 @@ namespace OKHOSTING.ERP
 	/// A category for invoices
 	/// </summary>
 	/// <remarks>Usefull to categorize invoices for customers anvendors, for internal control</remarks>
-	public class InvoiceCategory : ORM.Model.Base<Guid>
+	public class InvoiceCategory
 	{
+		public Guid Id { get; set; }
+
 		[RequiredValidator]
 		[StringLengthValidator(50)]
 		public string Name

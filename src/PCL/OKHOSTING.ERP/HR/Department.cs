@@ -7,8 +7,10 @@ namespace OKHOSTING.ERP.HR
 	/// A company department. A logical division in the company.
 	/// </summary>
 	/// <example>Management, HR, Marketing, Production, IT, etc.</example>
-	public class Department : ORM.Model.Base<Guid>
+	public class Department
 	{
+		public Guid Id { get; set; }
+
 		[RequiredValidator]
 		[StringLengthValidator(100)]
 		public string Name

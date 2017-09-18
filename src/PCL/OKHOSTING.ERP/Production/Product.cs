@@ -9,8 +9,10 @@ namespace OKHOSTING.ERP.Production
 	/// <summary>
 	/// A product that can be purchased or saled
 	/// </summary>
-	public class Product : ORM.Model.Base<Guid>
+	public class Product
 	{
+		public Guid Id { get; set; }
+
 		[RequiredValidator]
 		public ProductCategory Category
 		{

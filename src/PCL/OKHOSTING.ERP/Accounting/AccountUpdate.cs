@@ -11,8 +11,10 @@ namespace OKHOSTING.ERP.Accounting
 	/// It's like a snapshot of the account value in a specific moment. An account value will always be
 	/// the same as it's last AccountUpdate value
 	/// </summary>
-	public class AccountUpdate : ORM.Model.Base<Guid>
+	public class AccountUpdate
 	{
+		public Guid Id { get; set; }
+
 		/// <summary>
 		/// Account that this update is affecting
 		/// </summary>

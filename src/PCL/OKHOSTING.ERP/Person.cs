@@ -7,8 +7,10 @@ namespace OKHOSTING.ERP
 	/// <summary>
 	/// Represents a person
 	/// </summary>
-	public class Person : ORM.Model.Base<Guid>
+	public class Person
 	{
+		public Guid Id { get; set; }
+
 		/// <summary>
 		/// Prefix of the name that should be used when talking to this person
 		/// </summary>

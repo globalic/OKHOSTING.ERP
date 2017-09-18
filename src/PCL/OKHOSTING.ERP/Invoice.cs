@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using OKHOSTING.Data.Validation;
-using OKHOSTING.ORM;
-using OKHOSTING.ORM.Operations;
+
+
 
 namespace OKHOSTING.ERP
 {
@@ -11,8 +11,10 @@ namespace OKHOSTING.ERP
 	/// An invoice
 	/// </summary>
 	/// <remarks>An invoice can be a customer or a vendor invoice and represents a bussines transaction, a sale or a purchase</remarks>
-	public class Invoice : ORM.Model.Base<Guid>
+	public class Invoice
 	{
+		public Guid Id { get; set; }
+
 		[StringLengthValidator(50)]
 		public string AuxId
 		{
@@ -193,81 +195,6 @@ namespace OKHOSTING.ERP
 				return AuxId.ToString();
 			else
 				return Id.ToString();
-		}
-
-		/// <summary>
-		/// Deletes all items and payments of this invoice
-		/// </summary>
-		protected override void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
-		{
-			base.OnBeforeDelete(sender, eventArgs);
-
-			foreach (var i in Items)
-			{
-				sender.Delete(i);
-			}
-
-			foreach (var p in Payments)
-			{
-				sender.Delete(p);
-			}
-		}
-
-		/*
-		/// <summary>
-		/// Search for list and subscription items and deal with them
-		/// </summary>
-		protected override void  OnBeforeInsert()
-		{
-			base.OnBeforeInsert();
-
-			//if no items are defined, exit
-			if (Items == null) return;
-
-			//search for subscription products
-			for (int i = 0; i < Items.Count; i++)
-			{
-				InvoiceItem item = (InvoiceItem)Items[i];
-				SubscriptionProduct subscriptionProduct = new SubscriptionProduct();
-				subscriptionProduct.Id = item.Product.Id;
-
-				if (DataBase.Current.Select(subscriptionProduct) != null)
-				{
-					item.Product = subscriptionProduct;
-
-					//for subscriptions, create a SubscriptionInvoiceItem
-					SubscriptionInvoiceItem subscriptionItem = new SubscriptionInvoiceItem();
-
-					//copy values and replace current item
-					item.CopyTo(subscriptionItem);
-					subscriptionItem.Taxes = item.Taxes;
-					foreach (InvoiceItemTax tax in subscriptionItem.Taxes)
-					{
-						tax.Item = subscriptionItem;
-					}
-
-					Items[i] = subscriptionItem;
-				}
-			}
-		}
-		*/
-
-		/// <summary>
-		/// Inserts all items and payments along with the current invoice
-		/// </summary>
-		protected override void OnAfterInsert(DataBase sender, OperationEventArgs eventArgs)
-		{
-			base.OnAfterInsert(sender, eventArgs);
-
-			foreach (var i in Items)
-			{
-				i.Save();
-			}
-
-			foreach (var p in Payments)
-			{
-				p.Save();
-			}
 		}
 
 		#endregion
