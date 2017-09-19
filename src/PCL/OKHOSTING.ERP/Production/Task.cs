@@ -3,8 +3,6 @@ using System.Linq;
 using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
 
-
-
 namespace OKHOSTING.ERP.Production
 {
 	/// <summary>
@@ -26,6 +24,7 @@ namespace OKHOSTING.ERP.Production
 			get;
 			set;
 		}
+
 		bool _Finished;
 
 		/// <summary>
@@ -212,9 +211,6 @@ namespace OKHOSTING.ERP.Production
 			{
 				foreach (Task sub in SubTasks)
 				{
-					//sub.SelectOnce();
-					//sub.RecalculateValues();
-
 					if (sub.StartDate < StartDate)
 					{
 						StartDate = sub.StartDate;
@@ -226,7 +222,7 @@ namespace OKHOSTING.ERP.Production
 					}
 				}
 
-				Progress = (int)SubTasks.Average(t => t.Progress);
+				Progress = (int) SubTasks.Average(t => t.Progress);
 				TimeInvestedTotal += TimeSpan.FromTicks(SubTasks.Sum(t => t.TimeInvestedTotal.Ticks));
 
 				if (Finished && FinishDate == null)
