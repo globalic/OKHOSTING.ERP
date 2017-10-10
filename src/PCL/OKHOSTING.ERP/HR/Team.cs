@@ -29,12 +29,6 @@ namespace OKHOSTING.ERP.HR
 			set;
 		}
 
-		public Employee Leader
-		{
-			get;
-			set;
-		}
-
 		public Team Parent
 		{
 			get;

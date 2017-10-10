@@ -10,6 +10,8 @@ namespace OKHOSTING.ERP.Inventory
 {
 	public class Warehouse : CompanyAddress
 	{
+		public string Name { get; set; }
+
 		public ICollection<WarehouseInventory> Inventory
 		{
 			get;

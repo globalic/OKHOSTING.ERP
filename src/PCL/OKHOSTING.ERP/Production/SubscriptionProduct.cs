@@ -23,7 +23,7 @@ namespace OKHOSTING.ERP.Production
 		/// Unit used for subscription lenght
 		/// </summary>
 		[RequiredValidator]
-		public TimeUnit.Unit SubscriptionUnit
+		public Core.TimeUnit.Unit SubscriptionUnit
 		{
 			get;
 			set;
@@ -46,7 +46,7 @@ namespace OKHOSTING.ERP.Production
 		/// <summary>
 		/// Unit used for grace period lenght
 		/// </summary>
-		public TimeUnit.Unit GracePeriodUnit
+		public Core.TimeUnit.Unit GracePeriodUnit
 		{
 			get;
 			set;

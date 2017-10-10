@@ -49,7 +49,7 @@ namespace OKHOSTING.ERP.Accounting
 		/// Unit used for period lenght
 		/// </summary>
 		[RequiredValidator]
-		public TimeUnit.Unit PeriodUnit
+		public Core.TimeUnit.Unit PeriodUnit
 		{
 			get;
 			set;
@@ -80,11 +80,11 @@ namespace OKHOSTING.ERP.Accounting
 		public List<AccountUpdate> CalculateValues(DateTime from, DateTime to)
 		{
 			List<AccountUpdate> updates = new List<AccountUpdate>();
-			List<DateTime> repetitions = TimeUnit.GetRepetitions(Start, from, to, PeriodLenght, PeriodUnit);
+			IEnumerable<DateTime> repetitions = Core.TimeUnit.GetRepetitions(Start, from, to, PeriodLenght, PeriodUnit);
 
 			foreach (DateTime r in repetitions)
 			{
-				DateTime r2 = TimeUnit.Add(r, PeriodLenght, PeriodUnit).AddSeconds(-1);
+				DateTime r2 = Core.TimeUnit.Add(r, PeriodLenght, PeriodUnit).AddSeconds(-1);
 
 				//CriteriaOperator filter = CriteriaOperator.And
 				//(

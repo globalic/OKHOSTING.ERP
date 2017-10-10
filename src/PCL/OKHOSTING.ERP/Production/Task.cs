@@ -68,7 +68,7 @@ namespace OKHOSTING.ERP.Production
 		/// <summary>
 		/// Date when the task was finished or is supposed to finish in the furture
 		/// </summary>
-		public DateTime? FinishDate
+		public DateTime? EndDate
 		{
 			get;
 			set;
@@ -191,7 +191,7 @@ namespace OKHOSTING.ERP.Production
 		/// <summary>
 		/// Comments, files and directories related to this project
 		/// </summary>
-		public readonly ICollection<TaskAttachement> Updates;
+		public readonly ICollection<TaskAttachement> Attachements;
 
 		/// <summary>
 		/// Warehouse transactions related to this project
@@ -216,27 +216,27 @@ namespace OKHOSTING.ERP.Production
 						StartDate = sub.StartDate;
 					}
 
-					if (sub.FinishDate.Value > FinishDate)
+					if (sub.EndDate.Value > EndDate)
 					{
-						FinishDate = sub.FinishDate;
+						EndDate = sub.EndDate;
 					}
 				}
 
 				Progress = (int) SubTasks.Average(t => t.Progress);
 				TimeInvestedTotal += TimeSpan.FromTicks(SubTasks.Sum(t => t.TimeInvestedTotal.Ticks));
 
-				if (Finished && FinishDate == null)
+				if (Finished && EndDate == null)
 				{
-					FinishDate = DateTime.Now;
+					EndDate = DateTime.Now;
 
 					if (StartDate == null)
 					{
-						StartDate = FinishDate.Value.Subtract(TimeInvested);
+						StartDate = EndDate.Value.Subtract(TimeInvested);
 					}
 				}
 				else if (!Finished)
 				{
-					FinishDate = null;
+					EndDate = null;
 				}
 				
 				TotalSales += SubTasks.Sum(st => st.TotalSales);
@@ -251,6 +251,11 @@ namespace OKHOSTING.ERP.Production
 			}
 
 			Balance = TotalSales - TotalPurchases;
+		}
+
+		public Task Clone()
+		{
+			return (Task) MemberwiseClone();
 		}
 
 		#endregion
