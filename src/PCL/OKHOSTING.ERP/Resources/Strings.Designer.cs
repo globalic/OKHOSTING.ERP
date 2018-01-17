@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OKHOSTING.ERP.Resources {
+namespace OKHOSTING.ERP.New.Resources {
 	using System;
 	using System.Reflection;
 	
@@ -40,7 +40,7 @@ namespace OKHOSTING.ERP.Resources {
 		internal static global::System.Resources.ResourceManager ResourceManager {
 			get {
 				if (object.ReferenceEquals(resourceMan, null)) {
-					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OKHOSTING.ERP.Resources.Strings", typeof(Strings).GetTypeInfo().Assembly);
+					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OKHOSTING.ERP.New.Resources.Strings", typeof(Strings).GetTypeInfo().Assembly);
 					resourceMan = temp;
 				}
 				return resourceMan;

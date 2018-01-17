@@ -1,4 +1,4 @@
-﻿using OKHOSTING.ERP.HR;
+﻿using OKHOSTING.ERP.New.HR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.Inventory
+namespace OKHOSTING.ERP.New.Inventory
 {
 	public class Warehouse : CompanyAddress
 	{

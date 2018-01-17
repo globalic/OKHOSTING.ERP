@@ -2,7 +2,7 @@ using System;
 using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
 
-namespace OKHOSTING.ERP.HR
+namespace OKHOSTING.ERP.New.HR
 {
 	/// <summary>
 	/// En employee of the company

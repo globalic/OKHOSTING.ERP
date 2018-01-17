@@ -1,10 +1,10 @@
 using System;
-using OKHOSTING.ERP.Finances;
-using OKHOSTING.ERP.Vendors;
+using OKHOSTING.ERP.New.Finances;
+using OKHOSTING.ERP.New.Vendors;
 using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
 
-namespace OKHOSTING.ERP.Production
+namespace OKHOSTING.ERP.New.Production
 {
 	/// <summary>
 	/// A product that can be purchased or saled

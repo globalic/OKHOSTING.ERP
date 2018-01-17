@@ -2,7 +2,7 @@
 using OKHOSTING.Data.Validation;
 using System;
 
-namespace OKHOSTING.ERP.Accounting
+namespace OKHOSTING.ERP.New.Accounting
 {
 	/// <summary>
 	/// An account represents anything that can be "counted" in the company. It can be the number of customers,

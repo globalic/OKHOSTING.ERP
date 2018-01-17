@@ -1,7 +1,7 @@
 using System;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP
+namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// A currency that is used by the company for purchases or sales

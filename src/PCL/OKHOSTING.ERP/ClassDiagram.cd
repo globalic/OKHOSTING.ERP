@@ -21,21 +21,21 @@
   <Comment CommentText="Cadatarea o proyecto (Task) tiene una lista de subtareas, unalista de facturas (ingresos y egresos) y una lista de actualizaciones y archivos adjuntos (TaskAttachement)">
     <Position X="16.958" Y="6.402" Height="1.693" Width="1.7" />
   </Comment>
-  <Class Name="OKHOSTING.ERP.Company" Collapsed="true">
+  <Class Name="OKHOSTING.ERP.New.Company" Collapsed="true">
     <Position X="3" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAACAAAASEAAIAAAAACAAAhAEgCIABAAAAAAA=</HashCode>
       <FileName>Company.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.CompanyLocation" Collapsed="true">
+  <Class Name="OKHOSTING.ERP.New.CompanyLocation" Collapsed="true">
     <Position X="3" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>CompanyLocation.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Invoice">
+  <Class Name="OKHOSTING.ERP.New.Invoice">
     <Position X="10.75" Y="5.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
@@ -45,7 +45,7 @@
       <FileName>Invoice.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.InvoiceItem">
+  <Class Name="OKHOSTING.ERP.New.InvoiceItem">
     <Position X="10.75" Y="11.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
@@ -55,7 +55,7 @@
       <FileName>InvoiceItem.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.InvoicePayment">
+  <Class Name="OKHOSTING.ERP.New.InvoicePayment">
     <Position X="12.5" Y="11.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
@@ -65,14 +65,14 @@
       <FileName>InvoicePayment.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Location">
+  <Class Name="OKHOSTING.ERP.New.Location">
     <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAgIAEAAAAQAIAIAAAABAAIABAAAAAA=</HashCode>
       <FileName>Location.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Person">
+  <Class Name="OKHOSTING.ERP.New.Person">
     <Position X="8" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
@@ -82,21 +82,21 @@
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Customers.Customer" Collapsed="true">
+  <Class Name="OKHOSTING.ERP.New.Customers.Customer" Collapsed="true">
     <Position X="1.5" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAgAAAQAEAAEAAEgQBAAACAAAgQAiAAAABAAACAA=</HashCode>
       <FileName>Customers\Customer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Customers.PointOfSale" Collapsed="true">
+  <Class Name="OKHOSTING.ERP.New.Customers.PointOfSale" Collapsed="true">
     <Position X="3" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Customers\PointOfSale.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Customers.Sale">
+  <Class Name="OKHOSTING.ERP.New.Customers.Sale">
     <Position X="9.5" Y="9.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
@@ -106,84 +106,84 @@
       <FileName>Customers\Sale.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.HR.Employee">
+  <Class Name="OKHOSTING.ERP.New.HR.Employee">
     <Position X="11.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACgCAAAAAAAAAAEAAAAEAAAgAAAAAgEAAABAAAAAA=</HashCode>
       <FileName>HR\Employee.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.HR.EmployeeWorkSchedule">
+  <Class Name="OKHOSTING.ERP.New.HR.EmployeeWorkSchedule">
     <Position X="10.25" Y="3.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAACAAAAAAAAAAAAAACAAAAEAAAAAEAAAAAAA=</HashCode>
       <FileName>HR\EmployeeWorkSchedule.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.HR.EmployeeWorkSession">
+  <Class Name="OKHOSTING.ERP.New.HR.EmployeeWorkSession">
     <Position X="12.75" Y="3.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAEAAAAAAIAAAEACAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>HR\EmployeeWorkSession.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.HR.Office" Collapsed="true">
+  <Class Name="OKHOSTING.ERP.New.HR.Office" Collapsed="true">
     <Position X="0.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>HR\Office.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Inventory.Warehouse" Collapsed="true">
+  <Class Name="OKHOSTING.ERP.New.Inventory.Warehouse" Collapsed="true">
     <Position X="4.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>Inventory\Warehouse.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Inventory.WarehouseInventory" Collapsed="true">
+  <Class Name="OKHOSTING.ERP.New.Inventory.WarehouseInventory" Collapsed="true">
     <Position X="4" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAACIAAAAAAAAA=</HashCode>
       <FileName>Inventory\WarehouseInventory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Inventory.WarehouseProduct" Collapsed="true">
+  <Class Name="OKHOSTING.ERP.New.Inventory.WarehouseProduct" Collapsed="true">
     <Position X="20.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAQAAAgAAAAA=</HashCode>
       <FileName>Inventory\WarehouseProduct.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Inventory.WarehouseTransaction" Collapsed="true">
+  <Class Name="OKHOSTING.ERP.New.Inventory.WarehouseTransaction" Collapsed="true">
     <Position X="5.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAiIAAAAAAAAAAAAAAAAAAAAAAAAAABCEAAgAAAAQA=</HashCode>
       <FileName>Inventory\WarehouseTransaction.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Production.PackageProduct" Collapsed="true">
+  <Class Name="OKHOSTING.ERP.New.Production.PackageProduct" Collapsed="true">
     <Position X="18.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
       <FileName>Production\PackageProduct.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Production.Product" Collapsed="true">
+  <Class Name="OKHOSTING.ERP.New.Production.Product" Collapsed="true">
     <Position X="18.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQBAIAABwAggAAEAABQQAQAAAAAAIAAAAAAAAAACBA=</HashCode>
       <FileName>Production\Product.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Production.SubscriptionProduct" Collapsed="true">
+  <Class Name="OKHOSTING.ERP.New.Production.SubscriptionProduct" Collapsed="true">
     <Position X="16" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAAQAEAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Production\SubscriptionProduct.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Production.Task">
+  <Class Name="OKHOSTING.ERP.New.Production.Task">
     <Position X="14.5" Y="6.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
@@ -194,14 +194,14 @@
       <FileName>Production\Task.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Production.TaskAttachement">
+  <Class Name="OKHOSTING.ERP.New.Production.TaskAttachement">
     <Position X="16.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAgAAAABAEAAAAAABAA=</HashCode>
       <FileName>Production\TaskAttachement.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Vendors.Purchase">
+  <Class Name="OKHOSTING.ERP.New.Vendors.Purchase">
     <Position X="11.75" Y="9.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
@@ -211,7 +211,7 @@
       <FileName>Vendors\Purchase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OKHOSTING.ERP.Vendors.Vendor" Collapsed="true">
+  <Class Name="OKHOSTING.ERP.New.Vendors.Vendor" Collapsed="true">
     <Position X="4" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAgAAAAACAAAwQAAAAAQAAAACAA=</HashCode>

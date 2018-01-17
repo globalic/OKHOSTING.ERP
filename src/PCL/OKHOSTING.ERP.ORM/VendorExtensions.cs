@@ -1,9 +1,10 @@
 ﻿using OKHOSTING.ORM.Operations;
 using OKHOSTING.ORM;
-using OKHOSTING.ERP.Vendors;
+using OKHOSTING.ERP.New;
+using OKHOSTING.ERP.New.Vendors;
 using static OKHOSTING.ORM.Model.PersistentObjectExtensions;
 using System;
-using OKHOSTING.ERP.Production;
+using OKHOSTING.ERP.New.Production;
 
 namespace OKHOSTING.ERP.ORM
 {

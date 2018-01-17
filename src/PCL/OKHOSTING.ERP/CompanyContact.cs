@@ -1,6 +1,6 @@
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP
+namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// A person in a company who we have contact with

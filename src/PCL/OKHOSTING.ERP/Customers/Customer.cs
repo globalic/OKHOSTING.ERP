@@ -2,12 +2,12 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
-using OKHOSTING.ERP.HR;
-using OKHOSTING.ERP.Production;
+using OKHOSTING.ERP.New.HR;
+using OKHOSTING.ERP.New.Production;
 
 
 
-namespace OKHOSTING.ERP.Customers
+namespace OKHOSTING.ERP.New.Customers
 {
 	/// <summary>
 	/// A company that purchases products or services

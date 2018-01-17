@@ -1,7 +1,7 @@
 using System;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.Production
+namespace OKHOSTING.ERP.New.Production
 {
 	/// <summary>
 	/// A product or service that is active only a period of time

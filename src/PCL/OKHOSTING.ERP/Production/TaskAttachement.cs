@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.Production
+namespace OKHOSTING.ERP.New.Production
 {
 	/// <summary>
 	/// An attachement to a task, including an optional file and an also optional comment

@@ -5,7 +5,7 @@ using System.Text;
 //using OKHOSTING.Tools.Extensions;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.Accounting
+namespace OKHOSTING.ERP.New.Accounting
 {
 	/// <summary>
 	/// A calculated account that takes it's value from searching into an object list and filtering

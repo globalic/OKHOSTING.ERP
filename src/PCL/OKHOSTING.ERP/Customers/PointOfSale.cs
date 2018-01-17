@@ -1,4 +1,4 @@
-namespace OKHOSTING.ERP.Customers
+namespace OKHOSTING.ERP.New.Customers
 {
 	public class PointOfSale : CompanyAddress
 	{

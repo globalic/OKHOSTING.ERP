@@ -153,6 +153,10 @@
       <Project>{5ba0cbac-63e5-4e01-aeca-67ae3b63503b}</Project>
       <Name>OKHOSTING.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\..\OKHOSTING.Security\src\PCL\OKHOSTING.Security\OKHOSTING.Security.csproj">
+      <Project>{9fce3017-195b-46d7-a5bf-fbb0f352834f}</Project>
+      <Name>OKHOSTING.Security</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />

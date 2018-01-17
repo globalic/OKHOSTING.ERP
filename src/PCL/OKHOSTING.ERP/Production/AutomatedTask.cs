@@ -1,7 +1,7 @@
 ﻿using OKHOSTING.Data.Validation;
 using System.Reflection;
 
-namespace OKHOSTING.ERP.Production
+namespace OKHOSTING.ERP.New.Production
 {
 	/// <summary>
 	/// A method call with specific parameters that can be persisted and executed

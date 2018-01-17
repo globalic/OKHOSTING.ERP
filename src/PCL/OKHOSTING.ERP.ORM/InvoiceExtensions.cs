@@ -1,4 +1,5 @@
-﻿using OKHOSTING.ORM;
+﻿using OKHOSTING.ERP.New;
+using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
 
 namespace OKHOSTING.ERP.ORM

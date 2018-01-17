@@ -2,12 +2,12 @@ using System;
 using System.Linq;
 using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
-using OKHOSTING.ERP.Production;
+using OKHOSTING.ERP.New.Production;
 
 
-using OKHOSTING.ERP.HR;
+using OKHOSTING.ERP.New.HR;
 
-namespace OKHOSTING.ERP.Vendors
+namespace OKHOSTING.ERP.New.Vendors
 {
 	/// <summary>
 	/// A vendor who sales products or services to the company

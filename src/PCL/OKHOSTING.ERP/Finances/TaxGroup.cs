@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.Finances
+namespace OKHOSTING.ERP.New.Finances
 {
 	/// <summary>
 	/// A group of taxes that can be applied in a purchase or a sale

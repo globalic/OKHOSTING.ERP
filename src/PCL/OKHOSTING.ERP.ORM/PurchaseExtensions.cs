@@ -4,7 +4,7 @@ using System.Linq;
 using OKHOSTING.ORM.Operations;
 using OKHOSTING.ORM.Model;
 using OKHOSTING.ORM;
-using OKHOSTING.ERP.Vendors;
+using OKHOSTING.ERP.New.Vendors;
 
 namespace OKHOSTING.ERP.ORM
 {

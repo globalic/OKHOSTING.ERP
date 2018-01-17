@@ -2,7 +2,7 @@ using OKHOSTING.Data.Validation;
 
 
 
-namespace OKHOSTING.ERP.Customers
+namespace OKHOSTING.ERP.New.Customers
 {
 	/// <summary>
 	/// A sale made for a customer
@@ -50,28 +50,28 @@ namespace OKHOSTING.ERP.Customers
 
 		//public void CrearFactura()
 		//{
-		//	OKHOSTING.ERP.Local.Mexico.FacturacionElectronica.Factura.Sale_AfterInsert(this);
+		//	OKHOSTING.ERP.New.Local.Mexico.FacturacionElectronica.Factura.Sale_AfterInsert(this);
 		//}
 
 		//public void ReenviarFactura()
 		//{
-		//	OKHOSTING.ERP.Local.Mexico.FacturacionElectronica.Factura.EnviarFactura(this);
+		//	OKHOSTING.ERP.New.Local.Mexico.FacturacionElectronica.Factura.EnviarFactura(this);
 		//}
 
 		//public void RegenerarPDF()
 		//{
-		//	OKHOSTING.ERP.Local.Mexico.FacturacionElectronica.Factura.RegenerarPDF(this);
+		//	OKHOSTING.ERP.New.Local.Mexico.FacturacionElectronica.Factura.RegenerarPDF(this);
 		//}
 
 		//public void Cancelar()
 		//{
-		//	OKHOSTING.ERP.Local.Mexico.FacturacionElectronica.Factura.CancelarFactura(this);
+		//	OKHOSTING.ERP.New.Local.Mexico.FacturacionElectronica.Factura.CancelarFactura(this);
 		//}
 
 		//[Action]
 		//public void RegenerarFactura()
 		//{
-		//	OKHOSTING.ERP.Local.Mexico.FacturacionElectronica.Factura.RegenerarFactura(this);
+		//	OKHOSTING.ERP.New.Local.Mexico.FacturacionElectronica.Factura.RegenerarFactura(this);
 		//}
 
 	}

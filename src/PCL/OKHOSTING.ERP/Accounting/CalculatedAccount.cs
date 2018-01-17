@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace OKHOSTING.ERP.Accounting
+namespace OKHOSTING.ERP.New.Accounting
 {
 	/// <summary>
 	/// An account which value is automatically calculated by a child class and allows

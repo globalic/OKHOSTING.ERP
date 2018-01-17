@@ -1,6 +1,6 @@
 using System;
 
-namespace OKHOSTING.ERP.Inventory
+namespace OKHOSTING.ERP.New.Inventory
 {
 	public class WarehouseInventory
 	{

@@ -1,5 +1,6 @@
 ﻿using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
+using OKHOSTING.ERP.New;
 
 namespace OKHOSTING.ERP.ORM
 {

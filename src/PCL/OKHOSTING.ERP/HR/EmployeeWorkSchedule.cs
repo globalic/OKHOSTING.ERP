@@ -1,7 +1,7 @@
 ﻿using OKHOSTING.Data.Validation;
 using System;
 
-namespace OKHOSTING.ERP.HR
+namespace OKHOSTING.ERP.New.HR
 {
 	public class EmployeeWorkSchedule
 	{

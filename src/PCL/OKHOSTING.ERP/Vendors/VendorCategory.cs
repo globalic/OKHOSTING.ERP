@@ -1,7 +1,7 @@
 using System;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.Vendors
+namespace OKHOSTING.ERP.New.Vendors
 {
 	public class VendorCategory
 	{

@@ -1,11 +1,11 @@
 using OKHOSTING.Data.Validation;
-using OKHOSTING.ERP.HR;
+using OKHOSTING.ERP.New.HR;
 
 
 using System;
 using System.Collections.Generic;
 
-namespace OKHOSTING.ERP
+namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// A company

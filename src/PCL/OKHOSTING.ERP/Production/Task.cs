@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.Production
+namespace OKHOSTING.ERP.New.Production
 {
 	/// <summary>
 	/// The main class for tracking employee time

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using OKHOSTING.ERP.New;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
 using OKHOSTING.ORM.Model;
@@ -64,13 +65,13 @@ namespace OKHOSTING.ERP.ORM
 
 				sender.Select(item.Product);
 
-				Finances.TaxGroup group = null;
+				ERP.New.Finances.TaxGroup group = null;
 
-				if (item.Invoice is Customers.Sale)
+				if (item.Invoice is New.Customers.Sale)
 				{
 					group = item.Product.SaleTaxes;
 				}
-				else if (item.Invoice is Vendors.Purchase)
+				else if (item.Invoice is New.Vendors.Purchase)
 				{
 					group = item.Product.SaleTaxes;
 				}

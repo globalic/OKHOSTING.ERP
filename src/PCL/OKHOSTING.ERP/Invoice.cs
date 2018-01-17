@@ -5,7 +5,7 @@ using OKHOSTING.Data.Validation;
 
 
 
-namespace OKHOSTING.ERP
+namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// An invoice

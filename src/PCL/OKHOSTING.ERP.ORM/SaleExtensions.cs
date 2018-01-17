@@ -1,4 +1,4 @@
-﻿using OKHOSTING.ERP.Customers;
+﻿using OKHOSTING.ERP.New.Customers;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
 using OKHOSTING.ORM.Model;

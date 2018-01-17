@@ -1,7 +1,7 @@
 using System;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.Production
+namespace OKHOSTING.ERP.New.Production
 {
 	/// <summary>
 	/// Represents a Subscription to a service, wether a sale or a purchase. Allows administrators

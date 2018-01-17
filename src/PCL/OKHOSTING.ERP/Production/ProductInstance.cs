@@ -1,10 +1,10 @@
 using System;
-using OKHOSTING.ERP.Vendors;
-using OKHOSTING.ERP.Customers;
+using OKHOSTING.ERP.New.Vendors;
+using OKHOSTING.ERP.New.Customers;
 using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
 
-namespace OKHOSTING.ERP.Production
+namespace OKHOSTING.ERP.New.Production
 {
 	/// <summary>
 	/// Instance of a product, a product that was bought or sold and
@@ -200,7 +200,7 @@ namespace OKHOSTING.ERP.Production
 		public static void Synchronize(List<ProductInstance> externalList, Type productInstanceType)
 		{
 			//logging
-			const string LogType = "OKHOSTING.ERP.Production.ProductInstance.Synchronize()";
+			const string LogType = "OKHOSTING.ERP.New.Production.ProductInstance.Synchronize()";
 			const string LogSource = "Synchronize()";
 
 			if (externalList == null) throw new ArgumentNullException("externalList");
@@ -319,8 +319,8 @@ namespace OKHOSTING.ERP.Production
 		[Action]
 		public static void Synchronize(Product product)
 		{
-			const string LogType = "OKHOSTING.ERP.Production.ProductInstance.Synchronize(OKHOSTING.ERP.Production.Product)";
-			const string LogSource = "Synchronize(OKHOSTING.ERP.Production.Product)";
+			const string LogType = "OKHOSTING.ERP.New.Production.ProductInstance.Synchronize(OKHOSTING.ERP.New.Production.Product)";
+			const string LogSource = "Synchronize(OKHOSTING.ERP.New.Production.Product)";
 
 			if (product == null) throw new ArgumentNullException("product");
 

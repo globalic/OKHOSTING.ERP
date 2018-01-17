@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace OKHOSTING.ERP.Accounting
+namespace OKHOSTING.ERP.New.Accounting
 {
 	/// <summary>
 	/// A calculated account that takes it's value from evaluating an expression on a specific object
@@ -15,7 +15,7 @@ namespace OKHOSTING.ERP.Accounting
 		/// object that will be evaluated
 		/// </summary>
 		/// <example>
-		/// OKHOSTING.ERP.Customers.Customer, Oid={AD2451-64122F-78128A-E24516}
+		/// OKHOSTING.ERP.New.Customers.Customer, Oid={AD2451-64122F-78128A-E24516}
 		/// </example>
 		//public XPWeakReference EvaluatedObject
 		//{

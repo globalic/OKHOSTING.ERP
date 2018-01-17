@@ -1,8 +1,9 @@
 using System;
 using OKHOSTING.Data.Validation;
+using OKHOSTING.Security;
 using System.Collections.Generic;
 
-namespace OKHOSTING.ERP
+namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// Represents a person
@@ -143,6 +144,12 @@ namespace OKHOSTING.ERP
 				return (int) DateTime.Now.Subtract(BirthDate).TotalDays / 365; 
 			}
 		}
+
+        public User User
+        {
+            get;
+            set;
+        }
 
 		public override string ToString()
 		{

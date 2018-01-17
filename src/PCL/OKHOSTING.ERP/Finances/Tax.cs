@@ -2,7 +2,7 @@ using OKHOSTING.Data.Validation;
 using System;
 using System.Collections.Generic;
 
-namespace OKHOSTING.ERP.Finances
+namespace OKHOSTING.ERP.New.Finances
 {
 	/// <summary>
 	/// A tax that can be applied to sales or purchases

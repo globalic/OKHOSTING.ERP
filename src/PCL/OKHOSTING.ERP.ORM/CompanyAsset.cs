@@ -11,6 +11,6 @@ namespace OKHOSTING.ERP.ORM
 		/// <summary>
 		/// The company that owns the asset
 		/// </summary>
-		public Company Company { get; set; }
+		public OKHOSTING.ERP.New.Company Company { get; set; }
 	}
 }

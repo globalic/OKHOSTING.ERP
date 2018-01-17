@@ -1,7 +1,8 @@
 ﻿using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
-using OKHOSTING.ERP.Customers;
-using OKHOSTING.ERP.Production;
+using OKHOSTING.ERP.New;
+using OKHOSTING.ERP.New.Customers;
+using OKHOSTING.ERP.New.Production;
 using static OKHOSTING.ORM.Model.PersistentObjectExtensions;
 using System;
 

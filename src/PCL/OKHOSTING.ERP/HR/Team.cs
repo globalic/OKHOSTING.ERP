@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.HR
+namespace OKHOSTING.ERP.New.HR
 {
 	public class Team
 	{
@@ -23,11 +23,11 @@ namespace OKHOSTING.ERP.HR
 			set;
 		}
 
-		public Company Company
-		{
-			get;
-			set;
-		}
+		//public Company Company
+		//{
+		//	get;
+		//	set;
+		//}
 
 		public Team Parent
 		{

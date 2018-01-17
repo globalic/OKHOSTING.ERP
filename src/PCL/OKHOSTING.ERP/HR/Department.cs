@@ -1,7 +1,7 @@
 using OKHOSTING.Data.Validation;
 using System;
 
-namespace OKHOSTING.ERP.HR
+namespace OKHOSTING.ERP.New.HR
 {
 	/// <summary>
 	/// A company department. A logical division in the company.

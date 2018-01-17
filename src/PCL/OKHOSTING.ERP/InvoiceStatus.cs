@@ -2,7 +2,7 @@ using System;
 using OKHOSTING.Data.Validation;
 
 
-namespace OKHOSTING.ERP
+namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// Tax applied to an invoice item

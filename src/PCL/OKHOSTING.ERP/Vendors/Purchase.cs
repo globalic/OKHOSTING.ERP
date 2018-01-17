@@ -3,7 +3,7 @@ using OKHOSTING.Data.Validation;
 
 
 
-namespace OKHOSTING.ERP.Vendors
+namespace OKHOSTING.ERP.New.Vendors
 {
 	/// <summary>
 	/// A purchase that the company made to a vendor
@@ -12,7 +12,7 @@ namespace OKHOSTING.ERP.Vendors
 	{
 		public Purchase()
 		{
-			InvoiceType = ERP.InvoiceType.Purchase;
+			InvoiceType = ERP.New.InvoiceType.Purchase;
 		}
 
 		[RequiredValidator]
