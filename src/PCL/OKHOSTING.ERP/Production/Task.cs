@@ -194,14 +194,18 @@ namespace OKHOSTING.ERP.New.Production
 		public readonly ICollection<TaskAttachement> Attachements;
 
 		/// <summary>
+		/// Schedules for this task
+		/// </summary>
+		public readonly ICollection<TaskSchedule> Schedules;
+
+		/// <summary>
 		/// Warehouse transactions related to this project
 		/// </summary>
 		public readonly ICollection<Inventory.WarehouseTransaction> WarehouseTransactions;
 
-		#endregion
-
-		#region Recalculate values
-
+		/// <summary>
+		/// Recalculates Progress, StartDate, EndDate, TimeInvestedTotal, TotalSales, TotalPurchases and Balance properties based on SubTasks and Invoices
+		/// </summary>
 		public void RecalculateValues()
 		{
 			TimeInvestedTotal = TimeInvested;
@@ -222,7 +226,7 @@ namespace OKHOSTING.ERP.New.Production
 					}
 				}
 
-				Progress = (int) SubTasks.Average(t => t.Progress);
+				Progress = (int)SubTasks.Average(t => t.Progress);
 				TimeInvestedTotal += TimeSpan.FromTicks(SubTasks.Sum(t => t.TimeInvestedTotal.Ticks));
 
 				if (Finished && EndDate == null)
@@ -238,7 +242,7 @@ namespace OKHOSTING.ERP.New.Production
 				{
 					EndDate = null;
 				}
-				
+
 				TotalSales += SubTasks.Sum(st => st.TotalSales);
 				TotalPurchases += SubTasks.Sum(st => st.TotalPurchases);
 				Balance += SubTasks.Sum(st => st.Balance);
@@ -253,12 +257,13 @@ namespace OKHOSTING.ERP.New.Production
 			Balance = TotalSales - TotalPurchases;
 		}
 
+		#endregion
+
+
 		public Task Clone()
 		{
 			return (Task) MemberwiseClone();
 		}
-
-		#endregion
 
 		public override string ToString()
 		{

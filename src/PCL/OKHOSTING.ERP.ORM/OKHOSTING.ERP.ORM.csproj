@@ -59,11 +59,14 @@
     <Compile Include="InvoiceItemExtensions.cs" />
     <Compile Include="InvoiceItemTaxExtensions.cs" />
     <Compile Include="InvoicePaymentExtensions.cs" />
+    <Compile Include="ProductInstanceExtensions.cs" />
     <Compile Include="PackageProductExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurchaseExtensions.cs" />
     <Compile Include="SaleExtensions.cs" />
+    <Compile Include="SubscriptionExtensions.cs" />
     <Compile Include="TaskExtensions.cs" />
+    <Compile Include="TaskScheduler.cs" />
     <Compile Include="VendorExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

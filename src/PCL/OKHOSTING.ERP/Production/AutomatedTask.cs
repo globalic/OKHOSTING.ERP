@@ -46,24 +46,45 @@ namespace OKHOSTING.ERP.New.Production
 		}
 
 		/// <summary>
+		/// Returns true if the method was already executed and failed
+		/// </summary>
+		public bool Failed
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
 		/// Executes the method and returns a generated subtask with the result
 		/// </summary>
 		public void Execute()
 		{
 			StartDate = System.DateTime.Now;
 
-			//if method is static, just execute it
-			if (Method.IsStatic)
+			try
 			{
-				Result = Method.Invoke(null, Parameters);
-			}
-			else
-			{
-				Result = Method.Invoke(Instance, Parameters);
-			}
+				//if method is static, just execute it
+				if (Method.IsStatic)
+				{
+					Result = Method.Invoke(null, Parameters);
+				}
+				else
+				{
+					Result = Method.Invoke(Instance, Parameters);
+				}
 
-			Finished = true;
-			EndDate = System.DateTime.Now;
+				Failed = false;
+			}
+			catch (System.Exception e)
+			{
+				Failed = true;
+				Result = e;
+			}
+			finally
+			{
+				EndDate = System.DateTime.Now;
+				TimeInvested = EndDate.Value - StartDate.Value;
+			}
 		}
 	}
 }

@@ -75,7 +75,7 @@
     <Compile Include="Customers\SalesPerson.cs" />
     <Compile Include="Customers\PointOfSale.cs" />
     <Compile Include="Production\AutomatedTask.cs" />
-    <Compile Include="Production\ScheduledTask.cs" />
+    <Compile Include="Production\TaskSchedule.cs" />
     <Compile Include="Invoice.cs" />
     <Compile Include="InvoiceCategory.cs" />
     <Compile Include="InvoiceItem.cs" />
