@@ -6,7 +6,7 @@ namespace OKHOSTING.ERP.New.Production
 	/// <summary>
 	/// A method call with specific parameters that can be persisted and executed
 	/// </summary>
-	public class AutomatedTask: Task
+	public class MethodAutomatedTask: Task
 	{
 		/// <summary>
 		/// If the method is not static, you must specify a persistent object instance where this method will be invoked
@@ -74,12 +74,10 @@ namespace OKHOSTING.ERP.New.Production
 				}
 
 				Failed = false;
-				Finished = true;
 			}
 			catch (System.Exception e)
 			{
 				Failed = true;
-				Finished = false;
 				Result = e;
 			}
 			finally
