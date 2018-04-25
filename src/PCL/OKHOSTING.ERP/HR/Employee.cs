@@ -1,6 +1,7 @@
 using System;
 using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OKHOSTING.ERP.New.HR
 {
@@ -59,16 +60,33 @@ namespace OKHOSTING.ERP.New.HR
 			set;
 		}
 
-		//	public ICollection<Task> AssignedTasks
-		//	{
-		//		   get;
-		//		   set;
-		//	}
+		/// <summary>
+		/// List of thasts directly assigned to this employee
+		/// </summary>
+		public ICollection<Production.Task> AssignedTasks
+		{
+			get;
+			set;
+		}
 
-		//	public ICollection<Task> OpenTasks
-		//	{
-		//		   get;
-		//		   set;
-		//	}
+		/// <summary>
+		/// List of credentials assigned to this employee
+		/// </summary>
+		public ICollection<IT.EmployeeCredentials> Credentials
+		{
+			get;
+			set;
+		}
+		 
+		/// <summary>
+		/// Returns the list of task that are assigned to this employee and not finished
+		/// </summary>
+		public IEnumerable<Production.Task> OpenTasks
+		{
+			get
+			{
+				return AssignedTasks?.Where(t => !t.Finished);
+			}
+		}
 	}
 }

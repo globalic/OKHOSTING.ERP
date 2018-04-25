@@ -39,10 +39,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OKHOSTING.Computers\src\PCL\OKHOSTING.Computers.Security\OKHOSTING.Computers.Security.csproj">
-      <Project>{adc976be-b43b-4607-af7e-bf3f7359b80a}</Project>
-      <Name>OKHOSTING.Computers.Security</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\OKHOSTING.Computers\src\PCL\OKHOSTING.Computers\OKHOSTING.Computers.csproj">
       <Project>{69f56594-4a8f-45f2-a79e-76f476ce92f1}</Project>
       <Name>OKHOSTING.Computers</Name>

@@ -2,10 +2,10 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
-using OKHOSTING.ERP.New.HR;
 using OKHOSTING.ERP.New.Production;
-
-
+using OKHOSTING.ORM;
+using OKHOSTING.ORM.Operations;
+using OKHOSTING.ORM.Model;
 
 namespace OKHOSTING.ERP.New.Customers
 {
@@ -168,6 +168,67 @@ namespace OKHOSTING.ERP.New.Customers
 			else
 			{
 				Active = true;
+			}
+		}
+
+		/// <summary>
+		/// Merges another Customer with the current Customer. Transfers all data from the other Customer into the current one,
+		/// including invoices, contacts, addresses, etc.
+		/// Re-assigns all foreign-key related data from the other Customer in favor of the current one
+		/// and deletes the merged Customer at the end.
+		/// </summary>
+		/// <remarks>
+		/// The merged Customer will be deleted. Customer properties will not be copied into the current Customer, only foreign-key related DataObjects will 
+		/// be reasigned to the current one
+		/// </remarks>
+		/// <param name="customer">Customer that willl be merged and deleted</param>
+		public void Merge(Customer customer)
+		{
+			if (customer.Id == this.Id)
+			{
+				throw new ArgumentException("Can't merge the same customer", "customer");
+			}
+
+			foreach (Sale s in customer.Sales)
+			{
+				s.Customer = this;
+				s.Update();
+			}
+
+			foreach (CompanyContact s in customer.Contacts)
+			{
+				s.Company = this;
+				s.Update();
+			}
+
+			foreach (CompanyAddress s in customer.Locations)
+			{
+				s.Company = this;
+				s.Update();
+			}
+
+			foreach (ProductInstance s in customer.SoldProducts)
+			{
+				s.SoldTo = this;
+				s.Update();
+			}
+
+			//delete the other customer
+			customer.Delete();
+
+			this.Save();
+		}
+
+		/// <summary>
+		/// Deletes all Sales of this customer
+		/// </summary>
+		public override void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
+		{
+			base.OnBeforeDelete(sender, eventArgs);
+
+			foreach (var s in Sales)
+			{
+				s.Delete();
 			}
 		}
 	}

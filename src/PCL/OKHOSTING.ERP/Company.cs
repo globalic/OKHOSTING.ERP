@@ -1,7 +1,6 @@
 using OKHOSTING.Data.Validation;
-using OKHOSTING.ERP.New.HR;
-
-
+using OKHOSTING.ORM;
+using OKHOSTING.ORM.Operations;
 using System;
 using System.Collections.Generic;
 
@@ -188,6 +187,22 @@ namespace OKHOSTING.ERP.New
 		public override string ToString()
 		{
 			return LegalName;
+		}
+
+		/// <summary>
+		/// Deletes all addresses and  contacts of this company
+		/// </summary>
+		public virtual void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
+		{
+			foreach (var a in Locations)
+			{
+				sender.Delete(a);
+			}
+
+			foreach (var c in Contacts)
+			{
+				sender.Delete(c);
+			}
 		}
 	}
 }

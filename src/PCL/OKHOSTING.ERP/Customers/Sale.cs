@@ -1,6 +1,6 @@
 using OKHOSTING.Data.Validation;
-
-
+using OKHOSTING.ORM;
+using OKHOSTING.ORM.Operations;
 
 namespace OKHOSTING.ERP.New.Customers
 {
@@ -73,6 +73,37 @@ namespace OKHOSTING.ERP.New.Customers
 		//{
 		//	OKHOSTING.ERP.New.Local.Mexico.FacturacionElectronica.Factura.RegenerarFactura(this);
 		//}
+		/// <summary>
+		/// Re-calculates customer's balance
+		/// </summary>
+		public override void OnAfterInsert(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//re-calculate customer balance
+			sender.Select(Customer);
+			Customer.CalculateStatistics();
+			sender.Update(Customer);
+		}
 
+		/// <summary>
+		/// Re-calculates customer's balance
+		/// </summary>
+		public void OnAfterUpdate(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//re-calculate customer balance
+			sender.Select(Customer);
+			Customer.CalculateStatistics();
+			sender.Update(Customer);
+		}
+
+		/// <summary>
+		/// Re-calculates customer's balance
+		/// </summary>
+		public void OnAfterDelete(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//re-calculate customer balance
+			sender.Select(Customer);
+			Customer.CalculateStatistics();
+			sender.Update(Customer);
+		}
 	}
 }

@@ -1,7 +1,7 @@
 using System;
 using OKHOSTING.Data.Validation;
-
-
+using OKHOSTING.ORM;
+using OKHOSTING.ORM.Operations;
 
 namespace OKHOSTING.ERP.New.Vendors
 {
@@ -20,6 +20,45 @@ namespace OKHOSTING.ERP.New.Vendors
 		{
 			get;
 			set;
+		}
+
+		/// <summary>
+		/// Re-calculates vendor's balance
+		/// </summary>
+		public void OnAfterInsert(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//base.OnAfterInsert(sender, eventArgs);
+
+			//re-calculate vendor balance
+			sender.Select(Vendor);
+			Vendor.CalculateBalance();
+			sender.Update(Vendor);
+		}
+
+		/// <summary>
+		/// Re-calculates vendor's balance
+		/// </summary>
+		public void OnAfterUpdate(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//base.OnAfterUpdate(sender, eventArgs);
+
+			//re-calculate vendor balance
+			sender.Select(Vendor);
+			Vendor.CalculateBalance();
+			sender.Update(Vendor);
+		}
+
+		/// <summary>
+		/// Re-calculates vendor's balance
+		/// </summary>
+		public void OnAfterDelete(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//base.OnAfterDelete(sender, eventArgs);
+
+			//re-calculate vendor balance
+			sender.Select(Vendor);
+			Vendor.CalculateBalance();
+			sender.Update(Vendor);
 		}
 	}
 }

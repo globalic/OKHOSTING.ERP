@@ -40,10 +40,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OKHOSTING.Computers\src\PCL\OKHOSTING.Computers.Security\OKHOSTING.Computers.Security.csproj">
-      <Project>{adc976be-b43b-4607-af7e-bf3f7359b80a}</Project>
-      <Name>OKHOSTING.Computers.Security</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\OKHOSTING.Computers\src\PCL\OKHOSTING.Computers\OKHOSTING.Computers.csproj">
       <Project>{69f56594-4a8f-45f2-a79e-76f476ce92f1}</Project>
       <Name>OKHOSTING.Computers</Name>
@@ -64,9 +60,13 @@
       <Project>{0c60ee4a-67ca-4de9-9390-623c43e4da5c}</Project>
       <Name>OKHOSTING.Hosting</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OKHOSTING.ERP.Computers\OKHOSTING.ERP.Computers.csproj">
-      <Project>{84385934-cb0c-405b-a590-e0caa6479faf}</Project>
-      <Name>OKHOSTING.ERP.Computers</Name>
+    <ProjectReference Include="..\..\..\..\OKHOSTING.ORM\src\PCL\OKHOSTING.ORM\OKHOSTING.ORM.csproj">
+      <Project>{976ffeb3-e99d-4b0b-9735-98d2bb311986}</Project>
+      <Name>OKHOSTING.ORM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\OKHOSTING.SQL\src\PCL\OKHOSTING.SQL\OKHOSTING.SQL.csproj">
+      <Project>{afc2147b-ead8-439b-8ca6-d1bf308064b3}</Project>
+      <Name>OKHOSTING.SQL</Name>
     </ProjectReference>
     <ProjectReference Include="..\OKHOSTING.ERP\OKHOSTING.ERP.New.csproj">
       <Project>{04c2f81a-439a-4e72-aa70-ba0c9c5fd77b}</Project>

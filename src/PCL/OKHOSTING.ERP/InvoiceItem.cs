@@ -3,8 +3,8 @@ using System.Linq;
 using OKHOSTING.ERP.New.Production;
 using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
-
-
+using OKHOSTING.ORM;
+using OKHOSTING.ORM.Operations;
 
 namespace OKHOSTING.ERP.New
 {
@@ -178,6 +178,116 @@ namespace OKHOSTING.ERP.New
 		public override string ToString()
 		{
 			return Description;
+		}
+
+		/// <summary>
+		/// Deletes all taxes of this item
+		/// </summary>
+		public void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//base.OnBeforeDelete(sender, eventArgs);
+
+			foreach (var tax in Taxes)
+			{
+				sender.Delete(tax);
+			}
+		}
+
+		/// <summary>
+		/// Recalculates invoice's totals
+		/// </summary>
+		public void OnAfterDelete(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//base.OnAfterDelete(sender, eventArgs);
+
+			//re-calculate invoice totals
+			sender.Select(Invoice);
+			Invoice.CalculateTotals();
+			sender.Update(Invoice);
+		}
+
+		/// <summary>
+		/// Calculates totals
+		/// </summary>
+		public void OnBeforeInsert(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//get price from product
+			if (Price == 0)
+			{
+				Price = Product.Price;
+			}
+
+			//base.OnBeforeInsert(sender, eventArgs);
+		}
+
+		/// <summary>
+		/// Inserts all items taxes along with the current item and recalculates item's and invoice's totals
+		/// </summary>
+		public void OnAfterInsert(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//base.OnAfterInsert(sender, eventArgs);
+
+			//insert item taxes according to product
+			if (Taxes == null || !Taxes.Any())
+			{
+				Taxes = new List<InvoiceItemTax>();
+
+				sender.Select(Product);
+
+				ERP.New.Finances.TaxGroup group = null;
+
+				if (Invoice is New.Customers.Sale)
+				{
+					group = Product.SaleTaxes;
+				}
+				else if (Invoice is New.Vendors.Purchase)
+				{
+					group = Product.SaleTaxes;
+				}
+
+				sender.Select(group);
+				sender.LoadCollection(group, g => g.Taxes);
+
+				foreach (var t in group.Taxes)
+				{
+					sender.Select(t.Tax);
+
+					InvoiceItemTax itemTax = new InvoiceItemTax();
+					itemTax.Item = this;
+					itemTax.Tax = t.Tax;
+					itemTax.CalculateAmount();
+
+					Taxes.Add(itemTax);
+
+					sender.Insert(itemTax);
+				}
+			}
+
+			sender.Select(Invoice);
+			Invoice.CalculateTotals();
+			sender.Update(Invoice);
+		}
+
+		/// <summary>
+		/// Re-calculates totals
+		/// </summary>
+		public void OnBeforeUpdate(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//base.OnBeforeUpdate(sender, eventArgs);
+			CalculateTotals();
+		}
+
+		/// <summary>
+		/// Recalculates invoice's totals
+		/// </summary>
+		public void OnAfterUpdate(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//base.OnAfterUpdate(sender, eventArgs);
+
+			//re-calculate invoice totals
+			sender.Select(Invoice);
+			Invoice.CalculateTotals();
+			sender.Update(Invoice);
 		}
 	}
 }

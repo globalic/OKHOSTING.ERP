@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
+using OKHOSTING.ORM;
+using OKHOSTING.ORM.Operations;
 
 namespace OKHOSTING.ERP.New.Production
 {
@@ -258,8 +260,7 @@ namespace OKHOSTING.ERP.New.Production
 		}
 
 		#endregion
-
-
+		
 		public Task Clone()
 		{
 			return (Task) MemberwiseClone();
@@ -268,6 +269,66 @@ namespace OKHOSTING.ERP.New.Production
 		public override string ToString()
 		{
 			return Name;
+		}
+
+		public void OnBeforeInsert(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//base.OnBeforeInsert(sender, eventArgs);
+
+			if (Parent != null)
+			{
+				if (Customer == null)
+				{
+					Customer = Parent.Customer;
+				}
+
+				if (AssignedTo == null)
+				{
+					AssignedTo = Parent.AssignedTo;
+				}
+			}
+		}
+
+		public void OnBeforeUpdate(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//base.OnBeforeUpdate(sender, eventArgs);
+
+			if (Parent != null)
+			{
+				if (Customer == null)
+				{
+					Customer = Parent.Customer;
+				}
+
+				if (AssignedTo == null)
+				{
+					AssignedTo = Parent.AssignedTo;
+				}
+			}
+		}
+
+		public void OnAfterInsert(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//base.OnAfterInsert(sender, eventArgs);
+
+			if (Parent != null)
+			{
+				sender.Select(Parent);
+				Parent.RecalculateValues();
+				sender.Save(Parent);
+			}
+		}
+
+		public void OnAfterUpdate(DataBase sender, OperationEventArgs eventArgs)
+		{
+			//base.OnAfterUpdate(sender, eventArgs);
+
+			if (Parent != null)
+			{
+				sender.Select(Parent);
+				Parent.RecalculateValues();
+				sender.Save(Parent);
+			}
 		}
 	}
 }

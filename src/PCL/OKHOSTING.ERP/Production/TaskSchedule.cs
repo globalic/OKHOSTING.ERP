@@ -1,6 +1,10 @@
 ﻿using OKHOSTING.Data.Validation;
+using OKHOSTING.ORM;
+using OKHOSTING.ORM.Filters;
+using OKHOSTING.ORM.Operations;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OKHOSTING.ERP.New.Production
 {
@@ -47,6 +51,48 @@ namespace OKHOSTING.ERP.New.Production
 				newTask.TimeInvestedTotal = newTask.TimeInvested = TimeSpan.Zero;
 
 				yield return newTask;
+			}
+		}
+
+		/// <summary>
+		/// Searches for al scheduled task that are active in the given timeframe, creates the repetitions for the each schecule and saves them in the database
+		/// </summary>
+		/// <example>
+		/// Use this for
+		/// </example>
+		public static void CreateScheduledTaskRepetitions(DateTime from, DateTime to)
+		{
+			using (var db = DataBase.CreateDataBase())
+			{
+				var select = new Select<TaskSchedule>();
+				var dtype = DataType<TaskSchedule>.GetMap();
+
+				select.AddMembers
+				(
+					t => t.Id,
+					t => t.RepeatEvery,
+					t => t.RepeatUnit,
+					t => t.StartDate,
+					t => t.EndDate,
+					t => t.Task.Id
+				);
+
+				select.Where.Add(new ValueCompareFilter(dtype[m => m.StartDate], from, Data.CompareOperator.LessThanEqual));
+				select.Where.Add(new ValueCompareFilter(dtype[m => m.EndDate], to, Data.CompareOperator.GreaterThanEqual));
+
+				var schedules = db.Select(select);
+
+				foreach (var schedule in schedules)
+				{
+					schedule.Task = db.SelectInherited(schedule.Task).Last();
+
+					var repetitions = schedule.GetRepetitions(from, to);
+
+					foreach (var rep in repetitions)
+					{
+						db.Insert(rep);
+					}
+				}
 			}
 		}
 	}
