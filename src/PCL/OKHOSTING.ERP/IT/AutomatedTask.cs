@@ -68,7 +68,7 @@ namespace OKHOSTING.ERP.New.IT
 		/// </summary>
 		public void Execute()
 		{
-			StartDate = System.DateTime.Now;
+			StartDate = DateTime.Now;
 
 			try
 			{
@@ -85,7 +85,7 @@ namespace OKHOSTING.ERP.New.IT
 				Failed = false;
 				Finished = true;
 			}
-			catch (System.Exception e)
+			catch (Exception e)
 			{
 				Failed = true;
 				Finished = false;
@@ -93,12 +93,16 @@ namespace OKHOSTING.ERP.New.IT
 			}
 			finally
 			{
-				EndDate = System.DateTime.Now;
+				EndDate = DateTime.Now;
 				TimeInvested = EndDate.Value - StartDate.Value;
 			}
 		}
 
-		public static void ExecutePendingAutomatedTasks()
+		/// <summary>
+		/// Loads from the database all the automated tasks that are assigned to the current computer or do not have a computer assigned (null), 
+		/// and tries to execute them all one by one
+		/// </summary>
+		public static void ExecuteAllPendingTasks()
 		{
 			using (var db = DataBase.CreateDataBase())
 			{
@@ -112,12 +116,17 @@ namespace OKHOSTING.ERP.New.IT
 					t => t.Method,
 					t => t.StartDate,
 					t => t.EndDate,
-					t => t.TimeInvested
+					t => t.TimeInvested,
+					t => t.Computer.Id
 				);
 
 				select.Where.Add(new ValueCompareFilter(dtype[m => m.Finished], false));
 				select.Where.Add(new ValueCompareFilter(dtype[m => m.StartDate], DateTime.Now, Data.CompareOperator.LessThanEqual));
-				select.Where.Add(new ValueCompareFilter(dtype[m => m.EndDate], DateTime.Now, Data.CompareOperator.GreaterThanEqual));
+
+				OrFilter or = new OrFilter();
+				or.InnerFilters.Add(new ValueCompareFilter(dtype[m => m.Computer.Id], null, Data.CompareOperator.Equal));
+				or.InnerFilters.Add(new ValueCompareFilter(dtype[m => m.Computer.Id], Computers.Computer.Current.Id, Data.CompareOperator.Equal));
+				select.Where.Add(or);
 
 				var tasks = db.Select(select);
 
