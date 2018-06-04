@@ -145,11 +145,11 @@ namespace OKHOSTING.ERP.New
 			}
 		}
 
-        public User User
-        {
-            get;
-            set;
-        }
+		public User User
+		{
+			get;
+			set;
+		}
 
 		public override string ToString()
 		{
