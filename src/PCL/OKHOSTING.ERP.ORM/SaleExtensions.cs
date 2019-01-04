@@ -9,6 +9,9 @@ namespace OKHOSTING.ERP.ORM
 	{
 		/// <summary>
 		/// Re-calculates customer's balance
+		/// <para xml:lang="es">
+		/// Recalcula el balance de un cliente
+		/// </para>
 		/// </summary>
 		public static void OnAfterInsert(this Sale sale, DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -20,6 +23,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Re-calculates customer's balance
+		/// <para xml:lang="es">
+		/// Recalcula el balance de un cliente
+		/// </para>
 		/// </summary>
 		public static void OnAfterUpdate(this Sale sale, DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -33,6 +39,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Re-calculates customer's balance
+		/// <para xml:lang="es">
+		/// Recalcula el balance de un cliente
+		/// </para>
 		/// </summary>
 		public static void OnAfterDelete(this Sale sale, DataBase sender, OperationEventArgs eventArgs)
 		{

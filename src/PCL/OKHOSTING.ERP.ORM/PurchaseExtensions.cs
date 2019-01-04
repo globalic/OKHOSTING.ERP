@@ -13,6 +13,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Re-calculates vendor's balance
+		/// <para xml:lang="es">
+		/// Recalcula el balance de un vendedor
+		/// </para>
 		/// </summary>
 		public static void OnAfterInsert(this Purchase purchase, DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -26,6 +29,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Re-calculates vendor's balance
+		/// <para xml:lang="es">
+		/// Recalcula el balance de un vendedor
+		/// </para>
 		/// </summary>
 		public static void OnAfterUpdate(this Purchase purchase, DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -39,6 +45,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Re-calculates vendor's balance
+		/// <para xml:lang="es">
+		/// Recalcula el balance de un vendedor
+		/// </para>
 		/// </summary>
 		public static void OnAfterDelete(this Purchase purchase, DataBase sender, OperationEventArgs eventArgs)
 		{

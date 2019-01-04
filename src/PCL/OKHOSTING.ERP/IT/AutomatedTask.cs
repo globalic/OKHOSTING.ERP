@@ -104,7 +104,7 @@ namespace OKHOSTING.ERP.New.IT
 		/// </summary>
 		public static void ExecuteAllPendingTasks()
 		{
-			using (var db = DataBase.CreateDataBase())
+			using (var db = Core.BaitAndSwitch.Create<DataBase>())
 			{
 				var select = new Select<AutomatedTask>();
 				var dtype = DataType<AutomatedTask>.GetMap();

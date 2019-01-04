@@ -11,7 +11,10 @@ using OfficeOpenXml;
 namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 {
 	/// <summary>
-	/// Exporta una serie de comprobanteuras a Excel
+	/// Exporta una serie de comprobantes a Excel
+		/// <para xml:lang="en">
+		/// Exports receipts to Excel
+		/// </para>
 	/// </summary>
 	public static class Exportador
 	{

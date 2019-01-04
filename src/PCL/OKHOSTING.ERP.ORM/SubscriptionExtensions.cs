@@ -13,8 +13,15 @@ namespace OKHOSTING.ERP.ORM
 	{
 		/// <summary>
 		/// Create / Renew the subscription when a new invoice has been created
+		/// <para xml:lang="es">
+		/// Crea / Renueva la suscripcion cuando una nueva factura ha sido creada
+		/// </para>
 		/// </summary>
-		/// <param name="item">InvoiceItem that was created and that affects this subscription</param>
+		/// <param name="item">InvoiceItem that was created and that affects this subscription
+		/// <para xml:lang="es">
+		/// InvoiceItem que fue creado y que afecta a esa suscripción
+		/// </para>
+		/// </param>
 		//public static void OnInvoiceItem_AfterInsert(this Subscription subscription, InvoiceItem item)
 		//{
 		//	//base.OnInvoiceItem_AfterInsert(item);
@@ -107,6 +114,10 @@ namespace OKHOSTING.ERP.ORM
 		///// <summary>
 		///// Sends an notification email to the customers 
 		///// notifying the expiration date of this service
+		///// <para xml:lang="es">
+		///// Envía una notificacion por correo a los clientes
+		///// notificando la fecha de expiracion del servicio
+		///// </para>
 		///// </summary>
 		//public static void NotifyExpiration(this Subscription subscription, )
 		//{
@@ -138,9 +149,21 @@ namespace OKHOSTING.ERP.ORM
 		///// <summary>
 		///// Returns all subscriptions that are to expire in the specified time frame,
 		///// which means we have to notify the subscriber about the expiration
+		///// <para xml:lang="es">
+		///// Devuelve todas las suscripciones que van a expirar en el tiempo especificado
+		///// lo que significa que hay que notificar al suscriptor acerca de la expiración
+		///// </para>
 		///// </summary>
-		///// <param name="from">Starting expiration date to be used as filter</param>
-		///// <param name="to">Ending expiration date to be used as filter</param>
+		///// <param name="from">Starting expiration date to be used as filter
+		/// <para xml:lang="es">
+		/// Fecha inicial de expiración a usar como filtro
+		/// </para>
+		///// </param>
+		///// <param name="to">Ending expiration date to be used as filter
+		/// <para xml:lang="es">
+		/// Fecha final de expiración a usar como filtro
+		/// </para>
+		///// </param>
 		//public static IList<Subscription> GetSubscriptionsExpiring(DateTime from, DateTime to)
 		//{
 		//	return GetSubscriptionsExpiring(from, to, null);
@@ -149,11 +172,26 @@ namespace OKHOSTING.ERP.ORM
 		///// <summary>
 		///// Returns all subscriptions that are to expire in the specified time frame,
 		///// which means we have to notify the subscriber about the expiration
+		/// <para xml:lang="es">
+		///  Devuelve todas las suscripciones que van a expirar en el tiempo especificado,
+		/// lo que significa que hay que notificar al suscriptor sobre la expiración
+		/// </para>
 		///// </summary>
-		///// <param name="from">Starting expiration date to be used as filter</param>
-		///// <param name="to">Ending expiration date to be used as filter</param>
+		///// <param name="from">Starting expiration date to be used as filter
+		/// <para xml:lang="es">
+		/// Fecha de inicio a usar como filtro
+		/// </para>
+		//// </param>
+		///// <param name="to">Ending expiration date to be used as filter
+		/// <para xml:lang="es">
+		///  Fecha de finalización a usar como filtro
+		/// </para>
+		///// </param>
 		///// <param name="soldTo">
 		///// If not null, only retrieves subscriptions that where sold to a specific customer
+		/// <para xml:lang="es">
+		/// Si no es nulo, solamente libera las suscripciones que fueron vendidas a un cliente específico
+		/// </para>
 		///// </param>
 		//public static IList<Subscription> GetSubscriptionsExpiring(DateTime from, DateTime to, Customer soldTo)
 		//{
@@ -170,9 +208,22 @@ namespace OKHOSTING.ERP.ORM
 		///// <summary>
 		///// Returns all quotes that are to expire in the specified time frame,
 		///// which means we have to notify the subscriber about the expiration
+		/// <para xml:lang="es">
+		///  Devuelve todas las cuotas que van a expirar en el tiempo especificado,
+		/// lo que significa que hay que notificar al suscriptor sobre la expiración
+		/// </para>
 		///// </summary>
-		///// <param name="from">Starting expiration date to be used as filter</param>
-		///// <param name="to">Ending expiration date to be used as filter</param>
+		///// <param name="from">Starting expiration date to be used as filter
+		/// <para xml:lang="es">
+		/// Fecha de inicio a usar como filtro
+		/// </para>
+		//// </param>
+		///// <param name="to">Ending expiration date to be used as filter
+		/// <para xml:lang="es">
+		///  Fecha de finalización a usar como filtro
+		/// </para>
+		///// </param>
+		/////
 		//public static IList<Quote> GetQuotesExpiring(DateTime from, DateTime to)
 		//{
 		//	return GetQuotesExpiring(from, to, null);
@@ -181,11 +232,26 @@ namespace OKHOSTING.ERP.ORM
 		///// <summary>
 		///// Returns all quotes that are to expire in the specified time frame,
 		///// which means we have to notify the subscriber about the expiration
+		/// <para xml:lang="es">
+		///  Devuelve todas las suscripciones que van a expirar en el tiempo especificado,
+		/// lo que significa que hay que notificar al suscriptor sobre la expiración
+		/// </para>
 		///// </summary>
-		///// <param name="from">Starting expiration date to be used as filter</param>
-		///// <param name="to">Ending expiration date to be used as filter</param>
+		///// <param name="from">Starting expiration date to be used as filter
+		/// <para xml:lang="es">
+		/// Fecha de inicio a usar como filtro
+		/// </para>
+		//// </param>
+		///// <param name="to">Ending expiration date to be used as filter
+		/// <para xml:lang="es">
+		///  Fecha de finalización a usar como filtro
+		/// </para>
+		///// </param>
 		///// <param name="soldTo">
 		///// If not null, only retrieves subscriptions that where sold to a specific customer
+		/// <para xml:lang="es">
+		/// Si no es nulo, solo devuelve las suscripciones que fueron vendidas a un cliente específico
+		/// </para>
 		///// </param>
 		//public static IList<Quote> GetQuotesExpiring(DateTime from, DateTime to, Customer soldTo)
 		//{
@@ -201,9 +267,20 @@ namespace OKHOSTING.ERP.ORM
 
 		///// <summary>
 		///// Creates and saves new Quotes containing all subscriptions that are about to expire in a specific time frame and for all customer
+		/// <para xml:lang="es">
+		/// Crea y guarda nuevas cuotas que contengas todas las suscripciones que estan por expirar en un lapso de tiempo y para todos los clientes. 
+		/// </para>
 		///// </summary>
-		///// <param name="from">Starting date of the time frame</param>
-		///// <param name="to">Ending date of the time frame</param>
+		///// <param name="from">Starting date of the time frame
+		/// <para xml:lang="es">
+		/// Fecha de inicio del lapso de tiempo.
+		/// </para>
+		///</param>
+		///// <param name="to">Ending date of the time frame
+		/// <para xml:lang="es">
+		/// Fecha de finalización del lapso de tiempo
+		/// </para>
+		/// </param>
 		//public static void QuoteExpiringSubscriptions(DateTime from, DateTime to)
 		//{
 		//	XPCollection<Customer> customers = new XPCollection<Customer>(MyApplication.XpoSession);
@@ -221,10 +298,25 @@ namespace OKHOSTING.ERP.ORM
 
 		///// <summary>
 		///// Creates and saves a new Quote containing all subscriptions that are about to expire in a specific time frame and for a specific customer
+		/// <para xml:lang="es">
+		/// Crea y guarda una nueva cuota que contenga todas las suscripcones que estan por expirar en un tiempo de lapso especifico para un cliente especifico
+		/// </para>
 		///// </summary>
-		///// <param name="from">Starting date of the time frame</param>
-		///// <param name="to">Ending date of the time frame</param>
-		///// <param name="customer">Customer which will have the quote created</param>
+		///// <param name="from">Starting date of the time frame
+		/// <para xml:lang="es">
+		/// Fecha de inicio del lapso
+		/// </para>
+		/// </param>
+		///// <param name="to">Ending date of the time frame
+		/// <para xml:lang="es">
+		/// Fecha de finalización del lapso
+		/// </para>
+		/// </param>
+		///// <param name="customer">Customer which will have the quote created
+		/// <para xml:lang="es">
+		/// Cliente para el que fue creada la cuota
+		/// </para>
+		/// </param>
 		//public static void QuoteExpiringSubscriptions(DateTime from, DateTime to, Customer customer)
 		//{
 		//	IList<Subscription> subscriptions = GetSubscriptionsExpiring(from, to, customer);
@@ -314,12 +406,22 @@ namespace OKHOSTING.ERP.ORM
 		///// <summary>
 		///// Sends an notification email to all customers 
 		///// who have services that are expired or about to expire
+		/// <para xml:lang="es">
+		/// Envia notificaciones de correo a todos los clientes
+		/// que tengas servicios expirados o por expirar
+		/// </para>
 		///// </summary>
 		///// <param name="from">
-		///// Starting date for expirations to notufy
+		///// Starting date for expirations to notify
+		/// <para xml:lang="es">
+		/// Fecha de inicio para notificar
+		/// </para>
 		///// </param>
 		///// <param name="to">
-		///// Ending date for expirations to notufy
+		///// Ending date for expirations to notify
+		/// <para xml:lang="es">
+		/// Fecha de finalizacion para notificar
+		/// </para>
 		///// </param>
 		//public static void NotifyExpirationsSubscription(DateTime from, DateTime to)
 		//{
@@ -345,6 +447,10 @@ namespace OKHOSTING.ERP.ORM
 		///// <summary>
 		///// Sends an notification email to all customers 
 		///// who have services that are expired or about to expire
+		/// <para xml:lang="es">
+		/// Envia notificaciones de correo a los lcientes
+		/// que tienen servicios que han expirado o que van a expirar
+		/// </para>
 		///// </summary>
 		//public static void NotifyExpirationsSubscription(int daysBeforeToday, int daysAfterToday)
 		//{
@@ -354,12 +460,22 @@ namespace OKHOSTING.ERP.ORM
 		///// <summary>
 		///// Sends an notification email to all customers 
 		///// who have services that are expired or about to expire
+		/// <para xml:lang="es">
+		/// Envia notificacoines de correo a todos los clientes
+		/// que tienen servicios expirados o que estan por expirar
+		/// </para>
 		///// </summary>
 		///// <param name="from">
-		///// Starting date for expirations to notufy
+		///// Starting date for expirations to notify
+		/// <para xml:lang="es">
+		/// Fecha de inicio para notificar
+		/// </para>
 		///// </param>
 		///// <param name="to">
-		///// Ending date for expirations to notufy
+		///// Ending date for expirations to notify
+		/// <para xml:lang="es">
+		/// Fecha de finalizacion para notificar
+		/// </para>
 		///// </param>
 		//public static void NotifyExpirations(System.DateTime from, System.DateTime to)
 		//{
@@ -370,13 +486,23 @@ namespace OKHOSTING.ERP.ORM
 		///// <summary>
 		///// Sends an notification email to all customers 
 		///// who have services that are expired or about to expire
+		/// <para xml:lang="es">
+		/// Envia notificacoines de correo a todos los clientes
+		/// que tienen servicios expirados o que estan por expirar
+		/// </para>
 		///// </summary>
 		///// <param name="from">
-		///// Starting date for expirations to notufy
+		///// Starting date for expirations to notify
+		/// <para xml:lang="es">
+		/// Fecha de inicio para notificar
+		/// </para>
 		///// </param>
 		///// <param name="to">
-		///// Ending date for expirations to notufy
-		///// </param>
+		///// Ending date for expirations to notify
+		/// <para xml:lang="es">
+		/// Fecha de finalizacion para notificar
+		/// </para>
+		///// </param>	
 		//public static void NotifyExpirations(IList<Quote> quotes)
 		//{
 
@@ -465,6 +591,10 @@ namespace OKHOSTING.ERP.ORM
 		///// <summary>
 		///// Sends an notification email to all customers 
 		///// who have services that are expired or about to expire
+		/// <para xml:lang="es">
+		/// Envia una notificacion de correo a todos los clientes
+		/// que tienen servicios expirados o por expirar
+		/// </para>
 		///// </summary>
 		//public static void NotifyExpirations(int daysBeforeToday, int daysAfterToday)
 		//{
@@ -473,8 +603,15 @@ namespace OKHOSTING.ERP.ORM
 
 		///// <summary>
 		///// Deletes all subscriptions that have a finished grace period
+		/// <para xml:lang="es">
+		/// Elimina todas las suscripciones que tiene un periodo de prueba terminado
+		/// </para>
 		///// </summary>
-		///// <remarks>This method should run every day</remarks>
+		///// <remarks>This method should run every day
+		/// <para xml:lang="es">
+		/// Este método debe correr todos los días
+		/// </para>
+		/// </remarks>
 		//public static void DeleteFinishedGracePeriodSubscriptions()
 		//{
 		//	IList<Subscription> expiredSubscriptions = MyApplication.ObjectSpace.GetObjects<Subscription>(new BinaryOperator("GracePeriodEnd", DateTime.Now, BinaryOperatorType.Less));
@@ -510,6 +647,10 @@ namespace OKHOSTING.ERP.ORM
 		/// <summary>
 		/// Indicates if an invoice item was just a product upgrade and 
 		/// no extention of the subscription expiration should be made
+		/// <para xml:lang="es">
+		/// Indica si un articulo facturado fue solamente una actualización de producto y
+		/// si no se debe hacer un extención de la fecha de expiración de la suscripción. 
+		/// </para>
 		/// </summary>
 		public static bool IsUpgrade(this Subscription subscription, InvoiceItem item)
 		{

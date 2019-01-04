@@ -9,8 +9,15 @@ namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// An invoice
+	/// <para xml:lang="es">
+	/// Una factura
+	/// </para>
 	/// </summary>
-	/// <remarks>An invoice can be a customer or a vendor invoice and represents a bussines transaction, a sale or a purchase</remarks>
+	/// <remarks>An invoice can be a customer or a vendor invoice and represents a bussines transaction, a sale or a purchase
+	/// <para xml:lang="es">
+	/// Una factira puede pertenecer a un cliente o a un vendedor y representa una transaccion de negocios, es decir, una venta o una compra
+	/// </para>
+	/// </remarks>
 	public class Invoice
 	{
 		public Guid Id { get; set; }
@@ -38,6 +45,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Total sum of sales items, including discounts but not taxes
+		/// <para xml:lang="es">
+		/// Suma total de los articulos, incluyendo los descuentos pero no los impuestos
+		/// </para>
 		/// </summary>
 		public decimal Subtotal
 		{
@@ -47,6 +57,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Total sum of sales taxes
+		/// <para xml:lang="es">
+		/// Suma total de los impuestos de venta
+		/// </para>
 		/// </summary>
 		public decimal Tax
 		{
@@ -56,6 +69,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Total sum of sales items, including discounts and taxes
+		/// <para xml:lang="es">
+		/// Suma total de los articulos, incluyendo descuentos e impuestos
+		/// </para>
 		/// </summary>
 		public decimal Total
 		{
@@ -65,6 +81,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Whether the invoice is fully paid or not
+		/// <para xml:lang="es">
+		/// Si la factura ha sido totalmente pagada o no
+		/// </para>
 		/// </summary>
 		public decimal Balance
 		{
@@ -74,6 +93,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Whether this is a sale or a purchase
+		/// <para xml:lang="es">
+		/// Si es una venta o una compra
+		/// </para>
 		/// </summary>
 		[RequiredValidator]
 		public InvoiceType InvoiceType
@@ -201,6 +223,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Deletes all items and payments of this invoice
+		/// <para xml:lang="es">
+		/// Elimina todos los articulos y pagos en esta factura
+		/// </para>
 		/// </summary>
 		public virtual void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -256,6 +281,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Inserts all items and payments along with the current invoice
+		/// <para xml:lang="es">
+		/// Inserta todos los articulos y sus pagos correspondientes con el impuesto actual 
+		/// </para>
 		/// </summary>
 		public virtual void OnAfterInsert(DataBase sender, OperationEventArgs eventArgs)
 		{

@@ -7,6 +7,9 @@ namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// Represents a person
+	/// <para xml:lang="es">
+	/// Representa una persona
+	/// </para>
 	/// </summary>
 	public class Person
 	{
@@ -14,8 +17,15 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Prefix of the name that should be used when talking to this person
+		/// <para xml:lang="es">
+		/// Prefijo del nombre que debe ser utilizado cuando se habla hacia esa persona
+		/// </para>
 		/// </summary>
-		/// <example>Sir, Miss, Misses, Dr.</example>
+		/// <example>Sir, Miss, Misses, Dr.
+		/// <para xml:lang="es">
+		/// Sr, Sra, Srita, Dr.
+		/// </para>
+		/// </example>
 		[StringLengthValidator(10)]
 		public string Prefix
 		{
@@ -25,6 +35,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// First name
+		/// <para xml:lang="es">
+		/// Nombre
+		/// </para>
 		/// </summary>
 		[RequiredValidator]
 		[StringLengthValidator(50)]
@@ -36,6 +49,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Last name
+		/// <para xml:lang="es">
+		/// Apellido
+		/// </para>
 		/// </summary>
 		[RequiredValidator]
 		[StringLengthValidator(50)]
@@ -47,6 +63,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Gets the full name of the person in the format "FirstName LastName"
+		/// <para xml:lang="es">
+		/// Obtiene el nombre completo de la persona en el formato de "Nombre Apellido"
+		/// </para>
 		/// </summary>
 		[StringLengthValidator(100)]
 		public string FullName
@@ -59,6 +78,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Gets the "Alias" of the person, a friendly (non insultive) name to call him/her
+		/// <para xml:lang="es">
+		/// Obtiene el "Apodo" de la persona, una nombre amigable (no insultante) de llamarle a el/ella
+		/// </para>
 		/// </summary>
 		[StringLengthValidator(50)]
 		public string Alias

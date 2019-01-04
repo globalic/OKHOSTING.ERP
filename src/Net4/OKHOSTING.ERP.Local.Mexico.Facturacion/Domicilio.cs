@@ -7,6 +7,9 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 {
 	/// <summary>
 	/// Domicilio que puede ser usado para domicilios fiscales o de sucursal dentro de una factura
+		/// <para xml:lang="en">
+		/// Address that can be use for fiscal or branch addresses within the invoice
+		/// </para>
 	/// </summary>
 	[Serializable]
 	public struct Domicilio

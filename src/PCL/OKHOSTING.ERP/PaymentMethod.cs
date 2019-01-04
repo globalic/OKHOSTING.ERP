@@ -5,6 +5,9 @@ namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// A method of payment
+	/// <para xml:lang="es">
+	/// Un metodo de pago
+	/// </para>
 	/// </summary>
 	public class PaymentMethod
 	{

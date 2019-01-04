@@ -9,6 +9,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Deletes all items and payments of this invoice
+		/// <para xml:lang="es">
+		/// Elimina todos los articulos y los pagos en esta factura
+		/// </para>
 		/// </summary>
 		public static void OnBeforeDelete(this Invoice invoice, DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -26,6 +29,9 @@ namespace OKHOSTING.ERP.ORM
 		/*
 		/// <summary>
 		/// Search for list and subscription items and deal with them
+		/// <para xml:lang="es">
+		/// Busca lista y articulos suscritos para manejarlos
+		/// </para>
 		/// </summary>
 		protected override void  OnBeforeInsert()
 		{
@@ -64,6 +70,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Inserts all items and payments along with the current invoice
+		/// <para xml:lang="es">
+		/// Inserta todos los articulos y pagos en la factura actual 
+		/// </para>
 		/// </summary>
 		public static void OnAfterInsert(this Invoice invoice, DataBase sender, OperationEventArgs eventArgs)
 		{

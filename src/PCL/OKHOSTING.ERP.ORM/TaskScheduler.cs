@@ -1,4 +1,5 @@
-﻿using OKHOSTING.ERP.New.Production;
+﻿using OKHOSTING.ERP.New.IT;
+using OKHOSTING.ERP.New.Production;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Filters;
 using OKHOSTING.ORM.Operations;
@@ -9,12 +10,18 @@ using System.Linq;
 namespace OKHOSTING.ERP.ORM
 {
 	/// <summary>
-	/// Searches the database for scheduled task, and generates the next rounbd of iterations for a specified interval
+	/// Searches the database for scheduled task, and generates the next round of iterations for a specified interval
+		/// <para xml:lang="es">
+		/// Busca la base de datos para una tarea programada y genera la siguente ronda te iteraciones para el intervalo especifico
+		/// </para>
 	/// </summary>
 	public class TaskScheduler
 	{
 		/// <summary>
-		/// Searches for al scheduled task that are active in the given timeframe, creates the repetitions for the each schecule and saves them in the database
+		/// Searches for all scheduled task that are active in the given timeframe, creates the repetitions for the each schedule and saves them in the database
+		/// <para xml:lang="es">
+		/// Busca todas las tareas programadas que están activas en el lapso de tiempo dado, crea las repeticiones para cada tarea y las guarda en la base de datos. 
+		/// </para>
 		/// </summary>
 		/// <example>
 		/// Use this for

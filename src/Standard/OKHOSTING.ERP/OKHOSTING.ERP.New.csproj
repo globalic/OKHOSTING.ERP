@@ -1,0 +1,78 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="Custom\**" />
+	  <Compile Remove="Marketing\**" />
+	  <EmbeddedResource Remove="Custom\**" />
+	  <EmbeddedResource Remove="Marketing\**" />
+	  <None Remove="Custom\**" />
+	  <None Remove="Marketing\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Remove="Accounting\ExpressionTypeCalculatedAccount.cs" />
+	  <Compile Remove="CompanyAsset.cs" />
+	  <Compile Remove="Customers\CreditRating.cs" />
+	  <Compile Remove="Customers\NewCustomerMail.cs" />
+	  <Compile Remove="Customers\PriceLevel.cs" />
+	  <Compile Remove="Customers\ProspectSource.cs" />
+	  <Compile Remove="Customers\QuoteMail.cs" />
+	  <Compile Remove="Customers\QuoteStatus.cs" />
+	  <Compile Remove="Customers\Referrer.cs" />
+	  <Compile Remove="Customers\SaleMail.cs" />
+	  <Compile Remove="Finances\BankAccount.cs" />
+	  <Compile Remove="Finances\CashStorage.cs" />
+	  <Compile Remove="HR\Conversation.cs" />
+	  <Compile Remove="HR\EmployeeProspect.cs" />
+	  <Compile Remove="HR\MailAccountTaskSource.cs" />
+	  <Compile Remove="HR\MailMessageTask.cs" />
+	  <Compile Remove="HR\PhoneCall.cs" />
+	  <Compile Remove="HR\PlannedTask.cs" />
+	  <Compile Remove="HR\Rest.cs" />
+	  <Compile Remove="HR\TaskFeedback.cs" />
+	  <Compile Remove="HR\TaskMail.cs" />
+	  <Compile Remove="HR\TaskMailProxy.cs" />
+	  <Compile Remove="HR\TaskMessage.cs" />
+	  <Compile Remove="HR\TaskSource.cs" />
+	  <Compile Remove="HR\TaskSourceEmployee.cs" />
+	  <Compile Remove="InvoiceMail.cs" />
+	  <Compile Remove="Production\ExpiredQuoteMail.cs" />
+	  <Compile Remove="Production\ExpiredSubscriptionMail.cs" />
+	  <Compile Remove="Production\ExpiringQuoteMail.cs" />
+	  <Compile Remove="Production\ExpiringSubscriptionMail.cs" />
+	  <Compile Remove="Production\InventoryProduct.cs" />
+	  <Compile Remove="Production\ISubscription.cs" />
+	  <Compile Remove="Production\MethodAutomatedTask.cs" />
+	  <Compile Remove="Production\Project.cs" />
+	  <Compile Remove="Production\ProjectPhase.cs" />
+	  <Compile Remove="Production\ShippingMethod.cs" />
+	  <Compile Remove="Production\Subscription-29fb06510ac942ff11667dc3e1458beb.cs" />
+	  <Compile Remove="Production\SubscriptionMail.cs" />
+	  <Compile Remove="Production\TaskCheckItem.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Customers.NewCustomerMail.html" />
+	  <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Customers.QuoteMail.html" />
+	  <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Customers.SaleMail.html" />
+	  <Content Include="Custom\MailTemplates\OKHOSTING.ERP.HR.TaskMail.html" />
+	  <Content Include="Custom\MailTemplates\OKHOSTING.ERP.InvoiceMail.html" />
+	  <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Local.Mexico.FacturacionElectronica.EmailFactura.html" />
+	  <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Production.ExpiredQuoteMail.html" />
+	  <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Production.ExpiredSubscriptionMail.html" />
+	  <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Production.ExpiringQuoteMail.html" />
+	  <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Production.ExpiringSubscriptionMail.html" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\OKHOSTING.Computers\src\Standard\OKHOSTING.Computers\OKHOSTING.Computers.csproj" />
+		<ProjectReference Include="..\..\..\..\OKHOSTING.Core\src\Standard\OKHOSTING.Core\OKHOSTING.Core.csproj" />
+		<ProjectReference Include="..\..\..\..\OKHOSTING.Data\src\Standard\OKHOSTING.Data\OKHOSTING.Data.csproj" />
+		<ProjectReference Include="..\..\..\..\OKHOSTING.ORM\src\Standard\OKHOSTING.ORM\OKHOSTING.ORM.csproj" />
+		<ProjectReference Include="..\..\..\..\OKHOSTING.SQL\src\Standard\OKHOSTING.SQL\OKHOSTING.SQL.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="MultilingualResources\" />
+	  <Folder Include="Properties\" />
+	</ItemGroup>
+
+</Project>

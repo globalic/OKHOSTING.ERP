@@ -376,7 +376,7 @@ namespace OKHOSTING.ERP.New.Production
 			if (Product.ProductInstanceType == null) return;
 
 			//select from database, in case this instance already exist
-			using (var db = DataBase.CreateDataBase())
+			using (var db = Core.BaitAndSwitch.Create<DataBase>())
 			{
 				var select = new Select<ProductInstance>();
 				var dtype = DataType<ProductInstance>.GetMap();

@@ -13,6 +13,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Calculates the amount of tax
+		/// <para xml:lang="es">
+		/// Calcula el importe de impuestos
+		/// </para>
 		/// </summary>
 		public static void OnBeforeInsert(this InvoiceItemTax itemTax, DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -23,6 +26,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Calculates the amount of tax
+		/// <para xml:lang="es">
+		/// Calcula el importe de impuestos
+		/// </para>
 		/// </summary>
 		public static void OnBeforeUpdate(this InvoiceItemTax itemTax, DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -33,6 +39,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Recalculates invoice item's totals
+		/// <para xml:lang="es">
+		/// Recalcula el importe total de los articulos facturados
+		/// </para>
 		/// </summary>
 		public static void OnAfterInsert(this InvoiceItemTax itemTax, DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -46,6 +55,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Recalculates invoice item's totals
+		/// <para xml:lang="es">
+		/// Recalcula el importe total de los articulos facturados
+		/// </para>
 		/// </summary>
 		public static void OnAfterUpdate(this InvoiceItemTax itemTax, DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -59,6 +71,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Recalculates invoice item's totals
+		/// <para xml:lang="es">
+		/// Recalcula el importe total de los articulos facturas
+		/// </para>
 		/// </summary>
 		public static void OnAfterDelete(this InvoiceItemTax itemTax, DataBase sender, OperationEventArgs eventArgs)
 		{

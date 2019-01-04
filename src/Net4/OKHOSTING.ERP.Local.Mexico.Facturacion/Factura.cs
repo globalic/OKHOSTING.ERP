@@ -16,11 +16,17 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 {
 	/// <summary>
 	/// Crea facturas digitales para México siguiendo el estandar del SAT vigente a Junio del 2008
+		/// <para xml:lang="en">
+		/// Creates digital invoice for Mexico following SAT June 2008 standars 
+		/// </para>
 	/// </summary>
 	public class Factura
 	{
 		/// <summary>
-		/// RFC que debe usarse cuando se generewn facturas para el público en general, incluyendo extrangeros y mexicanos sin RFC
+		/// RFC que debe usarse cuando se generen facturas para el público en general, incluyendo extranjeros y mexicanos sin RFC
+		/// <para xml:lang="en">
+		/// RFC that must be used when a public invoice is generated, including foreigns and mexicans without RFC. 
+		/// </para>		
 		/// </summary>
 		public const string RFCPublicoEnGeneral = "XAXX010101000";
 
@@ -28,61 +34,94 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Ruta de la carpeta donde se guardan las facturas
+		/// <para xml:lang="en">
+		/// Path where the invoices are stored
+		/// </para>
 		/// </summary>
 		public static readonly string CarpetaFacturas = AppDomain.CurrentDomain.BaseDirectory + @"Custom\FacturacionElectronica\Facturas\";
 		
 		/// <summary>
-		/// Ruta de la carpeta donde se encuentran los recuros
+		/// Ruta de la carpeta donde se encuentran los recursos
+		/// <para xml:lang="en">
+		/// Path where the resources are in
+		/// </para>
 		/// </summary>
 		public static readonly string CarpetaRecursos = AppDomain.CurrentDomain.BaseDirectory + @"Custom\FacturacionElectronica\Recursos\";
 
 		/// <summary>
 		/// Ruta de la carpeta donde se guardan los archivos temporales
+		/// <para xml:lang="en">
+		/// Path where temporary files are stored
+		/// </para>
 		/// </summary>
 		public static readonly string CarpetaTemporal = AppDomain.CurrentDomain.BaseDirectory + @"Custom\FacturacionElectronica\Temporal\";
 		
 		/// <summary>
 		/// Version del XML, debe ser 2.0
+		/// <para xml:lang="en">
+		/// XML version, must be 2.0
+		/// </para>
 		/// </summary>
 		public string Version;
 
 		/// <summary>
 		/// Serie de la factura que se va a crear
+		/// <para xml:lang="en">
+		/// Serial number of the invoice that will be created
+		/// </para>
 		/// </summary>
 		/// <example>A, B, C o cualquier cadena</example>
 		public string Serie;
 
 		/// <summary>
 		/// El número de la factura
+		/// <para xml:lang="en">
+		/// Invoice's number
+		/// </para>
 		/// </summary>
 		/// <example>100</example>
 		public int Folio;
 
 		/// <summary>
 		/// Fecha y hora en que se crea la factura, debe contener hora, minutos y segundos
+		/// <para xml:lang="en">
+		/// Date and Time when the invoice was created, must contain hour, minutes and seconds
+		/// </para>
 		/// </summary>
 		/// <example>1/1/2008 10:30:00 A.M.</example>
 		public DateTime Fecha;
 
 		/// <summary>
 		/// El sello digital, se genera automaticamente con la función CrearSello usando openssl.exe
+		/// <para xml:lang="en">
+		/// Digital sign, automatically created with CrearSello function using openssl.exe
+		/// </para>
 		/// </summary>
 		public string Sello;
 
 		/// <summary>
-		/// Número de aprocación de los folios. Este dato lo otorga la SHCP al solicitar los folios.
+		/// Número de aprobación de los folios. Este dato lo otorga la SHCP al solicitar los folios.
+		/// <para xml:lang="en">
+		/// folio's number approbation. Given by SCHP when you asking for folios. 
+		/// </para>
 		/// </summary>
 		/// <example>2000</example>
 		//public string NoAprobacion;
 
 		/// <summary>
 		/// Año de aprobación de los folios. Este dato lo otorga la SHCP al solicitar los folios.
+		/// <para xml:lang="en">
+		/// Folio's year approbation. Given by SCHP when asking for folios.  
+		/// </para>
 		/// </summary>
 		/// <example>2008</example>
 		//public string AnoAprobacion;
 
 		/// <summary>
 		/// La forma de pago para la factura
+		/// <para xml:lang="en">
+		/// Payment method for this invoice
+		/// </para>
 		/// </summary>
 		/// <remarks>Obligatorio</remarks>
 		/// <example>Pago en una sola excibición</example>
@@ -90,14 +129,24 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// El número del certificado con el que se autentifica la factura
+		/// <para xml:lang="en">
+		/// Certificate number for invoice autentification 
+		/// </para>
 		/// </summary>
 		/// <example>00001000000001655555</example>
 		public string NoCertificado;
 
 		/// <summary>
 		/// El certificado con el que se autentifica la facturas
+		/// <para xml:lang="en">
+		/// Certificate for invoices autentification 
+		/// </para>
 		/// </summary>
-		/// <remarks>Este certificado se obtiene convirtiendo el certificado de la FIEL a formato PEM usando openssl</remarks>
+		/// <remarks>Este certificado se obtiene convirtiendo el certificado de la FIEL a formato PEM usando openssl
+		/// <para xml:lang="en">
+		/// Get this with conversion from FIEL to PEM using openssl 
+		/// </para>
+		/// </remarks>
 		/// <example>
 		/// MIICXgIBAAKBgQDKRVP186zuDWHP9BDOGPAOfJaqBlKKaNN6FV0mkO6iyG7TlpWr
 		/// O3IBRBX4lw5k5MEDBwLxFmRQJ68ZHkaPDdBfGi3SO6VA+rkt50tlH5bLcSycWDAk
@@ -117,12 +166,22 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Condiciones para el pago
+		/// <para xml:lang="en">
+		/// Payment conditions 
+		/// </para>
 		/// </summary>
-		/// <remarks>Opcional</remarks>
+		/// <remarks>Opcional
+		/// <para xml:lang="en">
+		/// Optional 
+		/// </para>
+		/// </remarks>
 		public string CondicionesDePago;
 
 		/// <summary>
-		/// Subtotal de la factura sin incluir impuestos, descuentos niretenciones. Equivale a la suma del importe de todos los conceptos
+		/// Subtotal de la factura sin incluir impuestos, descuentos ni retenciones. Equivale a la suma del importe de todos los conceptos
+		/// <para xml:lang="en">
+		/// Invoice's subtotal without taxes, discounts, or retentions. Is the sum of every concept amount. 
+		/// </para>
 		/// </summary>
 		public decimal Subtotal
 		{
@@ -134,18 +193,27 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Descuento que se aplica a la factura
+		/// <para xml:lang="en">
+		/// Discount applied to this invoice
+		/// </para>
 		/// </summary>
 		/// <remarks>Opcional</remarks>
 		public decimal Descuento;
 
 		/// <summary>
 		/// Motivo por el cual se aplica un descuento
+		/// <para xml:lang="en">
+		/// Why the discount is applied to 
+		/// </para>
 		/// </summary>
 		/// <remarks>Opcional</remarks>
 		public string MotivoDescuento;
 
 		/// <summary>
 		/// Total a pagar. Equivale al Subtotal - Descuento + Traslados - Retenciones
+		/// <para xml:lang="en">
+		/// Total amount. Subtotal - Discount + Transfers - Retentions 
+		/// </para>
 		/// </summary>
 		public decimal Total
 		{
@@ -160,6 +228,9 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Método de pago
+		/// <para xml:lang="en">
+		/// Payment methods
+		/// </para>
 		/// </summary>
 		/// <example>NO IDENTIFICADO, CHEQUE y TRANSFERENCIA</example>
 		/// <remarks>Opcional hasta antes del 1/Julio/2012, obligatorio a partir de esa fecha</remarks>
@@ -167,6 +238,9 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 		
 		/// <summary>
 		/// Ultimos 4 digitos de la cuenta a donde se realizó el pago
+		/// <para xml:lang="en">
+		///  Last four digits of payment's account. 
+		/// </para>
 		/// </summary>
 		/// <example>0546</example>
 		/// <remarks>Opcional, se usa solo en caso de que el metodo de pago sea "Deposito bancario"</remarks>
@@ -174,11 +248,17 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Tipo de comprobante
+		/// <para xml:lang="en">
+		/// Type of receipt
+		/// </para>
 		/// </summary>
 		public TipoDeComprobante TipoDeComprobante;
 
 		/// <summary>
 		/// Lugar donde se expide la factura
+		/// <para xml:lang="en">
+		/// Place where the invoice is issued
+		/// </para>
 		/// </summary>
 		/// <example>Guadalajara, Jalisco</example>
 		/// <remarks>Obligatorio</remarks>
@@ -186,77 +266,131 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Namespace del archivo XML
+		/// <para xml:lang="en">
+		///  XML document namespace
+		/// </para>
 		/// </summary>
 		/// <example>http://www.sat.gob.mx/cfd/2</example>
 		public string Xmlns;
 
 		/// <summary>
 		/// Esquema del XML
+		/// <para xml:lang="en">
+		///  XML Schema
+		/// </para>
 		/// </summary>
 		/// <example>http://www.w3.org/2001/XMLSchema-instance</example>
 		public string Xmlns_Xsi;
 
 		/// <summary>
 		/// Ubicación del esquema del XML
+		/// <para xml:lang="en">
+		///  XML Schema Location
+		/// </para>
 		/// </summary>
 		/// <example>http://www.sat.gob.mx/cfd/2 http://www.sat.gob.mx/sitio_internet/cfd/2/cfdv2.xsd</example>
 		public string Xsi_SchemaLocation;
 
 		/// <summary>
 		/// Empresa que emite la factura
+		/// <para xml:lang="en">
+		/// Company issuing the invoice
+		/// </para>
 		/// </summary>
 		public Empresa Emisor;
 
 		/// <summary>
 		/// Empresa a quien va dirigida la factura
+		/// <para xml:lang="en">
+		/// Company which the invoice is for 
+		/// </para>
 		/// </summary>
 		public Empresa Receptor;
 
 		/// <summary>
 		/// Domicilio fiscal del Emisor
+		/// <para xml:lang="en">
+		///  Sender Address
+		/// </para>
 		/// </summary>
 		public Domicilio DomicilioFiscalEmisor;
 
 		/// <summary>
 		/// Domicilio fiscal del Receptor
+		/// <para xml:lang="en">
+		///  Receiver Address
+		/// </para>
 		/// </summary>
 		public Domicilio DomicilioFiscalReceptor;
 
 		/// <summary>
 		/// Lista de conceptos, productos o servicios que se están facturando
+		/// <para xml:lang="en">
+		/// Concepts, products or services list for the invoice
+		/// </para>
 		/// </summary>
 		public List<Concepto> Conceptos = new List<Concepto>();
 
 		/// <summary>
 		/// Lista de impuestos retenidos
+		/// <para xml:lang="en">
+		/// Taxes deteined list
+		/// </para>
 		/// </summary>
 		public List<Retencion> Retenciones = new List<Retencion>();
 
 		/// <summary>
 		/// Lista de impuestos trasladados
+		/// <para xml:lang="en">
+		/// Taxes transfered list
+		/// </para>
 		/// </summary>
 		public List<Traslado> Traslados = new List<Traslado>();
 
 		/// <summary>
 		/// Ruta donde se guardó el archivo XML
+		/// <para xml:lang="en">
+		///  Path where de xml document is stored
+		/// </para>
 		/// </summary>
-		/// <remarks>Se establece automáticamente con la funcion Guardar()</remarks>
+		/// <remarks>Se establece automáticamente con la funcion Guardar()
+		/// <para xml:lang="en">
+		///  Set automatically using Save() function
+		/// </para>
+		/// </remarks>
 		public string RutaXML;
 
 		/// <summary>
 		/// Ruta donde se guardó el archivo HTML para impresión
+		/// <para xml:lang="en">
+		/// Path where the html document to print is stored.
+		/// </para>
 		/// </summary>
-		/// <remarks>Se establece automáticamente con la funcion GuardarHTML()</remarks>
+		/// <remarks>Se establece automáticamente con la funcion GuardarHTML()
+		/// <para xml:lang="en">
+		///  Set automatically with SaveHTML() function
+		/// </para>
+		/// </remarks>
 		public string RutaHTML;
 
 		/// <summary>
 		/// Ruta donde se guardó el archivo PDF para impresión
+		/// <para xml:lang="en">
+		///  Path where the PDF to print is stored.
+		/// </para>
 		/// </summary>
-		/// <remarks>Se establece automáticamente con la funcion GuardarPDF()</remarks>
+		/// <remarks>Se establece automáticamente con la funcion GuardarPDF()
+		/// <para xml:lang="en">
+		/// Automatically setted by SavePDF() function 
+		/// </para>
+		/// </remarks>
 		public string RutaPDF;
 
 		/// <summary>
 		/// Devuelve el número de factura incluyendo la serie
+		/// <para xml:lang="en">
+		///  Returns invoice's number including the serial number.
+		/// </para>
 		/// </summary>
 		/// <example>A100</example>
 		public string NoFactura
@@ -273,8 +407,15 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Crea la factura en formato XML
+		/// <para xml:lang="en">
+		///  Creates invoice in XML format
+		/// </para>
 		/// </summary>
-		/// <returns>Instancia del XmlDocument conteniendo toda la información de la factura</returns>
+		/// <returns>Instancia del XmlDocument conteniendo toda la información de la factura
+		/// <para xml:lang="en">
+		///  XMLDocument instance with all invoice's information
+		/// </para>
+		/// </returns>
 		protected XmlDocument CrearXML()
 		{
 			XmlDocument xmlDoc;
@@ -442,19 +583,41 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Formatea un valor decimal para ser almacenado en el XML, deacuerdo al estándar del SAT
+		/// <para xml:lang="en">
+		///  Format a decimal number to be stored in xml, with SAT standars
+		/// </para>
 		/// </summary>
-		/// <param name="valor">Número decimal que será escrito en el XML</param>
-		/// <returns>Representación en cadena de texto del valor decimal</returns>
+		/// <param name="valor">Número decimal que será escrito en el XML
+		/// <para xml:lang="en">
+		///  Decimal number to be written in the XML
+		/// </para>
+		/// </param>
+		/// <returns>Representación en cadena de texto del valor decimal
+		/// <para xml:lang="en">
+		///  String representation of a decimal value
+		/// </para>
+		/// </returns>
 		protected string ParseXML(decimal valor)
 		{
 			return valor.ToString("F2").Replace(',', '.');
 		}
 
 		/// <summary>
-		/// Formatea una enumeración para ser almacenada en el XML, deacuerdo al estándar del SAT
+		/// Formatea una enumeración para ser almacenada en el XML, de acuerdo al estándar del SAT
+		/// <para xml:lang="en">
+		///  Format a enum to be stored in xml, with SAT standars
+		/// </para>
 		/// </summary>
-		/// <param name="valor">Enumeración que será escrito en el XML</param>
-		/// <returns>Representación en cadena de texto de la enumeración</returns>
+		/// <param name="valor">Enumeración que será escrito en el XML
+		/// <para xml:lang="en">
+		///  Enum value to be written in the XML
+		/// </para>
+		/// </param>
+		/// <returns>Representación en cadena de texto de la enumeración
+		/// <para xml:lang="en">
+		///  String representation of a enum value
+		/// </para>
+		/// </returns>
 		protected string ParseXML(Enum valor)
 		{
 			return valor.ToString();
@@ -462,9 +625,20 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Formatea un valor de tipo texto para ser almacenado en el XML, deacuerdo al estándar del SAT
+		/// <para xml:lang="en">
+		///  Format a string value to be stored in xml, with SAT standars
+		/// </para>
 		/// </summary>
-		/// <param name="valor">Cadena de texto que será escrita en el XML</param>
-		/// <returns>Representación de la cadena de texto sin espacios en los extremos, ni caracteres no permitidos</returns>
+		/// <param name="valor">Cadena de texto que será escrita en el XML
+		/// <para xml:lang="en">
+		///  String that will be written in the XML
+		/// </para>
+		/// </param>
+		/// <returns>Representación de la cadena de texto sin espacios en los extremos, ni caracteres no permitidos
+		/// <para xml:lang="en">
+		///  Representation of a string without start/end blankspaces or forbidden characters 
+		/// </para>
+		/// </returns>
 		protected string ParseXML(string valor)
 		{
 			if (valor == null) return null;
@@ -486,9 +660,20 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Formatea un valor de tipo fecha para ser almacenado en el XML, deacuerdo al estándar del SAT
+		/// <para xml:lang="en">
+		///  Format a date value to be stored in xml, with SAT standars
+		/// </para>
 		/// </summary>
-		/// <param name="valor">Fecha-hora que será escrita en el XML</param>
-		/// <returns>Representación en cadena de texto de la fecha-hora</returns>
+		/// <param name="valor">Fecha-hora que será escrita en el XML
+		/// <para xml:lang="en">
+		///  Date-Time value to be written in the XML
+		/// </para>
+		/// </param>
+		/// <returns>Representación en cadena de texto de la fecha-hora
+		/// <para xml:lang="en">
+		///  String representation of Date-Time
+		/// </para>
+		/// </returns>
 		protected string ParseXML(DateTime value)
 		{
 			return value.ToString("yyyy-MM-ddTHH:mm:ss");
@@ -496,10 +681,25 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Establece el valor de un atributo a un elemento de XML
+		/// <para xml:lang="en">
+		/// Set attribute's value to an XML Element 
+		/// </para>
 		/// </summary>
-		/// <param name="elemento">El elemento de XML al cual se le establecerá el valor de un atributo</param>
-		/// <param name="nombre">Nombre del atributo</param>
-		/// <param name="valor">Valor del atributo</param>
+		/// <param name="elemento">El elemento de XML al cual se le establecerá el valor de un atributo
+		/// <para xml:lang="en">
+		///  XML Element which attribute's value is going to be assigned to
+		/// </para>
+		/// </param>
+		/// <param name="nombre">Nombre del atributo
+		/// <para xml:lang="en">
+		///  Attributes name
+		/// </para>
+		/// </param>
+		/// <param name="valor">Valor del atributo
+		/// <para xml:lang="en">
+		///  Attributes value
+		/// </para>
+		/// </param>
 		protected void SetXmlAttribute(XmlElement elemento, string nombre, object valor)
 		{
 			SetXmlAttribute(elemento, nombre, valor, false);
@@ -507,10 +707,25 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Establece el valor de un atributo a un elemento de XML
+		/// <para xml:lang="en">
+		///  Set attribute's value to an XML element
+		/// </para>
 		/// </summary>
-		/// <param name="elemento">El elemento de XML al cual se le establecerá el valor de un atributo</param>
-		/// <param name="nombre">Nombre del atributo</param>
-		/// <param name="valor">Valor del atributo</param>
+		/// <param name="elemento">El elemento de XML al cual se le establecerá el valor de un atributo
+		/// <para xml:lang="en">
+		///  XML Element which attribute's value is going to be assigned to
+		/// </para>
+		///</param>
+		/// <param name="nombre">Nombre del atributo
+		/// <para xml:lang="en">
+		///  Attribute's name
+		/// </para>
+		/// </param>
+		/// <param name="valor">Valor del atributo
+		/// <para xml:lang="en">
+		///  Attribute's value
+		/// </para>
+		/// </param>
 		/// <param name="opcional">
 		///		Define si el atributo es opcional o no
 		///		<remarks>Si es opcional y el valor es NULL o vacío, el atributo no se escribe. Si no es opcional y el valor es NULL o vacío, se manda un error</remarks>
@@ -539,6 +754,10 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 		/// <summary>
 		/// Busca traslados duplicados por concepto de IVA, ISR u otro tipo de traslado, suma todos los totales y deja
 		/// 1 solo traslado con el total. Se usa para evitar tener multiples registros de traslado con IVA en la factura
+		/// <para xml:lang="en">
+		/// Searches for duplicated transefer via IVA, ISR or other transfer type, sum avery total and let only one total transfer
+		/// Usefull to avoid multiple IVA Transfers registers in the invoice.
+		/// </para>
 		/// </summary>
 		public void SumarTrasladosDuplicados()
 		{
@@ -577,6 +796,9 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Devuelve el número de factura incluyendo la serie
+		/// <para xml:lang="en">
+		/// Returns invoice's number including serial number
+		/// </para>
 		/// </summary>
 		/// <example>A100</example>
 		public override string ToString()
@@ -586,6 +808,9 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Crea la cadena original de la factura y la guarda en la carpeta temporal
+		/// <para xml:lang="en">
+		/// Creates a original invoice's string and stores it the temporary file
+		/// </para>
 		/// </summary>
 		protected void CrearCadenaOriginal()
 		{
@@ -615,7 +840,10 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 		}
 
 		/// <summary>
-		/// Crea el sello de la factura yu lo guyarda en la carpeta temporal
+		/// Crea el sello de la factura y lo guarda en la carpeta temporal
+		/// <para xml:lang="en">
+		/// Creates invoice's sign and stores it in the temporary file
+		/// </para>
 		/// </summary>
 		protected void CrearSello()
 		{
@@ -704,6 +932,9 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Crea una nueva instancia de esta clase
+		/// <para xml:lang="en">
+		/// Creates a new instance of this class
+		/// </para>
 		/// </summary>
 		public Factura()
 		{
@@ -711,8 +942,15 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Genera un archivo XML con la factura electrónica
+		/// <para xml:lang="en">
+		/// Generates a XML file with e-invoice
+		/// </para>
 		/// </summary>
-		/// <returns>La ruta donde fué generada la factura en formato XML</returns>
+		/// <returns>La ruta donde fué generada la factura en formato XML
+		/// <para xml:lang="en">
+		/// Path where the xml format invoice was generated
+		/// </para>
+		/// </returns>
 		public string GuardarXml()
 		{
 			XmlDocument xml;
@@ -748,8 +986,15 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 
 		/// <summary>
 		/// Genera un archivo imprimible HTML
+		/// <para xml:lang="en">
+		/// Generates a HTML print file
+		/// </para>
 		/// </summary>
-		/// <returns>La ruta donde fué generada la factura en formato HTML</returns>
+		/// <returns>La ruta donde fué generada la factura en formato HTML
+		/// <para xml:lang="en">
+		/// The path where the html format invoice was generated
+		/// </para>
+		/// </returns>
 		public string GuardarHtml()
 		{
 			XPathDocument pathDoc;

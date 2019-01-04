@@ -5,6 +5,9 @@ namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// An address of a person or a company
+	/// <para xml:lang="es">
+	/// La direccion de una persona o una empresa
+	/// </para>
 	/// </summary>
 	public class Address
 	{
@@ -12,6 +15,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Name of the street
+		/// <para xml:lang="es">
+		/// Nombre de la calle
+		/// </para>
 		/// </summary>
 		[RequiredValidator]
 		[StringLengthValidator(200)]
@@ -23,6 +29,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Number of the address
+		/// <para xml:lang="es">
+		/// Numero de la direccion
+		/// </para>
 		/// </summary>
 		[RequiredValidator]
 		[StringLengthValidator(30)]
@@ -34,6 +43,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Suburb
+		/// <para xml:lang="es">
+		/// Colonia
+		/// </para>
 		/// </summary>
 		[StringLengthValidator(30)]
 		public string Suburb
@@ -44,6 +56,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Zip code
+		/// <para xml:lang="es">
+		/// Codigo Postal
+		/// </para>
 		/// </summary>
 		/// <example>44510, 90210</example>
 		[RequiredValidator]
@@ -56,6 +71,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// City
+		/// <para xml:lang="es">
+		/// Ciudad
+		/// </para>
 		/// </summary>
 		/// <example>Guadalajara, San Francisco</example>
 		[RequiredValidator]
@@ -68,6 +86,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// State
+		/// <para xml:lang="es">
+		/// Estado
+		/// </para>
 		/// </summary>
 		/// <example>Jalisco, Aguascalientes</example>
 		[RequiredValidator]
@@ -80,6 +101,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Country
+		/// <para xml:lang="es">
+		/// Pais
+		/// </para>
 		/// </summary>
 		/// <example>México</example>
 		[RequiredValidator]
@@ -91,6 +115,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Adittional notes on the address
+		/// <para xml:lang="es">
+		/// Notes adicionales sobre la direccion
+		/// </para>
 		/// </summary>
 		[StringLengthValidator(StringLengthValidator.Unlimited)]
 		public string Notes
@@ -101,6 +128,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Geographic coordinates in decimal notation
+		/// <para xml:lang="es">
+		/// Coordenadas geográficas en notacion decimal
+		/// </para>
 		/// </summary>
 		public Tuple<decimal, decimal> Coordinates
 		{

@@ -4,6 +4,9 @@ namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// A person in a company who we have contact with
+	/// <para xml:lang="es">
+	/// Una persona dentro de una empresa con la cual tenemos contacto
+	/// </para>
 	/// </summary>
 	public class CompanyContact: Person
 	{

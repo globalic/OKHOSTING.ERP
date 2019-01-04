@@ -1,0 +1,94 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body style="font-family: Arial">
+		<div>
+			<h1>
+				Cotizaci&oacute;n #&lt;@Quote.Id&gt;
+			</h1>
+			
+			<p>
+				Fecha: &lt;@Invoice.Date&gt;
+			</p>
+
+			<p>
+				Con atenci&oacute;n a: &lt;@Recipient.Alias&gt;
+			</p>
+			
+			<p>
+				Mil gracias por tu inter&eacute;s en OK HOSTING. Esta es una cotización sin compromiso, 
+				esperamos contar con tu confianza. 
+			</p>
+
+			<table>
+				<tr>
+					<th>
+						Producto
+					</th>
+					<th>
+						Descripción
+					</th>
+					<th>
+						Cantidad
+					</th>
+					<th>
+						Precio
+					</th>
+					<th>
+						Descuento
+					</th>
+					<th>
+						Total
+					</th>
+				</tr>
+				
+				&lt;@Invoice.Items&gt;
+
+				<tr>
+					<td colspan="5" align="right">
+						Subtotal: &lt;@Invoice.Subtotal&gt;
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" align="right">
+						IVA: &lt;@Invoice.Tax&gt;
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" align="right">
+						<strong>Total: &lt;@Invoice.Total&gt;</strong>
+					</td>
+				</tr>
+			</table>
+
+
+			<div style="border-top: 1px dashed #DDDDDD; margin-top: 20px;">
+				<p>
+					<img src="http://okhosting.com/media/imagenes/logos/okhosting-logo.png" alt="OK HOSTING" />
+					<br />
+					<b>
+						OK HOSTING S.C.
+					</b>
+					(antes miempresaenlinea.com)
+					<br />
+					<br />
+					<a href="http://okhosting.com">okhosting.com</a>
+					<br />
+					<a href="http://www.miempresaenlinea.com/chat/livehelp.php?department=1">Chat de ayuda en vivo</a>
+					<br />
+					Lada sin costo: 01 800 80 10 WEB (932) 
+					<br />
+					Desde Guadalajara: 84 21 11 32 
+					<br />
+					<a href="mailto:contacto@okhosting.com">contacto@okhosting.com</a>
+				</p>
+				<p>
+					La informaci&oacute;n aqui contenida es confidencial.
+				</p>
+			</div>
+			
+		</div>
+	</body>
+</html>

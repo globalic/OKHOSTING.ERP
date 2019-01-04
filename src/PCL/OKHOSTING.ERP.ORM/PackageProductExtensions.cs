@@ -13,6 +13,10 @@ namespace OKHOSTING.ERP.ORM
 		/// <summary>
 		/// Monitor all inserted invoices, and if an invoice contains a PackageProduct in one of it's InvoiceItems,
 		/// This methods adds all products included in the PackageProduct to the invoice
+		/// <para xml:lang="es">
+		/// Monitoera todas las facturas insertadas, si una factura contiene PackageProduct en one de sus InvoiceItems, 
+		/// este metodo añado todos los productos incluídos en el paquete a la factura. 
+		/// </para>
 		/// </summary>
 		public static void InvoiceItem_BeforeInsert(this InvoiceItem item)
 		{

@@ -10,6 +10,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Recalculates invoice's totals
+		/// <para xml:lang="es">
+		/// Recalcula los totales de facturas
+		/// </para>
 		/// </summary>
 		public static void OnAfterDelete(this InvoicePayment payment, DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -21,6 +24,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Inserts all items taxes along with the current item and recalculates item's and invoice's totals
+		/// <para xml:lang="es">
+		/// Inserta todos los impuesos de articulos al elemento actual y recalcula los totales de articulos y facturas. 
+		/// </para>
 		/// </summary>
 		public static void OnAfterInsert(this InvoicePayment payment, DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -32,6 +38,9 @@ namespace OKHOSTING.ERP.ORM
 
 		/// <summary>
 		/// Recalculates invoice's totals
+		/// <para xml:lang="es">
+		/// Recalcula los totales de facturas
+		/// </para>
 		/// </summary>
 		public static void OnAfterUpdate(this InvoicePayment payment, DataBase sender, OperationEventArgs eventArgs)
 		{

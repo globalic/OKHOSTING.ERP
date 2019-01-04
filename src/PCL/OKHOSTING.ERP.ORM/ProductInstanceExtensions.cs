@@ -17,6 +17,12 @@ namespace OKHOSTING.ERP.ORM
 		/// we check Invoiceitem.Product.ProductInstanceType, and if it is not null, we create an
 		/// ProductInstance of that type and save it to the Database. 
 		/// InvoiceItem.Description is copied to ProductInstance.Name
+		/// <para xml:lang="es">
+		/// Cada vez que un InvoiceItem es insertado (lo que significa que una compra o venta fue hecha)
+		/// se revisa InvoiceItem.Producto.ProductInstaceType, y si no es nulo, creamos una
+		/// ProductInstance de ese tipo y lo guardamos en la base de datos. 
+		/// Se copia InvoiceItem.Description a ProductInstance.Name 
+		/// </para>
 		/// </summary>
 		/// <remarks>
 		/// Use this to control inventory merchandise, rented services or goods
@@ -24,6 +30,13 @@ namespace OKHOSTING.ERP.ORM
 		/// Each ProductInstance represents the instance of a product or service, and
 		/// has a Unique Id (Name) for a Product. Name can be the serial number of a product
 		/// or a unique identifier like a domain name or a username
+		/// <para xml:lang="es">
+		/// Usa este control de mercancía de inventario, servicios rentados o buenos
+		/// nombres de dominio o paquetes de hosting. 
+		/// Cada ProductInstance representa la instancia del producto o servicio, y
+		/// tiene un ID unico (nombre) para un producto. El nombre puede ser el numero de serie de un producto 
+		/// o un identificador único como nombre de dominio o usuario. 
+		/// </para>
 		/// </remarks>
 		public static void InvoiceItem_AfterInsert(this InvoiceItem item)
 		{

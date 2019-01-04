@@ -6,6 +6,9 @@ namespace OKHOSTING.ERP.Local.Mexico.Facturacion
 {
 	/// <summary>
 	/// Permite converir numeros a su representacion en texto (EXPERIMENTAL)
+		/// <para xml:lang="en">
+		///  Allows numer to string conversion
+		/// </para>
 	/// </summary>
 	public class NumberToText
 	{

@@ -6,6 +6,9 @@ namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// A country
+	/// <para xml:lang="es">
+	/// Un pais
+	/// </para>
 	/// </summary>
 	public class Country
 	{
@@ -13,6 +16,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Name of the country
+		/// <para xml:lang="es">
+		/// Nombre del pais
+		/// </para>
 		/// </summary>
 		/// <example>México, France, Brasil</example>
 		[StringLengthValidator(50)]
@@ -25,8 +31,15 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Short abbreviation of the country in ISO 2 letter format.
+		/// <para xml:lang="es">
+		/// Abreviacion corta del paos en formato ISO de 2 letras
+		/// </para>
 		/// </summary>
-		/// <example>MX, FR, BR</example>
+		/// <example>MX, FR, BR
+		/// <para xml:lang="es">
+		/// MX, FR, BR
+		/// </para>
+		/// </example>
 		[StringLengthValidator(2)]
 		public string Iso2
 		{
@@ -36,8 +49,15 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Short abbreviation of the country in ISO 3 letter format
+		/// <para xml:lang="es">
+		/// Abreviacion corta del pais en formato ISO de tres letras
+		/// </para>
 		/// </summary>
-		/// <example>MEX, FRA, BRA</example>
+		/// <example>MEX, FRA, BRA
+		/// <para xml:lang="es">
+		/// MEX, FRA, BRA
+		/// </para>
+		/// </example>
 		[StringLengthValidator(3)]
 		public string Iso3
 		{
@@ -47,8 +67,15 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Gets an international numeric unique identifier of the country
+		/// <para xml:lang="es">
+		/// Obtiene un identificador internacional numerico unico del pais
+		/// </para>
 		/// </summary>
-		/// <example>484 for México, 840 for USA</example>
+		/// <example>484 for México, 840 for USA
+		/// <para xml:lang="es">
+		/// 484 para México, 840 para USA
+		/// </para>
+		/// </example>
 		public int? NumericCode
 		{
 			get;
@@ -57,8 +84,15 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Phone area code of the country
+		/// <para xml:lang="es">
+		/// Codigo telefonico de area del pais
+		/// </para>
 		/// </summary>
-		/// <example>52 for México, 01 for USA</example>
+		/// <example>52 for México, 01 for USA
+		/// <para xml:lang="es">
+		/// 52 para México, 01 para USA
+		/// </para>
+		/// </example>
 		public int? PhoneCode
 		{
 			get;
@@ -67,6 +101,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Main currency used in the country
+		/// <para xml:lang="es">
+		/// Moneda principal utilizada en el pais
+		/// </para>
 		/// </summary>
 		[RequiredValidator]
 		public Currency Currency
@@ -81,6 +118,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Used for populating initial data only
+		/// <para xml:lang="es">
+		/// Usado unicamente para los datos iniciales del poblado
+		/// </para>
 		/// </summary>
 		public Country(string name, string iso2, string iso3, int? numericCode, int? phoneCode)
 		{
@@ -93,6 +133,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Returns the initial collection of countries that should be created on system setup
+		/// <para xml:lang="es">
+		/// Devuelve la coleccion inicial de los pais que debieron ser creados por disposicion del sistema
+		/// </para>
 		/// </summary>
 		public static IEnumerable<Country> GetSetupObjects()
 		{

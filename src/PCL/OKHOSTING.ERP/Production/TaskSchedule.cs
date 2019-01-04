@@ -62,7 +62,7 @@ namespace OKHOSTING.ERP.New.Production
 		/// </example>
 		public static void CreateScheduledTaskRepetitions(DateTime from, DateTime to)
 		{
-			using (var db = DataBase.CreateDataBase())
+			using (var db = Core.BaitAndSwitch.Create<DataBase>())
 			{
 				var select = new Select<TaskSchedule>();
 				var dtype = DataType<TaskSchedule>.GetMap();

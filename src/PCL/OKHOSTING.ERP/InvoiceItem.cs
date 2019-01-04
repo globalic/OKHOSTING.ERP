@@ -10,6 +10,9 @@ namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// An item that belongs to an invoice
+	/// <para xml:lang="es">
+	/// Un item que pertenece a una factura
+	/// </para>
 	/// </summary>
 	public class InvoiceItem
 	{
@@ -40,6 +43,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Number of items sold
+		/// <para xml:lang="es">
+		/// Numero de articulos vendidos
+		/// </para>
 		/// </summary>
 		[RequiredValidator]
 		public decimal Quantity
@@ -50,6 +56,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Individual product price
+		/// <para xml:lang="es">
+		/// Precio individual del producto
+		/// </para>
 		/// </summary>
 		public decimal Price
 		{
@@ -59,6 +68,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Individual product discount
+		/// <para xml:lang="es">
+		/// Descuento individual del producto
+		/// </para>
 		/// </summary>
 		public decimal Discount
 		{
@@ -68,6 +80,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Description for this item
+		/// <para xml:lang="es">
+		/// Descripcion del articulo
+		/// </para>
 		/// </summary>
 		[StringLengthValidator(100)]
 		[RequiredValidator]
@@ -79,6 +94,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Invoice which this item belongs to
+		/// <para xml:lang="es">
+		/// Factura a la que el articulo pertenece
+		/// </para>
 		/// </summary>
 		[RequiredValidator]
 		public Invoice Invoice
@@ -89,6 +107,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Product instance that is being sold/bought in the current Invoice (optional)
+		/// <para xml:lang="es">
+		/// Instancia del producto que esta siendo vendido/comprado en la factura actual (opcional)
+		/// </para>
 		/// </summary>
 		public ProductInstance ProductInstance
 		{
@@ -135,8 +156,15 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Total ammount of the sale, including discounts but not taxes
+		/// <para xml:lang="es">
+		/// Cantidad total de la venta, incluyendo descuentos pero no los impuestos
+		/// </para>
 		/// </summary>
-		/// <value>Quantity * Price</value>
+		/// <value>Quantity * Price
+		/// <para xml:lang="es">
+		/// Cantidad * Precio
+		/// </para>
+		/// </value>
 		private void CalculateSubtotal()
 		{
 			Subtotal = (this.Quantity * this.Price) - this.Discount;
@@ -144,6 +172,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Total ammount of taxes
+		/// <para xml:lang="es">
+		/// Cantidad total de impuestos
+		/// </para>
 		/// </summary>
 		private void CalculateTax()
 		{
@@ -158,8 +189,15 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Total ammount of the sale, including taxes and discount
+		/// <para xml:lang="es">
+		/// Cantidad total de la venta, incluyendo impuestos y descuentos
+		/// </para>
 		/// </summary>
-		/// <value>PriceTotal + TaxTotal</value>
+		/// <value>PriceTotal + TaxTotal
+		/// <para xml:lang="es">
+		/// PriceTotal + TaxTotal
+		/// </para>
+		/// </value>
 		private void CalculateTotal()
 		{
 			Total = Subtotal + Tax;
@@ -167,6 +205,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Performs calculations for subtotal, tax, total, paid and balance
+		/// <para xml:lang="es">
+		/// Realiza los calculos del subtotal, impuesto, toal, pagado y balance
+		/// </para>
 		/// </summary>
 		public void CalculateTotals()
 		{
@@ -182,6 +223,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Deletes all taxes of this item
+		/// <para xml:lang="es">
+		/// Elimina todos los impuestos para este articulo
+		/// </para>
 		/// </summary>
 		public void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -195,6 +239,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Recalculates invoice's totals
+		/// <para xml:lang="es">
+		/// Recalcula los totales de las facturas
+		/// </para>
 		/// </summary>
 		public void OnAfterDelete(DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -208,6 +255,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Calculates totals
+		/// <para xml:lang="es">
+		/// Calcula los totales
+		/// </para>
 		/// </summary>
 		public void OnBeforeInsert(DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -222,6 +272,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Inserts all items taxes along with the current item and recalculates item's and invoice's totals
+		/// <para xml:lang="es">
+		/// Inserta todos los impuestos de los articulos correspondientes y recalcula el total de articulos y facturas
+		/// </para>
 		/// </summary>
 		public void OnAfterInsert(DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -270,6 +323,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Re-calculates totals
+		/// <para xml:lang="es">
+		/// Recalcula los totales
+		/// </para>
 		/// </summary>
 		public void OnBeforeUpdate(DataBase sender, OperationEventArgs eventArgs)
 		{
@@ -279,6 +335,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Recalculates invoice's totals
+		/// <para xml:lang="es">
+		/// Recalcula los totales de las facturas
+		/// </para>
 		/// </summary>
 		public void OnAfterUpdate(DataBase sender, OperationEventArgs eventArgs)
 		{

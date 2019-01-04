@@ -8,8 +8,15 @@ namespace OKHOSTING.ERP.New
 {
 	/// <summary>
 	/// A company
+	/// <para xml:lang="es">
+	/// Una empresa
+	/// </para>
 	/// </summary>
-	/// <remarks>This is the base class for customers, vendors, competition and any kind of company</remarks>
+	/// <remarks>This is the base class for customers, vendors, competition and any kind of company
+	/// <para xml:lang="es">
+	/// Esta es la clase base para clientes, vendedores, competencia y cualquier otro tipo de empresa
+	/// </para>
+	/// </remarks>
 	public class Company
 	{
 		public Guid Id { get; set; }
@@ -191,6 +198,9 @@ namespace OKHOSTING.ERP.New
 
 		/// <summary>
 		/// Deletes all addresses and  contacts of this company
+		/// <para xml:lang="es">
+		/// Elimina todas las direcciones y los contactos de esta empresa
+		/// </para>
 		/// </summary>
 		public virtual void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
 		{

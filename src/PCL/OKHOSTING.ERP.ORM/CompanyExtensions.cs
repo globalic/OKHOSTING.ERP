@@ -8,6 +8,9 @@ namespace OKHOSTING.ERP.ORM
 	{
 		/// <summary>
 		/// Deletes all addresses and  contacts of this company
+		/// <para xml:lang="es">
+		/// Elimina todas las direcciones y los contanctos de esta empresa
+		/// </para>
 		/// </summary>
 		public static void OnBeforeDelete(this Company company, DataBase sender, OperationEventArgs eventArgs)
 		{
