@@ -152,6 +152,7 @@ namespace OKHOSTING.ERP.New.Customers
 
 			foreach (Sale sale in Sales)
 			{
+				sale.CalculateTotals();
 				TotalSold += sale.Total;
 				TotalSales++;
 				Balance += sale.Balance;
@@ -217,19 +218,6 @@ namespace OKHOSTING.ERP.New.Customers
 			customer.Delete();
 
 			this.Save();
-		}
-
-		/// <summary>
-		/// Deletes all Sales of this customer
-		/// </summary>
-		public override void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
-		{
-			base.OnBeforeDelete(sender, eventArgs);
-
-			foreach (var s in Sales)
-			{
-				s.Delete();
-			}
 		}
 	}
 }

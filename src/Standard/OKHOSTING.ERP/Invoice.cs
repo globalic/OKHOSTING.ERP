@@ -191,29 +191,10 @@ namespace OKHOSTING.ERP.New
 		/// </summary>
 		public override string ToString()
 		{
-			if (AuxId != null && AuxId != "")
-				return AuxId.ToString();
-			else
-				return Id.ToString();
+			return AuxId?.ToString() ?? Id.ToString();
 		}
 
 		#endregion
-
-		/// <summary>
-		/// Deletes all items and payments of this invoice
-		/// </summary>
-		public virtual void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
-		{
-			foreach (var i in Items)
-			{
-				sender.Delete(i);
-			}
-
-			foreach (var p in Payments)
-			{
-				sender.Delete(p);
-			}
-		}
 
 		/*
 		/// <summary>
@@ -253,21 +234,5 @@ namespace OKHOSTING.ERP.New
 			}
 		}
 		*/
-
-		/// <summary>
-		/// Inserts all items and payments along with the current invoice
-		/// </summary>
-		public virtual void OnAfterInsert(DataBase sender, OperationEventArgs eventArgs)
-		{
-			foreach (var i in Items)
-			{
-				sender.Save(i);
-			}
-
-			foreach (var p in Payments)
-			{
-				sender.Save(p);
-			}
-		}
 	}
 }

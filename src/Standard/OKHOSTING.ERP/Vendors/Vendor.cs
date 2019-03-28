@@ -1,11 +1,7 @@
 using System;
-using System.Linq;
 using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
 using OKHOSTING.ERP.New.Production;
-
-
-using OKHOSTING.ERP.New.HR;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
 using OKHOSTING.ORM.Model;
@@ -23,7 +19,7 @@ namespace OKHOSTING.ERP.New.Vendors
 			set;
 		}
 
-		[RequiredValidator]
+		//[RequiredValidator]
 		public Currency Currency
 		{
 			get;
@@ -60,6 +56,7 @@ namespace OKHOSTING.ERP.New.Vendors
 
 			foreach (Purchase purchase in Purchases)
 			{
+				purchase.CalculateTotals();
 				Balance += purchase.Balance;
 			}
 		}
@@ -110,19 +107,6 @@ namespace OKHOSTING.ERP.New.Vendors
 			vendor.Delete();
 
 			this.Save();
-		}
-
-		/// <summary>
-		/// Deletes all invoices of this vendor
-		/// </summary>
-		public override void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
-		{
-			base.OnBeforeDelete(sender, eventArgs);
-
-			foreach (var s in Purchases)
-			{
-				sender.Delete(s);
-			}
 		}
 	}
 }

@@ -65,7 +65,7 @@ namespace OKHOSTING.ERP.New
 		}
 
 		[StringLengthValidator(100)]
-		[RegexValidator(Core.RegexPatterns.EmailAddress)]
+		//[RegexValidator(Core.RegexPatterns.EmailAddress)]
 		public string Email
 		{
 			get;
@@ -73,7 +73,7 @@ namespace OKHOSTING.ERP.New
 		}
 
 		[StringLengthValidator(100)]
-		[RegexValidator(Core.RegexPatterns.EmailAddress)]
+		//[RegexValidator(Core.RegexPatterns.EmailAddress)]
 		public string Email2
 		{
 			get;
@@ -81,7 +81,7 @@ namespace OKHOSTING.ERP.New
 		}
 
 		[StringLengthValidator(100)]
-		[RegexValidator(Core.RegexPatterns.DomainName)]
+		//[RegexValidator(Core.RegexPatterns.DomainName)]
 		public string Url
 		{
 			get;
@@ -187,22 +187,6 @@ namespace OKHOSTING.ERP.New
 		public override string ToString()
 		{
 			return LegalName;
-		}
-
-		/// <summary>
-		/// Deletes all addresses and  contacts of this company
-		/// </summary>
-		public virtual void OnBeforeDelete(DataBase sender, OperationEventArgs eventArgs)
-		{
-			foreach (var a in Locations)
-			{
-				sender.Delete(a);
-			}
-
-			foreach (var c in Contacts)
-			{
-				sender.Delete(c);
-			}
 		}
 	}
 }
