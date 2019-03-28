@@ -5,10 +5,13 @@
 	<ItemGroup>
 	  <Compile Remove="Custom\**" />
 	  <Compile Remove="Marketing\**" />
+	  <Compile Remove="MultilingualResources\**" />
 	  <EmbeddedResource Remove="Custom\**" />
 	  <EmbeddedResource Remove="Marketing\**" />
+	  <EmbeddedResource Remove="MultilingualResources\**" />
 	  <None Remove="Custom\**" />
 	  <None Remove="Marketing\**" />
+	  <None Remove="MultilingualResources\**" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Remove="Accounting\ExpressionTypeCalculatedAccount.cs" />
@@ -71,7 +74,6 @@
 		<ProjectReference Include="..\..\..\..\OKHOSTING.SQL\src\Standard\OKHOSTING.SQL\OKHOSTING.SQL.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="MultilingualResources\" />
 	  <Folder Include="Properties\" />
 	</ItemGroup>
 

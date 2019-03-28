@@ -1,6 +1,11 @@
 using System;
 using OKHOSTING.Data.Validation;
 using System.Linq;
+using OKHOSTING.ORM.Operations;
+using OKHOSTING.ORM;
+using OKHOSTING.ORM.Filters;
+using System.Collections.Generic;
+using OKHOSTING.Core;
 
 namespace OKHOSTING.ERP.New.Production
 {
@@ -67,94 +72,112 @@ namespace OKHOSTING.ERP.New.Production
 		/// Create / Renew the subscription when a new invoice has been created
 		/// </summary>
 		/// <param name="item">InvoiceItem that was created and that affects this subscription</param>
-		//public void OnInvoiceItem_AfterInsert(InvoiceItem item)
-		//{
-		//	//base.OnInvoiceItem_AfterInsert(item);
-		//	var db = Core.BaitAndSwitch.Create<DataBase>();
-		//	Select<InvoiceItem> select = new Select<InvoiceItem>();
-		//	select.AddMember(m => m.Id);
-		//	select.AddMember(m => m.Invoice.Id);
-		//	select.AddMember(m => m.Invoice.Date);
-		//	select.AddMember(m => m.Description);
-		//	select.AddMember(m => m.Product.Id);
-		//	select.AddMember(m => m.Product.ProductInstanceType);
-		//	select.OrderBy.Add(new OrderBy(select.DataType[m => m.Invoice.Date], Data.SortDirection.Ascending));
-		//	select.Where.Add(new ValueCompareFilter(select.DataType[m=> m.Description], subscription.Name));
+		protected override void OnInvoiceItem_AfterInsert(InvoiceItem item)
+		{
+			using (var db = BaitAndSwitch.Create<DataBase>())
+			{
+				Select<InvoiceItem> select = new Select<InvoiceItem>();
+				select.AddMembers
+				(
+					m => m.Id,
+					m => m.Discount,
+					m => m.Description,
+					m => m.Price,
+					m => m.Quantity,
+					m => m.Subtotal,
+					m => m.Tax,
+					m => m.Total,
+					m => m.Invoice.Id,
+					m => m.Invoice.Date,
+					m => m.Invoice.InvoiceType,
+					m => m.ProductInstance.Id,
+					m => m.ProductInstance.Name,
+					m => m.Product.Id,
+					m => m.Product.ProductInstanceType
+				);
 
-		//	var productInstanceTypeFilter = new ValueCompareFilter(select.DataType[m => m.Product.ProductInstanceType], item.Product.ProductInstanceType);
-		//	productInstanceTypeFilter.TypeAlias = "Product";
-		//	select.Where.Add(productInstanceTypeFilter);
+				select.Where.Add(new ValueCompareFilter(select.DataType[m => m.Description], Name));
 
-		//	//load subscription product
-		//	IEnumerable<InvoiceItem> items = db.Select(select);
+				var productType = DataType<Product>.GetDataType();
+				var productInstanceTypeFilter = new ValueCompareFilter(productType[m => m.ProductInstanceType], item.Product.ProductInstanceType);
+				productInstanceTypeFilter.TypeAlias = select.Joins.Where(j => j.Type.Equals(productType)).Single().Alias;
+				select.Where.Add(productInstanceTypeFilter);
 
-		//	foreach (InvoiceItem i in items)
-		//	{
-		//		if (i.Invoice != null)
-		//		{
-		//			if (i.Invoice.InvoiceType == InvoiceType.Sale)
-		//			{
-		//				//subscription.Items.Add(i);
-		//				i.ProductInstance = subscription;
-		//			}
-		//			else
-		//			{
-		//				i.ProductInstance = null;
-		//			}
-		//		}
-		//	}
+				var invoiceType = DataType<Invoice>.GetDataType();
+				var order = new OrderBy(invoiceType[m => m.Date], Data.SortDirection.Ascending);
+				order.TypeAlias = select.Joins.Where(j => j.Type.Equals(invoiceType)).Single().Alias;
+				select.OrderBy.Add(order);
 
-		//	//load all items for this subscription and calculate end date
-		//	foreach (InvoiceItem i in subscription.Items)
-		//	{
-		//		if (i.Invoice.InvoiceType != InvoiceType.Sale)
-		//		{
-		//			continue;
-		//		}
+				//load subscription product
+				var items = db.Select(select).ToArray();
 
-		//		SubscriptionProduct product = (SubscriptionProduct)i.Product;
+				foreach (InvoiceItem i in items)
+				{
+					if (i.Invoice != null)
+					{
+						if (i.Invoice.InvoiceType == InvoiceType.Sale)
+						{
+							i.ProductInstance = this;
+						}
+						else
+						{
+							i.ProductInstance = null;
+						}
+					}
+				}
 
-		//		if (IsFirstItem(i))
-		//		{
-		//			//create new subscription
-		//			Start = i.Invoice.Date;
-		//			End = TimeUnit.Add(Start, (int)(product.SubscriptionLenght * i.Quantity), product.SubscriptionUnit);
-		//		}
-		//		else if (!IsUpgrade(i))
-		//		{
-		//			if (IsNewObject)
-		//			{
-		//				//create new subscription
-		//				Start = i.Invoice.Date;
-		//				End = TimeUnit.Add(Start, (int)(product.SubscriptionLenght * i.Quantity), product.SubscriptionUnit);
-		//			}
-		//			else
-		//			{
-		//				//renew existing subscription
-		//				End = TimeUnit.Add(End.Value, (int)(product.SubscriptionLenght * i.Quantity), product.SubscriptionUnit);
-		//			}
-		//		}
+				//load all items for this subscription and calculate end date
+				foreach (InvoiceItem i in items)
+				{
+					if (i.Invoice.InvoiceType != InvoiceType.Sale)
+					{
+						continue;
+					}
 
-		//		//grace period
-		//		if (End == null)
-		//		{
-		//			GracePeriodEnd = null;
-		//		}
-		//		else
-		//		{
-		//			if (product.GracePeriodLenght == null || product.GracePeriodUnit == null)
-		//			{
-		//				GracePeriodEnd = End;
-		//			}
-		//			else
-		//			{
-		//				GracePeriodEnd = TimeUnit.Add(End.Value, (int)(product.GracePeriodLenght * i.Quantity), product.GracePeriodUnit);
-		//			}
-		//		}
-		//	}
-		//}
+					SubscriptionProduct product = (SubscriptionProduct) db.SelectInherited(i.Product).LastOrDefault();
 
-		//#region Notifications
+					if (Array.IndexOf(items, i) == 0)
+					{
+						//create new subscription
+						Start = i.Invoice.Date;
+						End = TimeUnit.Add(Start, (int) (product.SubscriptionLenght * i.Quantity), product.SubscriptionUnit);
+					}
+					else if (!IsUpgrade(i, items))
+					{
+						if (!DataType.HasPrimaryKey(this))
+						{
+							//create new subscription
+							Start = i.Invoice.Date;
+							End = TimeUnit.Add(Start, (int) (product.SubscriptionLenght * i.Quantity), product.SubscriptionUnit);
+						}
+						else
+						{
+							//renew existing subscription
+							End = TimeUnit.Add(End.Value, (int) (product.SubscriptionLenght * i.Quantity), product.SubscriptionUnit);
+						}
+					}
+
+					//grace period
+					if (End == null)
+					{
+						GracePeriodEnd = null;
+					}
+					else
+					{
+						if (product.GracePeriodLenght == 0)
+						{
+							GracePeriodEnd = End;
+						}
+						else
+						{
+							GracePeriodEnd = TimeUnit.Add(End.Value, (int)(product.GracePeriodLenght * i.Quantity), product.GracePeriodUnit);
+						}
+					}
+				}
+			}
+		}
+
+		#region Notifications
 
 		///// <summary>
 		///// Sends an notification email to the customers 
@@ -207,7 +230,7 @@ namespace OKHOSTING.ERP.New.Production
 		///// <param name="soldTo">
 		///// If not null, only retrieves subscriptions that where sold to a specific customer
 		///// </param>
-		//public IList<Subscription> GetSubscriptionsExpiring(DateTime from, DateTime to, Customer soldTo)
+		//public IList<Subscription> GetSubscriptionsExpiring(DateTime from, DateTime to, Customers.Customer soldTo)
 		//{
 		//	if (soldTo == null)
 		//	{
@@ -537,33 +560,13 @@ namespace OKHOSTING.ERP.New.Production
 		//	}
 		//}
 
-		//#endregion
-
-		public bool IsFirstItem(InvoiceItem item)
-		{
-			if (item.ProductInstance != this)
-			{
-				throw new ArgumentException("Item should belong to Items collection", "item");
-			}
-
-			return Items.ToList().IndexOf(item) == 0;
-		}
-
-		public bool IsLastItem(InvoiceItem item)
-		{
-			if (item.ProductInstance != this)
-			{
-				throw new ArgumentException("Item should belong to Items collection", "item");
-			}
-
-			return Items.ToList().IndexOf(item) == Items.Count - 1;
-		}
+		#endregion
 
 		/// <summary>
 		/// Indicates if an invoice item was just a product upgrade and 
 		/// no extention of the subscription expiration should be made
 		/// </summary>
-		public bool IsUpgrade(InvoiceItem item)
+		public bool IsUpgrade(InvoiceItem item, InvoiceItem[] items)
 		{
 			if (item.ProductInstance != this)
 			{
@@ -572,13 +575,13 @@ namespace OKHOSTING.ERP.New.Production
 
 			//we assume that if the item is not the first one, and the pricex is much lower than the renewal price, 
 			//and the product is different than the last item's product, we can safetly say this is a product upgrade
-			var items = Items.ToList();
+			var index = Array.IndexOf(items, item);
 			SubscriptionProduct sp = item.Product as SubscriptionProduct;
-			SubscriptionProduct spOld = items[items.IndexOf(item) - 1].Product as SubscriptionProduct;
-			double days = item.Invoice.Date.Subtract(items[items.IndexOf(item) - 1].Invoice.Date).TotalDays;
+			SubscriptionProduct spOld = items[index - 1].Product as SubscriptionProduct;
+			double days = item.Invoice.Date.Subtract(items[index - 1].Invoice.Date).TotalDays;
 
 			return
-				!IsFirstItem(item) &&
+				Array.IndexOf(items, item) > 0 &&
 				item.Subtotal < item.Product.Price &&
 				sp.Price > spOld.Price &&
 				sp != spOld &&

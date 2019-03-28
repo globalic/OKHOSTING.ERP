@@ -18,7 +18,7 @@ namespace OKHOSTING.ERP.New.Production
 		/// Monitor all inserted invoices, and if an invoice contains a PackageProduct in one of it's InvoiceItems,
 		/// This methods adds all products included in the PackageProduct to the invoice
 		/// </summary>
-		public void InvoiceItem_BeforeInsert(InvoiceItem item)
+		public static void InvoiceItem_BeforeInsert(InvoiceItem item)
 		{
 			//if this is a package product, proceed
 			if (item.Product is PackageProduct)
