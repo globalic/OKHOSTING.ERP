@@ -216,5 +216,30 @@ namespace OKHOSTING.ERP.New.Production
 				return db.SelectInherited(select);
 			}
 		}
+
+		public static void DeleteWhereInstanceDoesNotExist()
+		{
+			//select from database, in case this instance already exist
+			using (var db = Core.BaitAndSwitch.Create<DataBase>())
+			using (var db2 = Core.BaitAndSwitch.Create<DataBase>())
+			{
+				var select = new Select<ProductInstance>();
+				select.AddMembers(select.DataType.AllDataMembers);
+
+				foreach (var instance in db.SelectInherited(select))
+				{
+					if (!db2.Exist(instance.Instance))
+					{
+						foreach (var item2 in instance.Items)
+						{
+							item2.ProductInstance = null;
+							db2.Update(item2);
+						}
+
+						db2.Delete(instance);
+					}
+				}
+			}
+		}
 	}
 }
