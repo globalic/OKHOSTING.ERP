@@ -3,7 +3,7 @@ using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OKHOSTING.ERP.New.HR
+namespace OKHOSTING.ERP.HR
 {
 	/// <summary>
 	/// En employee of the company

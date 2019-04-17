@@ -4,7 +4,7 @@ using OKHOSTING.ORM.Operations;
 using System;
 using System.Collections.Generic;
 
-namespace OKHOSTING.ERP.New
+namespace OKHOSTING.ERP
 {
 	/// <summary>
 	/// A company

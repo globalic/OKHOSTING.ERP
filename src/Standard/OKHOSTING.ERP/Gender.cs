@@ -1,4 +1,4 @@
-namespace OKHOSTING.ERP.New
+namespace OKHOSTING.ERP
 {
 	/// <summary>
 	/// Gender of a person

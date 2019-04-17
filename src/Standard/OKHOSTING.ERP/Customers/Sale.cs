@@ -2,7 +2,7 @@ using OKHOSTING.Data.Validation;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
 
-namespace OKHOSTING.ERP.New.Customers
+namespace OKHOSTING.ERP.Customers
 {
 	/// <summary>
 	/// A sale made for a customer

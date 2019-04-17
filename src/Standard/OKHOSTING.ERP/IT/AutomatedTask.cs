@@ -5,7 +5,7 @@ using OKHOSTING.ORM.Operations;
 using System;
 using System.Reflection;
 
-namespace OKHOSTING.ERP.New.IT
+namespace OKHOSTING.ERP.IT
 {
 	/// <summary>
 	/// A method call with specific parameters that can be persisted and executed

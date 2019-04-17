@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using OKHOSTING.ERP.New.HR;
+using OKHOSTING.ERP.HR;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.New.Customers
+namespace OKHOSTING.ERP.Customers
 {
 	/// <summary>
 	/// Represents a customer feedback where the customer is expressing his overall satisfaction level with our service

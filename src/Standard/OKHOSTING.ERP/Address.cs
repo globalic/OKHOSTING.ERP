@@ -1,7 +1,7 @@
 using OKHOSTING.Data.Validation;
 using System;
 
-namespace OKHOSTING.ERP.New
+namespace OKHOSTING.ERP
 {
 	/// <summary>
 	/// An address of a person or a company

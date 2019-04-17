@@ -1,6 +1,6 @@
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.New
+namespace OKHOSTING.ERP
 {
 	/// <summary>
 	/// A location that belongs to a company

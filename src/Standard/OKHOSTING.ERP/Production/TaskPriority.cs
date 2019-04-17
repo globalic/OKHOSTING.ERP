@@ -1,4 +1,4 @@
-﻿namespace OKHOSTING.ERP.New.Production
+﻿namespace OKHOSTING.ERP.Production
 {
 	/// <summary>
 	/// The different priorities that a task can have

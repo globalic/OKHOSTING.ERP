@@ -3,7 +3,7 @@ using OKHOSTING.Data.Validation;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
 
-namespace OKHOSTING.ERP.New
+namespace OKHOSTING.ERP
 {
 	/// <summary>
 	/// A payment made for an invoice

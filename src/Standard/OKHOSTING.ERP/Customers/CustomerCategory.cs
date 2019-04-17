@@ -3,7 +3,7 @@ using OKHOSTING.Data;
 using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
 
-namespace OKHOSTING.ERP.New.Customers
+namespace OKHOSTING.ERP.Customers
 {
 	/// <summary>
 	/// A category for customers

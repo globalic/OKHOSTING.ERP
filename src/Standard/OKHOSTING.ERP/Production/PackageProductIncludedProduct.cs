@@ -1,6 +1,6 @@
 using System;
 
-namespace OKHOSTING.ERP.New.Production
+namespace OKHOSTING.ERP.Production
 {
 	/// <summary>
 	/// A product that is included into a PackageProduct

@@ -1,7 +1,7 @@
 ﻿using System;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.New.Inventory
+namespace OKHOSTING.ERP.Inventory
 {
 	public class WarehouseTransaction
 	{

@@ -1,12 +1,12 @@
 using System;
 using System.Linq;
-using OKHOSTING.ERP.New.Production;
+using OKHOSTING.ERP.Production;
 using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
 
-namespace OKHOSTING.ERP.New
+namespace OKHOSTING.ERP
 {
 	/// <summary>
 	/// An item that belongs to an invoice

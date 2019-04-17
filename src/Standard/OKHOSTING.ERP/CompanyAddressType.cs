@@ -1,6 +1,6 @@
 using System;
 
-namespace OKHOSTING.ERP.New
+namespace OKHOSTING.ERP
 {
 	/// <summary>
 	/// Types of address that a company can have

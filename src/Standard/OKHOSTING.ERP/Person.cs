@@ -3,7 +3,7 @@ using OKHOSTING.Data.Validation;
 using OKHOSTING.Security;
 using System.Collections.Generic;
 
-namespace OKHOSTING.ERP.New
+namespace OKHOSTING.ERP
 {
 	/// <summary>
 	/// Represents a person

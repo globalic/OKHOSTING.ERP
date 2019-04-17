@@ -1,4 +1,4 @@
-﻿namespace OKHOSTING.ERP.New
+﻿namespace OKHOSTING.ERP
 {
 	/// <summary>
 	/// Defines my company information

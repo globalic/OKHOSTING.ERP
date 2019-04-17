@@ -1,9 +1,6 @@
 using System;
 using OKHOSTING.Data.Validation;
-using OKHOSTING.ORM;
-using OKHOSTING.ORM.Operations;
-
-namespace OKHOSTING.ERP.New.Vendors
+namespace OKHOSTING.ERP.Vendors
 {
 	/// <summary>
 	/// A purchase that the company made to a vendor
@@ -12,7 +9,7 @@ namespace OKHOSTING.ERP.New.Vendors
 	{
 		public Purchase()
 		{
-			InvoiceType = ERP.New.InvoiceType.Purchase;
+			InvoiceType = InvoiceType.Purchase;
 		}
 
 		[RequiredValidator]

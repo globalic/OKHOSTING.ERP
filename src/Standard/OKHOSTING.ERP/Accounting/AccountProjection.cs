@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.New.Accounting
+namespace OKHOSTING.ERP.Accounting
 {
 	/// <summary>
 	/// A projection is an estimate value that an account will have sometime in the future

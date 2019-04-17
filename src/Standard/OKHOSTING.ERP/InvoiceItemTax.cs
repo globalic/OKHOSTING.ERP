@@ -1,10 +1,10 @@
 using System;
-using OKHOSTING.ERP.New.Finances;
+using OKHOSTING.ERP.Finances;
 using OKHOSTING.Data.Validation;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
 
-namespace OKHOSTING.ERP.New
+namespace OKHOSTING.ERP
 {
 	/// <summary>
 	/// Tax applied to an invoice item

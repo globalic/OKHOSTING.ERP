@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{8982753D-2359-45C3-9600-8170B675D759}"
 EndProject
@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OKHOSTING.ORM.UI", "..\..\O
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OKHOSTING.UI", "..\..\OKHOSTING.UI\src\Standard\OKHOSTING.UI\OKHOSTING.UI.csproj", "{F9D654B5-6B7A-4573-B8C8-FD09B96C021B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OKHOSTING.ERP.New", "Standard\OKHOSTING.ERP\OKHOSTING.ERP.New.csproj", "{04C2F81A-439A-4E72-AA70-BA0C9C5FD77B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OKHOSTING.ERP", "Standard\OKHOSTING.ERP\OKHOSTING.ERP.csproj", "{04C2F81A-439A-4E72-AA70-BA0C9C5FD77B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OKHOSTING.Computers", "..\..\OKHOSTING.Computers\src\Standard\OKHOSTING.Computers\OKHOSTING.Computers.csproj", "{69F56594-4A8F-45F2-A79E-76F476CE92F1}"
 EndProject

@@ -1,7 +1,7 @@
 using System;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.New.Customers
+namespace OKHOSTING.ERP.Customers
 {
 	/// <summary>
 	/// A percentage of commission that will be given to a sales person for a specific sale.

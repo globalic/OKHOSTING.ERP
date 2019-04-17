@@ -1,6 +1,6 @@
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.New.Customers
+namespace OKHOSTING.ERP.Customers
 {
 	/// <summary>
 	/// An employee in charge of sales, that optionally recieves a comissions for every sale he or she makes

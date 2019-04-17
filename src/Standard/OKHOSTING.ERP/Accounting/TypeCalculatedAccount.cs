@@ -1,7 +1,7 @@
 ﻿using System;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.New.Accounting
+namespace OKHOSTING.ERP.Accounting
 {
 	/// <summary>
 	/// A calculated account that takes it's value from looking into a list of objects and evaluating an expression on it
@@ -12,7 +12,7 @@ namespace OKHOSTING.ERP.New.Accounting
 		/// Collection of objects that will be evaluated
 		/// </summary>
 		/// <example>
-		/// OKHOSTING.ERP.New.Customers.Sale
+		/// OKHOSTING.ERP.Customers.Sale
 		/// </example>
 		//[ValueConverter(typeof(OKHOSTING.ValueConverters.TypeValueConverter))]
 		public Type EvaluatedType

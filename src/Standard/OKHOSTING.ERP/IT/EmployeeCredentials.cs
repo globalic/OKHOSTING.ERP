@@ -1,4 +1,4 @@
-﻿namespace OKHOSTING.ERP.New.IT
+﻿namespace OKHOSTING.ERP.IT
 {
 	/// <summary>
 	/// Credenmtials that are assigned to an employee

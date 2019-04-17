@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace OKHOSTING.ERP.New.Inventory
+namespace OKHOSTING.ERP.Inventory
 {
 	public class WarehouseProduct : Production.Product
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OKHOSTING.ERP.New.HR
+namespace OKHOSTING.ERP.HR
 {
 	/// <summary>
 	/// How salary is calculated for an employee

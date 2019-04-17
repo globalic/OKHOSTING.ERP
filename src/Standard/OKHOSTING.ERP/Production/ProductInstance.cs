@@ -1,13 +1,13 @@
 using System;
-using OKHOSTING.ERP.New.Vendors;
-using OKHOSTING.ERP.New.Customers;
+using OKHOSTING.ERP.Vendors;
+using OKHOSTING.ERP.Customers;
 using OKHOSTING.Data.Validation;
 using System.Collections.Generic;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
 using System.Linq;
 
-namespace OKHOSTING.ERP.New.Production
+namespace OKHOSTING.ERP.Production
 {
 	/// <summary>
 	/// Instance of a product, a product that was bought or sold and

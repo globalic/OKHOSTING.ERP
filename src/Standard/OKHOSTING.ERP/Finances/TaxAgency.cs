@@ -1,7 +1,7 @@
 using System;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.New.Finances
+namespace OKHOSTING.ERP.Finances
 {
 	/// <summary>
 	/// A tax agency which taxes must be paid to

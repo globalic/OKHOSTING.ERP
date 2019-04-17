@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using OKHOSTING.Data.Validation;
 
-namespace OKHOSTING.ERP.New.Accounting
+namespace OKHOSTING.ERP.Accounting
 {
 	/// <summary>
 	/// An AccountUpdate is a change to the value of an account at a given moment in time.

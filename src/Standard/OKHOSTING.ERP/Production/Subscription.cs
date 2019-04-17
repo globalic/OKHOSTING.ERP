@@ -7,7 +7,7 @@ using OKHOSTING.ORM.Filters;
 using System.Collections.Generic;
 using OKHOSTING.Core;
 
-namespace OKHOSTING.ERP.New.Production
+namespace OKHOSTING.ERP.Production
 {
 	/// <summary>
 	/// Represents a Subscription to a service, wether a sale or a purchase. Allows administrators

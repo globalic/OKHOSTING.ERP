@@ -5,7 +5,7 @@ using OKHOSTING.Data.Validation;
 using OKHOSTING.ORM;
 using OKHOSTING.ORM.Operations;
 
-namespace OKHOSTING.ERP.New.Production
+namespace OKHOSTING.ERP.Production
 {
 	/// <summary>
 	/// The main class for tracking employee time
