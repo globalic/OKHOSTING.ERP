@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\OKHOSTING.Computers\src\Standard\OKHOSTING.Computers\OKHOSTING.Computers.csproj" />
+    <ProjectReference Include="..\..\..\..\OKHOSTING.Core\src\Standard\OKHOSTING.Core\OKHOSTING.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\OKHOSTING.Data\src\Standard\OKHOSTING.Data\OKHOSTING.Data.csproj" />
+    <ProjectReference Include="..\..\..\..\OKHOSTING.Files\src\Standard\OKHOSTING.Files\OKHOSTING.Files.csproj" />
+    <ProjectReference Include="..\..\..\..\OKHOSTING.ORM\src\Standard\OKHOSTING.ORM.UI\OKHOSTING.ORM.UI.csproj" />
+    <ProjectReference Include="..\..\..\..\OKHOSTING.ORM\src\Standard\OKHOSTING.ORM\OKHOSTING.ORM.csproj" />
+    <ProjectReference Include="..\..\..\..\OKHOSTING.Security\src\Standard\OKHOSTING.Security\OKHOSTING.Security.csproj" />
+    <ProjectReference Include="..\..\..\..\OKHOSTING.Shell\src\Standard\OKHOSTING.Shell\OKHOSTING.Shell.csproj" />
+    <ProjectReference Include="..\..\..\..\OKHOSTING.SQL\src\Standard\OKHOSTING.SQL\OKHOSTING.SQL.csproj" />
+    <ProjectReference Include="..\..\..\..\OKHOSTING.UI\src\Standard\OKHOSTING.UI\OKHOSTING.UI.csproj" />
+    <ProjectReference Include="..\OKHOSTING.ERP\OKHOSTING.ERP.csproj" />
+  </ItemGroup>
+
+</Project>
