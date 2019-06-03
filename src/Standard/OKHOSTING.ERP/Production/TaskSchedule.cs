@@ -87,11 +87,14 @@ namespace OKHOSTING.ERP.Production
 					schedule.Task = db.SelectInherited(schedule.Task).Last();
 
 					var repetitions = schedule.GetRepetitions(from, to);
+					var operations = new List<Insert>();
 
 					foreach (var rep in repetitions)
 					{
-						db.Insert(rep);
+						operations.Add(new Insert() { Instance = rep });
 					}
+
+					db.Execute(operations);
 				}
 			}
 		}

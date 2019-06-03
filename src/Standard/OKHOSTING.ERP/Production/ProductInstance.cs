@@ -195,7 +195,13 @@ namespace OKHOSTING.ERP.Production
 				);
 
 				select.Where.Add(new ORM.Filters.ValueCompareFilter() { Member = dtype[dm => dm.Name], ValueToCompare = name });
-				select.Where.Add(new ORM.Filters.ValueCompareFilter() { Member = productType[dm => dm.ProductInstanceType], ValueToCompare = productInstanceType, TypeAlias = select.Joins.First().Alias });
+
+				var or = new ORM.Filters.OrFilter();
+
+				or.InnerFilters.Add(new ORM.Filters.ValueCompareFilter() { Member = productType[dm => dm.ProductInstanceType], ValueToCompare = productInstanceType, TypeAlias = select.Joins.First().Alias });
+				or.InnerFilters.Add(new ORM.Filters.ValueCompareFilter() { Member = dtype[dm => dm.Product.Id], ValueToCompare = null });
+
+				select.Where.Add(or);
 
 				return db.SelectInherited(select);
 			}
