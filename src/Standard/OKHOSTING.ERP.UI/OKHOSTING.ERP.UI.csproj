@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OKHOSTING.Computers\src\Standard\OKHOSTING.Computers\OKHOSTING.Computers.csproj" />
     <ProjectReference Include="..\..\..\..\OKHOSTING.Core\src\Standard\OKHOSTING.Core\OKHOSTING.Core.csproj" />
     <ProjectReference Include="..\..\..\..\OKHOSTING.Data\src\Standard\OKHOSTING.Data\OKHOSTING.Data.csproj" />
     <ProjectReference Include="..\..\..\..\OKHOSTING.Files\src\Standard\OKHOSTING.Files\OKHOSTING.Files.csproj" />

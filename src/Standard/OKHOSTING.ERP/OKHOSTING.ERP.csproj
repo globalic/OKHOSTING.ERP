@@ -27,9 +27,11 @@
 	  <Compile Remove="Finances\BankAccount.cs" />
 	  <Compile Remove="Finances\CashStorage.cs" />
 	  <Compile Remove="HR\Conversation.cs" />
+	  <Compile Remove="HR\Department.cs" />
 	  <Compile Remove="HR\EmployeeProspect.cs" />
 	  <Compile Remove="HR\MailAccountTaskSource.cs" />
 	  <Compile Remove="HR\MailMessageTask.cs" />
+	  <Compile Remove="HR\Office.cs" />
 	  <Compile Remove="HR\PhoneCall.cs" />
 	  <Compile Remove="HR\PlannedTask.cs" />
 	  <Compile Remove="HR\Rest.cs" />
@@ -52,6 +54,7 @@
 	  <Compile Remove="Production\ShippingMethod.cs" />
 	  <Compile Remove="Production\Subscription-29fb06510ac942ff11667dc3e1458beb.cs" />
 	  <Compile Remove="Production\SubscriptionMail.cs" />
+	  <Compile Remove="Production\TaskCategory.cs" />
 	  <Compile Remove="Production\TaskCheckItem.cs" />
 	</ItemGroup>
 	<ItemGroup>
@@ -67,10 +70,10 @@
 	  <Content Include="Custom\MailTemplates\OKHOSTING.ERP.Production.ExpiringSubscriptionMail.html" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\..\OKHOSTING.Computers\src\Standard\OKHOSTING.Computers\OKHOSTING.Computers.csproj" />
 		<ProjectReference Include="..\..\..\..\OKHOSTING.Core\src\Standard\OKHOSTING.Core\OKHOSTING.Core.csproj" />
 		<ProjectReference Include="..\..\..\..\OKHOSTING.Data\src\Standard\OKHOSTING.Data\OKHOSTING.Data.csproj" />
 		<ProjectReference Include="..\..\..\..\OKHOSTING.ORM\src\Standard\OKHOSTING.ORM\OKHOSTING.ORM.csproj" />
+		<ProjectReference Include="..\..\..\..\OKHOSTING.RPC\src\Standard\OKHOSTING.RPC\OKHOSTING.RPC.csproj" />
 		<ProjectReference Include="..\..\..\..\OKHOSTING.SQL\src\Standard\OKHOSTING.SQL\OKHOSTING.SQL.csproj" />
 	</ItemGroup>
 	<ItemGroup>

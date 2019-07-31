@@ -86,10 +86,28 @@ namespace OKHOSTING.ERP.Production
 		}
 
 		/// <summary>
+		/// Cost of time invested, considering the employee's salary
+		/// </summary>
+		public decimal TimeInvestedCost
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Cost of time invested, considering the employee's salary, in total
+		/// </summary>
+		public decimal TimeInvestedCostTotal
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
 		/// Employee who is responsible for doing this task
 		/// </summary>
 		[RequiredValidator]
-		public HR.Employee AssignedTo
+		public HR.Employee Owner
 		{
 			get;
 			set;
@@ -134,13 +152,13 @@ namespace OKHOSTING.ERP.Production
 			set;
 		}
 
-		public decimal TotalSales
+		public decimal SoldTotal
 		{
 			get;
 			set;
 		}
 
-		public decimal TotalPurchases
+		public decimal PurchasedTotal
 		{
 			get;
 			set;
@@ -155,10 +173,18 @@ namespace OKHOSTING.ERP.Production
 		/// <summary>
 		/// invoices related to this project
 		/// </summary>
-		public ICollection<Invoice> Invoices
+		public ICollection<InvoiceItem> InvoiceItems
 		{
 			get;
 			set;
+		}
+
+		public IEnumerable<Product> SoldProducts
+		{
+			get
+			{
+				return InvoiceItems?.Where(i => i.Invoice.InvoiceType == InvoiceType.Sale).Select(i => i.Product);
+			}
 		}
 
 		#endregion
@@ -184,6 +210,11 @@ namespace OKHOSTING.ERP.Production
 			set;
 		}
 
+		/// <summary>
+		/// Tasks that conform this task as a group. This is just a way of grouping tasks.
+		/// You could think of subtasks as prerequisites of the parent task. Once all subtasks as completed 
+		/// (and only then),the parent task is also considered completed.
+		/// </summary>
 		public ICollection<Task> SubTasks
 		{
 			get;
@@ -193,7 +224,7 @@ namespace OKHOSTING.ERP.Production
 		/// <summary>
 		/// Comments, files and directories related to this project
 		/// </summary>
-		public readonly ICollection<TaskAttachement> Attachements;
+		//public readonly ICollection<TaskAttachement> Attachements;
 
 		/// <summary>
 		/// Schedules for this task
@@ -203,7 +234,7 @@ namespace OKHOSTING.ERP.Production
 		/// <summary>
 		/// Warehouse transactions related to this project
 		/// </summary>
-		public readonly ICollection<Inventory.WarehouseTransaction> WarehouseTransactions;
+		//public readonly ICollection<Inventory.WarehouseTransaction> WarehouseTransactions;
 
 		/// <summary>
 		/// Recalculates Progress, StartDate, EndDate, TimeInvestedTotal, TotalSales, TotalPurchases and Balance properties based on SubTasks and Invoices
@@ -211,7 +242,13 @@ namespace OKHOSTING.ERP.Production
 		public void RecalculateValues()
 		{
 			TimeInvestedTotal = TimeInvested;
-			TotalSales = TotalPurchases = 0;
+			SoldTotal = PurchasedTotal = TimeInvestedCost = 0;
+			TimeInvestedCost = (decimal) TimeInvested.TotalHours * Owner.SalaryPerHour;
+
+			//foreach (var s in SubTasks)
+			//{
+			//	s.RecalculateValues();
+			//}
 
 			if (SubTasks.Any())
 			{
@@ -228,9 +265,6 @@ namespace OKHOSTING.ERP.Production
 					}
 				}
 
-				Progress = (int)SubTasks.Average(t => t.Progress);
-				TimeInvestedTotal += TimeSpan.FromTicks(SubTasks.Sum(t => t.TimeInvestedTotal.Ticks));
-
 				if (Finished && EndDate == null)
 				{
 					EndDate = DateTime.Now;
@@ -245,22 +279,24 @@ namespace OKHOSTING.ERP.Production
 					EndDate = null;
 				}
 
-				TotalSales += SubTasks.Sum(st => st.TotalSales);
-				TotalPurchases += SubTasks.Sum(st => st.TotalPurchases);
-				Balance += SubTasks.Sum(st => st.Balance);
+				Progress = (int) SubTasks.Average(t => t.Progress);
+				TimeInvestedTotal += TimeSpan.FromTicks(SubTasks.Sum(t => t.TimeInvestedTotal.Ticks) + TimeInvested.Ticks);
+				TimeInvestedCostTotal = SubTasks.Sum(st => st.TimeInvestedCostTotal) + TimeInvestedCost;
+				SoldTotal += SubTasks.Sum(st => st.SoldTotal);
+				PurchasedTotal += SubTasks.Sum(st => st.PurchasedTotal);
 			}
 
-			if (Invoices.Any())
+			if (InvoiceItems.Any())
 			{
-				TotalSales = Invoices.Where(i => i is Customers.Sale).Sum(i => i.Total);
-				TotalPurchases = Invoices.Where(i => i is Vendors.Purchase).Sum(i => i.Total);
+				SoldTotal += InvoiceItems.Where(i => i.Invoice.InvoiceType == InvoiceType.Sale).Sum(i => i.Total);
+				PurchasedTotal += InvoiceItems.Where(i => i.Invoice.InvoiceType == InvoiceType.Purchase).Sum(i => i.Total);
 			}
 
-			Balance = TotalSales - TotalPurchases;
+			Balance = SoldTotal - PurchasedTotal - TimeInvestedCostTotal;
 		}
 
 		#endregion
-		
+
 		public Task Clone()
 		{
 			return (Task) MemberwiseClone();
