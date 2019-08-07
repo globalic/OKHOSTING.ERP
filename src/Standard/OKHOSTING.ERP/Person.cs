@@ -131,13 +131,13 @@ namespace OKHOSTING.ERP
 			}
 		}
 
-		//public User User
-		//{
-		//	get;
-		//	set;
-		//}
+        public User User
+        {
+            get;
+            set;
+        }
 
-		public override string ToString()
+        public override string ToString()
 		{
 			return FullName;
 		}
