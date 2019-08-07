@@ -88,5 +88,55 @@ namespace OKHOSTING.ERP.HR
 				return AssignedTasks?.Where(t => !t.Finished);
 			}
 		}
+
+		public ICollection<EmployeeWorkSchedule> WorkSchedules
+		{
+			get;
+			set;
+		}
+
+		public ICollection<EmployeeWorkSession> WorkSessions
+		{
+			get;
+			set;
+		}
+
+		public decimal SalaryPerHour
+		{
+			get
+			{
+				int daysPerSalary = 0;
+
+				switch (SalaryType)
+				{
+					case SalaryType.PerBiWeek:
+						daysPerSalary = 14;
+						break;
+
+					case SalaryType.PerDay:
+						daysPerSalary = 1;
+						break;
+
+					case SalaryType.PerMonth:
+						daysPerSalary = 28;
+						break;
+
+					case SalaryType.PerWeek:
+						daysPerSalary = 7;
+						break;
+
+					case SalaryType.PerWork:
+					case SalaryType.PerHour:
+					default:
+						return 0;
+				}
+
+				decimal scheduledHoursPerWeek = (decimal) TimeSpan.FromTicks(WorkSchedules.Sum(s => s.Lenght.Ticks)).TotalHours;
+				decimal averageHoursPerDay = scheduledHoursPerWeek / 7;
+				decimal hoursPerSalary = daysPerSalary * averageHoursPerDay;
+
+				return Salary / hoursPerSalary;
+			}
+		}
 	}
 }

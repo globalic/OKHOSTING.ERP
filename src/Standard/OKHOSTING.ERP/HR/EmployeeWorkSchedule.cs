@@ -5,6 +5,12 @@ namespace OKHOSTING.ERP.HR
 {
 	public class EmployeeWorkSchedule
 	{
+		public Guid Id
+		{
+			get;
+			set;
+		}
+
 		[RequiredValidator]
 		public Employee Employee
 		{
