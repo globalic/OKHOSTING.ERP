@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 using OKHOSTING.Data.Validation;
 
@@ -8,16 +7,9 @@ namespace OKHOSTING.ERP.Production
 	/// <summary>
 	/// A group of tasks that are organized in chronological order
 	/// </summary>
-	public class Project: ORM.Model.Base<Guid>
+	public class Project
 	{
-		/// <summary>
-		/// Customer that is requesting this project. Use null for "internal" projects, no customer paying
-		/// </summary>
-		public Customers.Customer Customer
-		{
-			get;
-			set;
-		}
+		public Guid Id { get; set; }
 
 		/// <summary>
 		/// Name of this project
@@ -39,50 +31,34 @@ namespace OKHOSTING.ERP.Production
 			set;
 		}
 
-		/// <summary>
-		/// Percentaje (from 0 to 100) of progress, how much is an activity finished
-		/// </summary>
-		[RequiredValidator]
-		[RangeValidator(0, 100)]
-		public int Progress
+		public HR.Team Team
 		{
 			get;
 			set;
 		}
 
-		/// <summary>
-		/// Date when the task started or is supposed to start
-		/// </summary>
-		public DateTime StartDate
-		{
-			get;
-			set;
-		} = DateTime.Now;
-
-		/// <summary>
-		/// Time invested in doing this task
-		/// </summary>
-		public TimeSpan TimeInvested
+		public Project Parent
 		{
 			get;
 			set;
 		}
 
-		public DateTime? FinishDate
+		public ICollection<Project> Subprojects
 		{
 			get;
 			set;
 		}
 
-
-		/// <summary>
-		/// invoices related to this project
-		/// </summary>
 		public ICollection<Task> Tasks
 		{
 			get;
 			set;
 		}
 
+		public ICollection<Invoice> Invoices
+		{
+			get;
+			set;
+		}
 	}
 }

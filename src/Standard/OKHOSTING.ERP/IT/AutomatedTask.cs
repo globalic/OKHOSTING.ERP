@@ -82,8 +82,8 @@ namespace OKHOSTING.ERP.IT
 
 			select.Where.Add(new ORM.Filters.ValueCompareFilter(dtype[m => m.Finished], false));
 			select.Where.Add(new ORM.Filters.ValueCompareFilter(dtype[m => m.StartDate], DateTime.Now, Data.CompareOperator.LessThanEqual));
+			select.OrderBy.Add(new ORM.Operations.OrderBy(dtype[m => m.Project.Id]));
 			select.OrderBy.Add(new ORM.Operations.OrderBy(dtype[m => m.StartDate]));
-			select.OrderBy.Add(new ORM.Operations.OrderBy(dtype[m => m.Parent.Id]));
 			select.OrderBy.Add(new ORM.Operations.OrderBy(dtype[m => m.Priority], Data.SortDirection.Descending));
 
 			using (var db = Core.BaitAndSwitch.Create<ORM.DataBase>())

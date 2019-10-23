@@ -33,7 +33,6 @@ namespace OKHOSTING.ERP.Production
 				//but with a different date adn set as a subtask of the original
 				newTask.StartDate = date;
 				newTask.Name = $"{Task.Name} / {DateTime.Now.ToString("yyyy-MM-dd hh:mm")}";
-				newTask.Parent = Task;
 
 				//set these to empty
 				newTask.Id = Guid.Empty;
@@ -47,8 +46,6 @@ namespace OKHOSTING.ERP.Production
 				{
 					newTask.EndDate = null;
 				}
-
-				newTask.TimeInvestedTotal = newTask.TimeInvested = TimeSpan.Zero;
 
 				yield return newTask;
 			}

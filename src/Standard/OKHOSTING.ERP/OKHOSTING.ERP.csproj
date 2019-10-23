@@ -50,7 +50,6 @@
 	  <Compile Remove="Production\InventoryProduct.cs" />
 	  <Compile Remove="Production\ISubscription.cs" />
 	  <Compile Remove="Production\MethodAutomatedTask.cs" />
-	  <Compile Remove="Production\Project.cs" />
 	  <Compile Remove="Production\ProjectPhase.cs" />
 	  <Compile Remove="Production\ShippingMethod.cs" />
 	  <Compile Remove="Production\Subscription-29fb06510ac942ff11667dc3e1458beb.cs" />
